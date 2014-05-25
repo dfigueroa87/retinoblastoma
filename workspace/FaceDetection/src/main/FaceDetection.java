@@ -12,7 +12,7 @@ import org.opencv.objdetect.CascadeClassifier;
 //
 //Detects faces in an image, draws boxes around them, and writes the results
 //to "faceDetection.png".
-//
+//mod
 class DetectFaceDemo {
 public void run() {
  System.out.println("\nRunning DetectFaceDemo");
