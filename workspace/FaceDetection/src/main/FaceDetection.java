@@ -19,9 +19,9 @@ public void run() {
 
  // Create a face detector from the cascade file in the resources
  // directory.
- CascadeClassifier faceDetector = new CascadeClassifier("C:/retinoblastoma/workspace/FaceDetection/resources/lbpcascade_frontalface.xml");
+ CascadeClassifier faceDetector = new CascadeClassifier("C:/retinoblastoma/workspace/FaceDetection/resources/haarcascade_eye.xml");
  //CascadeClassifier profileFaceDetector = new CascadeClassifier("C:/retinoblastoma/workspace/FaceDetection/resources/lbpcascade_profileface.xml");
- Mat image = Highgui.imread("C:/retinoblastoma/DataSet/profile.jpg");
+ Mat image = Highgui.imread("C:/retinoblastoma/DataSet/ejemplo10.jpg");
 
  // Detect faces in the image.
  // MatOfRect is a special container class for Rect.
