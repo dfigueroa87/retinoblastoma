@@ -1,0 +1,6 @@
+-marcar puntos en los ojos en todas las fotos, y despues compararlas con los resultados, para ver si los ojos están adentro de los rectangulos
+
+-rotar fotos para ver si toma mejor los ojos.
+
+-preprocesamiento de fotos antes. que puede ser mejor?
+
