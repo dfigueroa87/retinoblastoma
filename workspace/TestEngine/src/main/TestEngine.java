@@ -17,13 +17,14 @@ public class TestEngine {
 	public static String imagesPath = "C:/retinoblastoma/DataSet";
 	public static String faceCascadeClassifierPath = "C:/retinoblastoma/workspace/Resources/CascadeClassifiers/FaceDetection";
 	public static String eyeCascadeClassifierPath = "C:/retinoblastoma/workspace/Resources/CascadeClassifiers/EyeDetection";
+	private static String logPath = "C:/retinoblastoma/workspace/TestEngine/results.txt";
 	
 	
 	  public static void main(String[] args) {
 
 		    // Load the native library.
 		    System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-		    
+		    Log log = new Log(logPath);
 		    File faceCascadeDir = new File(faceCascadeClassifierPath);
 		    String faceCascadeClassifiers[] = faceCascadeDir.list();
 		    for(int i=0; i<faceCascadeClassifiers.length; i++) {
@@ -42,6 +43,8 @@ public class TestEngine {
 			    		// Convert to gray scale
 			    		Mat gray = new Mat();
 			    		Imgproc.cvtColor(image, gray, Imgproc.COLOR_RGB2GRAY);
+			    		// Give the image a standard brightness and contrast
+			    		Imgproc.equalizeHist(gray, gray);
 			    		 
 			    		PatternDetector faceDetector = new PatternDetector(gray, faceClassifier);
 			    		MatOfRect faceDetections = faceDetector.Detection();
@@ -69,10 +72,11 @@ public class TestEngine {
 			    		
 			    	}
 			    	long stopTime = System.currentTimeMillis();
-			        long elapsedTime = (stopTime - startTime)*1000;
-			    	System.out.println(String.format("Detected %d faces using %s in %d seconds", detections, faceCascadeClassifiers[i], elapsedTime));
+			        long elapsedTime = (stopTime - startTime)/1000;
+			    	log.Write(String.format("Detected %d faces using %s in %d seconds", detections, faceCascadeClassifiers[i], elapsedTime));
 			    //}
 		    }
+		    log.Close();
 		    
 		    
 		  }

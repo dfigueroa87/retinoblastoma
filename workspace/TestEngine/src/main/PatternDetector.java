@@ -6,6 +6,7 @@ import org.opencv.core.MatOfRect;
 import org.opencv.core.Point;
 import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
+import org.opencv.core.Size;
 import org.opencv.objdetect.CascadeClassifier;
 
 public class PatternDetector {
@@ -14,24 +15,25 @@ public class PatternDetector {
 	protected Mat image;
 	protected MatOfRect detections;
 	
-	public PatternDetector(Mat image) {
-		this.image = image;
-		this.detections = new MatOfRect();
-	}
+	private double scaleFactor = 1.1;
+	private int minNeighbors = 2;
+	private int flags = org.opencv.objdetect.Objdetect.CASCADE_DO_CANNY_PRUNING;
+	private int minSizeRatio = 12;
+	
+	private Size minSize;
+	private Size maxSize;
 	
 	public PatternDetector(Mat image, CascadeClassifier classifier) {
 		this.classifier = classifier;
 		this.image = image;
 		this.detections = new MatOfRect();
-	}
-	
-	public PatternDetector(Mat image, CascadeClassifier classifier1, CascadeClassifier classifier2) {
-		
+		this.minSize = new Size(image.size().width/this.minSizeRatio, image.size().height/this.minSizeRatio);
+		this.maxSize = image.size();
 	}
 	
 	public MatOfRect Detection(){
 		this.detections = new MatOfRect();
-		this.classifier.detectMultiScale(this.image, this.detections);
+		this.classifier.detectMultiScale(this.image, this.detections, scaleFactor, minNeighbors, flags, minSize, maxSize);
 		return this.detections;
 	}
 	
@@ -45,6 +47,47 @@ public class PatternDetector {
 	
 	public int DetectedPatterns() {
 		return this.detections.toArray().length;
+	}
+	
+	// Sets and Gets
+	public void SetScaleFactor(double factor) {
+		this.scaleFactor = factor;
+	}
+	
+	public double GetScaleFactor() {
+		return this.scaleFactor;
+	}
+	
+	public void SetMinNeighbors(int value) {
+		this.minNeighbors = value;
+	}
+	
+	public int GetMinNeighbors() {
+		return this.minNeighbors;
+	}
+	
+	public void SetFlags(int value) {
+		this.flags = value;
+	}
+	
+	public int GetFlags() {
+		return this.flags;
+	}
+	
+	public void SetMinSize(Size value) {
+		this.minSize = value;
+	}
+	
+	public Size GetMinSize() {
+		return this.minSize;
+	}
+	
+	public void SetMaxSize(Size value) {
+		this.maxSize = value;
+	}
+	
+	public Size GetMaxSize() {
+		return this.maxSize;
 	}
 
 }
