@@ -27,7 +27,7 @@ public class Log {
 	public void Write(String text) {
 		try {
 			bw.write(text);
-			bw.write("\n");
+			bw.write(System.getProperty("line.separator"));
 			
 		} catch(IOException e) {
 			e.printStackTrace();

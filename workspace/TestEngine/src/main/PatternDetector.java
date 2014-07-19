@@ -15,10 +15,10 @@ public class PatternDetector {
 	protected Mat image;
 	protected MatOfRect detections;
 	
-	private double scaleFactor = 1.1;
-	private int minNeighbors = 2;
+	private double scaleFactor = 1.05;
+	private int minNeighbors = 1;
 	private int flags = org.opencv.objdetect.Objdetect.CASCADE_DO_CANNY_PRUNING;
-	private int minSizeRatio = 12;
+	private int minSizeRatio = 10;
 	
 	private Size minSize;
 	private Size maxSize;
@@ -88,6 +88,14 @@ public class PatternDetector {
 	
 	public Size GetMaxSize() {
 		return this.maxSize;
+	}
+	
+	public void SetMinSizeRatio(int value) {
+		this.minSizeRatio = value;
+	}
+	
+	public int GetMinSizeRatio() {
+		return this.minSizeRatio;
 	}
 
 }
