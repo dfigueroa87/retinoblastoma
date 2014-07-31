@@ -47,20 +47,35 @@ for (Rect rect : faceDetections.toArray()) {
    Mat face = new Mat(image, rect);
    eyeDetector.detectMultiScale(face, eyeDetections);
    System.out.println(String.format("Detected %s eyes", eyeDetections.toArray().length));
+   double rand = 1;
    for (Rect rect2 : eyeDetections.toArray()) {
 	   Core.rectangle(image, new Point(rect.x + rect2.x, rect.y + rect2.y), new Point(rect.x + rect2.x + rect2.width, rect.y + rect2.y + rect2.height), new Scalar(255, 0, 0));
 	   
-	   Mat eye = new Mat(image, rect2);
+	   Rect roi = new Rect(new Point(rect.x + rect2.x, rect.y + rect2.y), new Point(rect.x + rect2.x + rect2.width, rect.y + rect2.y + rect2.height));
+	   
+	   Mat eye = new Mat(image.clone(), roi);
+	   
+	   String file = "Eye " + Double.toString(rand) + ".jpg";
+	   Highgui.imwrite(file, eye);
 	   
 	   // Invert eye
 	   Mat invEye = new Mat(eye.rows(),eye.cols(), eye.type(), new Scalar(255,255,255));
 	   Core.subtract(invEye, eye, eye);
 	   
+	   //Double rand = Math.random();
+	   
+	   file = "Inverted " + Double.toString(rand) + ".jpg";
+	   Highgui.imwrite(file, eye);
+	   
 	   // To gray scale
 	   Imgproc.cvtColor(eye, eye, Imgproc.COLOR_BGR2GRAY);
+	   file = "Gray " + Double.toString(rand) + ".jpg";
+	   Highgui.imwrite(file, eye);
 	   
 	   // Convert to binary image by thresholding it
-	   Imgproc.threshold(eye, eye, 220, 255, Imgproc.THRESH_BINARY);
+	   Imgproc.threshold(eye, eye, 120, 255, Imgproc.THRESH_BINARY);
+	   file = "Threshold " + Double.toString(rand) + ".jpg";
+	   Highgui.imwrite(file, eye);
 	   
 	   // Find all contours
 	   List<MatOfPoint> contours = new ArrayList<MatOfPoint>();
@@ -68,7 +83,9 @@ for (Rect rect : faceDetections.toArray()) {
 	   
 	   // Fill holes in each contour
 	   Imgproc.drawContours(eye, contours, -1, new Scalar(255,255,255), -1);
-	   
+	   file = "Contours " + Double.toString(rand) + ".jpg";
+	   Highgui.imwrite(file, eye);
+	   rand++;
 	   for (int n = 0; n < contours.size(); n++)
 	   {
 	       double area = Imgproc.contourArea(contours.get(n));    // Blob area
