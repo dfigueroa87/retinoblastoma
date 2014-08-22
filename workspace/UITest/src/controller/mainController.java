@@ -8,6 +8,9 @@ import java.util.ResourceBundle;
 
 import javax.imageio.ImageIO;
 
+import org.opencv.core.Core;
+
+import application.Detector;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -17,7 +20,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
-import javafx.stage.Stage;
 
 public class mainController implements Initializable{
 	
@@ -27,6 +29,8 @@ public class mainController implements Initializable{
 	private Button btnDetect;
 	@FXML
 	private ImageView imageView;
+	
+	private String path;
 	
 	@FXML
 	Parent root;
@@ -49,6 +53,7 @@ public class mainController implements Initializable{
 
 		if (selectedFile != null) {
 			try {
+				path = selectedFile.getAbsolutePath();
                 BufferedImage bufferedImage = ImageIO.read(selectedFile);
                 Image image = SwingFXUtils.toFXImage(bufferedImage, null);
                 imageView.setImage(image);
@@ -62,7 +67,11 @@ public class mainController implements Initializable{
 	
 	@FXML
 	public void Detect() {
-		
+		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+		Detector det = new Detector();
+		det.setImagePath(path);
+		Image img = det.detect();
+		imageView.setImage(img);
 	}
 
 }
