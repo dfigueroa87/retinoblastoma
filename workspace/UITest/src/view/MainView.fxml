@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="396.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.mainController">
+   <children>
+      <ImageView fx:id="imageView" fitHeight="363.0" fitWidth="323.0" layoutX="134.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btnLoad" layoutX="26.0" layoutY="34.0" mnemonicParsing="false" onAction="#LoadImage" text="Abrir" />
+      <Button fx:id="btnDetect" layoutX="15.0" layoutY="83.0" mnemonicParsing="false" onAction="#Detect" text="Detectar!" />
+   </children>
+</AnchorPane>
