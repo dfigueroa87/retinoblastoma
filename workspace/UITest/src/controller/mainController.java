@@ -32,6 +32,8 @@ public class mainController implements Initializable{
 	
 	private String path;
 	
+	private File pathFile;
+	
 	@FXML
 	Parent root;
 	
@@ -46,14 +48,18 @@ public class mainController implements Initializable{
 	public void LoadImage() {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Abrir imagen");
+		if(path!=null){
+			File file= new File(path.substring(0,path.lastIndexOf("\\")));
+			fileChooser.setInitialDirectory(file);		
+		}
 		fileChooser.getExtensionFilters().add(
 		         new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif")
 		         );
 		File selectedFile = fileChooser.showOpenDialog(application.Main.stage);
-
+		
 		if (selectedFile != null) {
 			try {
-				path = selectedFile.getAbsolutePath();
+				path = selectedFile.getAbsolutePath();				
                 BufferedImage bufferedImage = ImageIO.read(selectedFile);
                 Image image = SwingFXUtils.toFXImage(bufferedImage, null);
                 imageView.setImage(image);
