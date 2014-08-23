@@ -6,11 +6,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javax.imageio.ImageIO;
-
-import org.opencv.core.Core;
-
-import application.Detector;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -20,6 +15,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+
+import javax.imageio.ImageIO;
+
+import org.opencv.core.Core;
+
+import application.Detector;
 
 public class mainController implements Initializable{
 	
@@ -31,9 +32,7 @@ public class mainController implements Initializable{
 	private ImageView imageView;
 	
 	private String path;
-	
-	private File pathFile;
-	
+			
 	@FXML
 	Parent root;
 	
