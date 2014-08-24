@@ -24,6 +24,7 @@ import org.opencv.objdetect.CascadeClassifier;
 public class Detector {
 	
 	private String imagePath;
+	private Image originalImage;
 	
 	CascadeClassifier faceDetector = new CascadeClassifier("C:/retinoblastoma/workspace/Resources/CascadeClassifiers/FaceDetection/haarcascade_frontalface_alt.xml");
 	CascadeClassifier eyeDetector = new CascadeClassifier("C:/retinoblastoma/workspace/Resources/CascadeClassifiers/EyeDetection/haarcascade_eye.xml");
@@ -139,6 +140,10 @@ public class Detector {
 
 	public void setImagePath(String path) {
 		imagePath = path;
+	}
+	
+	public void setImage(Image im) {
+		originalImage = im;
 	}
 
 }
