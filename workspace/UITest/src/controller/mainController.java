@@ -96,13 +96,13 @@ public class mainController implements Initializable{
 		int i = 0;
 		for (File file : imageFiles) {  
 			if (detected.get(i).equals(false)) {
-			System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-			Detector det = new Detector();
-			det.setImagePath(file.getAbsolutePath());
-			Image img = det.detect();
-			detected.set(i, true);
-		//imageContainer.getChildren().remove(file);
-		//imageView.setImage(img);
+				System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+				Detector det = new Detector();
+				det.setImagePath(file.getAbsolutePath());
+				Image img = det.detect();
+				detected.set(i, true);
+				ImageView iv = createImageViewFromImage(img);
+				imageContainer.getChildren().set(i, iv);
 			}
 		i++;
 		}
@@ -110,8 +110,17 @@ public class mainController implements Initializable{
 	
 	private ImageView createImageView(final File imageFile) throws FileNotFoundException {  
 		final int DEFAULT_THUMBNAIL_WIDTH = 100;
-	     final Image image = new Image(new FileInputStream(imageFile)) ;  
-	     final ImageView imageView = new ImageView(image);  
+	     Image image = new Image(new FileInputStream(imageFile)) ;  
+	     ImageView imageView = new ImageView(image);  
+	     imageView.setFitWidth(DEFAULT_THUMBNAIL_WIDTH);  
+	     imageView.setPreserveRatio(true);  
+	     imageView.setSmooth(true);  
+	     return imageView ;  
+	}  
+	
+	private ImageView createImageViewFromImage(Image im) {  
+		final int DEFAULT_THUMBNAIL_WIDTH = 100; 
+	     ImageView imageView = new ImageView(im);  
 	     imageView.setFitWidth(DEFAULT_THUMBNAIL_WIDTH);  
 	     imageView.setPreserveRatio(true);  
 	     imageView.setSmooth(true);  
