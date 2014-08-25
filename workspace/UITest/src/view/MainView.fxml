@@ -10,6 +10,7 @@
    <children>
       <Button fx:id="btnLoad" layoutX="26.0" layoutY="34.0" mnemonicParsing="false" onAction="#LoadImage" text="Abrir" />
       <Button fx:id="btnDetect" layoutX="15.0" layoutY="83.0" mnemonicParsing="false" onAction="#Detect" text="Detectar!" />
-      <TilePane fx:id="imageContainer" layoutX="102.0" layoutY="34.0" prefHeight="538.0" prefWidth="676.0" />
+      <ImageView fx:id="imageView" fitHeight="284.0" fitWidth="660.0" layoutX="119.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true" />
+      <TilePane fx:id="imageContainer" layoutX="101.0" layoutY="14.0" onMouseClicked="#clickImage" prefHeight="284.0" prefWidth="676.0" />
    </children>
 </AnchorPane>
