@@ -1,20 +1,15 @@
 package controller;
 
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import javafx.embed.swing.SwingFXUtils;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -22,8 +17,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
-
-import javax.imageio.ImageIO;
 
 import org.opencv.core.Core;
 
@@ -35,9 +28,6 @@ public class mainController implements Initializable{
 	private Button btnLoad;
 	@FXML
 	private Button btnDetect;
-	
-	@FXML
-	private ImageView imageView;
 	
 	private String path;
 	
@@ -129,14 +119,7 @@ public class mainController implements Initializable{
 	     imageView.setPreserveRatio(true);  
 	     imageView.setSmooth(true);  
 	     return imageView ;  
-	}
-	
-	@FXML
-	public void clickImage(Event e){
-		e.getClass();
-		ImageView imagen = (ImageView) e.getTarget();
-		imageView.setImage(imagen.getImage());
-		
-	}
+	}  
 
 }
+
