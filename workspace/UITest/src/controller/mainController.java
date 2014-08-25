@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -40,7 +41,8 @@ public class mainController implements Initializable{
 	@FXML
 	Pane imageContainer ; // initialize to TilePane or FlowPane as desired  
 
-	
+	@FXML
+	ImageView imageView;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -120,6 +122,11 @@ public class mainController implements Initializable{
 	     imageView.setSmooth(true);  
 	     return imageView ;  
 	}  
+	
+	@FXML
+	public void clickImage(Event e){
+		imageView.setImage(((ImageView) e.getTarget()).getImage());
+	}
 
 }
 
