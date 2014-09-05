@@ -46,11 +46,11 @@
             <Button fx:id="btnDetectar" mnemonicParsing="false" onAction="#Detect" text="Detectar" />
         </items>
       </ToolBar>
-      <SplitPane dividerPositions="0.12910798122065728" GridPane.rowIndex="2">
+      <SplitPane dividerPositions="0.11580594679186229" GridPane.rowIndex="2">
         <items>
-            <ScrollPane prefViewportHeight="737.0" prefViewportWidth="162.0">
+            <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" prefHeight="737.0" prefViewportHeight="737.0" prefViewportWidth="162.0" prefWidth="550.0">
                <content>
-                  <TilePane fx:id="imageContainer" layoutX="35.0" layoutY="58.0" onMouseClicked="#clickImage" orientation="VERTICAL" prefColumns="1" prefHeight="736.0" prefWidth="270.0" tileAlignment="TOP_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TilePane fx:id="imageContainer" layoutX="35.0" layoutY="58.0" onMouseClicked="#clickImage" prefColumns="1" prefHeight="736.0" prefWidth="164.0" tileAlignment="TOP_LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
