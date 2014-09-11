@@ -18,6 +18,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.TilePane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -124,7 +126,19 @@ public class MainController implements Initializable{
 	
 	@FXML
 	public void clickImage(Event e){
-		imageView.setImage(((ImageView) e.getTarget()).getImage());
+		// Double click -> Display big image
+		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)){
+            if(((MouseEvent)e).getClickCount() == 2){
+            	imageView.setImage(((ImageView) e.getTarget()).getImage());
+            }
+        }
+		
+		
+	}
+	
+	@FXML
+	public void Exit() {
+		System.exit(0);
 	}
 
 }

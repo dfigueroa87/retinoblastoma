@@ -20,19 +20,21 @@
    <children>
       <MenuBar maxHeight="-Infinity" minHeight="-Infinity">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Archivo">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem mnemonicParsing="false" onAction="#LoadImage" text="Abrir" />
+                  <MenuItem mnemonicParsing="false" text="Guardar" />
+              <MenuItem mnemonicParsing="false" onAction="#Exit" text="Salir" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Edición">
             <items>
               <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" text="Ayuda">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" text="Acerca de..." />
             </items>
           </Menu>
         </menus>

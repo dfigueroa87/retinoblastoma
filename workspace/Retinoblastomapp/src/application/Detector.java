@@ -26,18 +26,53 @@ public class Detector {
 	private String imagePath;
 	private Image originalImage;
 	
-	CascadeClassifier faceDetector = new CascadeClassifier("C:/retinoblastoma/workspace/Resources/CascadeClassifiers/FaceDetection/haarcascade_frontalface_alt.xml");
-	CascadeClassifier eyeDetector = new CascadeClassifier("C:/retinoblastoma/workspace/Resources/CascadeClassifiers/EyeDetection/haarcascade_eye.xml");
+	private CascadeClassifier faceDetector = new CascadeClassifier("C:/retinoblastoma/workspace/Resources/CascadeClassifiers/FaceDetection/haarcascade_frontalface_alt.xml");
+	private CascadeClassifier eyeDetector = new CascadeClassifier("C:/retinoblastoma/workspace/Resources/CascadeClassifiers/EyeDetection/haarcascade_eye.xml");
 
-	double scaleFactor = 1.05;
-	int minNeighbors = 1;
-	int flags = org.opencv.objdetect.Objdetect.CASCADE_DO_CANNY_PRUNING;
-	int minSizeRatio = 10;
-
-
+	private double scaleFactor = 1.05;
+	private int minNeighbors = 1;
+	private int flags = org.opencv.objdetect.Objdetect.CASCADE_DO_CANNY_PRUNING;
+	private int minSizeRatio = 10;
 	
-
-
+	public void setFaceClassifier(String path) {
+		faceDetector = new CascadeClassifier(path);
+	}
+	
+	public void setEyeClassifier(String path) {
+		eyeDetector = new CascadeClassifier(path);
+	}
+	
+	public void setScaleFactor(double value) {
+		scaleFactor = value;
+	}
+	
+	public double getScaleFactor() {
+		return scaleFactor;
+	}
+	
+	public void setMinNeighbors(int value) {
+		minNeighbors = value;
+	}
+	
+	public int getMinNeighbors() {
+		return minNeighbors;
+	}
+	
+	public void setFlags(int value) {
+		flags = value;
+	}
+	
+	public int getFlags() {
+		return flags;
+	}
+	
+	public void setMinSizeRatio(int value) {
+		minSizeRatio = value;
+	}
+	
+	public int getMinSizeRatio() {
+		return minSizeRatio;
+	}
 
 	public Image detect() {
 		Mat image = Highgui.imread(imagePath);
