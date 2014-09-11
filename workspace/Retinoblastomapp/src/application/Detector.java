@@ -3,6 +3,7 @@ package application;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.util.LinkedList;
 
 import javax.imageio.ImageIO;
 
@@ -10,8 +11,11 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 
 import org.opencv.core.Core;
+import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfByte;
+import org.opencv.core.MatOfFloat;
+import org.opencv.core.MatOfInt;
 import org.opencv.core.MatOfRect;
 import org.opencv.core.Point;
 import org.opencv.core.Rect;
@@ -33,6 +37,8 @@ public class Detector {
 	private int minNeighbors = 1;
 	private int flags = org.opencv.objdetect.Objdetect.CASCADE_DO_CANNY_PRUNING;
 	private int minSizeRatio = 10;
+	
+	private Scalar mColorsBGR[] = new Scalar[] { new Scalar(255, 0, 0), new Scalar(0, 255, 0), new Scalar(0, 0, 255) };
 	
 	public void setFaceClassifier(String path) {
 		faceDetector = new CascadeClassifier(path);
@@ -136,11 +142,15 @@ public class Detector {
 
 				        Point pt = new Point(Math.round(vCircle[0]), Math.round(vCircle[1]));
 				        int radius = (int)Math.round(vCircle[2]);
+				        
+				        
 
 				        // draw the found circle
 				        Core.circle(eye, pt, radius, new Scalar(0,255,0), 2);
 				        Point pt2 = new Point(rect.x + rect2.x + Math.round(vCircle[0]), rect.y + rect2.y + Math.round(vCircle[1]));
 				        Core.circle(image, pt2, radius, new Scalar(0,0,255), 2);
+				        
+				        CalculateHistogram(eye);
 				        
 				        file = "Final " + Double.toString(rand) + x + ".jpg";
 						   Highgui.imwrite(file, eye);
@@ -170,6 +180,50 @@ public class Detector {
 			//TODO
 		}
 		return im;
+		
+	}
+	
+	public void CalculateHistogram(Mat img) {
+		//Calculate histogram
+		java.util.List<Mat> bgrPlanes = new LinkedList<Mat>();
+
+	    Core.split(img, bgrPlanes);
+
+	    MatOfInt histSize = new MatOfInt(256);
+
+	    final MatOfFloat histRange = new MatOfFloat(0f, 256f);
+
+	    boolean accumulate = false;
+
+	    Mat b_hist = new  Mat();
+	    
+	    int hist_w = 512;
+	    int hist_h = 256;
+	    long bin_w;
+	    bin_w = Math.round((double) (hist_w / 256));
+
+	    Mat histImage = new Mat(hist_h, hist_w, CvType.CV_8UC3, new Scalar(0,0,0));
+	    
+	    for (int c=0;c<3;c++){
+
+	    Imgproc.calcHist(bgrPlanes, new MatOfInt(c),new Mat(), b_hist, histSize, histRange, accumulate);
+
+	    Core.normalize(b_hist, b_hist, 3, histImage.rows(), Core.NORM_MINMAX);
+
+	    for (int i = 1; i < 256; i++) {         
+
+
+	        Core.line(histImage, new Point(bin_w * (i - 1),hist_h- Math.round(b_hist.get( i-1,0)[0])), 
+	                new Point(bin_w * (i), hist_h-Math.round(Math.round(b_hist.get(i, 0)[0]))),
+	                mColorsBGR[c], 2, 8, 0);
+
+	    }
+	    
+	    }
+
+		
+		String filename = "Hist.jpg";
+		Highgui.imwrite(filename, histImage);
 		
 	}
 
