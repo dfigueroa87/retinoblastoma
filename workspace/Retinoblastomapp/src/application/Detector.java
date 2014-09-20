@@ -3,6 +3,7 @@ package application;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 import javax.imageio.ImageIO;
@@ -25,10 +26,12 @@ import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
 
+import utils.Utils;
+
 public class Detector {
 	
 	private String imagePath;
-	private Image originalImage;
+	private Mat originalImage;
 	
 	private CascadeClassifier faceDetector = new CascadeClassifier("C:/retinoblastoma/workspace/Resources/CascadeClassifiers/FaceDetection/haarcascade_frontalface_alt.xml");
 	private CascadeClassifier eyeDetector = new CascadeClassifier("C:/retinoblastoma/workspace/Resources/CascadeClassifiers/EyeDetection/haarcascade_eye.xml");
@@ -39,6 +42,35 @@ public class Detector {
 	private int minSizeRatio = 10;
 	
 	private Scalar mColorsBGR[] = new Scalar[] { new Scalar(255, 0, 0), new Scalar(0, 255, 0), new Scalar(0, 0, 255) };
+	
+	private ArrayList<Mat> detectedFaces = new ArrayList<Mat>();
+	private ArrayList<Mat> detectedEyes = new ArrayList<Mat>();
+	private ArrayList<Mat> detectedPupils = new ArrayList<Mat>();
+	private ArrayList<Mat> pupilHistograms = new ArrayList<Mat>();
+	
+	private int facesDetected = 0;
+	private int eyesDetected = 0;
+	private int pupilsDetected = 0;
+	
+	private ArrayList<Integer> eyesPerFace = new ArrayList<Integer>();
+	private ArrayList<Integer> pupilsPerEye = new ArrayList<Integer>();
+	
+	public Detector(String path) {
+		imagePath = path;
+		originalImage = Highgui.imread(imagePath);
+	}
+	
+	public Image getOriginalImage() {
+		return Utils.ConvertMatToImage(originalImage);
+	}
+	
+	public Image getHistogram(int i) {
+		return Utils.ConvertMatToImage(pupilHistograms.get(i));
+	}
+	
+	public ArrayList<Mat> getDetectedEyes() {
+		return detectedEyes;
+	}
 	
 	public void setFaceClassifier(String path) {
 		faceDetector = new CascadeClassifier(path);
@@ -81,7 +113,7 @@ public class Detector {
 	}
 
 	public Image detect() {
-		Mat image = Highgui.imread(imagePath);
+		Mat image = originalImage.clone();
 
 		Size minSize = new Size(image.size().width/minSizeRatio, image.size().height/minSizeRatio);
 		Size maxSize = image.size();
@@ -89,12 +121,16 @@ public class Detector {
 		// Detect faces in the image.
 		MatOfRect faceDetections = new MatOfRect();
 		faceDetector.detectMultiScale(image, faceDetections, scaleFactor, minNeighbors, flags, minSize, maxSize);
+		
+		facesDetected = faceDetections.toArray().length;
 
-		System.out.println(String.format("Detected %s faces", faceDetections.toArray().length));
+		System.out.println(String.format("Detected %s faces", facesDetected));
 
 		// Draw a bounding box around each face.
 		for (Rect rect : faceDetections.toArray()) {
 		   Core.rectangle(image, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height), new Scalar(0, 255, 0));
+		   detectedFaces.add(new Mat(image, rect));
+		   
 		   MatOfRect eyeDetections = new MatOfRect();
 		   
 		   Rect boundedRect= new Rect(rect.x,rect.y,rect.width,(int)Math.floor(rect.height*0.60));
@@ -103,32 +139,34 @@ public class Detector {
 		   minSize = new Size(topOfFace.size().width/minSizeRatio, topOfFace.size().height/minSizeRatio);
 		   maxSize = topOfFace.size();
 		   eyeDetector.detectMultiScale(topOfFace, eyeDetections, scaleFactor, minNeighbors, flags, minSize, maxSize);
+		   
+		   eyesPerFace.add(eyeDetections.toArray().length);
+		   eyesDetected += eyeDetections.toArray().length;
 		   System.out.println(String.format("Detected %s eyes", eyeDetections.toArray().length));
-		   double rand = 1;
+		   
+		   // Each detected eye
 		   for (Rect rect2 : eyeDetections.toArray()) {
 			   Core.rectangle(image, new Point(rect.x + rect2.x, rect.y + rect2.y), new Point(rect.x + rect2.x + rect2.width, rect.y + rect2.y + rect2.height), new Scalar(255, 0, 0));
 			   
 			   Rect roi = new Rect(new Point(rect.x + rect2.x, rect.y + rect2.y), new Point(rect.x + rect2.x + rect2.width, rect.y + rect2.y + rect2.height));
 			   
 			   Mat eye = new Mat(image.clone(), roi);
-			   Mat transformedEye = new Mat();
 			   
-			   String file = "Eye " + Double.toString(rand) + ".jpg";
-			   Highgui.imwrite(file, eye);
+			   detectedEyes.add(eye.clone());
+			   Mat transformedEye = new Mat();
 			   
 			   
 			   // To gray scale
 			   Imgproc.cvtColor(eye, transformedEye, Imgproc.COLOR_BGR2GRAY);
-			   file = "Gray " + Double.toString(rand) + ".jpg";
-			   Highgui.imwrite(file, transformedEye);
 			   
 			   Mat circles = new Mat();
 			   
 			   Imgproc.Canny(transformedEye, transformedEye, 50, 150);
-			   file = "Canny " + Double.toString(rand) + ".jpg";
-			   Highgui.imwrite(file, transformedEye);
 			   
 			   Imgproc.HoughCircles(transformedEye, circles, Imgproc.CV_HOUGH_GRADIENT, 1.3, transformedEye.rows()/1, 150, 30, 0, 0);
+			   
+			   pupilsPerEye.add(circles.cols());
+			   pupilsDetected += circles.cols();
 			   
 			   // Draw the circles detected
 			   if (circles.cols() > 0)
@@ -152,11 +190,8 @@ public class Detector {
 				        
 				        CalculateHistogram(eye);
 				        
-				        file = "Final " + Double.toString(rand) + x + ".jpg";
-						   Highgui.imwrite(file, eye);
-				        }
 
-			   rand++;
+				        }
 		   }
 		}
 
@@ -221,18 +256,12 @@ public class Detector {
 	    
 	    }
 
-		
-		String filename = "Hist.jpg";
-		Highgui.imwrite(filename, histImage);
+	    pupilHistograms.add(histImage);
 		
 	}
 
 	public void setImagePath(String path) {
 		imagePath = path;
-	}
-	
-	public void setImage(Image im) {
-		originalImage = im;
 	}
 
 }
