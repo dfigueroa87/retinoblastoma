@@ -184,11 +184,21 @@ public class Detector {
 				        
 
 				        // draw the found circle
-				        Core.circle(eye, pt, radius, new Scalar(0,255,0), 2);
+				        //Core.circle(eye, pt, radius, new Scalar(0,255,0), 2);
 				        Point pt2 = new Point(rect.x + rect2.x + Math.round(vCircle[0]), rect.y + rect2.y + Math.round(vCircle[1]));
 				        Core.circle(image, pt2, radius, new Scalar(0,0,255), 2);
 				        
-				        CalculateHistogram(eye);
+				        Rect pupilRect = new Rect((int)(pt.x - (radius*Math.sqrt(2)/2)), (int)(pt.y - (radius*Math.sqrt(2)/2)), (int)(radius*Math.sqrt(2)), (int)(radius*Math.sqrt(2)));
+				        Mat pupilMat = new Mat(eye, pupilRect);
+				        
+				        //Core.rectangle(eye, new Point((pt.x - (radius*Math.sqrt(2)/2)), (pt.y - (radius*Math.sqrt(2)/2))), new Point((pt.x + (radius*Math.sqrt(2)/2)), (pt.y + (radius*Math.sqrt(2)/2))), new Scalar(255,0,0));
+				        
+				        String filename = "pupil.png";
+						Highgui.imwrite(filename, eye);
+						filename = "pupilMat.png";
+						Highgui.imwrite(filename, pupilMat);
+				        
+				        CalculateHistogram(pupilMat);
 				        
 
 				        }
