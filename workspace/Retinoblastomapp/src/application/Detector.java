@@ -47,11 +47,7 @@ public class Detector {
 	private ArrayList<Mat> detectedEyes = new ArrayList<Mat>();
 	private ArrayList<Mat> detectedPupils = new ArrayList<Mat>();
 	private ArrayList<Mat> pupilHistograms = new ArrayList<Mat>();
-	
-	private int facesDetected = 0;
-	private int eyesDetected = 0;
-	private int pupilsDetected = 0;
-	
+
 	private ArrayList<Integer> eyesPerFace = new ArrayList<Integer>();
 	private ArrayList<Integer> pupilsPerEye = new ArrayList<Integer>();
 	
@@ -121,10 +117,8 @@ public class Detector {
 		// Detect faces in the image.
 		MatOfRect faceDetections = new MatOfRect();
 		faceDetector.detectMultiScale(image, faceDetections, scaleFactor, minNeighbors, flags, minSize, maxSize);
-		
-		facesDetected = faceDetections.toArray().length;
 
-		System.out.println(String.format("Detected %s faces", facesDetected));
+		System.out.println(String.format("Detected %s faces", faceDetections.toArray().length));
 
 		// Draw a bounding box around each face.
 		for (Rect rect : faceDetections.toArray()) {
@@ -141,7 +135,6 @@ public class Detector {
 		   eyeDetector.detectMultiScale(topOfFace, eyeDetections, scaleFactor, minNeighbors, flags, minSize, maxSize);
 		   
 		   eyesPerFace.add(eyeDetections.toArray().length);
-		   eyesDetected += eyeDetections.toArray().length;
 		   System.out.println(String.format("Detected %s eyes", eyeDetections.toArray().length));
 		   
 		   // Each detected eye
@@ -155,7 +148,6 @@ public class Detector {
 			   detectedEyes.add(eye.clone());
 			   Mat transformedEye = new Mat();
 			   
-			   
 			   // To gray scale
 			   Imgproc.cvtColor(eye, transformedEye, Imgproc.COLOR_BGR2GRAY);
 			   
@@ -166,12 +158,10 @@ public class Detector {
 			   Imgproc.HoughCircles(transformedEye, circles, Imgproc.CV_HOUGH_GRADIENT, 1.3, transformedEye.rows()/1, 150, 30, 0, 0);
 			   
 			   pupilsPerEye.add(circles.cols());
-			   pupilsDetected += circles.cols();
 			   
 			   // Draw the circles detected
 			   if (circles.cols() > 0)
-				    for (int x = 0; x < circles.cols(); x++) 
-				        {
+				    for (int x = 0; x < circles.cols(); x++) {
 				    	System.out.println("Detected circle");
 				        double vCircle[] = circles.get(0,x);
 
@@ -180,8 +170,6 @@ public class Detector {
 
 				        Point pt = new Point(Math.round(vCircle[0]), Math.round(vCircle[1]));
 				        int radius = (int)Math.round(vCircle[2]);
-				        
-				        
 
 				        // draw the found circle
 				        //Core.circle(eye, pt, radius, new Scalar(0,255,0), 2);
@@ -190,6 +178,7 @@ public class Detector {
 				        
 				        Rect pupilRect = new Rect((int)(pt.x - (radius*Math.sqrt(2)/2)), (int)(pt.y - (radius*Math.sqrt(2)/2)), (int)(radius*Math.sqrt(2)), (int)(radius*Math.sqrt(2)));
 				        Mat pupilMat = new Mat(eye, pupilRect);
+				        detectedPupils.add(pupilMat);
 				        
 				        //Core.rectangle(eye, new Point((pt.x - (radius*Math.sqrt(2)/2)), (pt.y - (radius*Math.sqrt(2)/2))), new Point((pt.x + (radius*Math.sqrt(2)/2)), (pt.y + (radius*Math.sqrt(2)/2))), new Scalar(255,0,0));
 				        
@@ -199,8 +188,6 @@ public class Detector {
 						Highgui.imwrite(filename, pupilMat);
 				        
 				        CalculateHistogram(pupilMat);
-				        
-
 				        }
 		   }
 		}
@@ -250,24 +237,16 @@ public class Detector {
 	    Mat histImage = new Mat(hist_h, hist_w, CvType.CV_8UC3, new Scalar(0,0,0));
 	    
 	    for (int c=0;c<3;c++){
-
-	    Imgproc.calcHist(bgrPlanes, new MatOfInt(c),new Mat(), b_hist, histSize, histRange, accumulate);
-
-	    Core.normalize(b_hist, b_hist, 3, histImage.rows(), Core.NORM_MINMAX);
-
-	    for (int i = 1; i < 256; i++) {         
-
-
-	        Core.line(histImage, new Point(bin_w * (i - 1),hist_h- Math.round(b_hist.get( i-1,0)[0])), 
-	                new Point(bin_w * (i), hist_h-Math.round(Math.round(b_hist.get(i, 0)[0]))),
-	                mColorsBGR[c], 2, 8, 0);
-
-	    }
-	    
+		    Imgproc.calcHist(bgrPlanes, new MatOfInt(c),new Mat(), b_hist, histSize, histRange, accumulate);
+		    Core.normalize(b_hist, b_hist, 3, histImage.rows(), Core.NORM_MINMAX);
+		    for (int i = 1; i < 256; i++) {
+		        Core.line(histImage, new Point(bin_w * (i - 1),hist_h- Math.round(b_hist.get( i-1,0)[0])), 
+		                new Point(bin_w * (i), hist_h-Math.round(Math.round(b_hist.get(i, 0)[0]))),
+		                mColorsBGR[c], 2, 8, 0);
+		    }
 	    }
 
 	    pupilHistograms.add(histImage);
-		
 	}
 
 	public void setImagePath(String path) {

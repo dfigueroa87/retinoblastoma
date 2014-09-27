@@ -16,8 +16,6 @@ public class Main extends Application {
 		try {
 			stage = primaryStage;
 			Parent root = FXMLLoader.load(getClass().getResource("/view/MainView.fxml"));
-			
-			//BorderPane root = new BorderPane();
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setTitle("Retinoblastomapp");

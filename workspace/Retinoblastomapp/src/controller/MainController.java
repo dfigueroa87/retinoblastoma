@@ -7,7 +7,9 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import org.opencv.core.Core;
+import org.opencv.core.Mat;
 
+import utils.Utils;
 import application.Detector;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -34,9 +36,6 @@ public class MainController implements Initializable{
 	
 	private String path;
 	
-	private List<File> imageFiles = new ArrayList<File>();
-	private List<Boolean> detected = new ArrayList<Boolean>();
-	
 	private Detector currentDetection;
 			
 	@FXML
@@ -44,9 +43,15 @@ public class MainController implements Initializable{
 	
 	@FXML
 	TilePane imageContainer;
+	@FXML
+	TilePane resultsMinPane;
 
 	@FXML
 	ImageView imageView;
+	@FXML
+	ImageView resultImageView;
+	@FXML
+	ImageView histogramView;
 	
 	private ArrayList<Detector> detections = new ArrayList<Detector>();
 
@@ -67,9 +72,7 @@ public class MainController implements Initializable{
 		fileChooser.getExtensionFilters().add(
 		         new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif")
 		         );
-		//File selectedFile = fileChooser.showOpenDialog(application.Main.stage);
 		List<File> files = fileChooser.showOpenMultipleDialog(null);
-		imageFiles.addAll(files);
 		for (File file : files) {
 			System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 			Detector det = new Detector(file.getAbsolutePath());
@@ -77,49 +80,60 @@ public class MainController implements Initializable{
 			ImageView imageView = createImageView(det.getOriginalImage());
 			imageView.setUserData(det);
 			imageContainer.getChildren().add(imageView);
-			detected.add(false);
-
 		}  
 		
-		if (!imageFiles.isEmpty()) {
-
-				path = imageFiles.get(0).getAbsolutePath();				
-
-            } 
-			
+		if (!files.isEmpty()) {
+			path = files.get(0).getAbsolutePath();
+		}
 
 	}
 	
 	@FXML
 	public void Detect() {
 		currentDetection.detect();
-		
-		
-
-		try{
-			Stage stage = new Stage();
-			
-			Parent root = null;
-			FXMLLoader loader = new FXMLLoader();
-			root = loader.load(getClass().getResource("/view/ResultsView.fxml"));
-			
-			//BorderPane root = new BorderPane();
-			
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			stage.setTitle("Resultados");
-			
-			
-			
-			root = (Parent) loader.load(getClass().getResource("/view/ResultsView.fxml").openStream());
-			ResultsController rc = loader.getController();
-			rc.setResults(currentDetection);
-			Scene scene = new Scene(root);
-			stage.setScene(scene);
-			stage.show();
-			
-		} catch(Exception e) {
-			e.printStackTrace();
+		setResults(currentDetection);
+//		try{
+//			Stage stage = new Stage();
+//			
+//			Parent root = null;
+//			FXMLLoader loader = new FXMLLoader();
+//			root = FXMLLoader.load(getClass().getResource("/view/ResultsView.fxml"));
+//			stage.setTitle("Resultados");
+//			
+//			root = (Parent) loader.load(getClass().getResource("/view/ResultsView.fxml").openStream());
+//			ResultsController rc = loader.getController();
+//			rc.setResults(currentDetection);
+//			Scene scene = new Scene(root);
+//			stage.setScene(scene);
+//			stage.show();
+//			
+//		} catch(Exception e) {
+//			e.printStackTrace();
+//		}
+	}
+	
+	public void setResults(Detector det) {
+		int i = 0;
+		for (Mat eye : det.getDetectedEyes()){
+			ImageView imageView = createImageView(Utils.ConvertMatToImage(eye));
+			imageView.setUserData(i);
+			resultsMinPane.getChildren().add(imageView);
+			i++;
 		}
+	}
+	
+	@FXML
+	public void clickedResultImage(Event e){
+		// Double click -> Display big image
+		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)){
+            if(((MouseEvent)e).getClickCount() == 2){
+            	resultImageView.setImage(((ImageView) e.getTarget()).getImage());
+            	Integer i = (Integer) ((ImageView) e.getTarget()).getUserData();
+            	histogramView.setImage(currentDetection.getHistogram(i));
+            }
+        }
+		
+		
 	}
 	
 	private ImageView createImageView(Image image) {  
@@ -140,8 +154,6 @@ public class MainController implements Initializable{
             	currentDetection = (Detector) ((ImageView) e.getTarget()).getUserData();
             }
         }
-		
-		
 	}
 	
 	@FXML

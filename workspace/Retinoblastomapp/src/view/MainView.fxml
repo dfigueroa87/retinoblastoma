@@ -59,15 +59,30 @@
                   </TilePane>
                </content>
             </ScrollPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
+            <SplitPane fx:id="principalPane" dividerPositions="0.7116237799467613" prefHeight="737.0" prefWidth="1127.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
                   <HBox alignment="CENTER" prefHeight="737.0" prefWidth="1110.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <ImageView fx:id="imageView" fitHeight="509.0" fitWidth="410.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </HBox>
-               </children>
-            </AnchorPane>
+                  <SplitPane dividerPositions="0.18995929443690637" orientation="VERTICAL" prefHeight="735.0" prefWidth="263.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                        <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER">
+                          <content>
+                              <TilePane fx:id="resultsMinPane" onMouseClicked="#clickedResultImage" prefHeight="200.0" prefWidth="200.0" />
+                          </content>
+                        </ScrollPane>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fx:id="resultImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="histogramView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </VBox>
+                    </items>
+                  </SplitPane>
+              </items>
+            </SplitPane>
         </items>
       </SplitPane>
    </children>
