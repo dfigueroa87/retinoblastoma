@@ -172,7 +172,7 @@ public class Detector {
 				        int radius = (int)Math.round(vCircle[2]);
 
 				        // draw the found circle
-				        //Core.circle(eye, pt, radius, new Scalar(0,255,0), 2);
+				        
 				        Point pt2 = new Point(rect.x + rect2.x + Math.round(vCircle[0]), rect.y + rect2.y + Math.round(vCircle[1]));
 				        Core.circle(image, pt2, radius, new Scalar(0,0,255), 2);
 				        
@@ -181,7 +181,7 @@ public class Detector {
 				        detectedPupils.add(pupilMat);
 				        
 				        //Core.rectangle(eye, new Point((pt.x - (radius*Math.sqrt(2)/2)), (pt.y - (radius*Math.sqrt(2)/2))), new Point((pt.x + (radius*Math.sqrt(2)/2)), (pt.y + (radius*Math.sqrt(2)/2))), new Scalar(255,0,0));
-				        
+				        //Core.circle(eye, pt, radius, new Scalar(0,255,0), 2);
 				        String filename = "pupil.png";
 						Highgui.imwrite(filename, eye);
 						filename = "pupilMat.png";
@@ -199,13 +199,13 @@ public class Detector {
 		
 		Image im = null;
 		
-		try{
-		MatOfByte bytemat = new MatOfByte();
-		Highgui.imencode(".jpg", image, bytemat);
-		byte[] bytes = bytemat.toArray();
-		InputStream in = new ByteArrayInputStream(bytes);
-		BufferedImage buffImg = ImageIO.read(in);
-		im = SwingFXUtils.toFXImage(buffImg, null);
+		try {
+			MatOfByte bytemat = new MatOfByte();
+			Highgui.imencode(".jpg", image, bytemat);
+			byte[] bytes = bytemat.toArray();
+			InputStream in = new ByteArrayInputStream(bytes);
+			BufferedImage buffImg = ImageIO.read(in);
+			im = SwingFXUtils.toFXImage(buffImg, null);
 		
 		}
 		catch(Exception e){
@@ -217,9 +217,10 @@ public class Detector {
 	
 	public void CalculateHistogram(Mat img) {
 		//Calculate histogram
-		java.util.List<Mat> bgrPlanes = new LinkedList<Mat>();
+		java.util.List<Mat> hsvPlanes = new LinkedList<Mat>();
+		Imgproc.cvtColor(img, img, Imgproc.COLOR_BGR2HSV);
 
-	    Core.split(img, bgrPlanes);
+	    Core.split(img, hsvPlanes);
 
 	    MatOfInt histSize = new MatOfInt(256);
 
@@ -237,7 +238,7 @@ public class Detector {
 	    Mat histImage = new Mat(hist_h, hist_w, CvType.CV_8UC3, new Scalar(0,0,0));
 	    
 	    for (int c=0;c<3;c++){
-		    Imgproc.calcHist(bgrPlanes, new MatOfInt(c),new Mat(), b_hist, histSize, histRange, accumulate);
+		    Imgproc.calcHist(hsvPlanes, new MatOfInt(c),new Mat(), b_hist, histSize, histRange, accumulate);
 		    Core.normalize(b_hist, b_hist, 3, histImage.rows(), Core.NORM_MINMAX);
 		    for (int i = 1; i < 256; i++) {
 		        Core.line(histImage, new Point(bin_w * (i - 1),hist_h- Math.round(b_hist.get( i-1,0)[0])), 

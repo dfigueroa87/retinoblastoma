@@ -13,10 +13,8 @@ import utils.Utils;
 import application.Detector;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -25,7 +23,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.TilePane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
-import javafx.stage.Stage;
 
 public class MainController implements Initializable{
 	
@@ -90,7 +87,7 @@ public class MainController implements Initializable{
 	
 	@FXML
 	public void Detect() {
-		currentDetection.detect();
+		imageView.setImage(currentDetection.detect());
 		setResults(currentDetection);
 //		try{
 //			Stage stage = new Stage();
