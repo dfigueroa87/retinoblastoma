@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
+import org.opencv.core.Rect;
 
 import utils.Utils;
 import application.Detector;
@@ -111,12 +112,17 @@ public class MainController implements Initializable{
 	
 	public void setResults(Detector det) {
 		int i = 0;
-		for (Mat eye : det.getDetectedEyes()){
-			ImageView imageView = createImageView(Utils.ConvertMatToImage(eye));
+		for (Rect eye : det.getDetectedEyes()){
+			Mat img = new Mat(det.getOriginalMat(), eye);
+			ImageView imageView = createImageView(Utils.ConvertMatToImage(img));
 			imageView.setUserData(i);
 			resultsMinPane.getChildren().add(imageView);
 			i++;
 		}
+	}
+	
+	public void drawDetections(Detector det) {
+		
 	}
 	
 	@FXML

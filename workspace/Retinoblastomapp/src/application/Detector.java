@@ -43,9 +43,9 @@ public class Detector {
 	
 	private Scalar mColorsBGR[] = new Scalar[] { new Scalar(255, 0, 0), new Scalar(0, 255, 0), new Scalar(0, 0, 255) };
 	
-	private ArrayList<Mat> detectedFaces = new ArrayList<Mat>();
-	private ArrayList<Mat> detectedEyes = new ArrayList<Mat>();
-	private ArrayList<Mat> detectedPupils = new ArrayList<Mat>();
+	private ArrayList<Rect> detectedFaces = new ArrayList<Rect>();
+	private ArrayList<Rect> detectedEyes = new ArrayList<Rect>();
+	private ArrayList<Rect> detectedPupils = new ArrayList<Rect>();
 	private ArrayList<Mat> pupilHistograms = new ArrayList<Mat>();
 
 	private ArrayList<Integer> eyesPerFace = new ArrayList<Integer>();
@@ -60,11 +60,15 @@ public class Detector {
 		return Utils.ConvertMatToImage(originalImage);
 	}
 	
+	public Mat getOriginalMat() {
+		return originalImage;
+	}
+	
 	public Image getHistogram(int i) {
 		return Utils.ConvertMatToImage(pupilHistograms.get(i));
 	}
 	
-	public ArrayList<Mat> getDetectedEyes() {
+	public ArrayList<Rect> getDetectedEyes() {
 		return detectedEyes;
 	}
 	
@@ -123,7 +127,7 @@ public class Detector {
 		// Draw a bounding box around each face.
 		for (Rect rect : faceDetections.toArray()) {
 		   Core.rectangle(image, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height), new Scalar(0, 255, 0));
-		   detectedFaces.add(new Mat(image, rect));
+		   detectedFaces.add(rect);
 		   
 		   MatOfRect eyeDetections = new MatOfRect();
 		   
@@ -145,7 +149,7 @@ public class Detector {
 			   
 			   Mat eye = new Mat(image.clone(), roi);
 			   
-			   detectedEyes.add(eye.clone());
+			   detectedEyes.add(new Rect(rect.x + rect2.x, rect.y + rect2.y, rect2.width, rect2.height));
 			   Mat transformedEye = new Mat();
 			   
 			   // To gray scale
@@ -178,7 +182,7 @@ public class Detector {
 				        
 				        Rect pupilRect = new Rect((int)(pt.x - (radius*Math.sqrt(2)/2)), (int)(pt.y - (radius*Math.sqrt(2)/2)), (int)(radius*Math.sqrt(2)), (int)(radius*Math.sqrt(2)));
 				        Mat pupilMat = new Mat(eye, pupilRect);
-				        detectedPupils.add(pupilMat);
+				        detectedPupils.add(pupilRect);
 				        
 				        //Core.rectangle(eye, new Point((pt.x - (radius*Math.sqrt(2)/2)), (pt.y - (radius*Math.sqrt(2)/2))), new Point((pt.x + (radius*Math.sqrt(2)/2)), (pt.y + (radius*Math.sqrt(2)/2))), new Scalar(255,0,0));
 				        //Core.circle(eye, pt, radius, new Scalar(0,255,0), 2);
