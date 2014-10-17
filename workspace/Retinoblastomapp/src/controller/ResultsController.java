@@ -44,7 +44,7 @@ public class ResultsController implements Initializable{
             if(((MouseEvent)e).getClickCount() == 2){
             	bigEyeView.setImage(((ImageView) e.getTarget()).getImage());
             	Integer i = (Integer) ((ImageView) e.getTarget()).getUserData();
-            	histogramView.setImage(detection.getHistogram(i));
+//            	histogramView.setImage(detection.getHistogram(i)); no hay mas histograma
             }
         }
 		

@@ -3,6 +3,7 @@ package controller;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -17,6 +18,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
@@ -50,6 +53,10 @@ public class MainController implements Initializable{
 	ImageView resultImageView;
 	@FXML
 	ImageView histogramView;
+	@FXML
+	TableView<HashMap<String,Double>> tableColorsPercentage;
+	@FXML
+	TableColumn<Double, Double> tableColumnWhite;
 	
 	private ArrayList<Detector> detections = new ArrayList<Detector>();
 
@@ -131,8 +138,11 @@ public class MainController implements Initializable{
 		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)){
             if(((MouseEvent)e).getClickCount() == 2){
             	resultImageView.setImage(((ImageView) e.getTarget()).getImage());
-            	Integer i = (Integer) ((ImageView) e.getTarget()).getUserData();
-            	histogramView.setImage(currentDetection.getHistogram(i));
+            	Integer i = (Integer) ((ImageView) e.getTarget()).getUserData();            	
+            	System.out.println(currentDetection.getPupilColorsPercentage(i));
+//            	histogramView.setImage(currentDetection.getHistogram(i)); voy a ver que devuelvo
+            	
+            	
             }
         }
 		

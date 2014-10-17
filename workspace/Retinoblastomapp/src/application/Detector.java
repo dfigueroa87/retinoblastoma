@@ -4,7 +4,9 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 
@@ -26,6 +28,9 @@ import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
 
+import com.sun.javafx.geom.Vec3f;
+import com.sun.prism.impl.ResourcePool;
+
 import utils.Utils;
 
 public class Detector {
@@ -46,10 +51,24 @@ public class Detector {
 	private ArrayList<Rect> detectedFaces = new ArrayList<Rect>();
 	private ArrayList<Rect> detectedEyes = new ArrayList<Rect>();
 	private ArrayList<Rect> detectedPupils = new ArrayList<Rect>();
-	private ArrayList<Mat> pupilHistograms = new ArrayList<Mat>();
+	private ArrayList<HashMap<String, Double>> pupilsColor = new ArrayList<HashMap<String, Double>>();
+
+	public ArrayList<HashMap<String, Double>> getPupilsColor() {
+		return pupilsColor;
+	}
+
+	public void setPupilsColor(ArrayList<HashMap<String, Double>> pupilsColor) {
+		this.pupilsColor = pupilsColor;
+	}
 
 	private ArrayList<Integer> eyesPerFace = new ArrayList<Integer>();
 	private ArrayList<Integer> pupilsPerEye = new ArrayList<Integer>();
+	
+	
+	
+	private static int H=0;
+	private static int S=1;
+	private static int V=2;
 	
 	public Detector(String path) {
 		imagePath = path;
@@ -64,9 +83,9 @@ public class Detector {
 		return originalImage;
 	}
 	
-	public Image getHistogram(int i) {
-		return Utils.ConvertMatToImage(pupilHistograms.get(i));
-	}
+//	public Image getHistogram(int i) {
+//		return Utils.ConvertMatToImage(pupilHistograms.get(i));
+//	}
 	
 	public ArrayList<Rect> getDetectedEyes() {
 		return detectedEyes;
@@ -191,7 +210,7 @@ public class Detector {
 						filename = "pupilMat.png";
 						Highgui.imwrite(filename, pupilMat);
 				        
-				        CalculateHistogram(pupilMat);
+						CalculateColorsPercentage(pupilMat);
 				        }
 		   }
 		}
@@ -219,43 +238,98 @@ public class Detector {
 		
 	}
 	
-	public void CalculateHistogram(Mat img) {
-		//Calculate histogram
-		java.util.List<Mat> hsvPlanes = new LinkedList<Mat>();
-		Imgproc.cvtColor(img, img, Imgproc.COLOR_BGR2HSV);
-
-	    Core.split(img, hsvPlanes);
-
-	    MatOfInt histSize = new MatOfInt(256);
-
-	    final MatOfFloat histRange = new MatOfFloat(0f, 256f);
-
-	    boolean accumulate = false;
-
-	    Mat b_hist = new  Mat();
-	    
-	    int hist_w = 512;
-	    int hist_h = 256;
-	    long bin_w;
-	    bin_w = Math.round((double) (hist_w / 256));
-
-	    Mat histImage = new Mat(hist_h, hist_w, CvType.CV_8UC3, new Scalar(0,0,0));
-	    
-	    for (int c=0;c<3;c++){
-		    Imgproc.calcHist(hsvPlanes, new MatOfInt(c),new Mat(), b_hist, histSize, histRange, accumulate);
-		    Core.normalize(b_hist, b_hist, 3, histImage.rows(), Core.NORM_MINMAX);
-		    for (int i = 1; i < 256; i++) {
-		        Core.line(histImage, new Point(bin_w * (i - 1),hist_h- Math.round(b_hist.get( i-1,0)[0])), 
-		                new Point(bin_w * (i), hist_h-Math.round(Math.round(b_hist.get(i, 0)[0]))),
-		                mColorsBGR[c], 2, 8, 0);
-		    }
+	public void CalculateColorsPercentage(Mat img) {
+		HashMap<String, Double> colors = new HashMap<String, Double>(); 
+		Mat imgHSV=new Mat();
+		Imgproc.cvtColor(img, imgHSV, Imgproc.COLOR_BGR2HSV);
+				
+		
+		int total= imgHSV.cols()*imgHSV.rows();
+		int white = 0;
+		int black = 0;
+		int red = 0;
+		int yellow = 0;
+		int green = 0;		
+		 
+		for(int x=0; x<imgHSV.cols();x++){
+	    	for(int y=0; y<imgHSV.rows();y++){
+	    		double[] hsv=imgHSV.get(y, x);	    		
+	    		double h=hsv[0];
+	    		double s=hsv[1];
+	    		double v=hsv[2];
+	    		//first we check if its a white color
+	    		if(v>229.5){
+	    			white++;
+	    		}else{
+	    			//black
+	    			if(v<64.0){
+	    				black++;	    				
+	    			}else{
+	    				//red
+	    				if(h<10.0 && h>166.5) red++;
+	    				//yellow
+	    				if(h>19.0 && h<31.0) yellow++;
+	    				//green
+	    				if(h<31.0 && h>68.0) green++;
+	    			}
+	    			
+	    		}
+	    	}
 	    }
+		Double whitePercent=(double)white/(double)total;
+		Double blackPercent=(double)black/(double)total;
+		Double redPercent=(double)red/(double)total;
+		Double yellowPercent=(double)yellow/(double)total;
+		Double greenPercent=(double)green/(double)total;
+		Double othersPercent= 1.0 - (whitePercent+blackPercent+redPercent+yellowPercent+greenPercent);
+			
+		colors.put("white", whitePercent);
+		colors.put("black", blackPercent);
+		colors.put("red", redPercent);
+		colors.put("yellow", yellowPercent);
+		colors.put("green", greenPercent);
+		colors.put("others", othersPercent);
+		
+//		java.util.List<Mat> hsvPlanes = new LinkedList<Mat>();
+//	    Core.split(img, hsvPlanes);
 
-	    pupilHistograms.add(histImage);
+//	    MatOfInt histSize = new MatOfInt(256);
+//
+//	    final MatOfFloat histRange = new MatOfFloat(0f, 256f);
+//
+//	    boolean accumulate = false;
+//
+//	    Mat b_hist = new  Mat();
+//	    
+//	    int hist_w = 512;
+//	    int hist_h = 256;
+//	    long bin_w;
+//	    bin_w = Math.round((double) (hist_w / 256));
+//
+//	    Mat histImage = new Mat(hist_h, hist_w, CvType.CV_8UC3, new Scalar(0,0,0));
+	   
+	    
+	    
+//	    for (int c=0;c<3;c++){
+//		    Imgproc.calcHist(hsvPlanes, new MatOfInt(c),new Mat(), b_hist, histSize, histRange, accumulate);
+//		    Core.normalize(b_hist, b_hist, 3, histImage.rows(), Core.NORM_MINMAX);
+//		    for (int i = 1; i < 256; i++) {
+//		        Core.line(histImage, new Point(bin_w * (i - 1),hist_h- Math.round(b_hist.get( i-1,0)[0])), 
+//		                new Point(bin_w * (i), hist_h-Math.round(Math.round(b_hist.get(i, 0)[0]))),
+//		                mColorsBGR[c], 2, 8, 0);
+//		    }
+//	    }
+
+		pupilsColor.add(colors);
+	    
 	}
 
 	public void setImagePath(String path) {
 		imagePath = path;
+	}
+	
+	public HashMap<String,Double> getPupilColorsPercentage(int i){
+		return pupilsColor.get(i);
 	}
 
 }
