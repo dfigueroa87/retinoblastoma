@@ -266,7 +266,7 @@ public class Detector {
 	    				black++;	    				
 	    			}else{
 	    				//red
-	    				if(h<10.0 && h>166.5) red++;
+	    				if(h<10.0 || h>166.5) red++;
 	    				//yellow
 	    				if(h>19.0 && h<31.0) yellow++;
 	    				//green
