@@ -258,7 +258,7 @@ public class Detector {
 	    		double s=hsv[1];
 	    		double v=hsv[2];
 	    		//first we check if its a white color
-	    		if(v>229.5){
+	    		if(v>229.5 && s<56){
 	    			white++;
 	    		}else{
 	    			//black
@@ -266,11 +266,11 @@ public class Detector {
 	    				black++;	    				
 	    			}else{
 	    				//red
-	    				if(h<10.0 || h>166.5) red++;
+	    				if(h<10.0 || h>166.5 && s>127) red++;
 	    				//yellow
-	    				if(h>19.0 && h<31.0) yellow++;
+	    				if(h>19.0 && h<31.0 && s>127) yellow++;
 	    				//green
-	    				if(h<31.0 && h>68.0) green++;
+	    				if(h<31.0 && h>68.0 && s>127) green++;
 	    			}
 	    			
 	    		}
