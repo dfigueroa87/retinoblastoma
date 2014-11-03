@@ -5,8 +5,6 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 
 import javax.imageio.ImageIO;
 
@@ -14,11 +12,8 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 
 import org.opencv.core.Core;
-import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfByte;
-import org.opencv.core.MatOfFloat;
-import org.opencv.core.MatOfInt;
 import org.opencv.core.MatOfRect;
 import org.opencv.core.Point;
 import org.opencv.core.Rect;
@@ -27,9 +22,6 @@ import org.opencv.core.Size;
 import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
-
-import com.sun.javafx.geom.Vec3f;
-import com.sun.prism.impl.ResourcePool;
 
 import utils.Utils;
 
@@ -46,8 +38,6 @@ public class Detector {
 	private int flags = org.opencv.objdetect.Objdetect.CASCADE_DO_CANNY_PRUNING;
 	private int minSizeRatio = 10;
 	
-	private Scalar mColorsBGR[] = new Scalar[] { new Scalar(255, 0, 0), new Scalar(0, 255, 0), new Scalar(0, 0, 255) };
-	
 	private ArrayList<Rect> detectedFaces = new ArrayList<Rect>();
 	private ArrayList<Rect> detectedEyes = new ArrayList<Rect>();
 	private ArrayList<Rect> detectedPupils = new ArrayList<Rect>();
@@ -63,12 +53,6 @@ public class Detector {
 
 	private ArrayList<Integer> eyesPerFace = new ArrayList<Integer>();
 	private ArrayList<Integer> pupilsPerEye = new ArrayList<Integer>();
-	
-	
-	
-	private static int H=0;
-	private static int S=1;
-	private static int V=2;
 	
 	public Detector(String path) {
 		imagePath = path;
@@ -178,7 +162,7 @@ public class Detector {
 			   
 			   Imgproc.Canny(transformedEye, transformedEye, 50, 150);
 			   
-			   Imgproc.HoughCircles(transformedEye, circles, Imgproc.CV_HOUGH_GRADIENT, 1.3, transformedEye.rows()/1, 150, 30, 0, 0);
+			   Imgproc.HoughCircles(transformedEye, circles, Imgproc.CV_HOUGH_GRADIENT, 1.3, transformedEye.rows()/1, 150, 30, 0, (int)(rect2.width/2));
 			   
 			   pupilsPerEye.add(circles.cols());
 			   
@@ -191,7 +175,7 @@ public class Detector {
 				        if (vCircle == null)
 				            break;
 
-				        Point pt = new Point(Math.round(vCircle[0]), Math.round(vCircle[1]));
+				        //Point pt = new Point(Math.round(vCircle[0]), Math.round(vCircle[1]));
 				        int radius = (int)Math.round(vCircle[2]);
 
 				        // draw the found circle
@@ -199,8 +183,8 @@ public class Detector {
 				        Point pt2 = new Point(rect.x + rect2.x + Math.round(vCircle[0]), rect.y + rect2.y + Math.round(vCircle[1]));
 				        Core.circle(image, pt2, radius, new Scalar(0,0,255), 2);
 				        
-				        Rect pupilRect = new Rect((int)(pt.x - (radius*Math.sqrt(2)/2)), (int)(pt.y - (radius*Math.sqrt(2)/2)), (int)(radius*Math.sqrt(2)), (int)(radius*Math.sqrt(2)));
-				        Mat pupilMat = new Mat(eye, pupilRect);
+				        Rect pupilRect = new Rect((int)(pt2.x - (radius*Math.sqrt(2)/2)) , (int)(pt2.y - (radius*Math.sqrt(2)/2)), (int)(radius*Math.sqrt(2)), (int)(radius*Math.sqrt(2)));
+				        Mat pupilMat = new Mat(image, pupilRect);
 				        detectedPupils.add(pupilRect);
 				        
 				        //Core.rectangle(eye, new Point((pt.x - (radius*Math.sqrt(2)/2)), (pt.y - (radius*Math.sqrt(2)/2))), new Point((pt.x + (radius*Math.sqrt(2)/2)), (pt.y + (radius*Math.sqrt(2)/2))), new Scalar(255,0,0));
