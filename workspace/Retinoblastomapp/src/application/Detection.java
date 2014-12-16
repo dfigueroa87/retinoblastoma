@@ -11,6 +11,10 @@ import javafx.scene.image.Image;
  */
 public abstract class Detection {
 	
+	public Detection() {
+		
+	}
+	
 	public abstract Image draw(Image im);
 
 }

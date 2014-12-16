@@ -16,10 +16,10 @@ public class DetectionManager {
 	private Detector eyeDetector;
 	private Detector pupilDetector;
 	
-	public DetectionManager(String imagePath) {
+	public DetectionManager() {
 		
-		faceDetector = new CascadeClassifierDetector(imagePath, faceClassifierPath);
-		eyeDetector = new CascadeClassifierDetector(imagePath, eyeClassifierPath);
+		faceDetector = new CascadeClassifierDetector(faceClassifierPath);
+		eyeDetector = new CascadeClassifierDetector(eyeClassifierPath);
 		
 	}
 

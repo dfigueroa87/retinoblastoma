@@ -30,9 +30,6 @@ import org.opencv.objdetect.CascadeClassifier;
  */
 public class CascadeClassifierDetector extends Detector {
 	
-	private String imagePath;
-	private Mat originalImage;
-	
 	private CascadeClassifier classifier;
 	
 	private double scaleFactor = 1.05;
@@ -42,10 +39,8 @@ public class CascadeClassifierDetector extends Detector {
 	
 	private ArrayList<Rect> detections = new ArrayList<Rect>();
 
-	public CascadeClassifierDetector(String imagePath, String classifierPath) {
-		super(imagePath);
-		this.imagePath = imagePath;
-		originalImage = Highgui.imread(imagePath);
+	public CascadeClassifierDetector(String classifierPath) {
+		super();
 		classifier = new CascadeClassifier(classifierPath);
 	}
 	
@@ -85,8 +80,9 @@ public class CascadeClassifierDetector extends Detector {
 		return minSizeRatio;
 	}
 	
-	public Image detect() {
-		Mat image = originalImage.clone();
+	public ArrayList<Detection> detect(Mat image) {
+		
+		ArrayList<Detection> detections = new ArrayList<Detection>();
 
 		Size minSize = new Size(image.size().width/minSizeRatio, image.size().height/minSizeRatio);
 		Size maxSize = image.size();
@@ -99,30 +95,11 @@ public class CascadeClassifierDetector extends Detector {
 
 		// Draw a bounding box around each face.
 		for (Rect rect : detectionsMat.toArray()) {
-		   Core.rectangle(image, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height), new Scalar(0, 255, 0));
-		   detections.add(rect);
+		   //Core.rectangle(image, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height), new Scalar(0, 255, 0));
+		   detections.add(new RectDetection(rect));
 		}
-
-		// Save the visualized detection.
-		String filename = "faceDetection.png";
-		System.out.println(String.format("Writing %s", filename));
-		Highgui.imwrite(filename, image);
 		
-		Image im = null;
-		
-		try {
-			MatOfByte bytemat = new MatOfByte();
-			Highgui.imencode(".jpg", image, bytemat);
-			byte[] bytes = bytemat.toArray();
-			InputStream in = new ByteArrayInputStream(bytes);
-			BufferedImage buffImg = ImageIO.read(in);
-			im = SwingFXUtils.toFXImage(buffImg, null);
-		
-		}
-		catch(Exception e){
-			//TODO
-		}
-		return im;
+		return detections;
 		
 	}
 

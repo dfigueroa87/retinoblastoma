@@ -3,6 +3,8 @@
  */
 package application;
 
+import org.opencv.core.Rect;
+
 import javafx.scene.image.Image;
 
 /**
@@ -10,8 +12,12 @@ import javafx.scene.image.Image;
  *
  */
 public class RectDetection extends Detection {
+	private Rect rect;
+	
+	public RectDetection(Rect r) {
+		rect = r;
+	}
 
-	@Override
 	public Image draw(Image im) {
 		// TODO Auto-generated method stub
 		return null;
