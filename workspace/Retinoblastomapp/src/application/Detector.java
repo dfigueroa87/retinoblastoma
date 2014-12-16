@@ -5,6 +5,8 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 
@@ -14,6 +16,7 @@ import javafx.scene.image.Image;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfByte;
+import org.opencv.core.MatOfPoint;
 import org.opencv.core.MatOfRect;
 import org.opencv.core.Point;
 import org.opencv.core.Rect;
@@ -73,6 +76,10 @@ public class Detector {
 	
 	public ArrayList<Rect> getDetectedEyes() {
 		return detectedEyes;
+	}
+	
+	public ArrayList<Rect> getDetectedPupils() {
+		return detectedPupils;
 	}
 	
 	public void setFaceClassifier(String path) {
@@ -156,14 +163,23 @@ public class Detector {
 			   Mat transformedEye = new Mat();
 			   
 			   // To gray scale
-			   Imgproc.cvtColor(eye, transformedEye, Imgproc.COLOR_BGR2GRAY);
+//			   Imgproc.cvtColor(eye, transformedEye, Imgproc.COLOR_BGR2GRAY);
+//			   
+//			   
+//			   Imgproc.Canny(transformedEye, transformedEye, 50, 150);
+			   
+			   Imgproc.cvtColor(eye, transformedEye, Imgproc.COLOR_BGR2HLS);
+			   
+			   
+			   
+			   List<Mat> hlsPlanes = new LinkedList<Mat>();
+			   Core.split(transformedEye, hlsPlanes);
+			   String filenameS = "saturation.png";
+			   Highgui.imwrite(filenameS, hlsPlanes.get(2));
+			   
 			   
 			   Mat circles = new Mat();
-			   
-			   Imgproc.Canny(transformedEye, transformedEye, 50, 150);
-			   
-			   Imgproc.HoughCircles(transformedEye, circles, Imgproc.CV_HOUGH_GRADIENT, 1.3, transformedEye.rows()/1, 150, 30, 0, (int)(rect2.width/2));
-			   
+			   Imgproc.HoughCircles(hlsPlanes.get(2), circles, Imgproc.CV_HOUGH_GRADIENT, 1.3, hlsPlanes.get(2).rows()/1, 150, 30, 0, (int)(rect2.width/2));
 			   pupilsPerEye.add(circles.cols());
 			   
 			   // Draw the circles detected
@@ -314,6 +330,41 @@ public class Detector {
 	
 	public HashMap<String,Double> getPupilColorsPercentage(int i){
 		return pupilsColor.get(i);
+	}
+	
+	// Primer algoritmo probado para deteccion de pupilas
+	public void pupilDetectionByContours(Mat eye){
+		// Invert eye
+		Mat invEye = new Mat(eye.rows(),eye.cols(), eye.type(), new Scalar(255,255,255));
+		Core.subtract(invEye, eye, eye);
+
+		// To gray scale
+		Imgproc.cvtColor(invEye, eye, Imgproc.COLOR_BGR2GRAY);
+
+		// Convert to binary image by thresholding it
+		Imgproc.threshold(eye, eye, 220, 255, Imgproc.THRESH_BINARY);
+
+		// Find all contours
+		List<MatOfPoint> contours = new ArrayList<MatOfPoint>();
+		Imgproc.findContours(eye.clone(), contours, new Mat(), Imgproc.RETR_EXTERNAL,Imgproc.CHAIN_APPROX_NONE);
+
+		// Fill holes in each contour
+		Imgproc.drawContours(eye, contours, -1, new Scalar(255,255,255), -1);
+
+		for (int n = 0; n < contours.size(); n++)
+		{
+			double area = Imgproc.contourArea(contours.get(n));    // Blob area
+			Rect rectangle = Imgproc.boundingRect(contours.get(n)); // Bounding box
+			int radius = rectangle.width/2;                     // Approximate radius
+
+			// Look for round shaped blob
+			if (area >= 30 && 
+					Math.abs(1 - ((double)rectangle.width / (double)rectangle.height)) <= 0.2 &&
+					Math.abs(1 - (area / (Math.PI * Math.pow(radius, 2)))) <= 0.2)    
+			{
+				Core.circle(eye, new Point(rectangle.x + radius, rectangle.y + radius), radius, new Scalar(255,0,0), 2);
+			}
+		}
 	}
 
 }

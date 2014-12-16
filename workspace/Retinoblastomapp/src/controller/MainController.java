@@ -95,6 +95,7 @@ public class MainController implements Initializable{
 	
 	@FXML
 	public void Detect() {
+		resultsMinPane.getChildren().clear();
 		imageView.setImage(currentDetection.detect());
 		setResults(currentDetection);
 //		try{
@@ -119,8 +120,8 @@ public class MainController implements Initializable{
 	
 	public void setResults(Detector det) {
 		int i = 0;
-		for (Rect eye : det.getDetectedEyes()){
-			Mat img = new Mat(det.getOriginalMat(), eye);
+		for (Rect pupil : det.getDetectedPupils()){
+			Mat img = new Mat(det.getOriginalMat(), pupil);
 			ImageView imageView = createImageView(Utils.ConvertMatToImage(img));
 			imageView.setUserData(i);
 			resultsMinPane.getChildren().add(imageView);
