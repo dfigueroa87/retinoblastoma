@@ -93,14 +93,12 @@ public class CascadeClassifierDetector extends Detector {
 
 		System.out.println(String.format("%s detections", detectionsMat.toArray().length));
 
-		// Draw a bounding box around each face.
 		for (Rect rect : detectionsMat.toArray()) {
 		   //Core.rectangle(image, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height), new Scalar(0, 255, 0));
 		   detections.add(new RectDetection(rect));
 		}
 		
 		return detections;
-		
 	}
 
 }
