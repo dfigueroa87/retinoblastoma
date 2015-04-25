@@ -5,6 +5,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -61,6 +62,8 @@ public abstract class Detector {
 	public ArrayList<Rect> getDetectedPupils() {
 		return detectedPupils;
 	}
+	
+	public abstract void configure(Hashtable<String, Object> params);
 
 	public abstract ArrayList<Detection> detect(Mat image);
 //	{

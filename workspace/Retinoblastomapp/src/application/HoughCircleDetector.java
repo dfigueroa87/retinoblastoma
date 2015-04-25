@@ -4,6 +4,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -79,6 +80,12 @@ public class HoughCircleDetector extends Detector {
 		
 		
 		return null;
+	}
+
+	@Override
+	public void configure(Hashtable<String, Object> params) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

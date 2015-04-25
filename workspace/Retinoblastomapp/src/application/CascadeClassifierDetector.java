@@ -4,6 +4,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;
@@ -83,6 +84,14 @@ public class CascadeClassifierDetector extends Detector {
 		}
 		
 		return detections;
+	}
+
+	@Override
+	public void configure(Hashtable<String, Object> params) {
+		setScaleFactor((double)params.get("scaleFactor"));
+		setMinNeighbors((int)params.get("minNeighbors"));
+		setFlags((int)params.get("flags"));
+		setMinSizeRatio((int)params.get("minSizeRatio"));
 	}
 
 }

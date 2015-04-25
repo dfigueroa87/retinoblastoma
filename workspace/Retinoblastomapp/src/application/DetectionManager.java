@@ -4,6 +4,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -24,8 +25,8 @@ public class DetectionManager {
 	private String faceClassifierPath = "C:/retinoblastoma/workspace/Resources/CascadeClassifiers/FaceDetection/haarcascade_frontalface_alt.xml";
 	private String eyeClassifierPath = "C:/retinoblastoma/workspace/Resources/CascadeClassifiers/EyeDetection/haarcascade_eye.xml";
 	
-	private CascadeClassifierDetector faceDetector;
-	private CascadeClassifierDetector eyeDetector;
+	private Detector faceDetector;
+	private Detector eyeDetector;
 	private Detector pupilDetector;
 	
 	private ArrayList<Detection> faces;
@@ -44,17 +45,21 @@ public class DetectionManager {
 	}
 	
 	public void configureFaceDetection(double scaleFactor, int minNeighbors, int flags, int minSizeRatio) {
-		faceDetector.setScaleFactor(scaleFactor);
-		faceDetector.setMinNeighbors(minNeighbors);
-		faceDetector.setFlags(flags);
-		faceDetector.setMinSizeRatio(minSizeRatio);
+		Hashtable<String, Object> values = new Hashtable<>();
+		values.put("scaleFactor", scaleFactor);
+		values.put("minNeighbors", minNeighbors);
+		values.put("flags", flags);
+		values.put("minSizeRatio", minSizeRatio);
+		faceDetector.configure(values);
 	}
 	
 	public void configureEyeDetection(double scaleFactor, int minNeighbors, int flags, int minSizeRatio) {
-		eyeDetector.setScaleFactor(scaleFactor);
-		eyeDetector.setMinNeighbors(minNeighbors);
-		eyeDetector.setFlags(flags);
-		eyeDetector.setMinSizeRatio(minSizeRatio);
+		Hashtable<String, Object> values = new Hashtable<>();
+		values.put("scaleFactor", scaleFactor);
+		values.put("minNeighbors", minNeighbors);
+		values.put("flags", flags);
+		values.put("minSizeRatio", minSizeRatio);
+		eyeDetector.configure(values);
 	}
 	
 	public void detect(Mat image) {
