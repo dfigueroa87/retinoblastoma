@@ -3,6 +3,8 @@
  */
 package application;
 
+import org.opencv.core.Rect;
+
 import javafx.scene.image.Image;
 
 /**
@@ -10,7 +12,12 @@ import javafx.scene.image.Image;
  *
  */
 public class CircleDetection extends Detection {
-
+	private Rect circleRect;
+	
+	public CircleDetection(Rect r) {
+		circleRect = r;
+	}
+	
 	@Override
 	public Image draw(Image im) {
 		// TODO Auto-generated method stub
@@ -20,25 +27,25 @@ public class CircleDetection extends Detection {
 	@Override
 	public int getX() {
 		// TODO Auto-generated method stub
-		return 0;
+		return circleRect.x;
 	}
 
 	@Override
 	public int getY() {
 		// TODO Auto-generated method stub
-		return 0;
+		return circleRect.y;
 	}
 
 	@Override
 	public int getWidth() {
 		// TODO Auto-generated method stub
-		return 0;
+		return circleRect.width;
 	}
 
 	@Override
 	public int getHeight() {
 		// TODO Auto-generated method stub
-		return 0;
+		return circleRect.height;
 	}
 
 }

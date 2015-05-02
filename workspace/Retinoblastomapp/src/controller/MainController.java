@@ -2,16 +2,14 @@ package controller;
 
 import java.io.File;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import org.opencv.core.Core;
-import org.opencv.core.Mat;
-import org.opencv.core.Rect;
+import org.opencv.highgui.Highgui;
 
-import utils.Utils;
+import application.DetectionManager;
 import application.Detector;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -37,7 +35,8 @@ public class MainController implements Initializable{
 	
 	private String path;
 	
-	private Detector currentDetection;
+	private DetectionManager detMan = new DetectionManager();
+	private String currentImagePath;
 			
 	@FXML
 	Parent root;
@@ -58,7 +57,7 @@ public class MainController implements Initializable{
 	@FXML
 	TableColumn<Double, Double> tableColumnWhite;
 	
-	private ArrayList<Detector> detections = new ArrayList<Detector>();
+	//private ArrayList<Detector> detections = new ArrayList<Detector>();
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -80,10 +79,10 @@ public class MainController implements Initializable{
 		List<File> files = fileChooser.showOpenMultipleDialog(null);
 		for (File file : files) {
 			System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-			Detector det = new Detector(file.getAbsolutePath());
-			this.detections.add(det);
-			ImageView imageView = createImageView(det.getOriginalImage());
-			imageView.setUserData(det);
+			//Detector det = new Detector(file.getAbsolutePath());
+			//this.detections.add(det);
+			ImageView imageView = createImageView(file.getAbsolutePath());
+			imageView.setUserData(file.getAbsolutePath());
 			imageContainer.getChildren().add(imageView);
 		}  
 		
@@ -96,8 +95,10 @@ public class MainController implements Initializable{
 	@FXML
 	public void Detect() {
 		resultsMinPane.getChildren().clear();
-		imageView.setImage(currentDetection.detect());
-		setResults(currentDetection);
+		
+		detMan.detect(Highgui.imread(currentImagePath));
+		//imageView.setImage(currentDetection.detect());
+		//setResults(currentDetection);
 //		try{
 //			Stage stage = new Stage();
 //			
@@ -119,14 +120,14 @@ public class MainController implements Initializable{
 	}
 	
 	public void setResults(Detector det) {
-		int i = 0;
-		for (Rect pupil : det.getDetectedPupils()){
-			Mat img = new Mat(det.getOriginalMat(), pupil);
-			ImageView imageView = createImageView(Utils.ConvertMatToImage(img));
-			imageView.setUserData(i);
-			resultsMinPane.getChildren().add(imageView);
-			i++;
-		}
+//		int i = 0;
+//		for (Rect pupil : det.getDetectedPupils()){
+//			Mat img = new Mat(det.getOriginalMat(), pupil);
+//			ImageView imageView = createImageView(Utils.ConvertMatToImage(img));
+//			imageView.setUserData(i);
+//			resultsMinPane.getChildren().add(imageView);
+//			i++;
+//		}
 	}
 	
 	public void drawDetections(Detector det) {
@@ -139,8 +140,8 @@ public class MainController implements Initializable{
 		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)){
             if(((MouseEvent)e).getClickCount() == 2){
             	resultImageView.setImage(((ImageView) e.getTarget()).getImage());
-            	Integer i = (Integer) ((ImageView) e.getTarget()).getUserData();            	
-            	System.out.println(currentDetection.getPupilColorsPercentage(i));
+//            	Integer i = (Integer) ((ImageView) e.getTarget()).getUserData();            	
+            	//System.out.println(currentDetection.getPupilColorsPercentage(i));
 //            	histogramView.setImage(currentDetection.getHistogram(i)); voy a ver que devuelvo
             	
             	
@@ -150,13 +151,14 @@ public class MainController implements Initializable{
 		
 	}
 	
-	private ImageView createImageView(Image image) {  
+	private ImageView createImageView(String imagePath) {
+		Image image = new Image(imagePath);
 		final int DEFAULT_THUMBNAIL_WIDTH = 100;
-	     ImageView imageView = new ImageView(image);  
-	     imageView.setFitWidth(DEFAULT_THUMBNAIL_WIDTH);  
-	     imageView.setPreserveRatio(true);  
-	     imageView.setSmooth(true);  
-	     return imageView; 
+	    ImageView imageView = new ImageView(image);  
+	    imageView.setFitWidth(DEFAULT_THUMBNAIL_WIDTH);  
+	    imageView.setPreserveRatio(true);  
+	    imageView.setSmooth(true);  
+	    return imageView; 
 	}  
 	
 	@FXML
@@ -165,7 +167,7 @@ public class MainController implements Initializable{
 		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)){
             if(((MouseEvent)e).getClickCount() == 2){
             	imageView.setImage(((ImageView) e.getTarget()).getImage());
-            	currentDetection = (Detector) ((ImageView) e.getTarget()).getUserData();
+            	currentImagePath = (String) ((ImageView) e.getTarget()).getUserData();
             }
         }
 	}

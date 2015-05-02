@@ -5,16 +5,10 @@ package application;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
-import java.util.LinkedList;
-import java.util.List;
 
-import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.Point;
 import org.opencv.core.Rect;
-import org.opencv.core.Scalar;
-import org.opencv.highgui.Highgui;
-import org.opencv.imgproc.Imgproc;
 
 /**
  * @author David
@@ -64,9 +58,14 @@ public class DetectionManager {
 	
 	public void detect(Mat image) {
 		faces = faceDetector.detect(image);
+		
 		eyes = new ArrayList<Detection>();
 		eyesPerFace = new ArrayList<Integer>();
-		int index = 0;
+		pupils = new ArrayList<Detection>();
+		pupilsPerEye = new ArrayList<Integer>();
+		
+		int faceIndex = 0;
+		int eyeIndex = 0;
 		for (Detection face : faces) {
 			// Use only the upper 60% of the detected face to search for eyes
 			Rect boundedRect= new Rect(face.getX(), face.getY(), face.getWidth(), (int)Math.floor(face.getHeight() * 0.60));
@@ -75,18 +74,20 @@ public class DetectionManager {
 			ArrayList<Detection> eyesDetected = eyeDetector.detect(topOfFace);
 			
 			// Save the number of eyes detected per each face
-			eyesPerFace.add(index, eyesDetected.size());
+			eyesPerFace.add(faceIndex, eyesDetected.size());
+			faceIndex++;
 			
 			eyes.addAll(eyesDetected);
-			index++;
 			
 			for (Detection eye : eyesDetected) {
 				Rect roi = new Rect(new Point(face.getX() + eye.getX(), face.getY() + eye.getY()), new Point(face.getX() + eye.getX() + eye.getWidth(), face.getY() + eye.getY() + face.getHeight()));
-
 				Mat eyeMat = new Mat(image.clone(), roi);
+				ArrayList<Detection> pupilsDetected = pupilDetector.detect(eyeMat);
 				
-				pupilDetector.detect(eyeMat);
-
+				pupilsPerEye.add(eyeIndex, pupilsDetected.size());
+				eyeIndex++;
+				
+				pupils.addAll(pupilsDetected);
 			}
 		}
 	}
