@@ -1,46 +1,62 @@
-/**
- * 
- */
-package application;
+package model.detection;
 
+import org.opencv.core.Core;
+import org.opencv.core.Mat;
+import org.opencv.core.Point;
 import org.opencv.core.Rect;
+import org.opencv.core.Scalar;
 
-import javafx.scene.image.Image;
-
-/**
- * @author David
- *
- */
 public class RectDetection extends Detection {
 	private Rect rect;
+	
+	public RectDetection() {
+		rect = new Rect();
+	}
 	
 	public RectDetection(Rect r) {
 		rect = r;
 	}
 
-	public Image draw(Image im) {
-		// TODO Auto-generated method stub
-		return null;
+	public void draw(Mat im, Scalar sc) {
+		//new Scalar(0, 255, 0)
+		Core.rectangle(im, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height), sc);
 	}
 
 	@Override
 	public int getX() {
-		return rect.x;
+		if (rect!=null)
+			return rect.x;
+		else
+			return 0;
 	}
 
 	@Override
 	public int getY() {
-		return rect.y;
+		if (rect!=null)
+			return rect.y;
+		else
+			return 0;
 	}
 
 	@Override
 	public int getWidth() {
-		return rect.width;
+		if (rect!=null)
+			return rect.width;
+		else
+			return 0;
 	}
 
 	@Override
 	public int getHeight() {
-		return rect.height;
+		if (rect!=null)
+			return rect.height;
+		else
+			return 0;
 	}
+	
+	public void setRect(Rect rect) {
+		this.rect = rect;
+	}
+	
 
 }

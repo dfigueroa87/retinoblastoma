@@ -1,9 +1,10 @@
 /**
  * 
  */
-package application;
+package model.detection;
 
-import javafx.scene.image.Image;
+import org.opencv.core.Mat;
+import org.opencv.core.Scalar;
 
 /**
  * @author David
@@ -15,7 +16,7 @@ public abstract class Detection {
 		
 	}
 	
-	public abstract Image draw(Image im);
+	public abstract void draw(Mat im,Scalar sc);
 	
 	public abstract int getX();
 	public abstract int getY();

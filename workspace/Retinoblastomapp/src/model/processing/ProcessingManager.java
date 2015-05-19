@@ -1,12 +1,8 @@
-/**
- * 
- */
-package application;
+package model.processing;
 
-/**
- * @author David
- *
- */
-public class ProcessingManager {
+
+public interface ProcessingManager {
+	
+	public void CalculateColorsPercentage();
 
 }

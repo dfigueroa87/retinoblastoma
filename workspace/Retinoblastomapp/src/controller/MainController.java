@@ -6,11 +6,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import model.detection.DetectionManager;
+import model.detection.DetectionManagerImpl;
+import model.detection.Detector;
+
 import org.opencv.core.Core;
 import org.opencv.highgui.Highgui;
 
-import application.DetectionManager;
-import application.Detector;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -35,7 +37,7 @@ public class MainController implements Initializable{
 	
 	private String path;
 	
-	private DetectionManager detMan = new DetectionManager();
+	private DetectionManagerImpl detMan = new DetectionManagerImpl();
 	private String currentImagePath;
 			
 	@FXML

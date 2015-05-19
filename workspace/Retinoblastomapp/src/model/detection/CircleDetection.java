@@ -1,50 +1,43 @@
-/**
- * 
- */
-package application;
+package model.detection;
 
+import org.opencv.core.Mat;
 import org.opencv.core.Rect;
+import org.opencv.core.Scalar;
 
-import javafx.scene.image.Image;
-
-/**
- * @author David
- *
- */
 public class CircleDetection extends Detection {
 	private Rect circleRect;
+	
+	public CircleDetection() {
+		circleRect = new Rect();
+	}
 	
 	public CircleDetection(Rect r) {
 		circleRect = r;
 	}
 	
 	@Override
-	public Image draw(Image im) {
+	public void draw(Mat im,Scalar sc) {
 		// TODO Auto-generated method stub
-		return null;
+		
 	}
 
 	@Override
 	public int getX() {
-		// TODO Auto-generated method stub
 		return circleRect.x;
 	}
 
 	@Override
 	public int getY() {
-		// TODO Auto-generated method stub
 		return circleRect.y;
 	}
 
 	@Override
 	public int getWidth() {
-		// TODO Auto-generated method stub
 		return circleRect.width;
 	}
 
 	@Override
 	public int getHeight() {
-		// TODO Auto-generated method stub
 		return circleRect.height;
 	}
 

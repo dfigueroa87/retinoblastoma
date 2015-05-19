@@ -1,7 +1,7 @@
 /**
  * 
  */
-package application;
+package model.processing;
 
 /**
  * @author David
