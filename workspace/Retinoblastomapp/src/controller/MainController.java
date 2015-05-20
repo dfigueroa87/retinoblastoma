@@ -80,7 +80,6 @@ public class MainController implements Initializable{
 		         );
 		List<File> files = fileChooser.showOpenMultipleDialog(null);
 		for (File file : files) {
-			System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 			//Detector det = new Detector(file.getAbsolutePath());
 			//this.detections.add(det);
 			ImageView imageView = createImageView(file.getAbsolutePath());

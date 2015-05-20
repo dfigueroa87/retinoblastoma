@@ -1,5 +1,7 @@
 package model;
 	
+import org.opencv.core.Core;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -14,6 +16,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+			System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 			stage = primaryStage;
 			Parent root = FXMLLoader.load(getClass().getResource("../view/MainView.fxml"));
 			Scene scene = new Scene(root);
