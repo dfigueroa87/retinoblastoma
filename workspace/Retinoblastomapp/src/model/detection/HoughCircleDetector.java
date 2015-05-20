@@ -58,14 +58,11 @@ public class HoughCircleDetector extends Detector {
 
 				Point pt = new Point(Math.round(vCircle[0]), Math.round(vCircle[1]));
 				int radius = (int)Math.round(vCircle[2]);
-
-				// draw the found circle
-				//Point pt2 = new Point(face.getX() + eye.getX() + Math.round(vCircle[0]), face.getY() + eye.getY() + Math.round(vCircle[1]));
-				//Core.circle(image, pt2, radius, new Scalar(0,0,255), 2);
-
-				Rect pupilRect = new Rect((int)(pt.x - (radius*Math.sqrt(2)/2)) , (int)(pt.y - (radius*Math.sqrt(2)/2)), (int)(radius*Math.sqrt(2)), (int)(radius*Math.sqrt(2)));
-				//Mat pupilMat = new Mat(image, pupilRect);
-				detections.add(new CircleDetection(pupilRect));
+				
+				detections.add(new CircleDetection(pt,radius));				
+				
+				//Mat pupilMat = new Mat(image, pupilRect); EL pupilRect era el rectangulo de adentro de la pupila
+				
 
 				//Core.rectangle(eyeMat, new Point((pt.x - (radius*Math.sqrt(2)/2)), (pt.y - (radius*Math.sqrt(2)/2))), new Point((pt.x + (radius*Math.sqrt(2)/2)), (pt.y + (radius*Math.sqrt(2)/2))), new Scalar(255,0,0));
 				//Core.circle(eyeMat, pt, radius, new Scalar(0,255,0), 2);
