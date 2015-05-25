@@ -11,6 +11,7 @@ import model.detection.DetectionManagerImpl;
 import model.detection.Detector;
 
 import org.opencv.core.Core;
+import org.opencv.core.Mat;
 import org.opencv.highgui.Highgui;
 
 import javafx.event.Event;
@@ -97,8 +98,8 @@ public class MainController implements Initializable{
 	public void Detect() {
 		resultsMinPane.getChildren().clear();
 		
-		detMan.detect(Highgui.imread(currentImagePath));
-		//imageView.setImage(currentDetection.detect());
+		Mat detectionMat = detMan.detect(Highgui.imread(currentImagePath));
+		imageView.setImage(utils.Utils.ConvertMatToImage(detectionMat));
 		//setResults(currentDetection);
 //		try{
 //			Stage stage = new Stage();
@@ -153,7 +154,8 @@ public class MainController implements Initializable{
 	}
 	
 	private ImageView createImageView(String imagePath) {
-		Image image = new Image(imagePath);
+		String path = "file:///" + imagePath;
+		Image image = new Image(path);
 		final int DEFAULT_THUMBNAIL_WIDTH = 100;
 	    ImageView imageView = new ImageView(image);  
 	    imageView.setFitWidth(DEFAULT_THUMBNAIL_WIDTH);  

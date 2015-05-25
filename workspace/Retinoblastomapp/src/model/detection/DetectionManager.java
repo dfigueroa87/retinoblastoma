@@ -8,6 +8,6 @@ public interface DetectionManager {
 	
 	public void configureEyeDetection(double scaleFactor, int minNeighbors, int flags, int minSizeRatio);
 	
-	public void detect(Mat image);
+	public Mat detect(Mat image);
 	
 }

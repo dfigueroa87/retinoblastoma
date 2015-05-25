@@ -1,11 +1,22 @@
 package model.detection;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
+import javax.imageio.ImageIO;
+
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.Image;
+
 import org.opencv.core.Mat;
+import org.opencv.core.MatOfByte;
 import org.opencv.core.Point;
 import org.opencv.core.Rect;
+import org.opencv.core.Scalar;
+import org.opencv.highgui.Highgui;
 
 public class DetectionManagerImpl implements DetectionManager {
 	
@@ -53,7 +64,8 @@ public class DetectionManagerImpl implements DetectionManager {
 	}
 
 	@Override
-	public void detect(Mat image)  {
+	public Mat detect(Mat image)  {
+		Mat result = image.clone();
 		faces = faceDetector.detect(image);
 		
 		eyes = new ArrayList<Detection>();
@@ -64,6 +76,9 @@ public class DetectionManagerImpl implements DetectionManager {
 		int faceIndex = 0;
 		int eyeIndex = 0;
 		for (Detection face : faces) {
+			// Draw detection
+			face.draw(result, new Scalar(0, 255, 0));
+			
 			// Use only the upper 60% of the detected face to search for eyes
 			Rect boundedRect= new Rect(((RectDetection)face).getX(), ((RectDetection)face).getY(), ((RectDetection)face).getWidth(), (int)Math.floor(((RectDetection)face).getHeight() * 0.60));
 			Mat topOfFace = new Mat(image, boundedRect);
@@ -77,6 +92,7 @@ public class DetectionManagerImpl implements DetectionManager {
 			eyes.addAll(eyesDetected);
 			
 			for (Detection eye : eyesDetected) {
+				// eye.draw(result, new Scalar(0, 0, 255));
 				Rect roi = new Rect(new Point(((RectDetection)face).getX() + ((RectDetection)eye).getX(), ((RectDetection)face).getY() + ((RectDetection)eye).getY()), new Point(((RectDetection)face).getX() + ((RectDetection)eye).getX() + ((RectDetection)eye).getWidth(), ((RectDetection)face).getY() + ((RectDetection)eye).getY() + ((RectDetection)face).getHeight()));
 				Mat eyeMat = new Mat(image.clone(), roi);
 				ArrayList<Detection> pupilsDetected = pupilDetector.detect(eyeMat);
@@ -87,6 +103,7 @@ public class DetectionManagerImpl implements DetectionManager {
 				pupils.addAll(pupilsDetected);
 			}
 		}
+		return result;
 	}
 
 }
