@@ -6,6 +6,6 @@ import org.opencv.core.Scalar;
 
 public interface Detection {
 	
-	public void draw(Mat im,Scalar sc);
+	public void draw(Mat im, Scalar sc, int originX, int originY);
 	
 }

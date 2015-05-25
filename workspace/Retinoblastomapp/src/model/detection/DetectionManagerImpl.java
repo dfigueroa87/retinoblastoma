@@ -77,7 +77,7 @@ public class DetectionManagerImpl implements DetectionManager {
 		int eyeIndex = 0;
 		for (Detection face : faces) {
 			// Draw detection
-			face.draw(result, new Scalar(0, 255, 0));
+			face.draw(result, new Scalar(0, 255, 0), 0, 0);
 			
 			// Use only the upper 60% of the detected face to search for eyes
 			Rect boundedRect= new Rect(((RectDetection)face).getX(), ((RectDetection)face).getY(), ((RectDetection)face).getWidth(), (int)Math.floor(((RectDetection)face).getHeight() * 0.60));
@@ -92,7 +92,7 @@ public class DetectionManagerImpl implements DetectionManager {
 			eyes.addAll(eyesDetected);
 			
 			for (Detection eye : eyesDetected) {
-				// eye.draw(result, new Scalar(0, 0, 255));
+				eye.draw(result, new Scalar(0, 0, 255), ((RectDetection)face).getX(), ((RectDetection)face).getY());
 				Rect roi = new Rect(new Point(((RectDetection)face).getX() + ((RectDetection)eye).getX(), ((RectDetection)face).getY() + ((RectDetection)eye).getY()), new Point(((RectDetection)face).getX() + ((RectDetection)eye).getX() + ((RectDetection)eye).getWidth(), ((RectDetection)face).getY() + ((RectDetection)eye).getY() + ((RectDetection)face).getHeight()));
 				Mat eyeMat = new Mat(image.clone(), roi);
 				ArrayList<Detection> pupilsDetected = pupilDetector.detect(eyeMat);
@@ -101,6 +101,10 @@ public class DetectionManagerImpl implements DetectionManager {
 				eyeIndex++;
 				
 				pupils.addAll(pupilsDetected);
+				
+				for (Detection pupil : pupilsDetected) {
+					pupil.draw(result, new Scalar(255, 0, 0), ((RectDetection)face).getX() + ((RectDetection)eye).getX(), ((RectDetection)face).getY() + ((RectDetection)eye).getY());
+				}
 			}
 		}
 		return result;

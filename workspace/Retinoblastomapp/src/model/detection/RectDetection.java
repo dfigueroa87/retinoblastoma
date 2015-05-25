@@ -17,9 +17,9 @@ public class RectDetection implements Detection {
 		rect = r;
 	}
 
-	public void draw(Mat im, Scalar sc) {
+	public void draw(Mat im, Scalar sc, int originX, int originY) {
 		//new Scalar(0, 255, 0)
-		Core.rectangle(im, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height), sc);
+		Core.rectangle(im, new Point(originX + rect.x, originY + rect.y), new Point(originX + rect.x + rect.width, originY + rect.y + rect.height), sc);
 	}
 
 	

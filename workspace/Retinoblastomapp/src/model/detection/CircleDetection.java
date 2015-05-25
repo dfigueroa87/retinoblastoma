@@ -26,10 +26,10 @@ public class CircleDetection implements Detection {
 	}
 	
 	@Override
-	public void draw(Mat im,Scalar sc) {
+	public void draw(Mat im,Scalar sc, int originX, int originY) {
 		// draw the found circle
-		//Point pt2 = new Point(face.getX() + eye.getX() + Math.round(vCircle[0]), face.getY() + eye.getY() + Math.round(vCircle[1]));
-		Core.circle(im, pt, radius, sc, thickness);
+		Point pt2 = new Point(originX + pt.x, originY + pt.y);
+		Core.circle(im, pt2, radius, sc, thickness);
 		
 	}
 
