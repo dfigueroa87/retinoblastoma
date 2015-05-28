@@ -35,13 +35,18 @@ public class HistogramHSV {
 	
 	public void calculate(Double h,Double s,Double v){
 		total++;
-		for(ColorHSV color:colors){
+		boolean found=false;
+		for(int i=0; i<= colors.size() && !found; i++){
+			found=false;
+			ColorHSV color= colors.get(i);
 			if(color.isColor(h, s, v)){
 				color.addOcurrence();
 				color.setPercentage(total);
+				found=true;
 			}else{
 				color.setPercentage(total);
 			}
+			
 		}
 	}
 
