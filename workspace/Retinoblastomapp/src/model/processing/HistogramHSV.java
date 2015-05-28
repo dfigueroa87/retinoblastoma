@@ -8,7 +8,7 @@ public class HistogramHSV {
 	private List<ColorHSV> colors;
 	private int total;
 	
-	HistogramHSV(){
+	public HistogramHSV(){
 		colors = new ArrayList<ColorHSV>();
 		total=0;
 	}

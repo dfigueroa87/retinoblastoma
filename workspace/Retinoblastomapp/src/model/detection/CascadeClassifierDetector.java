@@ -66,7 +66,7 @@ public class CascadeClassifierDetector extends Detector {
 		return minSizeRatio;
 	}
 	
-	public ArrayList<Detection> detect(Mat image) {
+	public ArrayList<Detection> detect(Mat image, int absolutePx,int absolutePy) {
 		ArrayList<Detection> detections = new ArrayList<Detection>();
 
 		Size minSize = new Size(image.size().width/minSizeRatio, image.size().height/minSizeRatio);
@@ -79,6 +79,9 @@ public class CascadeClassifierDetector extends Detector {
 		System.out.println(String.format("%s detections", detectionsMat.toArray().length));
 
 		for (Rect rect : detectionsMat.toArray()) {
+			//here puts the absolute position of the RectDetection
+			rect.x = absolutePx + rect.x;
+			rect.y = absolutePy + rect.y;
 		   //Core.rectangle(image, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height), new Scalar(0, 255, 0));
 		   detections.add(new RectDetection(rect));
 		}

@@ -5,6 +5,11 @@ public class Rank {
 	Double inf;
 	Double sup;
 	
+	public Rank(Double inf, Double sup) {		
+		this.inf = inf;
+		this.sup = sup;
+	}
+	
 	public Double getInf() {
 		return inf;
 	}
@@ -19,6 +24,10 @@ public class Rank {
 	}
 	
 	public boolean isRank(Double value){
+		if(this.inf>this.sup) {
+			if( (value >= this.inf) || (value <= this.sup)) return true;
+			return false;
+		}
 		if( (value >= this.inf) && (value <= this.sup)) return true;
 		return false;
 	}

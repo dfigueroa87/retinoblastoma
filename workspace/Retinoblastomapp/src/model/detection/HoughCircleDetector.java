@@ -11,7 +11,6 @@ import java.util.List;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.Point;
-import org.opencv.core.Rect;
 import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
 
@@ -27,7 +26,7 @@ public class HoughCircleDetector extends Detector {
 	}
 
 	@Override
-	public ArrayList<Detection> detect(Mat image) {
+	public ArrayList<Detection> detect(Mat image, int absolutePx,int absolutePy) {
 		ArrayList<Detection> detections = new ArrayList<Detection>();
 		Mat transformedEye = new Mat();
 
@@ -55,11 +54,13 @@ public class HoughCircleDetector extends Detector {
 
 				if (vCircle == null)
 					break;
-
-				Point pt = new Point(Math.round(vCircle[0]), Math.round(vCircle[1]));
+				
+				//Here it puts the absolute position of the CircleDetection
+				Point pt = new Point(Math.round(vCircle[0]) + absolutePx, Math.round(vCircle[1]) + absolutePy );
 				int radius = (int)Math.round(vCircle[2]);
 				
-				detections.add(new CircleDetection(pt,radius));				
+				CircleDetection circle = new CircleDetection(pt,radius);				
+				detections.add(circle);				
 				
 				//Mat pupilMat = new Mat(image, pupilRect); EL pupilRect era el rectangulo de adentro de la pupila
 				

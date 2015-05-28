@@ -48,7 +48,7 @@ public abstract class Detector {
 	
 	public abstract void configure(Hashtable<String, Object> params);
 
-	public abstract ArrayList<Detection> detect(Mat image);
+	public abstract ArrayList<Detection> detect(Mat image, int absolutePx,int absolutePy);
 //	{
 //
 //		// Draw a bounding box around each face.

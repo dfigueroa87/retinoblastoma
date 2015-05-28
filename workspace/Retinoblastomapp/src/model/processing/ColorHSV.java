@@ -12,7 +12,7 @@ public class ColorHSV {
 	
 	private Double percentage;
 	
-	public ColorHSV(String name,Rank h, Rank v, Rank s){
+	public ColorHSV(String name,Rank h, Rank s, Rank v){
 		this.name=name;
 		this.h=h;
 		this.s=s;

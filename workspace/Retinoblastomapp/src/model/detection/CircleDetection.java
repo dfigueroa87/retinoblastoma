@@ -11,7 +11,7 @@ public class CircleDetection implements Detection {
 	private Point pt;
 	private int radius;
 	private int thickness;
-	
+		
 	
 	public CircleDetection() {
 		pt = new Point();
@@ -26,10 +26,9 @@ public class CircleDetection implements Detection {
 	}
 	
 	@Override
-	public void draw(Mat im,Scalar sc, int originX, int originY) {
-		// draw the found circle
-		Point pt2 = new Point(originX + pt.x, originY + pt.y);
-		Core.circle(im, pt2, radius, sc, thickness);
+	public void draw(Mat im,Scalar sc) {
+		// draw the found circle		
+		Core.circle(im, pt, radius, sc, thickness);
 		
 	}
 
@@ -59,7 +58,7 @@ public class CircleDetection implements Detection {
 	
 	public Rect getInternRect() {
 		return new Rect((int)(pt.x - (radius*Math.sqrt(2)/2)) , (int)(pt.y - (radius*Math.sqrt(2)/2)), (int)(radius*Math.sqrt(2)), (int)(radius*Math.sqrt(2)));
-	}
+	}	
 	
 
 }

@@ -6,14 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import model.detection.DetectionManager;
-import model.detection.DetectionManagerImpl;
-import model.detection.Detector;
-
-import org.opencv.core.Core;
-import org.opencv.core.Mat;
-import org.opencv.highgui.Highgui;
-
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -28,6 +20,19 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.TilePane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+import model.detection.CircleDetection;
+import model.detection.Detection;
+import model.detection.DetectionManager;
+import model.detection.DetectionManagerImpl;
+import model.detection.Detector;
+import model.processing.ColorHSV;
+import model.processing.HistogramHSV;
+import model.processing.ProcessingManager;
+import model.processing.ProcessingManagerImpl;
+import model.processing.Rank;
+
+import org.opencv.core.Mat;
+import org.opencv.highgui.Highgui;
 
 public class MainController implements Initializable{
 	
@@ -38,9 +43,12 @@ public class MainController implements Initializable{
 	
 	private String path;
 	
-	private DetectionManagerImpl detMan = new DetectionManagerImpl();
+	private DetectionManager detMan = new DetectionManagerImpl();
+	private ProcessingManager procMan = new ProcessingManagerImpl();
 	private String currentImagePath;
-			
+	private Mat detectionMat;
+	private boolean detected=false;
+	
 	@FXML
 	Parent root;
 	
@@ -98,7 +106,7 @@ public class MainController implements Initializable{
 	public void Detect() {
 		resultsMinPane.getChildren().clear();
 		
-		Mat detectionMat = detMan.detect(Highgui.imread(currentImagePath));
+		detectionMat = detMan.detect(Highgui.imread(currentImagePath));
 		imageView.setImage(utils.Utils.ConvertMatToImage(detectionMat));
 		//setResults(currentDetection);
 //		try{
@@ -119,6 +127,33 @@ public class MainController implements Initializable{
 //		} catch(Exception e) {
 //			e.printStackTrace();
 //		}
+		detected=true;
+	}
+	
+	@FXML
+	public void calculateHistogram() {
+		//In OpenCV, H = 0-180, S = 0-255, V = 0-255
+		if(detected==true) {
+			for(Detection pupil : detMan.getPupils()) {				
+				Mat img= new Mat(detectionMat, ((CircleDetection)pupil).getInternRect());
+				ColorHSV white = new ColorHSV("blanco", new Rank(0.0,180.0), new Rank(0.0,56.0), new Rank(229.5,255.0));
+				ColorHSV black = new ColorHSV("negro", new Rank(0.0,180.0), new Rank(0.0,255.0), new Rank(0.0,64.0));
+				ColorHSV red = new ColorHSV("rojo", new Rank(166.5,10.0), new Rank(127.0,255.0), new Rank(64.0,229.5));
+				ColorHSV yellow = new ColorHSV("amarillo", new Rank(19.0,31.0), new Rank(127.0,255.0), new Rank(64.0,229.5));
+				ColorHSV green = new ColorHSV("verde", new Rank(31.0,68.0), new Rank(127.0,255.0), new Rank(64.0,229.5));
+				HistogramHSV histogram=new HistogramHSV();
+				histogram.addColor(white);
+				histogram.addColor(black);
+				histogram.addColor(red);
+				histogram.addColor(yellow);
+				histogram.addColor(green);
+				procMan.CalculateColorsPercentage(img, histogram);
+				for(ColorHSV color: histogram.getColors()) {
+					System.out.println("{"+color.getName()+", "+color.getPercentage()+"}");
+				}
+			}
+		}
+		
 	}
 	
 	public void setResults(Detector det) {
