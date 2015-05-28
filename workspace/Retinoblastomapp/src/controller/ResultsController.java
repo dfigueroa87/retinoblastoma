@@ -3,11 +3,12 @@ package controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import model.detection.Detector;
+
 import org.opencv.core.Mat;
 import org.opencv.core.Rect;
 
 import utils.Utils;
-import application.Detector;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -54,13 +55,13 @@ public class ResultsController implements Initializable{
 	public void setResults(Detector det) {
 		int i = 0;
 		detection = det;
-		for (Rect eye : det.getDetectedEyes()){
-			Mat img = new Mat(det.getOriginalMat(), eye);
-			ImageView imageView = createImageView(Utils.ConvertMatToImage(img));
-			imageView.setUserData(i);
-			minPane.getChildren().add(imageView);
-			i++;
-		}
+//		for (Rect eye : det.getDetectedEyes()){
+//			Mat img = new Mat(det.getOriginalMat(), eye);
+//			ImageView imageView = createImageView(Utils.ConvertMatToImage(img));
+//			imageView.setUserData(i);
+//			minPane.getChildren().add(imageView);
+//			i++;
+//		}
 	}
 
 	@Override
