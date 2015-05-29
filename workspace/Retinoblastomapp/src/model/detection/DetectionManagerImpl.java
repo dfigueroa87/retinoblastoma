@@ -83,7 +83,7 @@ public class DetectionManagerImpl implements DetectionManager {
 			
 			for (Detection eye : eyesDetected) {
 				eye.draw(result, new Scalar(0, 0, 255));
-				Rect roi = new Rect(new Point(((RectDetection)eye).getX(), ((RectDetection)eye).getY()), new Point(((RectDetection)eye).getX() + ((RectDetection)eye).getWidth(), ((RectDetection)eye).getY() + ((RectDetection)face).getHeight()));
+				Rect roi = new Rect(new Point(((RectDetection)eye).getX(), ((RectDetection)eye).getY()), new Point(((RectDetection)eye).getX() + ((RectDetection)eye).getWidth(), ((RectDetection)eye).getY() + ((RectDetection)eye).getHeight()));
 				Mat eyeMat = new Mat(image.clone(), roi);
 				ArrayList<Detection> pupilsDetected = pupilDetector.detect(eyeMat,((RectDetection)eye).getX(),((RectDetection)eye).getY());
 				
