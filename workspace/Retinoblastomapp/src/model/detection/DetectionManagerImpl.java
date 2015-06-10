@@ -10,8 +10,8 @@ import org.opencv.core.Scalar;
 
 public class DetectionManagerImpl implements DetectionManager {
 	
-	private static String FACE_CLASSIFIER_PATH = "C:/retinoblastoma/workspace/Resources/CascadeClassifiers/FaceDetection/haarcascade_frontalface_alt.xml";
-	private static String EYE_CLASSIFIER_PATH = "C:/retinoblastoma/workspace/Resources/CascadeClassifiers/EyeDetection/haarcascade_eye.xml";
+	private static String FACE_CLASSIFIER_PATH = "D:/retinoblastoma/workspace/Resources/CascadeClassifiers/FaceDetection/haarcascade_frontalface_alt.xml";
+	private static String EYE_CLASSIFIER_PATH = "D:/retinoblastoma/workspace/Resources/CascadeClassifiers/EyeDetection/haarcascade_eye.xml";
 	
 	private Detector faceDetector;
 	private Detector eyeDetector;

@@ -25,7 +25,9 @@ import model.detection.Detection;
 import model.detection.DetectionManager;
 import model.detection.DetectionManagerImpl;
 import model.detection.Detector;
+import model.processing.ColorHSL;
 import model.processing.ColorHSV;
+import model.processing.HistogramHSL;
 import model.processing.HistogramHSV;
 import model.processing.ProcessingManager;
 import model.processing.ProcessingManagerImpl;
@@ -131,7 +133,7 @@ public class MainController implements Initializable{
 	}
 	
 	@FXML
-	public void calculateHistogram() {
+	public void calculateHistogramHSV() {
 		//In OpenCV, H = 0-180, S = 0-255, V = 0-255
 		if(detected==true) {
 			for(Detection pupil : detMan.getPupils()) {				
@@ -147,10 +149,32 @@ public class MainController implements Initializable{
 				histogram.addColor(red);
 				histogram.addColor(yellow);
 				histogram.addColor(green);
-				procMan.CalculateColorsPercentage(img, histogram);
+				procMan.CalculateColorsPercentageHSV(img, histogram);
 				for(ColorHSV color: histogram.getColors()) {
 					System.out.println("{"+color.getName()+", "+color.getPercentage()+"}");
 				}
+				System.out.println();
+			}
+		}
+		
+	}
+	
+	@FXML
+	public void calculateHistogramHSL() {
+		//In OpenCV, H = 0-180, S = 0-255, L = 0-255
+		if(detected==true) {
+			for(Detection pupil : detMan.getPupils()) {				
+				Mat img= new Mat(detectionMat, ((CircleDetection)pupil).getInternRect());
+				ColorHSL lum = new ColorHSL("luminoso", new Rank(0.0,180.0), new Rank(0.0,255.0), new Rank(204.0,255.0));
+				ColorHSL osc = new ColorHSL("oscuro", new Rank(0.0,180.0), new Rank(0.0,255.0), new Rank(0.0,204.0));
+				HistogramHSL histogram=new HistogramHSL();
+				histogram.addColor(lum);
+				histogram.addColor(osc);
+				procMan.CalculateColorsPercentageHSL(img, histogram);
+				for(ColorHSL color: histogram.getColors()) {
+					System.out.println("{"+color.getName()+", "+color.getPercentage()+"}");					
+				}
+				System.out.println();
 			}
 		}
 		
