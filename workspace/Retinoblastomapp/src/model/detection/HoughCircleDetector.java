@@ -9,8 +9,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.opencv.core.Core;
+import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.Point;
+import org.opencv.core.Size;
 import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
 
@@ -28,23 +30,26 @@ public class HoughCircleDetector extends Detector {
 	@Override
 	public ArrayList<Detection> detect(Mat image, int absolutePx,int absolutePy) {
 		ArrayList<Detection> detections = new ArrayList<Detection>();
-		Mat transformedEye = new Mat();
+		Mat circles = new Mat();
+		Mat transformedEye = new Mat(image.rows(),image.cols(),image.type());
 
 		// To gray scale
 		// Imgproc.cvtColor(image, transformedEye, Imgproc.COLOR_BGR2GRAY);	   
-		//			   
 		// Imgproc.Canny(transformedEye, transformedEye, 50, 150);
 
-		Imgproc.cvtColor(image, transformedEye, Imgproc.COLOR_BGR2HLS);
+		
+		Imgproc.GaussianBlur(image, transformedEye, new Size(0,0), 10);
+		Core.addWeighted(image, 1.5, transformedEye, -0.5, 0, transformedEye);
+		Imgproc.cvtColor(transformedEye, transformedEye, Imgproc.COLOR_BGR2GRAY);
+		Imgproc.HoughCircles(transformedEye, circles, Imgproc.CV_HOUGH_GRADIENT, 1.3,transformedEye.rows()/1, 150, 30, 0, (int)(image.width()/2));
 
-		List<Mat> hlsPlanes = new LinkedList<Mat>();
-		Core.split(transformedEye, hlsPlanes);
-		String filenameS = "saturation.png";
-		Highgui.imwrite(filenameS, hlsPlanes.get(2));
-
-		Mat circles = new Mat();
-		Imgproc.HoughCircles(hlsPlanes.get(2), circles, Imgproc.CV_HOUGH_GRADIENT, 1.3, hlsPlanes.get(2).rows()/1, 150, 30, 0, (int)(image.width()/2));
-		//pupilsPerEye.add(circles.cols());
+        /**Con la capa de saturacion de HSL:**/
+//		Imgproc.cvtColor(image, transformedEye, Imgproc.COLOR_BGR2HLS);
+//		List<Mat> hlsPlanes = new LinkedList<Mat>();
+//		Core.split(transformedEye, hlsPlanes);
+//		String filenameS = "saturation.png";
+//		Highgui.imwrite(filenameS, hlsPlanes.get(2));
+//		Imgproc.HoughCircles(hlsPlanes.get(2), circles, Imgproc.CV_HOUGH_GRADIENT, 1.3, hlsPlanes.get(2).rows()/1, 150, 30, 0, (int)(image.width()/2));
 
 		// Draw the circles detected
 		if (circles.cols() > 0)
