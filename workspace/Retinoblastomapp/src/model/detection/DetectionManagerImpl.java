@@ -1,7 +1,11 @@
 package model.detection;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.Properties;
 
 import org.opencv.core.Mat;
 import org.opencv.core.Point;
@@ -9,9 +13,6 @@ import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
 
 public class DetectionManagerImpl implements DetectionManager {
-	
-	private static String FACE_CLASSIFIER_PATH = "D:/retinoblastoma/workspace/Resources/CascadeClassifiers/FaceDetection/haarcascade_frontalface_alt.xml";
-	private static String EYE_CLASSIFIER_PATH = "D:/retinoblastoma/workspace/Resources/CascadeClassifiers/EyeDetection/haarcascade_eye.xml";
 	
 	private Detector faceDetector;
 	private Detector eyeDetector;
@@ -25,8 +26,26 @@ public class DetectionManagerImpl implements DetectionManager {
 	private ArrayList<Integer> pupilsPerEye;
 	
 	public DetectionManagerImpl() {
-		faceDetector = new CascadeClassifierDetector(FACE_CLASSIFIER_PATH);
-		eyeDetector = new CascadeClassifierDetector(EYE_CLASSIFIER_PATH);
+		// Get cascade classifier paths from config file
+		Properties prop = new Properties();
+		InputStream input = null;
+		try {
+			input = new FileInputStream("resources/config.properties");
+			prop.load(input);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (input != null) {
+				try {
+					input.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		faceDetector = new CascadeClassifierDetector(prop.getProperty("FACE_CLASSIFIER_PATH"));
+		eyeDetector = new CascadeClassifierDetector(prop.getProperty("EYE_CLASSIFIER_PATH"));
 		pupilDetector = new HoughCircleDetector();
 	}
 
