@@ -1,5 +1,7 @@
 package model.detection;
 
+import java.util.ArrayList;
+
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.Point;
@@ -7,7 +9,8 @@ import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
 
 public class RectDetection implements Detection {
-	private Rect rect;	
+	private Rect rect;
+	private ArrayList<Detection> innerDetections;
 	
 	public RectDetection() {
 		rect = new Rect();
@@ -21,7 +24,6 @@ public class RectDetection implements Detection {
 		//new Scalar(0, 255, 0)
 		Core.rectangle(im, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height), sc);
 	}
-
 	
 	public int getX() {
 		if (rect!=null)
@@ -29,7 +31,6 @@ public class RectDetection implements Detection {
 		else
 			return 0;
 	}
-
 	
 	public int getY() {
 		if (rect!=null)
@@ -37,7 +38,6 @@ public class RectDetection implements Detection {
 		else
 			return 0;
 	}
-
 	
 	public int getWidth() {
 		if (rect!=null)
@@ -45,7 +45,6 @@ public class RectDetection implements Detection {
 		else
 			return 0;
 	}
-
 	
 	public int getHeight() {
 		if (rect!=null)
@@ -56,6 +55,14 @@ public class RectDetection implements Detection {
 	
 	public void setRect(Rect rect) {
 		this.rect = rect;
-	}	
+	}
+	
+	public void setInnerDetections(ArrayList<Detection> dets) {
+		innerDetections = dets;
+	}
+	
+	public ArrayList<Detection> getInnerDetections() {
+		return innerDetections;
+	}
 
 }

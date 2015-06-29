@@ -110,6 +110,13 @@ public class MainController implements Initializable{
 		
 		detectionMat = detMan.detect(Highgui.imread(currentImagePath));
 		imageView.setImage(utils.Utils.ConvertMatToImage(detectionMat));
+		
+		// TODO: Attach results to image.
+		
+		for (Detection face : detMan.getFaces()) {
+			// TODO: Set clickable section in image. 
+		}
+		
 		//setResults(currentDetection);
 //		try{
 //			Stage stage = new Stage();
@@ -130,6 +137,11 @@ public class MainController implements Initializable{
 //			e.printStackTrace();
 //		}
 		detected=true;
+	}
+	
+	@FXML
+	public void selectFace() {
+		// TODO
 	}
 	
 	@FXML

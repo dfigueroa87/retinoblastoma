@@ -22,8 +22,8 @@ public class DetectionManagerImpl implements DetectionManager {
 	private ArrayList<Detection> eyes;
 	private ArrayList<Detection> pupils;
 	
-	private ArrayList<Integer> eyesPerFace;
-	private ArrayList<Integer> pupilsPerEye;
+//	private ArrayList<Integer> eyesPerFace;
+//	private ArrayList<Integer> pupilsPerEye;
 	
 	public DetectionManagerImpl() {
 		// Get cascade classifier paths from config file
@@ -77,13 +77,13 @@ public class DetectionManagerImpl implements DetectionManager {
 		Mat result = image.clone();
 		faces = faceDetector.detect(image,0,0);
 		
-		eyes = new ArrayList<Detection>();
-		eyesPerFace = new ArrayList<Integer>();
-		pupils = new ArrayList<Detection>();
-		pupilsPerEye = new ArrayList<Integer>();
-		
-		int faceIndex = 0;
-		int eyeIndex = 0;
+//		eyes = new ArrayList<Detection>();
+//		eyesPerFace = new ArrayList<Integer>();
+//		pupils = new ArrayList<Detection>();
+//		pupilsPerEye = new ArrayList<Integer>();
+//		
+//		int faceIndex = 0;
+//		int eyeIndex = 0;
 		for (Detection face : faces) {
 			// Draw detection
 			face.draw(result, new Scalar(0, 255, 0));
@@ -93,23 +93,25 @@ public class DetectionManagerImpl implements DetectionManager {
 			Mat topOfFace = new Mat(image, boundedRect);
 			
 			ArrayList<Detection> eyesDetected = eyeDetector.detect(topOfFace,((RectDetection)face).getX(),((RectDetection)face).getY());
+			((RectDetection) face).setInnerDetections(eyesDetected);
 			
 			// Save the number of eyes detected per each face
-			eyesPerFace.add(faceIndex, eyesDetected.size());
-			faceIndex++;
+//			eyesPerFace.add(faceIndex, eyesDetected.size());
+//			faceIndex++;
+//			
+//			eyes.addAll(eyesDetected);
 			
-			eyes.addAll(eyesDetected);
-			
-			for (Detection eye : eyesDetected) {
+			for (Detection eye : ((RectDetection) face).getInnerDetections()) {
 				eye.draw(result, new Scalar(0, 0, 255));
 				Rect roi = new Rect(new Point(((RectDetection)eye).getX(), ((RectDetection)eye).getY()), new Point(((RectDetection)eye).getX() + ((RectDetection)eye).getWidth(), ((RectDetection)eye).getY() + ((RectDetection)eye).getHeight()));
 				Mat eyeMat = new Mat(image.clone(), roi);
 				ArrayList<Detection> pupilsDetected = pupilDetector.detect(eyeMat,((RectDetection)eye).getX(),((RectDetection)eye).getY());
+				((RectDetection) eye).setInnerDetections(pupilsDetected);
 				
-				pupilsPerEye.add(eyeIndex, pupilsDetected.size());
-				eyeIndex++;
-				
-				pupils.addAll(pupilsDetected);
+//				pupilsPerEye.add(eyeIndex, pupilsDetected.size());
+//				eyeIndex++;
+//				
+//				pupils.addAll(pupilsDetected);
 				
 				for (Detection pupil : pupilsDetected) {
 					pupil.draw(result, new Scalar(255, 0, 0));
