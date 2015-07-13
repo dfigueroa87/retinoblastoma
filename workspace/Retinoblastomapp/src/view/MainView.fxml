@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.MainController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
   <children>
     <MenuBar maxHeight="-Infinity" minHeight="-Infinity">
       <menus>
@@ -49,22 +49,31 @@
             <TilePane fx:id="imageContainer" onMouseClicked="#clickImage" prefColumns="1" prefHeight="736.0" prefWidth="164.0" tileAlignment="TOP_LEFT" />
           </content>
         </ScrollPane>
-        <SplitPane fx:id="principalPane" dividerPositions="0.6213333333333333" prefHeight="737.0" prefWidth="1127.0">
+        <SplitPane fx:id="principalPane" dividerPositions="0.38065661047027505" prefHeight="737.0" prefWidth="1127.0">
           <items>
             <HBox alignment="CENTER" prefHeight="737.0" prefWidth="1110.0">
               <children>
                 <ImageView fx:id="imageView" fitHeight="509.0" fitWidth="410.0" pickOnBounds="true" preserveRatio="true" />
               </children>
             </HBox>
-            <SplitPane dividerPositions="0.3133514986376022" orientation="VERTICAL" prefHeight="737.0" prefWidth="310.0">
+            <SplitPane dividerPositions="0.5508819538670285" orientation="VERTICAL" prefHeight="737.0" prefWidth="310.0">
               <items>
                 <SplitPane dividerPositions="0.5059665871121718" prefHeight="160.0" prefWidth="200.0">
                   <items>
-                    <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="228.0" prefWidth="212.0" vbarPolicy="NEVER">
-                      <content>
-                        <TilePane fx:id="resultsMinPane" onMouseClicked="#clickedResultImage" prefColumns="2" prefHeight="226.0" prefWidth="212.0" tileAlignment="TOP_LEFT" />
-                      </content>
-                    </ScrollPane>
+                              <SplitPane dividerPositions="0.5" orientation="VERTICAL">
+                                 <items>
+                          <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="228.0" prefWidth="212.0" vbarPolicy="NEVER">
+                            <content>
+                              <TilePane fx:id="facesMinPane" onMouseClicked="#clickFaceImage" prefColumns="2" prefHeight="226.0" prefWidth="212.0" tileAlignment="TOP_LEFT" />
+                            </content>
+                          </ScrollPane>
+                                    <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="10.0" layoutY="10.0" prefHeight="228.0" prefWidth="212.0" vbarPolicy="NEVER">
+                                       <content>
+                                          <TilePane fx:id="eyesMinPane" onMouseClicked="#clickEyeImage" prefColumns="2" prefHeight="226.0" prefWidth="212.0" tileAlignment="TOP_LEFT" />
+                                       </content>
+                                    </ScrollPane>
+                                 </items>
+                              </SplitPane>
                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                       <children>
                         <ImageView fx:id="resultImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
@@ -115,13 +124,13 @@
                     </HBox>
                     <Pane prefHeight="200.0" prefWidth="200.0">
                       <children>
-                        <TableView fx:id="tableColorsPercentage" prefHeight="77.0" prefWidth="377.0">
+                        <TableView fx:id="tableColorsPercentage" layoutY="87.0" prefHeight="77.0" prefWidth="377.0">
                           <columns>
-                            <TableColumn editable="false" id="colBlanco" prefWidth="75.0" text="Blanco" fx:id="tableColumnWhite" />
-                            <TableColumn editable="false" id="colNegro" prefWidth="75.0" text="Negro" />
-                            <TableColumn editable="false" id="ColRojo" prefWidth="75.0" text="Rojo" />
-                            <TableColumn editable="false" id="ColAmarillo" prefWidth="75.0" text="Amarillo" />
-                            <TableColumn editable="false" id="ColVerde" prefWidth="75.0" text="Verde" />
+                            <TableColumn id="colBlanco" fx:id="tableColumnWhite" editable="false" prefWidth="75.0" text="Blanco" />
+                            <TableColumn id="colNegro" editable="false" prefWidth="75.0" text="Negro" />
+                            <TableColumn id="ColRojo" editable="false" prefWidth="75.0" text="Rojo" />
+                            <TableColumn id="ColAmarillo" editable="false" prefWidth="75.0" text="Amarillo" />
+                            <TableColumn id="ColVerde" editable="false" prefWidth="75.0" text="Verde" />
                           </columns>
                         </TableView>
                       </children>

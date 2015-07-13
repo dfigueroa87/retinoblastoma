@@ -2,6 +2,7 @@ package controller;
 
 import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -25,6 +26,7 @@ import model.detection.Detection;
 import model.detection.DetectionManager;
 import model.detection.DetectionManagerImpl;
 import model.detection.Detector;
+import model.detection.RectDetection;
 import model.processing.ColorHSL;
 import model.processing.ColorHSV;
 import model.processing.HistogramHSL;
@@ -34,7 +36,10 @@ import model.processing.ProcessingManagerImpl;
 import model.processing.Rank;
 
 import org.opencv.core.Mat;
+import org.opencv.core.Rect;
 import org.opencv.highgui.Highgui;
+
+import utils.Utils;
 
 public class MainController implements Initializable{
 	
@@ -47,9 +52,10 @@ public class MainController implements Initializable{
 	
 	private DetectionManager detMan = new DetectionManagerImpl();
 	private ProcessingManager procMan = new ProcessingManagerImpl();
-	private String currentImagePath;
 	private Mat detectionMat;
 	private boolean detected=false;
+	
+	private ImageView selectedMinView;
 	
 	@FXML
 	Parent root;
@@ -57,7 +63,9 @@ public class MainController implements Initializable{
 	@FXML
 	TilePane imageContainer;
 	@FXML
-	TilePane resultsMinPane;
+	TilePane facesMinPane;
+	@FXML
+	TilePane eyesMinPane;
 
 	@FXML
 	ImageView imageView;
@@ -94,7 +102,7 @@ public class MainController implements Initializable{
 			//Detector det = new Detector(file.getAbsolutePath());
 			//this.detections.add(det);
 			ImageView imageView = createImageView(file.getAbsolutePath());
-			imageView.setUserData(file.getAbsolutePath());
+			imageView.getProperties().put("path", file.getAbsolutePath());
 			imageContainer.getChildren().add(imageView);
 		}  
 		
@@ -106,18 +114,16 @@ public class MainController implements Initializable{
 	
 	@FXML
 	public void Detect() {
-		resultsMinPane.getChildren().clear();
+		facesMinPane.getChildren().clear();
 		
-		detectionMat = detMan.detect(Highgui.imread(currentImagePath));
-		imageView.setImage(utils.Utils.ConvertMatToImage(detectionMat));
+		detectionMat = detMan.detect(Highgui.imread((String) imageView.getProperties().get("path")));
+		imageView.setImage(Utils.ConvertMatToImage(detectionMat));
+		selectedMinView.setImage(Utils.ConvertMatToImage(detectionMat));
+		imageView.getProperties().put("detection", detMan.getFaces());
+		selectedMinView.getProperties().put("detection", detMan.getFaces());
 		
-		// TODO: Attach results to image.
+		setFaceResults(detMan.getFaces());
 		
-		for (Detection face : detMan.getFaces()) {
-			// TODO: Set clickable section in image. 
-		}
-		
-		//setResults(currentDetection);
 //		try{
 //			Stage stage = new Stage();
 //			
@@ -192,6 +198,18 @@ public class MainController implements Initializable{
 		
 	}
 	
+	public void setFaceResults(ArrayList<Detection> faces) {
+		for (Detection face : faces) {
+			RectDetection rectDet = (RectDetection) face;
+			Mat img = new Mat(Highgui.imread((String) imageView.getProperties().get("path")), new Rect(rectDet.getX(), rectDet.getY(), rectDet.getWidth(), rectDet.getHeight()));
+			ImageView imageView = new ImageView(Utils.ConvertMatToImage(img));
+			imageView.setFitWidth(100);
+		    imageView.setPreserveRatio(true);  
+		    imageView.setSmooth(true);  
+			facesMinPane.getChildren().add(imageView);
+		}
+	}
+	
 	public void setResults(Detector det) {
 //		int i = 0;
 //		for (Rect pupil : det.getDetectedPupils()){
@@ -208,7 +226,26 @@ public class MainController implements Initializable{
 	}
 	
 	@FXML
-	public void clickedResultImage(Event e){
+	public void clickFaceImage(Event e) {
+		// TODO: Make it show eyes in face & big face image in resultImageView
+		// Double click -> Display big image
+		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)){
+            if(((MouseEvent)e).getClickCount() == 2){
+            	resultImageView.setImage(((ImageView) e.getTarget()).getImage());
+//            	Integer i = (Integer) ((ImageView) e.getTarget()).getUserData();            	
+            	//System.out.println(currentDetection.getPupilColorsPercentage(i));
+//            	histogramView.setImage(currentDetection.getHistogram(i)); voy a ver que devuelvo
+            	
+            	
+            }
+        }
+		
+		
+	}
+	
+	@FXML
+	public void clickEyeImage(Event e) {
+		// TODO: Make it show eye in resultImageView
 		// Double click -> Display big image
 		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)){
             if(((MouseEvent)e).getClickCount() == 2){
@@ -240,8 +277,9 @@ public class MainController implements Initializable{
 		// Double click -> Display big image
 		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)){
             if(((MouseEvent)e).getClickCount() == 2){
-            	imageView.setImage(((ImageView) e.getTarget()).getImage());
-            	currentImagePath = (String) ((ImageView) e.getTarget()).getUserData();
+            	selectedMinView = (ImageView) e.getTarget();
+            	imageView.setImage(selectedMinView.getImage());
+            	imageView.getProperties().putAll(selectedMinView.getProperties());
             }
         }
 	}
