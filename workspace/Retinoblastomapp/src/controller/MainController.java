@@ -203,6 +203,7 @@ public class MainController implements Initializable{
 			RectDetection rectDet = (RectDetection) face;
 			Mat img = new Mat(Highgui.imread((String) imageView.getProperties().get("path")), new Rect(rectDet.getX(), rectDet.getY(), rectDet.getWidth(), rectDet.getHeight()));
 			ImageView imageView = new ImageView(Utils.ConvertMatToImage(img));
+			imageView.getProperties().put("detection", rectDet);
 			imageView.setFitWidth(100);
 		    imageView.setPreserveRatio(true);  
 		    imageView.setSmooth(true);  
@@ -227,16 +228,20 @@ public class MainController implements Initializable{
 	
 	@FXML
 	public void clickFaceImage(Event e) {
-		// TODO: Make it show eyes in face & big face image in resultImageView
-		// Double click -> Display big image
+
 		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)){
-            if(((MouseEvent)e).getClickCount() == 2){
-            	resultImageView.setImage(((ImageView) e.getTarget()).getImage());
-//            	Integer i = (Integer) ((ImageView) e.getTarget()).getUserData();            	
-            	//System.out.println(currentDetection.getPupilColorsPercentage(i));
-//            	histogramView.setImage(currentDetection.getHistogram(i)); voy a ver que devuelvo
-            	
-            	
+			eyesMinPane.getChildren().clear();
+            resultImageView.setImage(((ImageView) e.getTarget()).getImage());
+            RectDetection face = (RectDetection) ((ImageView) e.getTarget()).getProperties().get("detection");
+            for (Detection eye : face.getInnerDetections()) {
+            	RectDetection rectDet = (RectDetection) eye;
+    			Mat img = new Mat(Highgui.imread((String) imageView.getProperties().get("path")), new Rect(rectDet.getX(), rectDet.getY(), rectDet.getWidth(), rectDet.getHeight()));
+    			ImageView imageView = new ImageView(Utils.ConvertMatToImage(img));
+    			imageView.getProperties().put("detection", rectDet);
+    			imageView.setFitWidth(100);
+    		    imageView.setPreserveRatio(true);  
+    		    imageView.setSmooth(true);  
+    			eyesMinPane.getChildren().add(imageView);
             }
         }
 		
@@ -245,17 +250,12 @@ public class MainController implements Initializable{
 	
 	@FXML
 	public void clickEyeImage(Event e) {
-		// TODO: Make it show eye in resultImageView
-		// Double click -> Display big image
 		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)){
-            if(((MouseEvent)e).getClickCount() == 2){
-            	resultImageView.setImage(((ImageView) e.getTarget()).getImage());
-//            	Integer i = (Integer) ((ImageView) e.getTarget()).getUserData();            	
-            	//System.out.println(currentDetection.getPupilColorsPercentage(i));
-//            	histogramView.setImage(currentDetection.getHistogram(i)); voy a ver que devuelvo
+            resultImageView.setImage(((ImageView) e.getTarget()).getImage());
+//          Integer i = (Integer) ((ImageView) e.getTarget()).getUserData();            	
+            //System.out.println(currentDetection.getPupilColorsPercentage(i));
+//          histogramView.setImage(currentDetection.getHistogram(i)); voy a ver que devuelvo
             	
-            	
-            }
         }
 		
 		
@@ -276,11 +276,11 @@ public class MainController implements Initializable{
 	public void clickImage(Event e){
 		// Double click -> Display big image
 		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)){
-            if(((MouseEvent)e).getClickCount() == 2){
-            	selectedMinView = (ImageView) e.getTarget();
-            	imageView.setImage(selectedMinView.getImage());
-            	imageView.getProperties().putAll(selectedMinView.getProperties());
-            }
+			facesMinPane.getChildren().clear();
+			eyesMinPane.getChildren().clear();
+            selectedMinView = (ImageView) e.getTarget();
+            imageView.setImage(selectedMinView.getImage());
+            imageView.getProperties().putAll(selectedMinView.getProperties());
         }
 	}
 	
