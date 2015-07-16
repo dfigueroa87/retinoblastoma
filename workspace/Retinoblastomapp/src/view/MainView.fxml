@@ -53,7 +53,12 @@
           <items>
             <HBox alignment="CENTER" prefHeight="737.0" prefWidth="1110.0">
               <children>
-                <ImageView fx:id="imageView" fitHeight="509.0" fitWidth="410.0" pickOnBounds="true" preserveRatio="true" />
+                        <Pane>
+                           <children>
+                      <ImageView fx:id="imageView" fitHeight="509.0" fitWidth="410.0" pickOnBounds="true" preserveRatio="true" />
+                              <ToggleButton fx:id="mainToggleBtn" layoutX="121.0" layoutY="543.0" mnemonicParsing="false" onAction="#toggleMainDet" text="Mostrar/Ocultar Detecciones" />
+                           </children>
+                        </Pane>
               </children>
             </HBox>
             <SplitPane dividerPositions="0.5508819538670285" orientation="VERTICAL" prefHeight="737.0" prefWidth="310.0">
