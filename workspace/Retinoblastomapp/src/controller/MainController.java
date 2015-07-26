@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import javafx.beans.value.ObservableValue;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,13 +15,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.TilePane;
-import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import model.detection.CircleDetection;
@@ -88,7 +85,7 @@ public class MainController implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		
+		mainToggleBtn.setDisable(true);
 	}
 	
 	@FXML
@@ -107,15 +104,6 @@ public class MainController implements Initializable{
 			ImageView imageView = createImageView(file.getAbsolutePath());
 			imageView.getProperties().put("path", file.getAbsolutePath());
 			imageContainer.getChildren().add(imageView);
-			//Add listener to mark the selected image
-			DropShadow ds = new DropShadow(20, Color.BLUE);
-			imageView.focusedProperty().addListener(( ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue ) -> {
-		        if (newValue) {
-		        	imageView.setEffect( ds );
-		        } else {
-		        	imageView.setEffect( null );
-		        }
-		    });
 		}  
 		
 		//Save the path for the next file chooser dialog
@@ -135,7 +123,6 @@ public class MainController implements Initializable{
 			clearResults();
 			
 			selectedMinView = (ImageView) e.getTarget();
-			selectedMinView.requestFocus();
 
 			//Clear properties data from global imageView
 			imageView.getProperties().clear();
@@ -148,6 +135,8 @@ public class MainController implements Initializable{
 			ArrayList<Detection> faces = (ArrayList<Detection>) imageView.getProperties().get("detection");
             if (faces != null) {
             	setFaceResults(faces);
+            	mainToggleBtn.setDisable(false);
+            	toggleMainDet(null);
             }
         }
 	}
@@ -160,10 +149,13 @@ public class MainController implements Initializable{
 		detectionMat = detMan.detect(Highgui.imread((String) imageView.getProperties().get("path")));
 		//Save images as properties
 		imageView.getProperties().put("original", imageView.getImage());
+		selectedMinView.getProperties().put("original", imageView.getImage());
 		imageView.getProperties().put("detectionImage", Utils.ConvertMatToImage(detectionMat));
+		selectedMinView.getProperties().put("detectionImage", Utils.ConvertMatToImage(detectionMat));
+		imageView.getProperties().put("detectionMat", detectionMat);
+		selectedMinView.getProperties().put("detectionMat", detectionMat);
 		//Set image with detections
 		imageView.setImage(Utils.ConvertMatToImage(detectionMat));
-		selectedMinView.setImage(Utils.ConvertMatToImage(detectionMat));
 		mainToggleBtn.setSelected(true);
 		//Save detection as property
 		imageView.getProperties().put("detection", detMan.getFaces());
@@ -172,6 +164,7 @@ public class MainController implements Initializable{
 		setFaceResults(detMan.getFaces());
 		
 		detected = true;
+		mainToggleBtn.setDisable(false);
 	}
 	
 	public void setFaceResults(ArrayList<Detection> faces) {
@@ -196,6 +189,7 @@ public class MainController implements Initializable{
 		facesMinPane.getChildren().clear();
 		eyesMinPane.getChildren().clear();
 		resultImageView.setImage(null);
+		mainToggleBtn.setDisable(true);
 	}
 	
 	public void drawDetections(Detector det) {
@@ -204,31 +198,49 @@ public class MainController implements Initializable{
 	
 	@FXML
 	public void clickFaceImage(Event e) {
-		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)){
+		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)) {
 			eyesMinPane.getChildren().clear();
-            resultImageView.setImage(((ImageView) e.getTarget()).getImage());
+			
+			resultImageView.getProperties().clear();
+			
+			resultImageView.setImage(((ImageView) e.getTarget()).getImage());
+			resultImageView.getProperties().putAll(((ImageView) e.getTarget()).getProperties());
+            
             RectDetection face = (RectDetection) ((ImageView) e.getTarget()).getProperties().get("detection");
             displayResults(face.getInnerDetections(), eyesMinPane);
+            
+            toggleMainDet(null);
         }
 	}
 	
 	public void displayResults(ArrayList<Detection> dets, TilePane pane) {
 		for (Detection det : dets) {
         	RectDetection rectDet = (RectDetection) det;
-			Mat img = new Mat(Highgui.imread((String) imageView.getProperties().get("path")), new Rect(rectDet.getX(), rectDet.getY(), rectDet.getWidth(), rectDet.getHeight()));
-			ImageView imageView = new ImageView(Utils.ConvertMatToImage(img));
+			Mat imgMat = new Mat(Highgui.imread((String) imageView.getProperties().get("path")), new Rect(rectDet.getX(), rectDet.getY(), rectDet.getWidth(), rectDet.getHeight()));
+			Image img = Utils.ConvertMatToImage(imgMat);
+			Mat detectionMat = new Mat((Mat) imageView.getProperties().get("detectionMat"), new Rect(rectDet.getX(), rectDet.getY(), rectDet.getWidth(), rectDet.getHeight()));
+			Image detectionImg = Utils.ConvertMatToImage(detectionMat);
+			ImageView imageView = new ImageView(img);
+			imageView.getProperties().put("original", img);
+			imageView.getProperties().put("detectionImage", detectionImg);
 			imageView.getProperties().put("detection", rectDet);
 			imageView.setFitWidth(100);
-		    imageView.setPreserveRatio(true);  
-		    imageView.setSmooth(true);  
+		    imageView.setPreserveRatio(true);
+		    imageView.setSmooth(true);
 		    pane.getChildren().add(imageView);
         }
 	}
 	
 	@FXML
 	public void clickEyeImage(Event e) {
-		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)){
-            resultImageView.setImage(((ImageView) e.getTarget()).getImage());
+		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)) {
+			resultImageView.getProperties().clear();
+			
+			resultImageView.setImage(((ImageView) e.getTarget()).getImage());
+			resultImageView.getProperties().putAll(((ImageView) e.getTarget()).getProperties());
+			
+			toggleMainDet(null);
+            
 //          Integer i = (Integer) ((ImageView) e.getTarget()).getUserData();            	
             //System.out.println(currentDetection.getPupilColorsPercentage(i));
 //          histogramView.setImage(currentDetection.getHistogram(i)); voy a ver que devuelvo
@@ -250,8 +262,10 @@ public class MainController implements Initializable{
 	public void toggleMainDet(Event e) {
 		if (mainToggleBtn.isSelected()) {
 			imageView.setImage((Image) imageView.getProperties().get("detectionImage"));
+			resultImageView.setImage((Image) resultImageView.getProperties().get("detectionImage"));
 		} else {
 			imageView.setImage((Image) imageView.getProperties().get("original"));
+			resultImageView.setImage((Image) resultImageView.getProperties().get("original"));
 		}
 	}
 	
