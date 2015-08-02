@@ -88,9 +88,9 @@
                 </SplitPane>
                 <VBox prefHeight="408.0" prefWidth="322.0">
                   <children>
-                    <HBox prefHeight="159.0" prefWidth="424.0">
+                    <HBox prefHeight="182.0" prefWidth="695.0">
                       <children>
-                        <Pane prefHeight="159.0" prefWidth="214.0">
+                        <Pane prefHeight="167.0" prefWidth="214.0">
                           <children>
                             <ToggleButton fx:id="buttonBlanco" layoutX="8.0" layoutY="13.0" mnemonicParsing="false" text="Blanco" />
                             <ToggleButton fx:id="buttonNegro" layoutX="9.0" layoutY="55.0" mnemonicParsing="false" text="Negro" />
@@ -109,7 +109,7 @@
                             <TextField fx:id="labelMaxRojo" layoutX="164.0" layoutY="97.0" prefHeight="25.0" prefWidth="43.0" />
                           </children>
                         </Pane>
-                        <Pane prefHeight="159.0" prefWidth="201.0">
+                        <Pane prefHeight="171.0" prefWidth="201.0">
                           <children>
                             <ToggleButton fx:id="buttonVerde" layoutX="14.0" layoutY="55.0" mnemonicParsing="false" text="Verde" />
                             <ToggleButton fx:id="buttonAzul" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="47.0" text="Azul" />
@@ -121,26 +121,22 @@
                             <TextField fx:id="labelMinVerde" layoutX="93.0" layoutY="55.0" prefHeight="25.0" prefWidth="43.0" />
                             <Label layoutX="139.0" layoutY="59.0" text="Max" />
                             <TextField fx:id="labelMaxVerde" layoutX="166.0" layoutY="53.0" prefHeight="25.0" prefWidth="43.0" />
-                            <Button fx:id="buttonRecalcular" layoutX="66.0" layoutY="95.0" mnemonicParsing="false" onAction="#calculateHistogramHSV" prefWidth="106.0" text="Histograma HSV" />
-                            <Button fx:id="buttonHistHSL" layoutX="66.0" layoutY="124.0" mnemonicParsing="false" onAction="#calculateHistogramHSL" prefWidth="106.0" text="Histograma HSL" />
                           </children>
                         </Pane>
+                                    <Pane prefHeight="170.0" prefWidth="204.0">
+                                       <children>
+                            <Button fx:id="buttonRecalcular" layoutX="47.0" layoutY="39.0" mnemonicParsing="false" onAction="#calculateHistogramHSV" prefWidth="106.0" text="Histograma HSV" />
+                            <Button fx:id="buttonHistHSL" layoutX="47.0" layoutY="85.0" mnemonicParsing="false" onAction="#calculateHistogramHSL" prefWidth="106.0" text="Histograma HSL" />
+                                       </children>
+                                    </Pane>
                       </children>
                     </HBox>
-                    <Pane prefHeight="200.0" prefWidth="200.0">
+                    <Pane prefHeight="159.0" prefWidth="695.0">
                       <children>
-                        <TableView fx:id="tableColorsPercentage" layoutY="87.0" prefHeight="77.0" prefWidth="377.0">
-                          <columns>
-                            <TableColumn id="colBlanco" fx:id="tableColumnWhite" editable="false" prefWidth="75.0" text="Blanco" />
-                            <TableColumn id="colNegro" editable="false" prefWidth="75.0" text="Negro" />
-                            <TableColumn id="ColRojo" editable="false" prefWidth="75.0" text="Rojo" />
-                            <TableColumn id="ColAmarillo" editable="false" prefWidth="75.0" text="Amarillo" />
-                            <TableColumn id="ColVerde" editable="false" prefWidth="75.0" text="Verde" />
-                          </columns>
-                        </TableView>
+                                    <PieChart fx:id="pieChart" legendVisible="false" prefHeight="150.0" prefWidth="340.0" />
+                          <ImageView fx:id="histogramView" fitHeight="138.0" fitWidth="200.0" layoutX="439.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
                       </children>
                     </Pane>
-                    <ImageView fx:id="histogramView" fitHeight="138.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                   </children>
                 </VBox>
               </items>

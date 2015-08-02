@@ -7,10 +7,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -26,7 +29,6 @@ import model.detection.CircleDetection;
 import model.detection.Detection;
 import model.detection.DetectionManager;
 import model.detection.DetectionManagerImpl;
-import model.detection.Detector;
 import model.detection.RectDetection;
 import model.processing.ColorHSL;
 import model.processing.ColorHSV;
@@ -54,7 +56,6 @@ public class MainController implements Initializable{
 	private DetectionManager detMan = new DetectionManagerImpl();
 	private ProcessingManager procMan = new ProcessingManagerImpl();
 	private Mat detectionMat;
-	private boolean detected = false;
 	
 	private ImageView selectedMinView;
 	
@@ -81,11 +82,16 @@ public class MainController implements Initializable{
 	
 	@FXML
 	ToggleButton mainToggleBtn;
+	
+	@FXML
+	PieChart pieChart;
+	
+	private ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
 		mainToggleBtn.setDisable(true);
+		pieChart.setData(pieChartData);
 	}
 	
 	@FXML
@@ -162,8 +168,7 @@ public class MainController implements Initializable{
 		selectedMinView.getProperties().put("detection", detMan.getFaces());
 		
 		setFaceResults(detMan.getFaces());
-		
-		detected = true;
+
 		mainToggleBtn.setDisable(false);
 	}
 	
@@ -174,26 +179,13 @@ public class MainController implements Initializable{
 		}
 	}
 	
-	public void setResults(Detector det) {
-//		int i = 0;
-//		for (Rect pupil : det.getDetectedPupils()){
-//			Mat img = new Mat(det.getOriginalMat(), pupil);
-//			ImageView imageView = createImageView(Utils.ConvertMatToImage(img));
-//			imageView.setUserData(i);
-//			resultsMinPane.getChildren().add(imageView);
-//			i++;
-//		}
-	}
-	
 	public void clearResults() {
 		facesMinPane.getChildren().clear();
 		eyesMinPane.getChildren().clear();
 		resultImageView.setImage(null);
+		resultImageView.getProperties().clear();
 		mainToggleBtn.setDisable(true);
-	}
-	
-	public void drawDetections(Detector det) {
-		
+		pieChartData.clear();
 	}
 	
 	@FXML
@@ -240,10 +232,6 @@ public class MainController implements Initializable{
 			resultImageView.getProperties().putAll(((ImageView) e.getTarget()).getProperties());
 			
 			toggleMainDet(null);
-            
-//          Integer i = (Integer) ((ImageView) e.getTarget()).getUserData();            	
-            //System.out.println(currentDetection.getPupilColorsPercentage(i));
-//          histogramView.setImage(currentDetection.getHistogram(i)); voy a ver que devuelvo
         }
 	}
 	
@@ -272,24 +260,29 @@ public class MainController implements Initializable{
 	@FXML
 	public void calculateHistogramHSV() {
 		//In OpenCV, H = 0-180, S = 0-255, V = 0-255
-		if(detected==true) {
-			for(Detection pupil : detMan.getPupils()) {				
-				Mat img= new Mat(detectionMat, ((CircleDetection)pupil).getInternRect());
+		if(resultImageView.getImage() != null) {
+			for(Detection pupil : ((RectDetection)resultImageView.getProperties().get("detection")).getInnerDetections()) {
+				Mat originalMat = Highgui.imread((String) imageView.getProperties().get("path"));
+				Mat img= new Mat(originalMat, ((CircleDetection)pupil).getInternRect());
 				ColorHSV white = new ColorHSV("blanco", new Rank(0.0,180.0), new Rank(0.0,56.0), new Rank(229.5,255.0));
 				ColorHSV black = new ColorHSV("negro", new Rank(0.0,180.0), new Rank(0.0,255.0), new Rank(0.0,64.0));
 				ColorHSV red = new ColorHSV("rojo", new Rank(166.5,10.0), new Rank(127.0,255.0), new Rank(64.0,229.5));
 				ColorHSV yellow = new ColorHSV("amarillo", new Rank(19.0,31.0), new Rank(127.0,255.0), new Rank(64.0,229.5));
 				ColorHSV green = new ColorHSV("verde", new Rank(31.0,68.0), new Rank(127.0,255.0), new Rank(64.0,229.5));
-				HistogramHSV histogram=new HistogramHSV();
+				HistogramHSV histogram = new HistogramHSV();
 				histogram.addColor(white);
 				histogram.addColor(black);
 				histogram.addColor(red);
 				histogram.addColor(yellow);
 				histogram.addColor(green);
 				procMan.CalculateColorsPercentageHSV(img, histogram);
+				pieChartData.clear();
 				for(ColorHSV color: histogram.getColors()) {
+					pieChartData.add(new PieChart.Data(color.getName(), color.getPercentage()*100));
 					System.out.println("{"+color.getName()+", "+color.getPercentage()+"}");
 				}
+				
+				
 				System.out.println();
 			}
 		}
@@ -299,16 +292,19 @@ public class MainController implements Initializable{
 	@FXML
 	public void calculateHistogramHSL() {
 		//In OpenCV, H = 0-180, S = 0-255, L = 0-255
-		if(detected==true) {
-			for(Detection pupil : detMan.getPupils()) {				
-				Mat img= new Mat(detectionMat, ((CircleDetection)pupil).getInternRect());
+		if(resultImageView.getImage() != null) {
+			for(Detection pupil : ((RectDetection)resultImageView.getProperties().get("detection")).getInnerDetections()) {
+				Mat originalMat = Highgui.imread((String) imageView.getProperties().get("path"));
+				Mat img= new Mat(originalMat, ((CircleDetection)pupil).getInternRect());
 				ColorHSL lum = new ColorHSL("luminoso", new Rank(0.0,180.0), new Rank(0.0,255.0), new Rank(204.0,255.0));
 				ColorHSL osc = new ColorHSL("oscuro", new Rank(0.0,180.0), new Rank(0.0,255.0), new Rank(0.0,204.0));
-				HistogramHSL histogram=new HistogramHSL();
+				HistogramHSL histogram = new HistogramHSL();
 				histogram.addColor(lum);
 				histogram.addColor(osc);
 				procMan.CalculateColorsPercentageHSL(img, histogram);
+				pieChartData.clear();
 				for(ColorHSL color: histogram.getColors()) {
+					pieChartData.add(new PieChart.Data(color.getName(), color.getPercentage()*100));
 					System.out.println("{"+color.getName()+", "+color.getPercentage()+"}");					
 				}
 				System.out.println();
