@@ -2,17 +2,22 @@ package controller;
 
 import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
@@ -24,7 +29,7 @@ import model.detection.CircleDetection;
 import model.detection.Detection;
 import model.detection.DetectionManager;
 import model.detection.DetectionManagerImpl;
-import model.detection.Detector;
+import model.detection.RectDetection;
 import model.processing.ColorHSL;
 import model.processing.ColorHSV;
 import model.processing.HistogramHSL;
@@ -34,7 +39,10 @@ import model.processing.ProcessingManagerImpl;
 import model.processing.Rank;
 
 import org.opencv.core.Mat;
+import org.opencv.core.Rect;
 import org.opencv.highgui.Highgui;
+
+import utils.Utils;
 
 public class MainController implements Initializable{
 	
@@ -47,9 +55,9 @@ public class MainController implements Initializable{
 	
 	private DetectionManager detMan = new DetectionManagerImpl();
 	private ProcessingManager procMan = new ProcessingManagerImpl();
-	private String currentImagePath;
 	private Mat detectionMat;
-	private boolean detected=false;
+	
+	private ImageView selectedMinView;
 	
 	@FXML
 	Parent root;
@@ -57,7 +65,9 @@ public class MainController implements Initializable{
 	@FXML
 	TilePane imageContainer;
 	@FXML
-	TilePane resultsMinPane;
+	TilePane facesMinPane;
+	@FXML
+	TilePane eyesMinPane;
 
 	@FXML
 	ImageView imageView;
@@ -70,12 +80,18 @@ public class MainController implements Initializable{
 	@FXML
 	TableColumn<Double, Double> tableColumnWhite;
 	
-	//private ArrayList<Detector> detections = new ArrayList<Detector>();
+	@FXML
+	ToggleButton mainToggleBtn;
+	
+	@FXML
+	PieChart pieChart;
+	
+	private ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-		
+		mainToggleBtn.setDisable(true);
+		pieChart.setData(pieChartData);
 	}
 	
 	@FXML
@@ -91,125 +107,132 @@ public class MainController implements Initializable{
 		         );
 		List<File> files = fileChooser.showOpenMultipleDialog(null);
 		for (File file : files) {
-			//Detector det = new Detector(file.getAbsolutePath());
-			//this.detections.add(det);
 			ImageView imageView = createImageView(file.getAbsolutePath());
-			imageView.setUserData(file.getAbsolutePath());
+			imageView.getProperties().put("path", file.getAbsolutePath());
 			imageContainer.getChildren().add(imageView);
 		}  
 		
+		//Save the path for the next file chooser dialog
 		if (!files.isEmpty()) {
 			path = files.get(0).getAbsolutePath();
 		}
+	}
+	
+	@FXML
+	/**
+	 * Open image when its min view is clicked
+	 * @param e
+	 */
+	public void clickImage(Event e){
+		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)) {
+			//Clear result panes
+			clearResults();
+			
+			selectedMinView = (ImageView) e.getTarget();
 
+			//Clear properties data from global imageView
+			imageView.getProperties().clear();
+			
+            imageView.setImage(selectedMinView.getImage());
+            imageView.getProperties().putAll(selectedMinView.getProperties());
+            
+            //If there are detections saved for the image, display them
+			@SuppressWarnings("unchecked")
+			ArrayList<Detection> faces = (ArrayList<Detection>) imageView.getProperties().get("detection");
+            if (faces != null) {
+            	setFaceResults(faces);
+            	mainToggleBtn.setDisable(false);
+            	toggleMainDet(null);
+            }
+        }
 	}
 	
 	@FXML
 	public void Detect() {
-		resultsMinPane.getChildren().clear();
+		//Clear previous results
+		clearResults();
 		
-		detectionMat = detMan.detect(Highgui.imread(currentImagePath));
-		imageView.setImage(utils.Utils.ConvertMatToImage(detectionMat));
-		//setResults(currentDetection);
-//		try{
-//			Stage stage = new Stage();
-//			
-//			Parent root = null;
-//			FXMLLoader loader = new FXMLLoader();
-//			root = FXMLLoader.load(getClass().getResource("/view/ResultsView.fxml"));
-//			stage.setTitle("Resultados");
-//			
-//			root = (Parent) loader.load(getClass().getResource("/view/ResultsView.fxml").openStream());
-//			ResultsController rc = loader.getController();
-//			rc.setResults(currentDetection);
-//			Scene scene = new Scene(root);
-//			stage.setScene(scene);
-//			stage.show();
-//			
-//		} catch(Exception e) {
-//			e.printStackTrace();
-//		}
-		detected=true;
+		detectionMat = detMan.detect(Highgui.imread((String) imageView.getProperties().get("path")));
+		//Save images as properties
+		imageView.getProperties().put("original", imageView.getImage());
+		selectedMinView.getProperties().put("original", imageView.getImage());
+		imageView.getProperties().put("detectionImage", Utils.ConvertMatToImage(detectionMat));
+		selectedMinView.getProperties().put("detectionImage", Utils.ConvertMatToImage(detectionMat));
+		imageView.getProperties().put("detectionMat", detectionMat);
+		selectedMinView.getProperties().put("detectionMat", detectionMat);
+		//Set image with detections
+		imageView.setImage(Utils.ConvertMatToImage(detectionMat));
+		mainToggleBtn.setSelected(true);
+		//Save detection as property
+		imageView.getProperties().put("detection", detMan.getFaces());
+		selectedMinView.getProperties().put("detection", detMan.getFaces());
+		
+		setFaceResults(detMan.getFaces());
+
+		mainToggleBtn.setDisable(false);
 	}
 	
-	@FXML
-	public void calculateHistogramHSV() {
-		//In OpenCV, H = 0-180, S = 0-255, V = 0-255
-		if(detected==true) {
-			for(Detection pupil : detMan.getPupils()) {				
-				Mat img= new Mat(detectionMat, ((CircleDetection)pupil).getInternRect());
-				ColorHSV white = new ColorHSV("blanco", new Rank(0.0,180.0), new Rank(0.0,56.0), new Rank(229.5,255.0));
-				ColorHSV black = new ColorHSV("negro", new Rank(0.0,180.0), new Rank(0.0,255.0), new Rank(0.0,64.0));
-				ColorHSV red = new ColorHSV("rojo", new Rank(166.5,10.0), new Rank(127.0,255.0), new Rank(64.0,229.5));
-				ColorHSV yellow = new ColorHSV("amarillo", new Rank(19.0,31.0), new Rank(127.0,255.0), new Rank(64.0,229.5));
-				ColorHSV green = new ColorHSV("verde", new Rank(31.0,68.0), new Rank(127.0,255.0), new Rank(64.0,229.5));
-				HistogramHSV histogram=new HistogramHSV();
-				histogram.addColor(white);
-				histogram.addColor(black);
-				histogram.addColor(red);
-				histogram.addColor(yellow);
-				histogram.addColor(green);
-				procMan.CalculateColorsPercentageHSV(img, histogram);
-				for(ColorHSV color: histogram.getColors()) {
-					System.out.println("{"+color.getName()+", "+color.getPercentage()+"}");
-				}
-				System.out.println();
-			}
+	public void setFaceResults(ArrayList<Detection> faces) {
+		displayResults(faces, facesMinPane);
+		if (!faces.isEmpty()) {
+			displayResults(((RectDetection) faces.get(0)).getInnerDetections(), eyesMinPane);
 		}
-		
+	}
+	
+	public void clearResults() {
+		facesMinPane.getChildren().clear();
+		eyesMinPane.getChildren().clear();
+		resultImageView.setImage(null);
+		resultImageView.getProperties().clear();
+		mainToggleBtn.setDisable(true);
+		pieChartData.clear();
 	}
 	
 	@FXML
-	public void calculateHistogramHSL() {
-		//In OpenCV, H = 0-180, S = 0-255, L = 0-255
-		if(detected==true) {
-			for(Detection pupil : detMan.getPupils()) {				
-				Mat img= new Mat(detectionMat, ((CircleDetection)pupil).getInternRect());
-				ColorHSL lum = new ColorHSL("luminoso", new Rank(0.0,180.0), new Rank(0.0,255.0), new Rank(204.0,255.0));
-				ColorHSL osc = new ColorHSL("oscuro", new Rank(0.0,180.0), new Rank(0.0,255.0), new Rank(0.0,204.0));
-				HistogramHSL histogram=new HistogramHSL();
-				histogram.addColor(lum);
-				histogram.addColor(osc);
-				procMan.CalculateColorsPercentageHSL(img, histogram);
-				for(ColorHSL color: histogram.getColors()) {
-					System.out.println("{"+color.getName()+", "+color.getPercentage()+"}");					
-				}
-				System.out.println();
-			}
-		}
-		
-	}
-	
-	public void setResults(Detector det) {
-//		int i = 0;
-//		for (Rect pupil : det.getDetectedPupils()){
-//			Mat img = new Mat(det.getOriginalMat(), pupil);
-//			ImageView imageView = createImageView(Utils.ConvertMatToImage(img));
-//			imageView.setUserData(i);
-//			resultsMinPane.getChildren().add(imageView);
-//			i++;
-//		}
-	}
-	
-	public void drawDetections(Detector det) {
-		
-	}
-	
-	@FXML
-	public void clickedResultImage(Event e){
-		// Double click -> Display big image
-		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)){
-            if(((MouseEvent)e).getClickCount() == 2){
-            	resultImageView.setImage(((ImageView) e.getTarget()).getImage());
-//            	Integer i = (Integer) ((ImageView) e.getTarget()).getUserData();            	
-            	//System.out.println(currentDetection.getPupilColorsPercentage(i));
-//            	histogramView.setImage(currentDetection.getHistogram(i)); voy a ver que devuelvo
-            	
-            	
-            }
+	public void clickFaceImage(Event e) {
+		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)) {
+			eyesMinPane.getChildren().clear();
+			
+			resultImageView.getProperties().clear();
+			
+			resultImageView.setImage(((ImageView) e.getTarget()).getImage());
+			resultImageView.getProperties().putAll(((ImageView) e.getTarget()).getProperties());
+            
+            RectDetection face = (RectDetection) ((ImageView) e.getTarget()).getProperties().get("detection");
+            displayResults(face.getInnerDetections(), eyesMinPane);
+            
+            toggleMainDet(null);
         }
-		
-		
+	}
+	
+	public void displayResults(ArrayList<Detection> dets, TilePane pane) {
+		for (Detection det : dets) {
+        	RectDetection rectDet = (RectDetection) det;
+			Mat imgMat = new Mat(Highgui.imread((String) imageView.getProperties().get("path")), new Rect(rectDet.getX(), rectDet.getY(), rectDet.getWidth(), rectDet.getHeight()));
+			Image img = Utils.ConvertMatToImage(imgMat);
+			Mat detectionMat = new Mat((Mat) imageView.getProperties().get("detectionMat"), new Rect(rectDet.getX(), rectDet.getY(), rectDet.getWidth(), rectDet.getHeight()));
+			Image detectionImg = Utils.ConvertMatToImage(detectionMat);
+			ImageView imageView = new ImageView(img);
+			imageView.getProperties().put("original", img);
+			imageView.getProperties().put("detectionImage", detectionImg);
+			imageView.getProperties().put("detection", rectDet);
+			imageView.setFitWidth(100);
+		    imageView.setPreserveRatio(true);
+		    imageView.setSmooth(true);
+		    pane.getChildren().add(imageView);
+        }
+	}
+	
+	@FXML
+	public void clickEyeImage(Event e) {
+		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)) {
+			resultImageView.getProperties().clear();
+			
+			resultImageView.setImage(((ImageView) e.getTarget()).getImage());
+			resultImageView.getProperties().putAll(((ImageView) e.getTarget()).getProperties());
+			
+			toggleMainDet(null);
+        }
 	}
 	
 	private ImageView createImageView(String imagePath) {
@@ -224,14 +247,69 @@ public class MainController implements Initializable{
 	}  
 	
 	@FXML
-	public void clickImage(Event e){
-		// Double click -> Display big image
-		if(((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)){
-            if(((MouseEvent)e).getClickCount() == 2){
-            	imageView.setImage(((ImageView) e.getTarget()).getImage());
-            	currentImagePath = (String) ((ImageView) e.getTarget()).getUserData();
-            }
-        }
+	public void toggleMainDet(Event e) {
+		if (mainToggleBtn.isSelected()) {
+			imageView.setImage((Image) imageView.getProperties().get("detectionImage"));
+			resultImageView.setImage((Image) resultImageView.getProperties().get("detectionImage"));
+		} else {
+			imageView.setImage((Image) imageView.getProperties().get("original"));
+			resultImageView.setImage((Image) resultImageView.getProperties().get("original"));
+		}
+	}
+	
+	@FXML
+	public void calculateHistogramHSV() {
+		//In OpenCV, H = 0-180, S = 0-255, V = 0-255
+		if(resultImageView.getImage() != null) {
+			for(Detection pupil : ((RectDetection)resultImageView.getProperties().get("detection")).getInnerDetections()) {
+				Mat originalMat = Highgui.imread((String) imageView.getProperties().get("path"));
+				Mat img= new Mat(originalMat, ((CircleDetection)pupil).getInternRect());
+				ColorHSV white = new ColorHSV("blanco", new Rank(0.0,180.0), new Rank(0.0,56.0), new Rank(229.5,255.0));
+				ColorHSV black = new ColorHSV("negro", new Rank(0.0,180.0), new Rank(0.0,255.0), new Rank(0.0,64.0));
+				ColorHSV red = new ColorHSV("rojo", new Rank(166.5,10.0), new Rank(127.0,255.0), new Rank(64.0,229.5));
+				ColorHSV yellow = new ColorHSV("amarillo", new Rank(19.0,31.0), new Rank(127.0,255.0), new Rank(64.0,229.5));
+				ColorHSV green = new ColorHSV("verde", new Rank(31.0,68.0), new Rank(127.0,255.0), new Rank(64.0,229.5));
+				HistogramHSV histogram = new HistogramHSV();
+				histogram.addColor(white);
+				histogram.addColor(black);
+				histogram.addColor(red);
+				histogram.addColor(yellow);
+				histogram.addColor(green);
+				procMan.CalculateColorsPercentageHSV(img, histogram);
+				pieChartData.clear();
+				for(ColorHSV color: histogram.getColors()) {
+					pieChartData.add(new PieChart.Data(color.getName(), color.getPercentage()*100));
+					System.out.println("{"+color.getName()+", "+color.getPercentage()+"}");
+				}
+				
+				
+				System.out.println();
+			}
+		}
+		
+	}
+	
+	@FXML
+	public void calculateHistogramHSL() {
+		//In OpenCV, H = 0-180, S = 0-255, L = 0-255
+		if(resultImageView.getImage() != null) {
+			for(Detection pupil : ((RectDetection)resultImageView.getProperties().get("detection")).getInnerDetections()) {
+				Mat originalMat = Highgui.imread((String) imageView.getProperties().get("path"));
+				Mat img= new Mat(originalMat, ((CircleDetection)pupil).getInternRect());
+				ColorHSL lum = new ColorHSL("luminoso", new Rank(0.0,180.0), new Rank(0.0,255.0), new Rank(204.0,255.0));
+				ColorHSL osc = new ColorHSL("oscuro", new Rank(0.0,180.0), new Rank(0.0,255.0), new Rank(0.0,204.0));
+				HistogramHSL histogram = new HistogramHSL();
+				histogram.addColor(lum);
+				histogram.addColor(osc);
+				procMan.CalculateColorsPercentageHSL(img, histogram);
+				pieChartData.clear();
+				for(ColorHSL color: histogram.getColors()) {
+					pieChartData.add(new PieChart.Data(color.getName(), color.getPercentage()*100));
+					System.out.println("{"+color.getName()+", "+color.getPercentage()+"}");					
+				}
+				System.out.println();
+			}
+		}
 	}
 	
 	@FXML
