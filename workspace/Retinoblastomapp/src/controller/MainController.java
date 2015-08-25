@@ -74,8 +74,6 @@ public class MainController implements Initializable{
 	@FXML
 	ImageView resultImageView;
 	@FXML
-	ImageView histogramView;
-	@FXML
 	TableView<HashMap<String,Double>> tableColorsPercentage;
 	@FXML
 	TableColumn<Double, Double> tableColumnWhite;
@@ -310,6 +308,11 @@ public class MainController implements Initializable{
 				System.out.println();
 			}
 		}
+	}
+	
+	@FXML
+	public void exportCsv() {
+		//TODO: save results to csv file
 	}
 	
 	@FXML
