@@ -6,8 +6,9 @@
 </head>
 <body>
 <h1>
-	Hello world!  
+	Hola, tenés retinoblastoma?!  
 </h1>
+anda al doctor!
 
 <P>  The time on the server is ${serverTime}. </P>
 </body>

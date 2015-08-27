@@ -289,6 +289,17 @@ public class MainController implements Initializable{
 	}
 	
 	@FXML
+	public void saveToText(){
+		if(imageView.getImage()!=null){
+			
+		}
+		
+	}
+	
+	
+	
+	
+	@FXML
 	public void calculateHistogramHSL() {
 		//In OpenCV, H = 0-180, S = 0-255, L = 0-255
 		if(resultImageView.getImage() != null) {
