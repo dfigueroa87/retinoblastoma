@@ -127,6 +127,7 @@
                                        <children>
                             <Button fx:id="buttonRecalcular" layoutX="47.0" layoutY="39.0" mnemonicParsing="false" onAction="#calculateHistogramHSV" prefWidth="106.0" text="Histograma HSV" />
                             <Button fx:id="buttonHistHSL" layoutX="47.0" layoutY="85.0" mnemonicParsing="false" onAction="#calculateHistogramHSL" prefWidth="106.0" text="Histograma HSL" />
+                                          <Button fx:id="buttonGuardarATexto" layoutX="34.0" layoutY="137.0" mnemonicParsing="false" onAction="#saveToText" prefHeight="25.0" prefWidth="137.0" text="Guardar a archivo" />
                                        </children>
                                     </Pane>
                       </children>
