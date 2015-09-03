@@ -11,18 +11,21 @@ public class CircleDetection implements Detection {
 	private Point pt;
 	private int radius;
 	private int thickness;
+	private boolean positive;
 		
 	
 	public CircleDetection() {
 		pt = new Point();
 		radius = 0;
 		thickness= 2;
+		positive = false;
 	}
 	
 	public CircleDetection(Point pt,int radius) {
 		this.pt = pt;
 		this.radius = radius;
 		thickness = 2;
+		positive = false;
 	}
 	
 	@Override
@@ -58,6 +61,14 @@ public class CircleDetection implements Detection {
 	
 	public Rect getInternRect() {
 		return new Rect((int)(pt.x - (radius*Math.sqrt(2)/2)) , (int)(pt.y - (radius*Math.sqrt(2)/2)), (int)(radius*Math.sqrt(2)), (int)(radius*Math.sqrt(2)));
+	}
+
+	public boolean isPositive() {
+		return positive;
+	}
+
+	public void setPositive(boolean positive) {
+		this.positive = positive;
 	}	
 	
 

@@ -44,6 +44,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.TilePane;
+import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 
@@ -103,6 +104,7 @@ public class MainController implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		mainToggleBtn.setDisable(true);
 		pieChart.setData(pieChartData);
+		checkPositive.setDisable(true);
 	}
 
 	@FXML
@@ -156,6 +158,7 @@ public class MainController implements Initializable {
 			}
 			// we set the checkBoxFlash in false;
 			checkFlash.setSelected(false);
+			checkPositive.setDisable(true);
 		}
 	}
 
@@ -215,6 +218,7 @@ public class MainController implements Initializable {
 			displayResults(face.getInnerDetections(), eyesMinPane);
 
 			toggleMainDet(null);
+			checkPositive.setDisable(true);
 		}
 	}
 
@@ -247,6 +251,14 @@ public class MainController implements Initializable {
 			resultImageView.getProperties().putAll(((ImageView) e.getTarget()).getProperties());
 
 			toggleMainDet(null);
+
+			// detects if the pupil selected has the flag positive in true
+			RectDetection eye = (RectDetection) resultImageView.getProperties().get("detection");
+			if (eye.getInnerDetections() != null && !eye.getInnerDetections().isEmpty()) {
+				checkPositive.setDisable(false);
+				CircleDetection pupil = (CircleDetection) eye.getInnerDetections().get(0);
+				checkPositive.setSelected(pupil.isPositive());
+			}
 		}
 	}
 
@@ -365,9 +377,10 @@ public class MainController implements Initializable {
 		Double yellowPerc = new Double(
 				((double) histogram.getColors().get(histogram.getColors().indexOf(yellow)).getOccurrence())
 						/ ((double) total));
+		String path = (String) imageView.getProperties().get("path");
 		String[] record = { path.substring(path.lastIndexOf("\\")), "" + faceCount, "" + eyeCount, "" + pupilCount,
 				whitePerc.toString(), blackPerc.toString(), redPerc.toString(), yellowPerc.toString(),
-				"" + checkFlash.isSelected(), "positivo" };
+				"" + checkFlash.isSelected(), "" + ((CircleDetection) pupil).isPositive() };
 		CSVWriter writer;
 		String csv = "data.csv";
 		try {
@@ -410,10 +423,16 @@ public class MainController implements Initializable {
 	public void Exit() {
 		System.exit(0);
 	}
-	
+
 	@FXML
-	public void checkPositivo(){
-		
+	public void checkPositivo() {
+		RectDetection eye = (RectDetection) resultImageView.getProperties().get("detection");
+		CircleDetection pupil = (CircleDetection) eye.getInnerDetections().get(0);
+		if (checkPositive.isSelected())
+			pupil.setPositive(true);
+		else
+			pupil.setPositive(false);
+
 	}
 
 }
