@@ -219,6 +219,7 @@ public class MainController implements Initializable {
 
 			toggleMainDet(null);
 			checkPositive.setDisable(true);
+			checkPositive.setSelected(false);
 		}
 	}
 
@@ -254,6 +255,8 @@ public class MainController implements Initializable {
 
 			// detects if the pupil selected has the flag positive in true
 			RectDetection eye = (RectDetection) resultImageView.getProperties().get("detection");
+			checkPositive.setDisable(true);
+			checkPositive.setSelected(false);
 			if (eye.getInnerDetections() != null && !eye.getInnerDetections().isEmpty()) {
 				checkPositive.setDisable(false);
 				CircleDetection pupil = (CircleDetection) eye.getInnerDetections().get(0);
