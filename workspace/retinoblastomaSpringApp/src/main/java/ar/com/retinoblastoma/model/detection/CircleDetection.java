@@ -12,6 +12,7 @@ public class CircleDetection implements Detection {
 	private int radius;
 	private int thickness;
 	private boolean positive;
+	private String comment;
 		
 	
 	public CircleDetection() {
@@ -69,6 +70,14 @@ public class CircleDetection implements Detection {
 
 	public void setPositive(boolean positive) {
 		this.positive = positive;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
 	}	
 	
 

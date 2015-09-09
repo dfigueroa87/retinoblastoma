@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ar.com.retinoblastoma.controller.MainController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ar.com.retinoblastoma.controller.MainController">
   <children>
     <MenuBar maxHeight="-Infinity" minHeight="-Infinity">
       <menus>
@@ -85,6 +85,8 @@
                           <children>
                             <ImageView fx:id="resultImageView" fitHeight="150.0" fitWidth="200.0" layoutX="71.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" />
                             <CheckBox fx:id="checkPositive" layoutX="133.0" layoutY="321.0" mnemonicParsing="false" onAction="#checkPositivo" prefWidth="77.0" text="positivo" />
+                                          <TextField fx:id="comment" layoutX="89.0" layoutY="354.0" promptText="comentario" />
+                                          <Button fx:id="saveCommentButton" layoutX="252.0" layoutY="354.0" mnemonicParsing="false" onAction="#saveComment" text="Guardar" />
                           </children>
                         </Pane>
                       </children>

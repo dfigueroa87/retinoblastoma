@@ -38,6 +38,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -45,6 +46,7 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.TilePane;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 
@@ -95,8 +97,13 @@ public class MainController implements Initializable {
 
 	@FXML
 	CheckBox checkPositive;
-
-	boolean flash = false;
+	
+	@FXML
+	Button saveCommentButton;
+	
+	@FXML
+	TextField comment;
+	
 
 	private ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
 
@@ -105,6 +112,9 @@ public class MainController implements Initializable {
 		mainToggleBtn.setDisable(true);
 		pieChart.setData(pieChartData);
 		checkPositive.setDisable(true);
+		comment.setDisable(true);
+		comment.setPromptText("comentario");
+		saveCommentButton.setDisable(true);
 	}
 
 	@FXML
@@ -159,6 +169,9 @@ public class MainController implements Initializable {
 			// we set the checkBoxFlash in false;
 			checkFlash.setSelected(false);
 			checkPositive.setDisable(true);
+			comment.setDisable(true);
+			comment.setPromptText("comentario");
+			saveCommentButton.setDisable(true);
 		}
 	}
 
@@ -220,6 +233,10 @@ public class MainController implements Initializable {
 			toggleMainDet(null);
 			checkPositive.setDisable(true);
 			checkPositive.setSelected(false);
+			
+			comment.setDisable(true);
+			comment.setPromptText("comentario");
+			saveCommentButton.setDisable(true);
 		}
 	}
 
@@ -256,11 +273,17 @@ public class MainController implements Initializable {
 			// detects if the pupil selected has the flag positive in true
 			RectDetection eye = (RectDetection) resultImageView.getProperties().get("detection");
 			checkPositive.setDisable(true);
+			comment.setDisable(true);
+			comment.setPromptText("comentario");
+			saveCommentButton.setDisable(true);
 			checkPositive.setSelected(false);
 			if (eye.getInnerDetections() != null && !eye.getInnerDetections().isEmpty()) {
 				checkPositive.setDisable(false);
+				comment.setDisable(false);				
+				saveCommentButton.setDisable(false);
 				CircleDetection pupil = (CircleDetection) eye.getInnerDetections().get(0);
 				checkPositive.setSelected(pupil.isPositive());
+				comment.setText(pupil.getComment());
 			}
 		}
 	}
@@ -383,7 +406,7 @@ public class MainController implements Initializable {
 		String path = (String) imageView.getProperties().get("path");
 		String[] record = { path.substring(path.lastIndexOf("\\")), "" + faceCount, "" + eyeCount, "" + pupilCount,
 				whitePerc.toString(), blackPerc.toString(), redPerc.toString(), yellowPerc.toString(),
-				"" + checkFlash.isSelected(), "" + ((CircleDetection) pupil).isPositive() };
+				"" + checkFlash.isSelected(), "" + ((CircleDetection) pupil).isPositive(), ((CircleDetection) pupil).getComment() };
 		CSVWriter writer;
 		String csv = "data.csv";
 		try {
@@ -437,5 +460,17 @@ public class MainController implements Initializable {
 			pupil.setPositive(false);
 
 	}
+	
+	@FXML
+	public void saveComment(){
+		RectDetection eye = (RectDetection) resultImageView.getProperties().get("detection");
+		CircleDetection pupil = (CircleDetection) eye.getInnerDetections().get(0);
+		if(comment.getText() != null && !"".equals(comment.getText())){
+			pupil.setComment(comment.getText());
+		}
+	}
+	
+
+	
 
 }
