@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ar.com.retinoblastoma.controller.MainController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ar.com.retinoblastoma.controller.MainController">
   <children>
     <MenuBar maxHeight="-Infinity" minHeight="-Infinity">
       <menus>
@@ -49,23 +49,27 @@
             <TilePane fx:id="imageContainer" onMouseClicked="#clickImage" prefColumns="1" prefHeight="736.0" prefWidth="164.0" tileAlignment="TOP_LEFT" />
           </content>
         </ScrollPane>
-        <SplitPane fx:id="principalPane" dividerPositions="0.3804444444444444" prefHeight="737.0" prefWidth="1127.0">
+        <SplitPane fx:id="principalPane" dividerPositions="0.36444444444444446" prefHeight="737.0" prefWidth="1127.0">
           <items>
             <HBox alignment="CENTER" prefHeight="737.0" prefWidth="1110.0">
               <children>
                 <Pane>
                   <children>
-                    <ImageView fx:id="imageView" fitHeight="509.0" fitWidth="410.0" pickOnBounds="true" preserveRatio="true" />
+                    <AnchorPane id="AnchorPane" fx:id="anchorPane" layoutX="0.0" layoutY="0.0">
+                      <children>
+                        <ImageView fx:id="imageView" fitHeight="509.0" fitWidth="410.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                      </children>
+                    </AnchorPane>
                     <ToggleButton fx:id="mainToggleBtn" layoutX="121.0" layoutY="543.0" mnemonicParsing="false" onAction="#toggleMainDet" text="Mostrar/Ocultar Detecciones" />
                   </children>
                 </Pane>
               </children>
             </HBox>
-            <SplitPane dividerPositions="0.5504087193460491" orientation="VERTICAL" prefHeight="737.0" prefWidth="310.0">
+            <SplitPane dividerPositions="0.6866485013623979" orientation="VERTICAL" prefHeight="737.0" prefWidth="310.0">
               <items>
                 <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0">
                   <items>
-                    <SplitPane dividerPositions="0.5012594458438288" orientation="VERTICAL">
+                    <SplitPane dividerPositions="0.5010060362173038" orientation="VERTICAL">
                       <items>
                         <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="228.0" prefWidth="212.0" vbarPolicy="NEVER">
                           <content>
@@ -85,8 +89,8 @@
                           <children>
                             <ImageView fx:id="resultImageView" fitHeight="150.0" fitWidth="200.0" layoutX="71.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" />
                             <CheckBox fx:id="checkPositive" layoutX="133.0" layoutY="321.0" mnemonicParsing="false" onAction="#checkPositivo" prefWidth="77.0" text="positivo" />
-                                          <TextField fx:id="comment" layoutX="89.0" layoutY="354.0" promptText="comentario" />
-                                          <Button fx:id="saveCommentButton" layoutX="252.0" layoutY="354.0" mnemonicParsing="false" onAction="#saveComment" text="Guardar" />
+                            <TextField fx:id="comment" layoutX="89.0" layoutY="354.0" promptText="comentario" />
+                            <Button fx:id="saveCommentButton" layoutX="252.0" layoutY="354.0" mnemonicParsing="false" onAction="#saveComment" text="Guardar" />
                           </children>
                         </Pane>
                       </children>

@@ -6,8 +6,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 import org.opencv.core.Mat;
 import org.opencv.core.Rect;
@@ -27,9 +29,11 @@ import ar.com.retinoblastoma.model.processing.ProcessingManagerImpl;
 import ar.com.retinoblastoma.model.processing.Rank;
 import ar.com.retinoblastoma.utils.Utils;
 import au.com.bytecode.opencsv.CSVWriter;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -44,8 +48,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.TilePane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -104,8 +112,28 @@ public class MainController implements Initializable {
 	@FXML
 	TextField comment;
 	
+	@FXML
+	AnchorPane anchorPane;
+	
 
 	private ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
+	
+	//Draw a rectangle
+	
+	double initX;
+    double initY;
+    double maxX;
+    double maxY;
+	
+//	private final Set<Rectangle> rectangles = new HashSet<Rectangle>();
+//
+//	private final SimpleDoubleProperty selectionRectInitialX = new SimpleDoubleProperty();
+//	private final SimpleDoubleProperty selectionRectInitialY = new SimpleDoubleProperty();
+//
+//	private final SimpleDoubleProperty selectionRectCurrentX = new SimpleDoubleProperty();
+//	private final SimpleDoubleProperty selectionRectCurrentY = new SimpleDoubleProperty();
+//
+//	private Rectangle selectionRect;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -115,7 +143,101 @@ public class MainController implements Initializable {
 		comment.setDisable(true);
 		comment.setPromptText("comentario");
 		saveCommentButton.setDisable(true);
+		maxX = imageView.getFitWidth();
+	    maxY = imageView.getFitHeight();
+		
+		
+		
+		imageView.setOnMousePressed(new EventHandler<MouseEvent>() {
+	        @Override
+	        public void handle(MouseEvent me) {
+	            //System.out.println("Clicked, x:" + me.getSceneX() + " y:" + me.getSceneY());
+	            //the event will be passed only to the circle which is on front
+	            initX = me.getX();
+	            initY = me.getY();
+	            me.consume();
+	        }
+	    });
+		imageView.setOnMouseDragged(new EventHandler<MouseEvent>() {
+	        @Override
+	        public void handle(MouseEvent me) {
+	            //System.out.println("Dragged, x:" + me.getSceneX() + " y:" + me.getSceneY());
+	            if (me.getX() < maxX && me.getY() < maxY) {
+	                Line line = new Line(initX, initY, me.getX(), me.getY());
+	                line.setFill(null);
+	                line.setStroke(Color.RED);
+	                line.setStrokeWidth(2);
+	                anchorPane.getChildren().add(line);
+	            }
+
+	            initX = me.getX() > maxX ? maxX : me.getX();
+	            initY = me.getY() > maxY ? maxY : me.getY();
+	        }
+	    });
+		
+		
+//		imageView.setOnMousePressed(new EventHandler<MouseEvent>()
+//	    {
+//	        @Override
+//	        public void handle(final MouseEvent event)
+//	        {
+//	            selectionRect.xProperty().set(event.getX());
+//	            selectionRect.yProperty().set(event.getY());
+//	            selectionRectInitialX.set(event.getX());
+//	            selectionRectInitialY.set(event.getY());
+//	        }
+//	    });
+//		
+//		imageView.setOnMouseDragged(new EventHandler<MouseEvent>()
+//	    {
+//	        @Override
+//	        public void handle(final MouseEvent event)
+//	        {
+//	            selectionRectCurrentX.set(event.getX());
+//	            selectionRectCurrentY.set(event.getY());
+//	            repaint();
+//	        }
+//	    });
+//		
+//		imageView.setOnMouseReleased(new EventHandler<MouseEvent>()
+//	    {
+//	        @Override
+//	        public void handle(final MouseEvent event)
+//	        {
+//	            final Rectangle newRect = MainController.this.getRectangle();
+//
+//	            newRect.setWidth(selectionRect.getWidth());
+//	            newRect.setHeight(selectionRect.getHeight());
+//	            newRect.setX(selectionRect.getX());
+//	            newRect.setY(selectionRect.getY());
+//
+//	            selectionRectCurrentX.set(0);
+//	            selectionRectCurrentY.set(0);
+//
+//	            rectangles.add(newRect);
+//	            repaint();
+//	        }
+//	    });
+		
 	}
+	
+//	public Rectangle getRectangle()
+//	{
+//	    final Rectangle rect = new Rectangle();
+//	    rect.setFill(Color.web("firebrick", 0.4));
+//	    rect.setStroke(Color.web("firebrick", 0.4));
+//	    return rect;
+//	}
+//
+//	public void repaint()
+//	{
+//	    this.anchorPane.getChildren().clear();
+//	    this.anchorPane.getChildren().add(this.selectionRect);
+//	    for (final Rectangle rect : this.rectangles)
+//	    {
+//	        this.anchorPane.getChildren().add(rect);
+//	    }
+//	}
 
 	@FXML
 	public void LoadImage() {
@@ -156,6 +278,7 @@ public class MainController implements Initializable {
 			imageView.getProperties().clear();
 
 			imageView.setImage(selectedMinView.getImage());
+					    
 			imageView.getProperties().putAll(selectedMinView.getProperties());
 
 			// If there are detections saved for the image, display them
