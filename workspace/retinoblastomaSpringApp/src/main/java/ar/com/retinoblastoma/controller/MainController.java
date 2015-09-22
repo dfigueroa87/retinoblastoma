@@ -125,15 +125,20 @@ public class MainController implements Initializable {
     double maxX;
     double maxY;
 	
-//	private final Set<Rectangle> rectangles = new HashSet<Rectangle>();
-//
-//	private final SimpleDoubleProperty selectionRectInitialX = new SimpleDoubleProperty();
-//	private final SimpleDoubleProperty selectionRectInitialY = new SimpleDoubleProperty();
-//
-//	private final SimpleDoubleProperty selectionRectCurrentX = new SimpleDoubleProperty();
-//	private final SimpleDoubleProperty selectionRectCurrentY = new SimpleDoubleProperty();
-//
-//	private Rectangle selectionRect;
+	private final Set<Rectangle> rectangles = new HashSet<Rectangle>();
+	private final Set<Circle> circles = new HashSet<Circle>();
+
+	private final SimpleDoubleProperty selectionRectInitialX = new SimpleDoubleProperty();
+	private final SimpleDoubleProperty selectionRectInitialY = new SimpleDoubleProperty();
+
+	private final SimpleDoubleProperty selectionRectCurrentX = new SimpleDoubleProperty();
+	private final SimpleDoubleProperty selectionRectCurrentY = new SimpleDoubleProperty();
+
+	private Rectangle selectionRect;
+	private Circle selectionCircle;
+	
+	private final SimpleDoubleProperty selectionCircleX = new SimpleDoubleProperty();
+	private final SimpleDoubleProperty selectionCircleY = new SimpleDoubleProperty();
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -146,98 +151,137 @@ public class MainController implements Initializable {
 		maxX = imageView.getFitWidth();
 	    maxY = imageView.getFitHeight();
 		
-		
-		
-		imageView.setOnMousePressed(new EventHandler<MouseEvent>() {
-	        @Override
-	        public void handle(MouseEvent me) {
-	            //System.out.println("Clicked, x:" + me.getSceneX() + " y:" + me.getSceneY());
-	            //the event will be passed only to the circle which is on front
-	            initX = me.getX();
-	            initY = me.getY();
-	            me.consume();
-	        }
-	    });
-		imageView.setOnMouseDragged(new EventHandler<MouseEvent>() {
-	        @Override
-	        public void handle(MouseEvent me) {
-	            //System.out.println("Dragged, x:" + me.getSceneX() + " y:" + me.getSceneY());
-	            if (me.getX() < maxX && me.getY() < maxY) {
-	                Line line = new Line(initX, initY, me.getX(), me.getY());
-	                line.setFill(null);
-	                line.setStroke(Color.RED);
-	                line.setStrokeWidth(2);
-	                anchorPane.getChildren().add(line);
-	            }
+	    this.selectionRect = this.getRectangle();
 
-	            initX = me.getX() > maxX ? maxX : me.getX();
-	            initY = me.getY() > maxY ? maxY : me.getY();
+	    this.selectionRect.widthProperty().bind(this.selectionRectCurrentX.subtract(this.selectionRectInitialX));
+	    this.selectionRect.heightProperty().bind(this.selectionRectCurrentY.subtract(this.selectionRectInitialY));
+	    
+	    this.selectionCircle = new Circle();
+	    this.selectionCircle.setFill(Color.web("coral", 0.4));
+	    this.selectionCircle.setStroke(Color.web("coral", 0.4));
+	    this.selectionCircle.setStrokeWidth(2);
+	    this.selectionCircle.radiusProperty().bind(this.selectionRectCurrentX.subtract(this.selectionRectInitialX));
+//		imageView.setOnMousePressed(new EventHandler<MouseEvent>() {
+//	        @Override
+//	        public void handle(MouseEvent me) {
+//	            //System.out.println("Clicked, x:" + me.getSceneX() + " y:" + me.getSceneY());
+//	            //the event will be passed only to the circle which is on front
+//	            initX = me.getX();
+//	            initY = me.getY();
+//	            me.consume();
+//	        }
+//	    });
+//		imageView.setOnMouseDragged(new EventHandler<MouseEvent>() {
+//	        @Override
+//	        public void handle(MouseEvent me) {
+//	            //System.out.println("Dragged, x:" + me.getSceneX() + " y:" + me.getSceneY());
+//	            if (me.getX() < maxX && me.getY() < maxY) {
+////	                Line line = new Line(initX, initY, me.getX(), me.getY());
+////	                line.setFill(null);
+////	                line.setStroke(Color.CORAL);
+////	                line.setStrokeWidth(2);
+////	                anchorPane.getChildren().add(line);
+//	                Rectangle rect = new Rectangle(initX, initY, me.getX(), me.getY());
+//	                rect.setFill(null);
+//	                rect.setStroke(Color.CORAL);
+//	                rect.setStrokeWidth(2);
+//	                anchorPane.getChildren().add(rect);
+//	            }
+//
+//	            initX = me.getX() > maxX ? maxX : me.getX();
+//	            initY = me.getY() > maxY ? maxY : me.getY();
+//	        }
+//	    });
+		
+		
+	    anchorPane.setOnMousePressed(new EventHandler<MouseEvent>()
+	    {
+	        @Override
+	        public void handle(final MouseEvent event)
+	        {
+	            selectionRect.xProperty().set(event.getX());
+	            selectionRect.yProperty().set(event.getY());
+	            selectionRectInitialX.set(event.getX());
+	            selectionRectInitialY.set(event.getY());
+	            selectionCircle.centerXProperty().set(event.getX());
+	            selectionCircle.centerYProperty().set(event.getY());
+	            
 	        }
 	    });
 		
+	    anchorPane.setOnMouseDragged(new EventHandler<MouseEvent>()
+	    {
+	        @Override
+	        public void handle(final MouseEvent event)
+	        {
+	            selectionRectCurrentX.set(event.getX());
+	            selectionRectCurrentY.set(event.getY());
+	            repaint();
+	        }
+	    });
 		
-//		imageView.setOnMousePressed(new EventHandler<MouseEvent>()
-//	    {
-//	        @Override
-//	        public void handle(final MouseEvent event)
-//	        {
-//	            selectionRect.xProperty().set(event.getX());
-//	            selectionRect.yProperty().set(event.getY());
-//	            selectionRectInitialX.set(event.getX());
-//	            selectionRectInitialY.set(event.getY());
-//	        }
-//	    });
-//		
-//		imageView.setOnMouseDragged(new EventHandler<MouseEvent>()
-//	    {
-//	        @Override
-//	        public void handle(final MouseEvent event)
-//	        {
-//	            selectionRectCurrentX.set(event.getX());
-//	            selectionRectCurrentY.set(event.getY());
-//	            repaint();
-//	        }
-//	    });
-//		
-//		imageView.setOnMouseReleased(new EventHandler<MouseEvent>()
-//	    {
-//	        @Override
-//	        public void handle(final MouseEvent event)
-//	        {
-//	            final Rectangle newRect = MainController.this.getRectangle();
-//
-//	            newRect.setWidth(selectionRect.getWidth());
-//	            newRect.setHeight(selectionRect.getHeight());
-//	            newRect.setX(selectionRect.getX());
-//	            newRect.setY(selectionRect.getY());
-//
-//	            selectionRectCurrentX.set(0);
-//	            selectionRectCurrentY.set(0);
-//
-//	            rectangles.add(newRect);
-//	            repaint();
-//	        }
-//	    });
+	    anchorPane.setOnMouseReleased(new EventHandler<MouseEvent>()
+	    {
+	        @Override
+	        public void handle(final MouseEvent event)
+	        {
+	            final Rectangle newRect = MainController.this.getRectangle();
+	            newRect.setWidth(selectionRect.getWidth());
+	            newRect.setHeight(selectionRect.getHeight());
+	            newRect.setX(selectionRect.getX());
+	            newRect.setY(selectionRect.getY());
+	            
+	            
+	            rectangles.add(newRect);
+	            
+	            if(selectionRect.getX() != 0 && selectionRect.getY() != 0){
+		            final Circle newCircle = new Circle();
+		            newCircle.setFill(Color.web("coral", 0.4));
+		            newCircle.setStroke(Color.web("coral", 0.4));
+		            newCircle.setStrokeWidth(2);
+//		            newCircle.setRadius(Math.hypot(selectionRect.getWidth(), selectionRect.getHeight())/2);
+//		            newCircle.setCenterX((selectionRect.getX() + selectionRectCurrentX.get())/2);
+//		            newCircle.setCenterY((selectionRect.getY() + selectionRectCurrentY.get())/2);
+		            newCircle.setRadius(selectionCircle.getRadius());
+		            newCircle.setCenterX(selectionCircle.getCenterX());
+		            newCircle.setCenterY(selectionCircle.getCenterY());
+		            if(newCircle.getRadius() > 2){
+		            	circles.add(newCircle);
+		            }
+	            }
+		        selectionRectCurrentX.set(0);
+		        selectionRectCurrentY.set(0);
+		            
+	            repaint();
+	        }
+	    });
 		
 	}
 	
-//	public Rectangle getRectangle()
-//	{
-//	    final Rectangle rect = new Rectangle();
-//	    rect.setFill(Color.web("firebrick", 0.4));
-//	    rect.setStroke(Color.web("firebrick", 0.4));
-//	    return rect;
-//	}
+	public Rectangle getRectangle()
+	{
+	    final Rectangle rect = new Rectangle();
+	    rect.setFill(Color.web("blueviolet", 0.4));
+	    rect.setStroke(Color.web("blueviolet", 0.4));
+	    rect.setStrokeWidth(2);
+	    return rect;
+	}
 //
-//	public void repaint()
-//	{
-//	    this.anchorPane.getChildren().clear();
+	public void repaint()
+	{
+	    this.anchorPane.getChildren().clear();
+	    this.anchorPane.getChildren().add(this.imageView);
 //	    this.anchorPane.getChildren().add(this.selectionRect);
 //	    for (final Rectangle rect : this.rectangles)
 //	    {
 //	        this.anchorPane.getChildren().add(rect);
 //	    }
-//	}
+	    this.anchorPane.getChildren().add(this.selectionCircle);
+	    for (final Circle circle : this.circles)
+	    {
+	        this.anchorPane.getChildren().add(circle);
+	    }
+	}
 
 	@FXML
 	public void LoadImage() {
@@ -295,6 +339,9 @@ public class MainController implements Initializable {
 			comment.setDisable(true);
 			comment.setPromptText("comentario");
 			saveCommentButton.setDisable(true);
+			rectangles.clear();
+			circles.clear();
+			repaint();
 		}
 	}
 
