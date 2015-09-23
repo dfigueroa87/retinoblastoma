@@ -65,11 +65,11 @@
                 </Pane>
               </children>
             </HBox>
-            <SplitPane dividerPositions="0.6866485013623979" orientation="VERTICAL" prefHeight="737.0" prefWidth="310.0">
+            <SplitPane dividerPositions="0.6880108991825613" orientation="VERTICAL" prefHeight="737.0" prefWidth="310.0">
               <items>
                 <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0">
                   <items>
-                    <SplitPane dividerPositions="0.5010060362173038" orientation="VERTICAL">
+                    <SplitPane dividerPositions="0.5" orientation="VERTICAL">
                       <items>
                         <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="228.0" prefWidth="212.0" vbarPolicy="NEVER">
                           <content>
@@ -103,18 +103,18 @@
                       <children>
                         <Pane prefHeight="175.0" prefWidth="692.0">
                           <children>
-                            <Button fx:id="buttonRecalcular" layoutX="47.0" layoutY="39.0" mnemonicParsing="false" onAction="#calculateHistogramHSV" prefWidth="106.0" text="Histograma HSV" />
-                            <Button fx:id="buttonHistHSL" layoutX="47.0" layoutY="85.0" mnemonicParsing="false" onAction="#calculateHistogramHSL" prefWidth="106.0" text="Histograma HSL" />
-                            <Button fx:id="buttonGuardarATexto" layoutX="34.0" layoutY="137.0" mnemonicParsing="false" onAction="#saveToText" prefHeight="25.0" prefWidth="137.0" text="Guardar a archivo" />
+                            <Button fx:id="buttonRecalcular" layoutX="47.0" layoutY="21.0" mnemonicParsing="false" onAction="#calculateHistogramHSV" prefWidth="106.0" text="Histograma HSV" />
+                            <Button fx:id="buttonHistHSL" layoutX="47.0" layoutY="52.0" mnemonicParsing="false" onAction="#calculateHistogramHSL" prefWidth="106.0" text="Histograma HSL" />
                             <CheckBox fx:id="checkFlash" layoutX="359.0" layoutY="23.0" mnemonicParsing="false" text="Tiene Flash" />
+                            <Button id="buttonGuardarATexto" layoutX="32.0" layoutY="86.0" mnemonicParsing="false" onAction="#saveToText" prefHeight="25.0" prefWidth="137.0" text="Guardar a archivo" />
                           </children>
                         </Pane>
                       </children>
                     </HBox>
                     <Pane prefHeight="159.0" prefWidth="695.0">
                       <children>
-                        <PieChart fx:id="pieChart" legendVisible="false" prefHeight="150.0" prefWidth="340.0" />
-                        <ImageView fx:id="histogramView" fitHeight="138.0" fitWidth="200.0" layoutX="439.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
+                        <PieChart fx:id="pieChart" layoutX="0.0" layoutY="0.0" legendVisible="false" minHeight="102.0" prefHeight="102.0" prefWidth="340.0" />
+                        <ImageView fx:id="histogramView" fitHeight="102.0" fitWidth="147.82608695652175" layoutX="439.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true" />
                       </children>
                     </Pane>
                   </children>
