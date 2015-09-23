@@ -119,7 +119,7 @@ public class MainController implements Initializable {
 
 	private ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
 
-	private final Set<Circle> circles = new HashSet<Circle>();
+	private final List<Circle> circles = new ArrayList<Circle>();
 
 	private final SimpleDoubleProperty selectionRectInitialX = new SimpleDoubleProperty();
 	private final SimpleDoubleProperty selectionRectInitialY = new SimpleDoubleProperty();
@@ -127,7 +127,6 @@ public class MainController implements Initializable {
 	private final SimpleDoubleProperty selectionRectCurrentX = new SimpleDoubleProperty();
 	private final SimpleDoubleProperty selectionRectCurrentY = new SimpleDoubleProperty();
 
-	private Rectangle selectionRect;
 	private Circle selectionCircle;
 
 	private final SimpleDoubleProperty selectionCircleRadio = new SimpleDoubleProperty();
@@ -156,13 +155,27 @@ public class MainController implements Initializable {
 				selectionRectInitialY.set(event.getY());
 				selectionCircle.centerXProperty().set(event.getX());
 				selectionCircle.centerYProperty().set(event.getY());
+				// to mark positive
+				if (!circles.isEmpty()) {
+					for (Circle circle : circles) {
+						if (event.getX() < (circle.getCenterX() + circle.getRadius())
+								&& event.getX() > (circle.getCenterX() - circle.getRadius())
+								&& event.getY() < (circle.getCenterY() + circle.getRadius())
+								&& event.getY() > (circle.getCenterY() - circle.getRadius())) {								
+							circle.setFill(Color.web("blueviolet", 0.4));
+							circle.setStroke(Color.web("blueviolet", 0.4));							
+						}
+
+					}
+					repaint();
+				}
 
 			}
 		});
 
 		anchorPane.setOnMouseDragged(new EventHandler<MouseEvent>() {
 			@Override
-			public void handle(final MouseEvent event) {
+			public void handle(final MouseEvent event) {				
 				if (event.getX() - selectionRectInitialX.get() > event.getY() - selectionRectInitialY.get())
 					selectionCircleRadio.set(event.getX() - selectionRectInitialX.get());
 				else
@@ -182,10 +195,10 @@ public class MainController implements Initializable {
 				newCircle.setRadius(selectionCircle.getRadius());
 				newCircle.setCenterX(selectionCircle.getCenterX());
 				newCircle.setCenterY(selectionCircle.getCenterY());
-				if (newCircle.getRadius() > 2) {
+				if (newCircle.getRadius() > 4) {
 					circles.add(newCircle);
 				}
-
+				selectionCircleRadio.set(0);
 				selectionRectCurrentX.set(0);
 				selectionRectCurrentY.set(0);
 
@@ -195,21 +208,14 @@ public class MainController implements Initializable {
 
 	}
 
-	public Rectangle getRectangle() {
-		final Rectangle rect = new Rectangle();
-		rect.setFill(Color.web("blueviolet", 0.4));
-		rect.setStroke(Color.web("blueviolet", 0.4));
-		rect.setStrokeWidth(2);
-		return rect;
-	}
-
 	// to draw the circles over the image
 	public void repaint() {
 		this.anchorPane.getChildren().clear();
 		this.anchorPane.getChildren().add(this.imageView);
-		this.anchorPane.getChildren().add(this.selectionCircle);
+		if(this.selectionCircle.getRadius() > 4)
+			this.anchorPane.getChildren().add(this.selectionCircle);
 		for (final Circle circle : this.circles) {
-			this.anchorPane.getChildren().add(circle);
+			this.anchorPane.getChildren().add(circle);			
 		}
 	}
 
@@ -489,7 +495,7 @@ public class MainController implements Initializable {
 					e.printStackTrace();
 				}
 				for (Circle circle : circles) {
-
+					
 					// a three rule to get the real values
 					Point pt = new Point(circle.getCenterX() * imageView.getImage().getWidth() / destWidth,
 							circle.getCenterY() * imageView.getImage().getHeight() / destHeight);
@@ -497,6 +503,9 @@ public class MainController implements Initializable {
 							new Double(circle.getRadius() * imageView.getImage().getWidth() / destWidth).intValue());
 					cD.setComment("pupila seleccionada");
 					pupilCount++;
+					if (circle.getFill().equals(Color.web("blueviolet", 0.4))) {
+						cD.setPositive(true);
+					}
 					saveToCSV(99, 99, pupilCount, cD);
 				}
 			}
