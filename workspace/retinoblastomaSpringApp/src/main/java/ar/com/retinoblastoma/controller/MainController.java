@@ -195,7 +195,7 @@ public class MainController implements Initializable {
 				newCircle.setRadius(selectionCircle.getRadius());
 				newCircle.setCenterX(selectionCircle.getCenterX());
 				newCircle.setCenterY(selectionCircle.getCenterY());
-				if (newCircle.getRadius() > 4) {
+				if (newCircle.getRadius() > 2) {
 					circles.add(newCircle);
 				}
 				selectionCircleRadio.set(0);
@@ -501,7 +501,7 @@ public class MainController implements Initializable {
 							circle.getCenterY() * imageView.getImage().getHeight() / destHeight);
 					CircleDetection cD = new CircleDetection(pt,
 							new Double(circle.getRadius() * imageView.getImage().getWidth() / destWidth).intValue());
-					cD.setComment("pupila seleccionada");
+					cD.setComment("seleccion manual");
 					pupilCount++;
 					if (circle.getFill().equals(Color.web("blueviolet", 0.4))) {
 						cD.setPositive(true);
