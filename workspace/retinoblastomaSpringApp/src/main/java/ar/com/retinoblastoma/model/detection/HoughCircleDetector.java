@@ -33,7 +33,7 @@ public class HoughCircleDetector extends Detector {
 		// Imgproc.cvtColor(image, transformedEye, Imgproc.COLOR_BGR2GRAY);	   
 		// Imgproc.Canny(transformedEye, transformedEye, 50, 150);
 
-		
+		//This is to add sharpness to the image
 		Imgproc.GaussianBlur(image, transformedEye, new Size(0,0), 10);
 		Core.addWeighted(image, 1.5, transformedEye, -0.5, 0, transformedEye);
 		Imgproc.cvtColor(transformedEye, transformedEye, Imgproc.COLOR_BGR2GRAY);
