@@ -1,0 +1,236 @@
+Archivo;Cara;Ojo;Pupila;Blanco;Negro;Rojo;Amarillo;Flash;Positivo;Detalles;Altura de cara
+\Pos1,jpg;99;99;1;1;0;0;0;true;true;seleccion manual;
+\Pos1,jpg;99;99;2;1;0;0;0;true;true;seleccion manual;
+\Pos2,jpg;99;99;1;1;0;0;0;false;true;seleccion manual;
+\Pos2,jpg;99;99;2;0;0,090909091;0,909090909;0;false;false;seleccion manual;
+\Pos3,jpg;1;1;1;0;1;0;0;true;false;mayor;161
+\Pos3,jpg;1;2;1;0,023809524;0,976190476;0;0;true;true;mayor;161
+\Pos3,jpg;99;99;1;0;1;0;0;true;false;seleccion manual;161
+\Pos3,jpg;99;99;2;0,5;0,5;0;0;true;true;seleccion manual;161
+\Pos4,JPG;2;1;1;1;0;0;0;true;true;;382
+\Pos4,JPG;2;2;1;0,013618677;0,986381323;0;0;true;false;iris;382
+\Pos4,JPG;99;99;1;0,047945205;0,952054795;0;0;true;false;seleccion manual;382
+\Pos5,jpg;1;1;1;0;0,202;0,798;0;false;true;mayor;301
+\Pos5,jpg;1;2;1;0,003552398;0,664298401;0,332149201;0;false;false;mayor;301
+\Pos5,jpg;99;99;1;0;0,030927835;0,969072165;0;false;true;seleccion manual;301
+\Pos5,jpg;99;99;2;0;1;0;0;false;false;seleccion manual;301
+\Pos6,jpg;1;1;1;0,990909091;0,009090909;0;0;true;true;;366
+\Pos6,jpg;1;2;1;0,033457249;0;0,966542751;0;true;false;;366
+\Pos7,jpg;1;1;1;0,01199262;0,98800738;0;0;false;false;;730
+\Pos7,jpg;1;2;1;1;0;0;0;false;true;;730
+\Pos7,jpg;1;3;1;0;0;1;0;false;false;invalido;730
+\Pos8,jpg;1;1;1;0,029411765;0,617647059;0,352941176;0;true;false;;529
+\Pos8,jpg;1;2;1;0;0;0;1;true;true;;529
+\Pos9,jpg;2;1;1;0,545454545;0,454545455;0;0;true;true;mayor;313
+\Pos9,jpg;2;2;1;0,094339623;0;0,905660377;0;true;false;iris;313
+\Pos9,jpg;99;99;1;0,647058824;0,352941176;0;0;true;true;seleccion manual;313
+\Pos9,jpg;99;99;2;0;0;1;0;true;false;seleccion manual;313
+\Pos10,jpg;99;99;1;0,023255814;0,813953488;0;0,162790698;false;true;seleccion manual;
+\Pos10,jpg;99;99;2;0;0,434782609;0,550724638;0,014492754;false;false;seleccion manual;
+\Pos11,jpg;99;99;1;0,958333333;0,041666667;0;0;true;true;seleccion manual;
+\Pos11,jpg;99;99;2;0,8;0,2;0;0;true;false;seleccion manual;
+\Pos12,jpg;1;1;1;0,696969697;0,181818182;0,121212121;0;false;true;;304
+\Pos12,jpg;1;3;1;1;0;0;0;false;true;;304
+\Pos13,jpg;99;99;1;0;0;1;0;true;false;seleccion manual;
+\Pos13,jpg;99;99;2;1;0;0;0;true;true;seleccion manual;
+\Pos14,png;2;1;1;0;1;0;0;false;false;iris;257
+\Pos14,png;2;2;1;0,004264392;0,980810235;0,014925373;0;false;false;mayor;257
+\Pos14,png;99;99;1;0;1;0;0;false;false;seleccion manual;257
+\Pos14,png;99;99;2;0;1;0;0;false;false;seleccion manual;257
+\Pos15,jpg;1;1;1;0,034340659;0,965659341;0;0;true;false;iris;550
+\Pos15,jpg;1;2;1;0,395644283;0,163339383;0,2323049;0,208711434;true;true;mayor;550
+\Pos15,jpg;99;99;1;0,085324232;0,914675768;0;0;true;false;seleccion manual;550
+\Pos15,jpg;99;99;2;0,110091743;0;0,486238532;0,403669725;true;true;seleccion manual;550
+\Pos16,jpg;99;99;1;0,896551724;0,103448276;0;0;true;true;seleccion manual;
+\Pos16,jpg;99;99;2;0,074324324;0,006756757;0,918918919;0;true;false;seleccion manual;
+\Pos17,jpg;1;1;1;0,75;0;0,25;0;true;true;iris;177
+\Pos17,jpg;99;99;1;1;0;0;0;true;true;seleccion manual;177
+\Pos17,jpg;99;99;2;0;0;1;0;true;false;seleccion manual;177
+\Pos18,jpg;1;1;1;1;0;0;0;true;true;mayor;384
+\Pos18,jpg;1;3;1;0,077777778;0,077777778;0,844444444;0;true;false;mayor;384
+\Pos18,jpg;99;99;1;1;0;0;0;true;true;seleccion manual;384
+\Pos18,jpg;99;99;2;0,084337349;0;0,915662651;0;true;false;seleccion manual;384
+\Pos19,jpg;1;1;1;0,027692308;0,003076923;0,969230769;0;true;false;;1002
+\Pos19,jpg;1;2;1;0,048837209;0;0,951162791;0;true;false;;1002
+\Pos20,jpg;3;1;1;0,006060606;0;0,993939394;0;true;false;iris;
+\Pos20,jpg;3;2;1;0,007936508;0;0,992063492;0;true;false;mayor;
+\Pos20,jpg;4;1;1;0,109375;0;0,890625;0;true;false;;
+\Pos20,jpg;4;3;1;1;0;0;0;true;true;iris;
+\Pos20,jpg;5;1;1;0,170731707;0;0,829268293;0;true;false;;
+\Pos20,jpg;5;2;1;0,154545455;0;0,845454545;0;true;false;;
+\Pos20,jpg;99;99;1;0,028301887;0;0,971698113;0;true;false;seleccion manual;
+\Pos20,jpg;99;99;2;0,008064516;0;0,991935484;0;true;false;seleccion manual;
+\Pos20,jpg;99;99;3;1;0;0;0;true;false;seleccion manual;
+\Pos21,jpg;1;1;1;1;0;0;0;true;false;invalido;231
+\Pos21,jpg;1;2;1;0;0;1;0;true;false;parcial;231
+\Pos21,jpg;2;1;1;NaN;NaN;NaN;NaN;true;true;invalido;256
+\Pos21,jpg;2;2;1;0;0;1;0;true;false;parcial;256
+\Pos21,jpg;99;99;1;0,166666667;0;0,833333333;0;true;false;seleccion manual;231
+\Pos21,jpg;99;99;2;0;0,25;0,75;0;true;false;seleccion manual;231
+\Pos21,jpg;99;99;3;0;1;0;0;true;true;seleccion manual;256
+\Pos21,jpg;99;99;4;0;0;1;0;true;false;seleccion manual;256
+\Pos22,jpg;1;1;1;0,005128205;0,992307692;0;0,002564103;true;false;mayor;367
+\Pos22,jpg;1;2;1;0,583333333;0,416666667;0;0;true;true;;367
+\Pos22,jpg;99;99;1;0,019417476;0,980582524;0;0;true;false;seleccion manual;367
+\Pos23,jpg;2;1;1;0,06185567;0,762886598;0,175257732;0;true;false;mayor;185
+\Pos23,jpg;2;2;1;0,02;0,72;0,26;0;true;true;parcial;185
+\Pos23,jpg;99;99;1;0,073170732;0,634146341;0,292682927;0;true;false;seleccion manual;185
+\Pos23,jpg;99;99;2;0,189655172;0,482758621;0,327586207;0;true;true;seleccion manual;185
+\Pos24,jpg;99;99;1;1;0;0;0;true;true;seleccion manual;
+\Pos24,jpg;99;99;2;0;1;0;0;true;false;seleccion manual;
+\Pos25,jpg;1;1;1;0,666666667;0,333333333;0;0;true;true;;272
+\Pos25,jpg;1;2;1;0,00678733;0,99321267;0;0;true;false;iris;272
+\Pos25,jpg;99;99;1;0,018691589;0,981308411;0;0;true;false;seleccion manual;272
+\Pos26,jpg;1;3;1;0,054545455;0,945454545;0;0;true;true;iris;252
+\Pos26,jpg;1;4;1;0,020895522;0,979104478;0;0;true;false;mayor;252
+\Pos26,jpg;99;99;1;0,1875;0,8125;0;0;true;true;seleccion manual;252
+\Pos26,jpg;99;99;2;0,057142857;0,942857143;0;0;true;false;seleccion manual;252
+\Pos27,jpg;99;99;1;1;0;0;0;true;true;seleccion manual;
+\Pos27,jpg;99;99;2;0;0,03125;0,96875;0;true;false;seleccion manual;
+\Pos28,jpg;1;1;1;0,996078431;0;0,003921569;0;true;true;;617
+\Pos28,jpg;1;2;1;0,069506726;0,006726457;0,923766816;0;true;false;;617
+\Pos29,jpg;99;99;1;0,054054054;0;0,945945946;0;true;false;seleccion manual;
+\Pos29,jpg;99;99;2;0,9375;0;0;0,0625;true;true;seleccion manual;
+\Pos30,JPG;1;1;1;0,925233645;0;0;0,074766355;true;true;;1266
+\Pos30,JPG;1;2;1;0,02890933;0;0,97109067;0;true;false;;1266
+\Neg1,jpg;3;1;1;0;0,347826087;0,652173913;0;true;false;invalido;217
+\Neg1,jpg;3;2;1;0;0,03960396;0,96039604;0;true;false;;217
+\Neg1,jpg;99;99;1;0;0;1;0;true;false;seleccion manual;217
+\Neg2,jpg;1;1;1;0,007246377;0,543478261;0,449275362;0;true;false;parcial;280
+\Neg2,jpg;1;2;1;0,014492754;0,405797101;0,579710145;0;true;false;mayor;280
+\Neg2,jpg;1;3;1;NaN;NaN;NaN;NaN;true;false;falso ojo;280
+\Neg2,jpg;99;99;1;0,013888889;0,027777778;0,958333333;0;true;false;seleccion manual;280
+\Neg2,jpg;99;99;2;0,013888889;0;0,986111111;0;true;false;seleccion manual;280
+\Neg3,png;1;1;1;0;0;1;0;true;false;;211
+\Neg3,png;1;2;1;0,008928571;0;0,991071429;0;true;false;mayor;211
+\Neg3,png;99;99;1;0,018518519;0;0,981481481;0;true;false;seleccion manual;211
+\Neg4,jpg;1;1;1;0,007898894;0,992101106;0;0;true;false;;794
+\Neg4,jpg;1;2;1;0,004175365;0,995824635;0;0;true;false;iris;794
+\Neg4,jpg;1;3;1;NaN;NaN;NaN;NaN;true;false;falso ojo;794
+\Neg4,jpg;99;99;1;0,009360374;0,990639626;0;0;true;false;seleccion manual;794
+\Neg5,jpg;1;1;1;0;0,818965517;0,181034483;0;false;false;parcial;355
+\Neg5,jpg;1;2;1;0;0,684210526;0,315789474;0;false;false;mayor;355
+\Neg5,jpg;1;4;1;0;0,071428571;0,928571429;0;false;false;falso ojo;355
+\Neg5,jpg;1;5;1;0;0,167487685;0,832512315;0;false;false;falso ojo;355
+\Neg5,jpg;1;6;1;0;0,013793103;0,986206897;0;false;false;falso ojo;355
+\Neg5,jpg;1;7;1;0;1;0;0;false;false;falso ojo;355
+\Neg5,jpg;2;1;1;0;0,989208633;0,010791367;0;false;false;;372
+\Neg5,jpg;2;2;1;0,090909091;0,681818182;0,227272727;0;false;false;invalido;
+\Neg5,jpg;99;99;1;0;0,941747573;0,058252427;0;false;false;seleccion manual;
+\Neg5,jpg;99;99;2;0;0,902255639;0,097744361;0;false;false;seleccion manual;
+\Neg5,jpg;99;99;3;0;0,968181818;0,031818182;0;false;false;seleccion manual;
+\Neg6,jpg;1;1;1;0,037593985;0,906015038;0,056390977;0;false;false;iris;366
+\Neg6,jpg;1;2;1;0,046610169;0,38559322;0,56779661;0;false;false;iris;366
+\Neg6,jpg;99;99;1;0,526315789;0,105263158;0,368421053;0;false;false;seleccion manual;366
+\Neg6,jpg;99;99;2;0,229166667;0;0,770833333;0;false;false;seleccion manual;366
+\Neg7,jpg;1;1;1;0,02173913;0,213768116;0,764492754;0;true;false;iris;301
+\Neg7,jpg;1;2;1;0,016025641;0,227564103;0,756410256;0;true;false;iris;301
+\Neg7,jpg;99;99;1;0,076923077;0,025641026;0,897435897;0;true;false;seleccion manual;301
+\Neg7,jpg;99;99;2;0,064102564;0;0,935897436;0;true;false;seleccion manual;301
+\Neg8,jpg;3;1;1;0;0,907630522;0,092369478;0;false;false;parcial;443
+\Neg8,jpg;3;2;1;0;0,455555556;0,544444444;0;false;false;invalido;443
+\Neg8,jpg;99;99;1;0,011173184;0,770949721;0,217877095;0;false;false;seleccion manual;443
+\Neg8,jpg;99;99;2;0,012711864;0,973163842;0,014124294;0;false;false;seleccion manual;443
+\Neg9,jpg;1;1;1;0,016666667;0,125;0,858333333;0;true;false;;322
+\Neg9,jpg;1;3;1;0,016853933;0,308988764;0,674157303;0;true;false;iris;322
+\Neg9,jpg;1;4;1;0;0,194444444;0;0,805555556;true;false;;322
+\Neg9,jpg;99;99;1;0,040540541;0,081081081;0,878378378;0;true;false;seleccion manual;322
+\Neg11,jpg;99;99;1;0;1;0;0;false;false;seleccion manual;
+\Neg11,jpg;99;99;2;0;1;0;0;false;false;seleccion manual;
+\Neg12,jpg;99;99;1;0;1;0;0;false;false;seleccion manual;
+\Neg12,jpg;99;99;2;0;1;0;0;false;false;seleccion manual;
+\Neg13,jpg;1;2;1;0;0,932960894;0,067039106;0;false;false;iris;369
+\Neg13,jpg;1;3;1;0;1;0;0;false;false;mayor;369
+\Neg13,jpg;2;1;1;0;0,989130435;0,010869565;0;false;false;iris;357
+\Neg13,jpg;2;2;1;0;0,972789116;0,027210884;0;false;false;mayor;357
+\Neg13,jpg;3;1;1;0;0,916666667;0;0,083333333;false;false;parcial;364
+\Neg13,jpg;3;2;1;0;0,987730061;0;0,012269939;false;false;iris;364
+\Neg13,jpg;4;1;1;0;0,966019417;0,033980583;0;false;false;mayor;364
+\Neg13,jpg;4;2;1;0;0,986928105;0,013071895;0;false;false;parcial;364
+\Neg13,jpg;99;99;1;0;1;0;0;false;false;seleccion manual;
+\Neg13,jpg;99;99;2;0;0,965686275;0,034313725;0;false;false;seleccion manual;
+\Neg13,jpg;99;99;3;0;0,983193277;0,016806723;0;false;false;seleccion manual;
+\Neg13,jpg;99;99;4;0;0,982905983;0,017094017;0;false;false;seleccion manual;
+\Neg13,jpg;99;99;5;0;0,983783784;0;0,016216216;false;false;seleccion manual;
+\Neg13,jpg;99;99;6;0;0,987179487;0;0,012820513;false;false;seleccion manual;
+\Neg13,jpg;99;99;7;0;1;0;0;false;false;seleccion manual;
+\Neg13,jpg;99;99;8;0;0,967741935;0,032258065;0;false;false;seleccion manual;
+\Neg14,jpg;1;1;1;0,076388889;0,923611111;0;0;true;false;;850
+\Neg14,jpg;1;2;1;0,076388889;0,923611111;0;0;true;false;;850
+\Neg15,jpg;1;1;1;0;1;0;0;false;false;invalido;672
+\Neg15,jpg;1;2;1;0;1;0;0;false;false;invalido;672
+\Neg15,jpg;1;3;1;0,035714286;0;0,964285714;0;false;false;falso ojo;672
+\Neg15,jpg;1;4;1;0;0;1;0;false;false;falso ojo;672
+\Neg15,jpg;99;99;1;0;1;0;0;false;false;seleccion manual;672
+\Neg15,jpg;99;99;2;0;1;0;0;false;false;seleccion manual;672
+\Neg16,jpg;99;99;1;0;1;0;0;false;false;seleccion manual;
+\Neg16,jpg;99;99;2;0;1;0;0;false;false;seleccion manual;
+\Neg17,jpg;99;99;1;0;1;0;0;false;false;seleccion manual;
+\Neg17,jpg;99;99;2;0;1;0;0;false;false;seleccion manual;
+\Neg18,jpg;99;99;1;0;1;0;0;false;false;seleccion manual;
+\Neg18,jpg;99;99;2;1;0;0;0;false;false;seleccion manual;
+\Neg19,jpg;1;4;1;0,059463379;0,932559826;0,007976795;0;true;false;mayor;422
+\Neg19,jpg;99;99;1;0,225705329;0,774294671;0;0;true;false;seleccion manual;422
+\Neg19,jpg;99;99;2;0,273006135;0,417177914;0,309815951;0;true;false;seleccion manual;422
+\Neg20,jpg;1;1;1;0;1;0;0;false;false;invalido;125
+\Neg20,jpg;1;2;1;0;0,909090909;0,090909091;0;false;false;mayor;125
+\Neg20,jpg;99;99;1;NaN;NaN;NaN;NaN;false;false;seleccion manual;125
+\Neg20,jpg;99;99;2;0;1;0;0;false;false;seleccion manual;125
+\Neg21,jpg;2;3;1;0;1;0;0;false;false;falso ojo;144
+\Neg21,jpg;3;3;1;0;0;1;0;false;false;falso ojo;201
+\Neg21,jpg;4;2;1;0,954545455;0,009090909;0,036363636;0;false;false;parcial;192
+\Neg21,jpg;99;99;1;0;0,714285714;0,285714286;0;false;false;seleccion manual;144
+\Neg21,jpg;99;99;2;0;0,537037037;0,462962963;0;false;false;seleccion manual;201
+\Neg21,jpg;99;99;3;0;0,1875;0,8125;0;false;false;seleccion manual;192
+\Neg21,jpg;99;99;4;0;0,486486486;0,513513514;0;false;false;seleccion manual;
+\Neg21,jpg;99;99;5;0,035714286;0,053571429;0,910714286;0;false;false;seleccion manual;
+\Neg22,jpg;1;1;1;0,176470588;0;0,823529412;0;true;false;;685
+\Neg22,jpg;1;3;1;0,225490196;0;0,774509804;0;true;false;;685
+\Neg22,jpg;1;4;1;0;0;1;0;true;false;falso ojo;685
+\Neg23,jpg;1;1;1;0,032967033;0,164835165;0,802197802;0;true;false;parcial;331
+\Neg23,jpg;1;2;1;0,078651685;0,314606742;0,606741573;0;true;false;parcial;331
+\Neg23,jpg;99;99;1;0,039215686;0,235294118;0,725490196;0;true;false;seleccion manual;331
+\Neg23,jpg;99;99;2;0,034482759;0,034482759;0,931034483;0;true;false;seleccion manual;331
+\Neg24,jpg;2;1;1;0;0,992559524;0,001488095;0,005952381;false;false;iris;591
+\Neg24,jpg;2;2;1;0;1;0;0;false;false;iris;591
+\Neg24,jpg;99;99;1;0;1;0;0;false;false;seleccion manual;591
+\Neg24,jpg;99;99;2;0;1;0;0;false;false;seleccion manual;591
+\Neg25,jpg;1;1;1;0,05511811;0,94488189;0;0;false;false;iris;365
+\Neg25,jpg;1;2;1;0;0,515151515;0,484848485;0;false;false;parcial;365
+\Neg25,jpg;99;99;1;0,038888889;0,95;0,011111111;0;false;false;seleccion manual;365
+\Neg25,jpg;99;99;2;0,045918367;0,852040816;0,102040816;0;false;false;seleccion manual;365
+\Neg26,jpg;1;1;1;0;0,204301075;0;0,795698925;true;false;;546
+\Neg26,jpg;1;2;1;0,003875969;0,509043928;0,23255814;0,254521964;true;false;mayor;546
+\Neg26,jpg;99;99;1;0;0,543252595;0,07266436;0,384083045;true;false;seleccion manual;546
+\Neg27,jpg;1;1;1;0;1;0;0;false;false;invalido;373
+\Neg27,jpg;1;2;1;0;1;0;0;false;false;mayor;373
+\Neg27,jpg;99;99;1;0;1;0;0;false;false;seleccion manual;373
+\Neg27,jpg;99;99;2;0;1;0;0;false;false;seleccion manual;373
+\Neg28,jpg;1;1;1;0;1;0;0;false;false;;338
+\Neg28,jpg;1;2;1;NaN;NaN;NaN;NaN;false;false;iris;338
+\Neg28,jpg;99;99;2;0;1;0;0;false;false;seleccion manual;338
+\Neg28,jpg;99;99;1;NaN;NaN;NaN;NaN;false;false;seleccion manual;338
+\Neg29,jpg;1;1;1;0;1;0;0;false;false;mayor;101
+\Neg29,jpg;99;99;1;0;1;0;0;false;false;seleccion manual;101
+\Neg29,jpg;99;99;2;0;1;0;0;false;false;seleccion manual;101
+\Neg30,jpg;99;99;1;0;1;0;0;false;false;seleccion manual;
+\Neg30,jpg;99;99;2;0;1;0;0;false;false;seleccion manual;
+;;;;;;;;;;;
+promedio positivos total con flash;;;;0,657366638;0,235868887;0,050324233;0,056440242;;;;
+promedio positivos optimo con flash;;;;0,721257042;0,17619155;0,035554187;0,066997221;;;;
+promedio positivos automatico con flash sin invalidos;;;;0,596778332;0,267908051;0,049748431;0,085565186;;;;
+minimos positivos total con flash;;;;0;0;0;0;;;;
+minimos positivos optimos con flash;;;;0;0;0;0;;;;
+minimos positivos automatico con flash sin invalido;;;;0;0;0;0;;;;
+maximos positivos total con flash;;;;1;1;0,486238532;1;;;;
+maximos positivos optimos con flash;;;;1;1;0,486238532;1;;;;
+maximos positivos automatico con flash sin invalido;;;;1;0,976190476;0,26;1;;;;
+promedio negativos total con flash;;;;0,076197592;0,330555792;0,565562374;0,027684242;;;;
+promedio negativos optimo con flash;;;;0,084793417;0,278766603;0,59967447;0,03676551;;;;
+promedio negativos automatico con flash sin invalidos ni falsos ojos;;;;0,042905379;0,358230692;0,555646707;0,043217222;;;;
+minimos negativos total con flash;;;;0;0;0;0;;;;
+minimos negativos optimos con flash;;;;0;0;0;0;;;;
+minimos negativos automatico con flash sin invalido y sin falsos ojos;;;;0;0;0;0;;;;
+maximos negativos total con flash;;;;1;1;1;0,805555556;;;;
+maximos negativos optimos con flash;;;;1;1;1;0,805555556;;;;
+maximos negativos automatico con flash sin invalido y sin flasos ojos;;;;0,225490196;1;1;0,805555556;;;;
