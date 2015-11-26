@@ -27,56 +27,60 @@ import javafx.scene.image.Image;
 
 @Path("/imagen")
 public class RestServiceRetinoblastoma {
-	
-	static final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	private Random  rnd= new Random();
-	private DetectionManager detMan = new DetectionManagerImpl();
-	static{ System.loadLibrary(Core.NATIVE_LIBRARY_NAME); }
 
-	@POST
-	@Path("/upload_image")
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	public DTOJson receiveJSON(DTOJson json) throws IOException {
-		String fileName= randomString(8);
-		File file=convertFile(json.getFile(), fileName);
-		String path;
-		if(file!=null){
-			path = file.getAbsolutePath();
-			Mat detectionMat = detMan.detect(Highgui.imread(path));
-			String pathResult = path.substring(0, path.length()-4)+"1.jpg";
-			Highgui.imwrite(pathResult, detectionMat);
-			File fileResult = new File(pathResult);
-			DTOJson result = new DTOJson(convertFileToString(fileResult));
-			return result;
-		}	
-		
-		return null;
-	}
+  static {
+    System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+  }
 
-	// Convert a Base64 string and create a file
-	private File convertFile(String file_string, String file_name) throws IOException {
-		Base64.Decoder decoder = Base64.getDecoder();
-		byte[] decodedByteArray = decoder.decode(file_string);//
-		File file = new File(file_name);
-		FileOutputStream fop = new FileOutputStream(file);
-		fop.write(decodedByteArray);
-		fop.flush();
-		fop.close();
-		return file;
-	}
-	
-	String randomString( int len ){
-		   StringBuilder sb = new StringBuilder( len );
-		   for( int i = 0; i < len; i++ ) 
-		      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );
-		   return sb.toString() + ".jpg";
-		}
-	
-	 private String convertFileToString(File file) throws IOException{
-	        byte[] bytes = Files.readAllBytes(file.toPath());
-	        Base64.Encoder encoder = Base64.getEncoder();
-	        String b = encoder.encodeToString(bytes);	        
-	        return b;        
-	    }
+  static final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  private Random rnd = new Random();
+  static DetectionManager detMan = new DetectionManagerImpl();
+
+
+  @POST
+  @Path("/upload_image")
+  @Consumes(MediaType.APPLICATION_JSON)
+  @Produces(MediaType.APPLICATION_JSON)
+  public DTOJsonResponse receiveJSON(DTOJsonRequest json) throws IOException {
+    String fileName = randomString(8, json.getExtension());
+    File file = convertFile(json.getFile(), fileName);
+    String path;
+    if (file != null) {
+      path = file.getAbsolutePath();
+      Mat detectionMat = detMan.detect(Highgui.imread(path));
+      String pathResult = path.substring(0, path.indexOf(".")-1) + "-Detected" + json.getExtension();
+      Highgui.imwrite(pathResult, detectionMat);
+      File fileResult = new File(pathResult);
+      DTOJsonResponse result = new DTOJsonResponse(convertFileToString(fileResult),"20","10","5","65","tiene mucho amarillo" );        
+      return result;
+    }
+
+    return null;
+  }
+
+  // Convert a Base64 string and create a file
+  private File convertFile(String file_string, String file_name) throws IOException {
+    Base64.Decoder decoder = Base64.getDecoder();
+    byte[] decodedByteArray = decoder.decode(file_string);//
+    File file = new File(file_name);
+    FileOutputStream fop = new FileOutputStream(file);
+    fop.write(decodedByteArray);
+    fop.flush();
+    fop.close();
+    return file;
+  }
+
+  String randomString(int len, String extension) {
+    StringBuilder sb = new StringBuilder(len);
+    for (int i = 0; i < len; i++)
+      sb.append(AB.charAt(rnd.nextInt(AB.length())));
+    return sb.toString() + "extension";
+  }
+
+  private String convertFileToString(File file) throws IOException {
+    byte[] bytes = Files.readAllBytes(file.toPath());
+    Base64.Encoder encoder = Base64.getEncoder();
+    String b = encoder.encodeToString(bytes);
+    return b;
+  }
 }
