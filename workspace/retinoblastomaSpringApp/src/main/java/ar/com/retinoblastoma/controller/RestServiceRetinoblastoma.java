@@ -56,7 +56,9 @@ public class RestServiceRetinoblastoma {
     }
 
     return null;
-  }
+  }  
+  
+   
 
   // Convert a Base64 string and create a file
   private File convertFile(String file_string, String file_name) throws IOException {

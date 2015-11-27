@@ -2,17 +2,16 @@ package com.retinoblastoma;
 
 import com.google.gson.annotations.SerializedName;
 
-public class DTOJson {
+public class DTOJsonRequest {
 
     private String file;
 
-    @SerializedName("message")
     private String extension;
 
-    public DTOJson() {
+    public DTOJsonRequest() {
     }
 
-    public DTOJson(String file, String extension){
+    public DTOJsonRequest(String file, String extension){
         this.extension = extension;
         this.file=file;
     }

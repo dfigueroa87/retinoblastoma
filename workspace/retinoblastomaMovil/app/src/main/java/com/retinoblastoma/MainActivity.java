@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView image;
 
-    private DTOJson data;
+    private DTOJsonResponse data;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,8 +66,12 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this, getString(R.string.imagen_no_cargada), Toast.LENGTH_SHORT).show();
                         } else {
                             Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
-                            intent.putExtra(DetailsActivity.DATA_FILE, data.getFile());
-                            intent.putExtra(DetailsActivity.DATA_MESSAGE, data.getExtension());
+                            intent.putExtra(DetailsActivity.DATA_MESSAGE, data.getMesssage());
+                            intent.putExtra(DetailsActivity.DATA_WHITE, data.getWhite());
+                            intent.putExtra(DetailsActivity.DATA_BLACK, data.getBlack());
+                            intent.putExtra(DetailsActivity.DATA_RED, data.getRed());
+                            intent.putExtra(DetailsActivity.DATA_YELLOW, data.getYellow());
+
                             startActivity(intent);
                         }
                     }
@@ -104,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             if (requestCode == SELECT_PICTURE) {
                 String base64 = getEncodedString(data);
 
-                DTOJson params = new DTOJson(base64, ".jpg");
+                DTOJsonRequest params = new DTOJsonRequest(base64, ".jpg");
 
                 OkHttpClient client = new OkHttpClient();
                 HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
@@ -113,15 +117,15 @@ public class MainActivity extends AppCompatActivity {
 
                 Retrofit retrofit = new Retrofit.Builder()
                         .addConverterFactory(GsonConverterFactory.create())
-                        .baseUrl("http://192.168.0.14:8080/")
+                        .baseUrl("http://192.168.0.2:8080/")
                         .client(client)
                         .build();
 
                 Service service = retrofit.create(Service.class);
-                Call<DTOJson> call = service.getResponse(params);
-                call.enqueue(new Callback<DTOJson>() {
+                Call<DTOJsonResponse> call = service.getResponse(params);
+                call.enqueue(new Callback<DTOJsonResponse>() {
                     @Override
-                    public void onResponse(Response<DTOJson> response, Retrofit retrofit) {
+                    public void onResponse(Response<DTOJsonResponse> response, Retrofit retrofit) {
                         showImage(response);
                     }
                     @Override
@@ -133,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void showImage(Response<DTOJson> response) {
+    private void showImage(Response<DTOJsonResponse> response) {
         data = response.body();
 
         byte[] decodedString = android.util.Base64.decode(response.body().getFile(), android.util.Base64.DEFAULT);
