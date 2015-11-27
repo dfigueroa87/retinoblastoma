@@ -586,8 +586,7 @@ int string abc_shareactionprovider_share_with_application 0x7f06000f
 int string abc_toolbar_collapse_description 0x7f060010
 int string app_name 0x7f060012
 int string buscar_imagen 0x7f060013
-int string detalles 0x7f060014
-int string imagen_no_cargada 0x7f060015
+int string imagen_no_cargada 0x7f060014
 int string status_bar_notification_info_overflow 0x7f060011
 int style AlertDialog_AppCompat 0x7f08007a
 int style AlertDialog_AppCompat_Light 0x7f08007b
