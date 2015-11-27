@@ -3427,27 +3427,8 @@
                     "startLine": 209,
                     "startColumn": 4,
                     "startOffset": 27950,
-                    "endColumn": 45,
-                    "endOffset": 27991
-                },
-                "from": {
-                    "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\src\\main\\res\\values\\strings.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 188,
-                        "endColumn": 45,
-                        "endOffset": 229
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 210,
-                    "startColumn": 4,
-                    "startOffset": 27996,
                     "endColumn": 63,
-                    "endOffset": 28055
+                    "endOffset": 28009
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\src\\main\\res\\values\\strings.xml",
@@ -3462,11 +3443,11 @@
             },
             {
                 "to": {
-                    "startLine": 211,
+                    "startLine": 210,
                     "startColumn": 4,
-                    "startOffset": 28060,
+                    "startOffset": 28014,
                     "endColumn": 70,
-                    "endOffset": 28126
+                    "endOffset": 28080
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3481,11 +3462,11 @@
             },
             {
                 "to": {
-                    "startLine": 212,
+                    "startLine": 211,
                     "startColumn": 4,
-                    "startOffset": 28131,
+                    "startOffset": 28085,
                     "endColumn": 77,
-                    "endOffset": 28204
+                    "endOffset": 28158
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3500,11 +3481,11 @@
             },
             {
                 "to": {
-                    "startLine": 213,
+                    "startLine": 212,
                     "startColumn": 4,
-                    "startOffset": 28209,
+                    "startOffset": 28163,
                     "endColumn": 89,
-                    "endOffset": 28294
+                    "endOffset": 28248
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3519,11 +3500,11 @@
             },
             {
                 "to": {
-                    "startLine": 214,
+                    "startLine": 213,
                     "startColumn": 4,
-                    "startOffset": 28299,
+                    "startOffset": 28253,
                     "endColumn": 87,
-                    "endOffset": 28382
+                    "endOffset": 28336
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3538,11 +3519,11 @@
             },
             {
                 "to": {
-                    "startLine": 215,
+                    "startLine": 214,
                     "startColumn": 4,
-                    "startOffset": 28387,
+                    "startOffset": 28341,
                     "endColumn": 95,
-                    "endOffset": 28478
+                    "endOffset": 28432
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3557,12 +3538,12 @@
             },
             {
                 "to": {
-                    "startLine": 216,
+                    "startLine": 215,
                     "startColumn": 4,
-                    "startOffset": 28483,
-                    "endLine": 221,
+                    "startOffset": 28437,
+                    "endLine": 220,
                     "endColumn": 12,
-                    "endOffset": 28797
+                    "endOffset": 28751
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\src\\main\\res\\values\\styles.xml",
@@ -3578,12 +3559,12 @@
             },
             {
                 "to": {
-                    "startLine": 222,
+                    "startLine": 221,
                     "startColumn": 4,
-                    "startOffset": 28802,
-                    "endLine": 228,
+                    "startOffset": 28756,
+                    "endLine": 227,
                     "endColumn": 12,
-                    "endOffset": 29298
+                    "endOffset": 29252
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3599,11 +3580,11 @@
             },
             {
                 "to": {
-                    "startLine": 229,
+                    "startLine": 228,
                     "startColumn": 4,
-                    "startOffset": 29303,
+                    "startOffset": 29257,
                     "endColumn": 88,
-                    "endOffset": 29387
+                    "endOffset": 29341
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3618,12 +3599,12 @@
             },
             {
                 "to": {
-                    "startLine": 230,
+                    "startLine": 229,
                     "startColumn": 4,
-                    "startOffset": 29392,
-                    "endLine": 233,
+                    "startOffset": 29346,
+                    "endLine": 232,
                     "endColumn": 12,
-                    "endOffset": 29634
+                    "endOffset": 29588
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3639,12 +3620,12 @@
             },
             {
                 "to": {
-                    "startLine": 234,
+                    "startLine": 233,
                     "startColumn": 4,
-                    "startOffset": 29639,
-                    "endLine": 237,
+                    "startOffset": 29593,
+                    "endLine": 236,
                     "endColumn": 12,
-                    "endOffset": 29915
+                    "endOffset": 29869
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3660,12 +3641,12 @@
             },
             {
                 "to": {
-                    "startLine": 238,
+                    "startLine": 237,
                     "startColumn": 4,
-                    "startOffset": 29920,
-                    "endLine": 242,
+                    "startOffset": 29874,
+                    "endLine": 241,
                     "endColumn": 12,
-                    "endOffset": 30200
+                    "endOffset": 30154
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3681,12 +3662,12 @@
             },
             {
                 "to": {
-                    "startLine": 243,
+                    "startLine": 242,
                     "startColumn": 4,
-                    "startOffset": 30205,
-                    "endLine": 248,
+                    "startOffset": 30159,
+                    "endLine": 247,
                     "endColumn": 12,
-                    "endOffset": 30593
+                    "endOffset": 30547
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3702,12 +3683,12 @@
             },
             {
                 "to": {
-                    "startLine": 249,
+                    "startLine": 248,
                     "startColumn": 4,
-                    "startOffset": 30598,
-                    "endLine": 255,
+                    "startOffset": 30552,
+                    "endLine": 254,
                     "endColumn": 12,
-                    "endOffset": 31070
+                    "endOffset": 31024
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3723,12 +3704,12 @@
             },
             {
                 "to": {
-                    "startLine": 256,
+                    "startLine": 255,
                     "startColumn": 4,
-                    "startOffset": 31075,
-                    "endLine": 259,
+                    "startOffset": 31029,
+                    "endLine": 258,
                     "endColumn": 12,
-                    "endOffset": 31292
+                    "endOffset": 31246
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3744,12 +3725,12 @@
             },
             {
                 "to": {
-                    "startLine": 260,
+                    "startLine": 259,
                     "startColumn": 4,
-                    "startOffset": 31297,
-                    "endLine": 263,
+                    "startOffset": 31251,
+                    "endLine": 262,
                     "endColumn": 12,
-                    "endOffset": 31514
+                    "endOffset": 31468
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3765,12 +3746,12 @@
             },
             {
                 "to": {
-                    "startLine": 264,
+                    "startLine": 263,
                     "startColumn": 4,
-                    "startOffset": 31519,
-                    "endLine": 268,
+                    "startOffset": 31473,
+                    "endLine": 267,
                     "endColumn": 12,
-                    "endOffset": 31782
+                    "endOffset": 31736
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3786,12 +3767,12 @@
             },
             {
                 "to": {
-                    "startLine": 269,
+                    "startLine": 268,
                     "startColumn": 4,
-                    "startOffset": 31787,
-                    "endLine": 272,
+                    "startOffset": 31741,
+                    "endLine": 271,
                     "endColumn": 12,
-                    "endOffset": 32009
+                    "endOffset": 31963
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3807,12 +3788,12 @@
             },
             {
                 "to": {
-                    "startLine": 273,
+                    "startLine": 272,
                     "startColumn": 4,
-                    "startOffset": 32014,
-                    "endLine": 276,
+                    "startOffset": 31968,
+                    "endLine": 275,
                     "endColumn": 12,
-                    "endOffset": 32239
+                    "endOffset": 32193
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3828,12 +3809,12 @@
             },
             {
                 "to": {
-                    "startLine": 277,
+                    "startLine": 276,
                     "startColumn": 4,
-                    "startOffset": 32244,
-                    "endLine": 280,
+                    "startOffset": 32198,
+                    "endLine": 279,
                     "endColumn": 12,
-                    "endOffset": 32469
+                    "endOffset": 32423
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3849,12 +3830,12 @@
             },
             {
                 "to": {
-                    "startLine": 281,
+                    "startLine": 280,
                     "startColumn": 4,
-                    "startOffset": 32474,
-                    "endLine": 284,
+                    "startOffset": 32428,
+                    "endLine": 283,
                     "endColumn": 12,
-                    "endOffset": 32699
+                    "endOffset": 32653
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3870,12 +3851,12 @@
             },
             {
                 "to": {
-                    "startLine": 285,
+                    "startLine": 284,
                     "startColumn": 4,
-                    "startOffset": 32704,
-                    "endLine": 288,
+                    "startOffset": 32658,
+                    "endLine": 287,
                     "endColumn": 12,
-                    "endOffset": 32929
+                    "endOffset": 32883
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3891,12 +3872,12 @@
             },
             {
                 "to": {
-                    "startLine": 289,
+                    "startLine": 288,
                     "startColumn": 4,
-                    "startOffset": 32934,
-                    "endLine": 292,
+                    "startOffset": 32888,
+                    "endLine": 291,
                     "endColumn": 12,
-                    "endOffset": 33156
+                    "endOffset": 33110
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3912,12 +3893,12 @@
             },
             {
                 "to": {
-                    "startLine": 293,
+                    "startLine": 292,
                     "startColumn": 4,
-                    "startOffset": 33161,
-                    "endLine": 296,
+                    "startOffset": 33115,
+                    "endLine": 295,
                     "endColumn": 12,
-                    "endOffset": 33395
+                    "endOffset": 33349
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3933,12 +3914,12 @@
             },
             {
                 "to": {
-                    "startLine": 297,
+                    "startLine": 296,
                     "startColumn": 4,
-                    "startOffset": 33400,
-                    "endLine": 300,
+                    "startOffset": 33354,
+                    "endLine": 299,
                     "endColumn": 12,
-                    "endOffset": 33621
+                    "endOffset": 33575
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3954,12 +3935,12 @@
             },
             {
                 "to": {
-                    "startLine": 301,
+                    "startLine": 300,
                     "startColumn": 4,
-                    "startOffset": 33626,
-                    "endLine": 304,
+                    "startOffset": 33580,
+                    "endLine": 303,
                     "endColumn": 12,
-                    "endOffset": 33866
+                    "endOffset": 33820
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3975,12 +3956,12 @@
             },
             {
                 "to": {
-                    "startLine": 305,
+                    "startLine": 304,
                     "startColumn": 4,
-                    "startOffset": 33871,
-                    "endLine": 306,
+                    "startOffset": 33825,
+                    "endLine": 305,
                     "endColumn": 12,
-                    "endOffset": 33996
+                    "endOffset": 33950
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -3996,12 +3977,12 @@
             },
             {
                 "to": {
-                    "startLine": 307,
+                    "startLine": 306,
                     "startColumn": 4,
-                    "startOffset": 34001,
-                    "endLine": 308,
+                    "startOffset": 33955,
+                    "endLine": 307,
                     "endColumn": 12,
-                    "endOffset": 34126
+                    "endOffset": 34080
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4017,12 +3998,12 @@
             },
             {
                 "to": {
-                    "startLine": 309,
+                    "startLine": 308,
                     "startColumn": 4,
-                    "startOffset": 34131,
-                    "endLine": 312,
+                    "startOffset": 34085,
+                    "endLine": 311,
                     "endColumn": 12,
-                    "endOffset": 34356
+                    "endOffset": 34310
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4038,12 +4019,12 @@
             },
             {
                 "to": {
-                    "startLine": 313,
+                    "startLine": 312,
                     "startColumn": 4,
-                    "startOffset": 34361,
-                    "endLine": 316,
+                    "startOffset": 34315,
+                    "endLine": 315,
                     "endColumn": 12,
-                    "endOffset": 34604
+                    "endOffset": 34558
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4059,12 +4040,12 @@
             },
             {
                 "to": {
-                    "startLine": 317,
+                    "startLine": 316,
                     "startColumn": 4,
-                    "startOffset": 34609,
-                    "endLine": 320,
+                    "startOffset": 34563,
+                    "endLine": 319,
                     "endColumn": 12,
-                    "endOffset": 34823
+                    "endOffset": 34777
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4080,12 +4061,12 @@
             },
             {
                 "to": {
-                    "startLine": 321,
+                    "startLine": 320,
                     "startColumn": 4,
-                    "startOffset": 34828,
-                    "endLine": 325,
+                    "startOffset": 34782,
+                    "endLine": 324,
                     "endColumn": 12,
-                    "endOffset": 35106
+                    "endOffset": 35060
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4101,12 +4082,12 @@
             },
             {
                 "to": {
-                    "startLine": 326,
+                    "startLine": 325,
                     "startColumn": 4,
-                    "startOffset": 35111,
-                    "endLine": 329,
+                    "startOffset": 35065,
+                    "endLine": 328,
                     "endColumn": 12,
-                    "endOffset": 35314
+                    "endOffset": 35268
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4122,12 +4103,12 @@
             },
             {
                 "to": {
-                    "startLine": 330,
+                    "startLine": 329,
                     "startColumn": 4,
-                    "startOffset": 35319,
-                    "endLine": 332,
+                    "startOffset": 35273,
+                    "endLine": 331,
                     "endColumn": 12,
-                    "endOffset": 35445
+                    "endOffset": 35399
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4143,12 +4124,12 @@
             },
             {
                 "to": {
-                    "startLine": 333,
+                    "startLine": 332,
                     "startColumn": 4,
-                    "startOffset": 35450,
-                    "endLine": 336,
+                    "startOffset": 35404,
+                    "endLine": 335,
                     "endColumn": 12,
-                    "endOffset": 35672
+                    "endOffset": 35626
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4164,12 +4145,12 @@
             },
             {
                 "to": {
-                    "startLine": 337,
+                    "startLine": 336,
                     "startColumn": 4,
-                    "startOffset": 35677,
-                    "endLine": 340,
+                    "startOffset": 35631,
+                    "endLine": 339,
                     "endColumn": 12,
-                    "endOffset": 35918
+                    "endOffset": 35872
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4185,12 +4166,12 @@
             },
             {
                 "to": {
-                    "startLine": 341,
+                    "startLine": 340,
                     "startColumn": 4,
-                    "startOffset": 35923,
-                    "endLine": 344,
+                    "startOffset": 35877,
+                    "endLine": 343,
                     "endColumn": 12,
-                    "endOffset": 36143
+                    "endOffset": 36097
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4206,12 +4187,12 @@
             },
             {
                 "to": {
-                    "startLine": 345,
+                    "startLine": 344,
                     "startColumn": 4,
-                    "startOffset": 36148,
-                    "endLine": 348,
+                    "startOffset": 36102,
+                    "endLine": 347,
                     "endColumn": 12,
-                    "endOffset": 36390
+                    "endOffset": 36344
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4227,12 +4208,12 @@
             },
             {
                 "to": {
-                    "startLine": 349,
+                    "startLine": 348,
                     "startColumn": 4,
-                    "startOffset": 36395,
-                    "endLine": 352,
+                    "startOffset": 36349,
+                    "endLine": 351,
                     "endColumn": 12,
-                    "endOffset": 36611
+                    "endOffset": 36565
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4248,12 +4229,12 @@
             },
             {
                 "to": {
-                    "startLine": 353,
+                    "startLine": 352,
                     "startColumn": 4,
-                    "startOffset": 36616,
-                    "endLine": 356,
+                    "startOffset": 36570,
+                    "endLine": 355,
                     "endColumn": 12,
-                    "endOffset": 36856
+                    "endOffset": 36810
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4269,12 +4250,12 @@
             },
             {
                 "to": {
-                    "startLine": 357,
+                    "startLine": 356,
                     "startColumn": 4,
-                    "startOffset": 36861,
-                    "endLine": 360,
+                    "startOffset": 36815,
+                    "endLine": 359,
                     "endColumn": 12,
-                    "endOffset": 37130
+                    "endOffset": 37084
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4290,12 +4271,12 @@
             },
             {
                 "to": {
-                    "startLine": 361,
+                    "startLine": 360,
                     "startColumn": 4,
-                    "startOffset": 37135,
-                    "endLine": 364,
+                    "startOffset": 37089,
+                    "endLine": 363,
                     "endColumn": 12,
-                    "endOffset": 37431
+                    "endOffset": 37385
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4311,12 +4292,12 @@
             },
             {
                 "to": {
-                    "startLine": 365,
+                    "startLine": 364,
                     "startColumn": 4,
-                    "startOffset": 37436,
-                    "endLine": 368,
+                    "startOffset": 37390,
+                    "endLine": 367,
                     "endColumn": 12,
-                    "endOffset": 37755
+                    "endOffset": 37709
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4332,12 +4313,12 @@
             },
             {
                 "to": {
-                    "startLine": 369,
+                    "startLine": 368,
                     "startColumn": 4,
-                    "startOffset": 37760,
-                    "endLine": 372,
+                    "startOffset": 37714,
+                    "endLine": 371,
                     "endColumn": 12,
-                    "endOffset": 38046
+                    "endOffset": 38000
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4353,12 +4334,12 @@
             },
             {
                 "to": {
-                    "startLine": 373,
+                    "startLine": 372,
                     "startColumn": 4,
-                    "startOffset": 38051,
-                    "endLine": 376,
+                    "startOffset": 38005,
+                    "endLine": 375,
                     "endColumn": 12,
-                    "endOffset": 38360
+                    "endOffset": 38314
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4374,11 +4355,11 @@
             },
             {
                 "to": {
-                    "startLine": 377,
+                    "startLine": 376,
                     "startColumn": 4,
-                    "startOffset": 38365,
+                    "startOffset": 38319,
                     "endColumn": 136,
-                    "endOffset": 38497
+                    "endOffset": 38451
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4393,11 +4374,11 @@
             },
             {
                 "to": {
-                    "startLine": 378,
+                    "startLine": 377,
                     "startColumn": 4,
-                    "startOffset": 38502,
+                    "startOffset": 38456,
                     "endColumn": 130,
-                    "endOffset": 38628
+                    "endOffset": 38582
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4412,11 +4393,11 @@
             },
             {
                 "to": {
-                    "startLine": 379,
+                    "startLine": 378,
                     "startColumn": 4,
-                    "startOffset": 38633,
+                    "startOffset": 38587,
                     "endColumn": 104,
-                    "endOffset": 38733
+                    "endOffset": 38687
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4431,12 +4412,12 @@
             },
             {
                 "to": {
-                    "startLine": 380,
+                    "startLine": 379,
                     "startColumn": 4,
-                    "startOffset": 38738,
-                    "endLine": 382,
+                    "startOffset": 38692,
+                    "endLine": 381,
                     "endColumn": 12,
-                    "endOffset": 38937
+                    "endOffset": 38891
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4452,12 +4433,12 @@
             },
             {
                 "to": {
-                    "startLine": 383,
+                    "startLine": 382,
                     "startColumn": 4,
-                    "startOffset": 38942,
-                    "endLine": 385,
+                    "startOffset": 38896,
+                    "endLine": 384,
                     "endColumn": 12,
-                    "endOffset": 39145
+                    "endOffset": 39099
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4473,12 +4454,12 @@
             },
             {
                 "to": {
-                    "startLine": 386,
+                    "startLine": 385,
                     "startColumn": 4,
-                    "startOffset": 39150,
-                    "endLine": 387,
+                    "startOffset": 39104,
+                    "endLine": 386,
                     "endColumn": 12,
-                    "endOffset": 39269
+                    "endOffset": 39223
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4494,12 +4475,12 @@
             },
             {
                 "to": {
-                    "startLine": 388,
+                    "startLine": 387,
                     "startColumn": 4,
-                    "startOffset": 39274,
-                    "endLine": 389,
+                    "startOffset": 39228,
+                    "endLine": 388,
                     "endColumn": 12,
-                    "endOffset": 39393
+                    "endOffset": 39347
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4515,11 +4496,11 @@
             },
             {
                 "to": {
-                    "startLine": 390,
+                    "startLine": 389,
                     "startColumn": 4,
-                    "startOffset": 39398,
+                    "startOffset": 39352,
                     "endColumn": 104,
-                    "endOffset": 39498
+                    "endOffset": 39452
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4534,11 +4515,11 @@
             },
             {
                 "to": {
-                    "startLine": 391,
+                    "startLine": 390,
                     "startColumn": 4,
-                    "startOffset": 39503,
+                    "startOffset": 39457,
                     "endColumn": 116,
-                    "endOffset": 39615
+                    "endOffset": 39569
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4553,12 +4534,12 @@
             },
             {
                 "to": {
-                    "startLine": 392,
+                    "startLine": 391,
                     "startColumn": 4,
-                    "startOffset": 39620,
-                    "endLine": 394,
+                    "startOffset": 39574,
+                    "endLine": 393,
                     "endColumn": 12,
-                    "endOffset": 39829
+                    "endOffset": 39783
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4574,12 +4555,12 @@
             },
             {
                 "to": {
-                    "startLine": 395,
+                    "startLine": 394,
                     "startColumn": 4,
-                    "startOffset": 39834,
-                    "endLine": 396,
+                    "startOffset": 39788,
+                    "endLine": 395,
                     "endColumn": 12,
-                    "endOffset": 39975
+                    "endOffset": 39929
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4595,12 +4576,12 @@
             },
             {
                 "to": {
-                    "startLine": 397,
+                    "startLine": 396,
                     "startColumn": 4,
-                    "startOffset": 39980,
-                    "endLine": 398,
+                    "startOffset": 39934,
+                    "endLine": 397,
                     "endColumn": 12,
-                    "endOffset": 40115
+                    "endOffset": 40069
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4616,12 +4597,12 @@
             },
             {
                 "to": {
-                    "startLine": 399,
+                    "startLine": 398,
                     "startColumn": 4,
-                    "startOffset": 40120,
-                    "endLine": 400,
+                    "startOffset": 40074,
+                    "endLine": 399,
                     "endColumn": 12,
-                    "endOffset": 40201
+                    "endOffset": 40155
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4637,12 +4618,12 @@
             },
             {
                 "to": {
-                    "startLine": 401,
+                    "startLine": 400,
                     "startColumn": 4,
-                    "startOffset": 40206,
-                    "endLine": 405,
+                    "startOffset": 40160,
+                    "endLine": 404,
                     "endColumn": 12,
-                    "endOffset": 40549
+                    "endOffset": 40503
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4658,11 +4639,11 @@
             },
             {
                 "to": {
-                    "startLine": 406,
+                    "startLine": 405,
                     "startColumn": 4,
-                    "startOffset": 40554,
+                    "startOffset": 40508,
                     "endColumn": 87,
-                    "endOffset": 40637
+                    "endOffset": 40591
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4677,12 +4658,12 @@
             },
             {
                 "to": {
-                    "startLine": 407,
+                    "startLine": 406,
                     "startColumn": 4,
-                    "startOffset": 40642,
-                    "endLine": 410,
+                    "startOffset": 40596,
+                    "endLine": 409,
                     "endColumn": 12,
-                    "endOffset": 40867
+                    "endOffset": 40821
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4698,12 +4679,12 @@
             },
             {
                 "to": {
-                    "startLine": 411,
+                    "startLine": 410,
                     "startColumn": 4,
-                    "startOffset": 40872,
-                    "endLine": 416,
+                    "startOffset": 40826,
+                    "endLine": 415,
                     "endColumn": 12,
-                    "endOffset": 41269
+                    "endOffset": 41223
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4719,12 +4700,12 @@
             },
             {
                 "to": {
-                    "startLine": 417,
+                    "startLine": 416,
                     "startColumn": 4,
-                    "startOffset": 41274,
-                    "endLine": 420,
+                    "startOffset": 41228,
+                    "endLine": 419,
                     "endColumn": 12,
-                    "endOffset": 41502
+                    "endOffset": 41456
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4740,11 +4721,11 @@
             },
             {
                 "to": {
-                    "startLine": 421,
+                    "startLine": 420,
                     "startColumn": 4,
-                    "startOffset": 41507,
+                    "startOffset": 41461,
                     "endColumn": 81,
-                    "endOffset": 41584
+                    "endOffset": 41538
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4759,12 +4740,12 @@
             },
             {
                 "to": {
-                    "startLine": 422,
+                    "startLine": 421,
                     "startColumn": 4,
-                    "startOffset": 41589,
-                    "endLine": 423,
+                    "startOffset": 41543,
+                    "endLine": 422,
                     "endColumn": 12,
-                    "endOffset": 41682
+                    "endOffset": 41636
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4780,12 +4761,12 @@
             },
             {
                 "to": {
-                    "startLine": 424,
+                    "startLine": 423,
                     "startColumn": 4,
-                    "startOffset": 41687,
-                    "endLine": 434,
+                    "startOffset": 41641,
+                    "endLine": 433,
                     "endColumn": 12,
-                    "endOffset": 42299
+                    "endOffset": 42253
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4801,11 +4782,11 @@
             },
             {
                 "to": {
-                    "startLine": 435,
+                    "startLine": 434,
                     "startColumn": 4,
-                    "startOffset": 42304,
+                    "startOffset": 42258,
                     "endColumn": 99,
-                    "endOffset": 42399
+                    "endOffset": 42353
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4820,12 +4801,12 @@
             },
             {
                 "to": {
-                    "startLine": 436,
+                    "startLine": 435,
                     "startColumn": 4,
-                    "startOffset": 42404,
-                    "endLine": 439,
+                    "startOffset": 42358,
+                    "endLine": 438,
                     "endColumn": 12,
-                    "endOffset": 42635
+                    "endOffset": 42589
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4841,12 +4822,12 @@
             },
             {
                 "to": {
-                    "startLine": 440,
+                    "startLine": 439,
                     "startColumn": 4,
-                    "startOffset": 42640,
-                    "endLine": 445,
+                    "startOffset": 42594,
+                    "endLine": 444,
                     "endColumn": 12,
-                    "endOffset": 43043
+                    "endOffset": 42997
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4862,12 +4843,12 @@
             },
             {
                 "to": {
-                    "startLine": 446,
+                    "startLine": 445,
                     "startColumn": 4,
-                    "startOffset": 43048,
-                    "endLine": 449,
+                    "startOffset": 43002,
+                    "endLine": 448,
                     "endColumn": 12,
-                    "endOffset": 43282
+                    "endOffset": 43236
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4883,11 +4864,11 @@
             },
             {
                 "to": {
-                    "startLine": 450,
+                    "startLine": 449,
                     "startColumn": 4,
-                    "startOffset": 43287,
+                    "startOffset": 43241,
                     "endColumn": 93,
-                    "endOffset": 43376
+                    "endOffset": 43330
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4902,11 +4883,11 @@
             },
             {
                 "to": {
-                    "startLine": 451,
+                    "startLine": 450,
                     "startColumn": 4,
-                    "startOffset": 43381,
+                    "startOffset": 43335,
                     "endColumn": 88,
-                    "endOffset": 43465
+                    "endOffset": 43419
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4921,12 +4902,12 @@
             },
             {
                 "to": {
-                    "startLine": 452,
+                    "startLine": 451,
                     "startColumn": 4,
-                    "startOffset": 43470,
-                    "endLine": 455,
+                    "startOffset": 43424,
+                    "endLine": 454,
                     "endColumn": 12,
-                    "endOffset": 43702
+                    "endOffset": 43656
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4942,12 +4923,12 @@
             },
             {
                 "to": {
-                    "startLine": 456,
+                    "startLine": 455,
                     "startColumn": 4,
-                    "startOffset": 43707,
-                    "endLine": 481,
+                    "startOffset": 43661,
+                    "endLine": 480,
                     "endColumn": 12,
-                    "endOffset": 45653
+                    "endOffset": 45607
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4963,12 +4944,12 @@
             },
             {
                 "to": {
-                    "startLine": 482,
+                    "startLine": 481,
                     "startColumn": 4,
-                    "startOffset": 45658,
-                    "endLine": 485,
+                    "startOffset": 45612,
+                    "endLine": 484,
                     "endColumn": 12,
-                    "endOffset": 45895
+                    "endOffset": 45849
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -4984,12 +4965,12 @@
             },
             {
                 "to": {
-                    "startLine": 486,
+                    "startLine": 485,
                     "startColumn": 4,
-                    "startOffset": 45900,
-                    "endLine": 512,
+                    "startOffset": 45854,
+                    "endLine": 511,
                     "endColumn": 12,
-                    "endOffset": 47977
+                    "endOffset": 47931
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5005,12 +4986,12 @@
             },
             {
                 "to": {
-                    "startLine": 513,
+                    "startLine": 512,
                     "startColumn": 4,
-                    "startOffset": 47982,
-                    "endLine": 660,
+                    "startOffset": 47936,
+                    "endLine": 659,
                     "endColumn": 12,
-                    "endOffset": 57404
+                    "endOffset": 57358
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5026,12 +5007,12 @@
             },
             {
                 "to": {
-                    "startLine": 661,
+                    "startLine": 660,
                     "startColumn": 4,
-                    "startOffset": 57409,
-                    "endLine": 682,
+                    "startOffset": 57363,
+                    "endLine": 681,
                     "endColumn": 12,
-                    "endOffset": 58671
+                    "endOffset": 58625
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5047,12 +5028,12 @@
             },
             {
                 "to": {
-                    "startLine": 683,
+                    "startLine": 682,
                     "startColumn": 4,
-                    "startOffset": 58676,
-                    "endLine": 830,
+                    "startOffset": 58630,
+                    "endLine": 829,
                     "endColumn": 12,
-                    "endOffset": 68208
+                    "endOffset": 68162
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5068,12 +5049,12 @@
             },
             {
                 "to": {
-                    "startLine": 831,
+                    "startLine": 830,
                     "startColumn": 4,
-                    "startOffset": 68213,
-                    "endLine": 852,
+                    "startOffset": 68167,
+                    "endLine": 851,
                     "endColumn": 12,
-                    "endOffset": 69489
+                    "endOffset": 69443
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5089,12 +5070,12 @@
             },
             {
                 "to": {
-                    "startLine": 853,
+                    "startLine": 852,
                     "startColumn": 4,
-                    "startOffset": 69494,
-                    "endLine": 859,
+                    "startOffset": 69448,
+                    "endLine": 858,
                     "endColumn": 12,
-                    "endOffset": 70025
+                    "endOffset": 69979
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5110,12 +5091,12 @@
             },
             {
                 "to": {
-                    "startLine": 860,
+                    "startLine": 859,
                     "startColumn": 4,
-                    "startOffset": 70030,
-                    "endLine": 864,
+                    "startOffset": 69984,
+                    "endLine": 863,
                     "endColumn": 12,
-                    "endOffset": 70355
+                    "endOffset": 70309
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5131,12 +5112,12 @@
             },
             {
                 "to": {
-                    "startLine": 865,
+                    "startLine": 864,
                     "startColumn": 4,
-                    "startOffset": 70360,
-                    "endLine": 885,
+                    "startOffset": 70314,
+                    "endLine": 884,
                     "endColumn": 12,
-                    "endOffset": 71478
+                    "endOffset": 71432
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5152,12 +5133,12 @@
             },
             {
                 "to": {
-                    "startLine": 886,
+                    "startLine": 885,
                     "startColumn": 4,
-                    "startOffset": 71483,
-                    "endLine": 890,
+                    "startOffset": 71437,
+                    "endLine": 889,
                     "endColumn": 12,
-                    "endOffset": 71734
+                    "endOffset": 71688
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5173,12 +5154,12 @@
             },
             {
                 "to": {
-                    "startLine": 891,
+                    "startLine": 890,
                     "startColumn": 4,
-                    "startOffset": 71739,
-                    "endLine": 895,
+                    "startOffset": 71693,
+                    "endLine": 894,
                     "endColumn": 12,
-                    "endOffset": 71970
+                    "endOffset": 71924
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5194,12 +5175,12 @@
             },
             {
                 "to": {
-                    "startLine": 896,
+                    "startLine": 895,
                     "startColumn": 4,
-                    "startOffset": 71975,
-                    "endLine": 905,
+                    "startOffset": 71929,
+                    "endLine": 904,
                     "endColumn": 12,
-                    "endOffset": 72517
+                    "endOffset": 72471
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5215,12 +5196,12 @@
             },
             {
                 "to": {
-                    "startLine": 906,
+                    "startLine": 905,
                     "startColumn": 4,
-                    "startOffset": 72522,
-                    "endLine": 914,
+                    "startOffset": 72476,
+                    "endLine": 913,
                     "endColumn": 12,
-                    "endOffset": 73011
+                    "endOffset": 72965
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5236,12 +5217,12 @@
             },
             {
                 "to": {
-                    "startLine": 915,
+                    "startLine": 914,
                     "startColumn": 4,
-                    "startOffset": 73016,
-                    "endLine": 925,
+                    "startOffset": 72970,
+                    "endLine": 924,
                     "endColumn": 12,
-                    "endOffset": 73684
+                    "endOffset": 73638
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5257,12 +5238,12 @@
             },
             {
                 "to": {
-                    "startLine": 926,
+                    "startLine": 925,
                     "startColumn": 4,
-                    "startOffset": 73689,
-                    "endLine": 928,
+                    "startOffset": 73643,
+                    "endLine": 927,
                     "endColumn": 12,
-                    "endOffset": 73832
+                    "endOffset": 73786
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5278,12 +5259,12 @@
             },
             {
                 "to": {
-                    "startLine": 929,
+                    "startLine": 928,
                     "startColumn": 4,
-                    "startOffset": 73837,
-                    "endLine": 935,
+                    "startOffset": 73791,
+                    "endLine": 934,
                     "endColumn": 12,
-                    "endOffset": 74360
+                    "endOffset": 74314
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5299,12 +5280,12 @@
             },
             {
                 "to": {
-                    "startLine": 936,
+                    "startLine": 935,
                     "startColumn": 4,
-                    "startOffset": 74365,
-                    "endLine": 943,
+                    "startOffset": 74319,
+                    "endLine": 942,
                     "endColumn": 12,
-                    "endOffset": 74924
+                    "endOffset": 74878
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5320,12 +5301,12 @@
             },
             {
                 "to": {
-                    "startLine": 944,
+                    "startLine": 943,
                     "startColumn": 4,
-                    "startOffset": 74929,
-                    "endLine": 950,
+                    "startOffset": 74883,
+                    "endLine": 949,
                     "endColumn": 12,
-                    "endOffset": 75299
+                    "endOffset": 75253
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5341,11 +5322,11 @@
             },
             {
                 "to": {
-                    "startLine": 951,
+                    "startLine": 950,
                     "startColumn": 4,
-                    "startOffset": 75304,
+                    "startOffset": 75258,
                     "endColumn": 117,
-                    "endOffset": 75417
+                    "endOffset": 75371
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5360,12 +5341,12 @@
             },
             {
                 "to": {
-                    "startLine": 952,
+                    "startLine": 951,
                     "startColumn": 4,
-                    "startOffset": 75422,
-                    "endLine": 960,
+                    "startOffset": 75376,
+                    "endLine": 959,
                     "endColumn": 12,
-                    "endOffset": 75955
+                    "endOffset": 75909
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5381,12 +5362,12 @@
             },
             {
                 "to": {
-                    "startLine": 961,
+                    "startLine": 960,
                     "startColumn": 4,
-                    "startOffset": 75960,
-                    "endLine": 963,
+                    "startOffset": 75914,
+                    "endLine": 962,
                     "endColumn": 12,
-                    "endOffset": 76112
+                    "endOffset": 76066
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5402,12 +5383,12 @@
             },
             {
                 "to": {
-                    "startLine": 964,
+                    "startLine": 963,
                     "startColumn": 4,
-                    "startOffset": 76117,
-                    "endLine": 966,
+                    "startOffset": 76071,
+                    "endLine": 965,
                     "endColumn": 12,
-                    "endOffset": 76256
+                    "endOffset": 76210
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5423,12 +5404,12 @@
             },
             {
                 "to": {
-                    "startLine": 967,
+                    "startLine": 966,
                     "startColumn": 4,
-                    "startOffset": 76261,
-                    "endLine": 971,
+                    "startOffset": 76215,
+                    "endLine": 970,
                     "endColumn": 12,
-                    "endOffset": 76576
+                    "endOffset": 76530
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5444,12 +5425,12 @@
             },
             {
                 "to": {
-                    "startLine": 972,
+                    "startLine": 971,
                     "startColumn": 4,
-                    "startOffset": 76581,
-                    "endLine": 975,
+                    "startOffset": 76535,
+                    "endLine": 974,
                     "endColumn": 12,
-                    "endOffset": 76832
+                    "endOffset": 76786
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5465,12 +5446,12 @@
             },
             {
                 "to": {
-                    "startLine": 976,
+                    "startLine": 975,
                     "startColumn": 4,
-                    "startOffset": 76837,
-                    "endLine": 979,
+                    "startOffset": 76791,
+                    "endLine": 978,
                     "endColumn": 12,
-                    "endOffset": 77002
+                    "endOffset": 76956
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5486,12 +5467,12 @@
             },
             {
                 "to": {
-                    "startLine": 980,
+                    "startLine": 979,
                     "startColumn": 4,
-                    "startOffset": 77007,
-                    "endLine": 982,
+                    "startOffset": 76961,
+                    "endLine": 981,
                     "endColumn": 12,
-                    "endOffset": 77143
+                    "endOffset": 77097
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5507,11 +5488,11 @@
             },
             {
                 "to": {
-                    "startLine": 983,
+                    "startLine": 982,
                     "startColumn": 4,
-                    "startOffset": 77148,
+                    "startOffset": 77102,
                     "endColumn": 63,
-                    "endOffset": 77207
+                    "endOffset": 77161
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5526,12 +5507,12 @@
             },
             {
                 "to": {
-                    "startLine": 984,
+                    "startLine": 983,
                     "startColumn": 4,
-                    "startOffset": 77212,
-                    "endLine": 987,
+                    "startOffset": 77166,
+                    "endLine": 986,
                     "endColumn": 12,
-                    "endOffset": 77489
+                    "endOffset": 77443
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5547,12 +5528,12 @@
             },
             {
                 "to": {
-                    "startLine": 988,
+                    "startLine": 987,
                     "startColumn": 4,
-                    "startOffset": 77494,
-                    "endLine": 991,
+                    "startOffset": 77448,
+                    "endLine": 990,
                     "endColumn": 12,
-                    "endOffset": 77775
+                    "endOffset": 77729
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5568,12 +5549,12 @@
             },
             {
                 "to": {
-                    "startLine": 992,
+                    "startLine": 991,
                     "startColumn": 4,
-                    "startOffset": 77780,
-                    "endLine": 999,
+                    "startOffset": 77734,
+                    "endLine": 998,
                     "endColumn": 12,
-                    "endOffset": 78317
+                    "endOffset": 78271
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5589,12 +5570,12 @@
             },
             {
                 "to": {
-                    "startLine": 1000,
+                    "startLine": 999,
                     "startColumn": 4,
-                    "startOffset": 78322,
-                    "endLine": 1004,
+                    "startOffset": 78276,
+                    "endLine": 1003,
                     "endColumn": 12,
-                    "endOffset": 78581
+                    "endOffset": 78535
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5610,12 +5591,12 @@
             },
             {
                 "to": {
-                    "startLine": 1005,
+                    "startLine": 1004,
                     "startColumn": 4,
-                    "startOffset": 78586,
-                    "endLine": 1011,
+                    "startOffset": 78540,
+                    "endLine": 1010,
                     "endColumn": 12,
-                    "endOffset": 78919
+                    "endOffset": 78873
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5631,12 +5612,12 @@
             },
             {
                 "to": {
-                    "startLine": 1012,
+                    "startLine": 1011,
                     "startColumn": 4,
-                    "startOffset": 78924,
-                    "endLine": 1017,
+                    "startOffset": 78878,
+                    "endLine": 1016,
                     "endColumn": 12,
-                    "endOffset": 79272
+                    "endOffset": 79226
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5652,11 +5633,11 @@
             },
             {
                 "to": {
-                    "startLine": 1018,
+                    "startLine": 1017,
                     "startColumn": 4,
-                    "startOffset": 79277,
+                    "startOffset": 79231,
                     "endColumn": 93,
-                    "endOffset": 79366
+                    "endOffset": 79320
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5671,12 +5652,12 @@
             },
             {
                 "to": {
-                    "startLine": 1019,
+                    "startLine": 1018,
                     "startColumn": 4,
-                    "startOffset": 79371,
-                    "endLine": 1022,
+                    "startOffset": 79325,
+                    "endLine": 1021,
                     "endColumn": 12,
-                    "endOffset": 79672
+                    "endOffset": 79626
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5692,12 +5673,12 @@
             },
             {
                 "to": {
-                    "startLine": 1023,
+                    "startLine": 1022,
                     "startColumn": 4,
-                    "startOffset": 79677,
-                    "endLine": 1027,
+                    "startOffset": 79631,
+                    "endLine": 1026,
                     "endColumn": 12,
-                    "endOffset": 79934
+                    "endOffset": 79888
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5713,12 +5694,12 @@
             },
             {
                 "to": {
-                    "startLine": 1028,
+                    "startLine": 1027,
                     "startColumn": 4,
-                    "startOffset": 79939,
-                    "endLine": 1029,
+                    "startOffset": 79893,
+                    "endLine": 1028,
                     "endColumn": 12,
-                    "endOffset": 80059
+                    "endOffset": 80013
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5734,12 +5715,12 @@
             },
             {
                 "to": {
-                    "startLine": 1030,
+                    "startLine": 1029,
                     "startColumn": 4,
-                    "startOffset": 80064,
-                    "endLine": 1031,
+                    "startOffset": 80018,
+                    "endLine": 1030,
                     "endColumn": 12,
-                    "endOffset": 80186
+                    "endOffset": 80140
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5755,12 +5736,12 @@
             },
             {
                 "to": {
-                    "startLine": 1032,
+                    "startLine": 1031,
                     "startColumn": 4,
-                    "startOffset": 80191,
-                    "endLine": 1034,
+                    "startOffset": 80145,
+                    "endLine": 1033,
                     "endColumn": 12,
-                    "endOffset": 80425
+                    "endOffset": 80379
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5776,12 +5757,12 @@
             },
             {
                 "to": {
-                    "startLine": 1035,
+                    "startLine": 1034,
                     "startColumn": 4,
-                    "startOffset": 80430,
-                    "endLine": 1037,
+                    "startOffset": 80384,
+                    "endLine": 1036,
                     "endColumn": 12,
-                    "endOffset": 80636
+                    "endOffset": 80590
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5797,12 +5778,12 @@
             },
             {
                 "to": {
-                    "startLine": 1038,
+                    "startLine": 1037,
                     "startColumn": 4,
-                    "startOffset": 80641,
-                    "endLine": 1039,
+                    "startOffset": 80595,
+                    "endLine": 1038,
                     "endColumn": 12,
-                    "endOffset": 80755
+                    "endOffset": 80709
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5818,12 +5799,12 @@
             },
             {
                 "to": {
-                    "startLine": 1040,
+                    "startLine": 1039,
                     "startColumn": 4,
-                    "startOffset": 80760,
-                    "endLine": 1043,
+                    "startOffset": 80714,
+                    "endLine": 1042,
                     "endColumn": 12,
-                    "endOffset": 80948
+                    "endOffset": 80902
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5839,12 +5820,12 @@
             },
             {
                 "to": {
-                    "startLine": 1044,
+                    "startLine": 1043,
                     "startColumn": 4,
-                    "startOffset": 80953,
-                    "endLine": 1050,
+                    "startOffset": 80907,
+                    "endLine": 1049,
                     "endColumn": 12,
-                    "endOffset": 81403
+                    "endOffset": 81357
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5860,12 +5841,12 @@
             },
             {
                 "to": {
-                    "startLine": 1051,
+                    "startLine": 1050,
                     "startColumn": 4,
-                    "startOffset": 81408,
-                    "endLine": 1053,
+                    "startOffset": 81362,
+                    "endLine": 1052,
                     "endColumn": 12,
-                    "endOffset": 81584
+                    "endOffset": 81538
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5881,12 +5862,12 @@
             },
             {
                 "to": {
-                    "startLine": 1054,
+                    "startLine": 1053,
                     "startColumn": 4,
-                    "startOffset": 81589,
-                    "endLine": 1056,
+                    "startOffset": 81543,
+                    "endLine": 1055,
                     "endColumn": 12,
-                    "endOffset": 81706
+                    "endOffset": 81660
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5902,12 +5883,12 @@
             },
             {
                 "to": {
-                    "startLine": 1057,
+                    "startLine": 1056,
                     "startColumn": 4,
-                    "startOffset": 81711,
-                    "endLine": 1060,
+                    "startOffset": 81665,
+                    "endLine": 1059,
                     "endColumn": 12,
-                    "endOffset": 81965
+                    "endOffset": 81919
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5923,12 +5904,12 @@
             },
             {
                 "to": {
-                    "startLine": 1061,
+                    "startLine": 1060,
                     "startColumn": 4,
-                    "startOffset": 81970,
-                    "endLine": 1062,
+                    "startOffset": 81924,
+                    "endLine": 1061,
                     "endColumn": 12,
-                    "endOffset": 82078
+                    "endOffset": 82032
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5944,12 +5925,12 @@
             },
             {
                 "to": {
-                    "startLine": 1063,
+                    "startLine": 1062,
                     "startColumn": 4,
-                    "startOffset": 82083,
-                    "endLine": 1066,
+                    "startOffset": 82037,
+                    "endLine": 1065,
                     "endColumn": 12,
-                    "endOffset": 82265
+                    "endOffset": 82219
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5965,12 +5946,12 @@
             },
             {
                 "to": {
-                    "startLine": 1067,
+                    "startLine": 1066,
                     "startColumn": 4,
-                    "startOffset": 82270,
-                    "endLine": 1068,
+                    "startOffset": 82224,
+                    "endLine": 1067,
                     "endColumn": 12,
-                    "endOffset": 82367
+                    "endOffset": 82321
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -5986,12 +5967,12 @@
             },
             {
                 "to": {
-                    "startLine": 1069,
+                    "startLine": 1068,
                     "startColumn": 4,
-                    "startOffset": 82372,
-                    "endLine": 1074,
+                    "startOffset": 82326,
+                    "endLine": 1073,
                     "endColumn": 12,
-                    "endOffset": 82811
+                    "endOffset": 82765
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6007,12 +5988,12 @@
             },
             {
                 "to": {
-                    "startLine": 1075,
+                    "startLine": 1074,
                     "startColumn": 4,
-                    "startOffset": 82816,
-                    "endLine": 1076,
+                    "startOffset": 82770,
+                    "endLine": 1075,
                     "endColumn": 12,
-                    "endOffset": 82935
+                    "endOffset": 82889
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6028,12 +6009,12 @@
             },
             {
                 "to": {
-                    "startLine": 1077,
+                    "startLine": 1076,
                     "startColumn": 4,
-                    "startOffset": 82940,
-                    "endLine": 1080,
+                    "startOffset": 82894,
+                    "endLine": 1079,
                     "endColumn": 12,
-                    "endOffset": 83220
+                    "endOffset": 83174
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6049,12 +6030,12 @@
             },
             {
                 "to": {
-                    "startLine": 1081,
+                    "startLine": 1080,
                     "startColumn": 4,
-                    "startOffset": 83225,
-                    "endLine": 1092,
+                    "startOffset": 83179,
+                    "endLine": 1091,
                     "endColumn": 12,
-                    "endOffset": 84107
+                    "endOffset": 84061
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6070,12 +6051,12 @@
             },
             {
                 "to": {
-                    "startLine": 1093,
+                    "startLine": 1092,
                     "startColumn": 4,
-                    "startOffset": 84112,
-                    "endLine": 1098,
+                    "startOffset": 84066,
+                    "endLine": 1097,
                     "endColumn": 12,
-                    "endOffset": 84401
+                    "endOffset": 84355
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6091,12 +6072,12 @@
             },
             {
                 "to": {
-                    "startLine": 1099,
+                    "startLine": 1098,
                     "startColumn": 4,
-                    "startOffset": 84406,
-                    "endLine": 1109,
+                    "startOffset": 84360,
+                    "endLine": 1108,
                     "endColumn": 12,
-                    "endOffset": 85133
+                    "endOffset": 85087
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6112,12 +6093,12 @@
             },
             {
                 "to": {
-                    "startLine": 1110,
+                    "startLine": 1109,
                     "startColumn": 4,
-                    "startOffset": 85138,
-                    "endLine": 1112,
+                    "startOffset": 85092,
+                    "endLine": 1111,
                     "endColumn": 12,
-                    "endOffset": 85305
+                    "endOffset": 85259
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6133,12 +6114,12 @@
             },
             {
                 "to": {
-                    "startLine": 1113,
+                    "startLine": 1112,
                     "startColumn": 4,
-                    "startOffset": 85310,
-                    "endLine": 1117,
+                    "startOffset": 85264,
+                    "endLine": 1116,
                     "endColumn": 12,
-                    "endOffset": 85641
+                    "endOffset": 85595
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6154,12 +6135,12 @@
             },
             {
                 "to": {
-                    "startLine": 1118,
+                    "startLine": 1117,
                     "startColumn": 4,
-                    "startOffset": 85646,
-                    "endLine": 1129,
+                    "startOffset": 85600,
+                    "endLine": 1128,
                     "endColumn": 12,
-                    "endOffset": 86508
+                    "endOffset": 86462
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6175,12 +6156,12 @@
             },
             {
                 "to": {
-                    "startLine": 1130,
+                    "startLine": 1129,
                     "startColumn": 4,
-                    "startOffset": 86513,
-                    "endLine": 1134,
+                    "startOffset": 86467,
+                    "endLine": 1133,
                     "endColumn": 12,
-                    "endOffset": 86786
+                    "endOffset": 86740
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6196,12 +6177,12 @@
             },
             {
                 "to": {
-                    "startLine": 1135,
+                    "startLine": 1134,
                     "startColumn": 4,
-                    "startOffset": 86791,
-                    "endLine": 1172,
+                    "startOffset": 86745,
+                    "endLine": 1171,
                     "endColumn": 12,
-                    "endOffset": 89648
+                    "endOffset": 89602
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6217,12 +6198,12 @@
             },
             {
                 "to": {
-                    "startLine": 1173,
+                    "startLine": 1172,
                     "startColumn": 4,
-                    "startOffset": 89653,
-                    "endLine": 1211,
+                    "startOffset": 89607,
+                    "endLine": 1210,
                     "endColumn": 12,
-                    "endOffset": 92650
+                    "endOffset": 92604
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6238,11 +6219,11 @@
             },
             {
                 "to": {
-                    "startLine": 1212,
+                    "startLine": 1211,
                     "startColumn": 4,
-                    "startOffset": 92655,
+                    "startOffset": 92609,
                     "endColumn": 61,
-                    "endOffset": 92712
+                    "endOffset": 92666
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6257,12 +6238,12 @@
             },
             {
                 "to": {
-                    "startLine": 1213,
+                    "startLine": 1212,
                     "startColumn": 4,
-                    "startOffset": 92717,
-                    "endLine": 1222,
+                    "startOffset": 92671,
+                    "endLine": 1221,
                     "endColumn": 12,
-                    "endOffset": 93342
+                    "endOffset": 93296
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6278,12 +6259,12 @@
             },
             {
                 "to": {
-                    "startLine": 1223,
+                    "startLine": 1222,
                     "startColumn": 4,
-                    "startOffset": 93347,
-                    "endLine": 1231,
+                    "startOffset": 93301,
+                    "endLine": 1230,
                     "endColumn": 12,
-                    "endOffset": 93956
+                    "endOffset": 93910
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6299,11 +6280,11 @@
             },
             {
                 "to": {
-                    "startLine": 1232,
+                    "startLine": 1231,
                     "startColumn": 4,
-                    "startOffset": 93961,
+                    "startOffset": 93915,
                     "endColumn": 85,
-                    "endOffset": 94042
+                    "endOffset": 93996
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6318,12 +6299,12 @@
             },
             {
                 "to": {
-                    "startLine": 1233,
+                    "startLine": 1232,
                     "startColumn": 4,
-                    "startOffset": 94047,
-                    "endLine": 1234,
+                    "startOffset": 94001,
+                    "endLine": 1233,
                     "endColumn": 12,
-                    "endOffset": 94155
+                    "endOffset": 94109
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6339,12 +6320,12 @@
             },
             {
                 "to": {
-                    "startLine": 1235,
+                    "startLine": 1234,
                     "startColumn": 4,
-                    "startOffset": 94160,
-                    "endLine": 1238,
+                    "startOffset": 94114,
+                    "endLine": 1237,
                     "endColumn": 12,
-                    "endOffset": 94384
+                    "endOffset": 94338
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6360,12 +6341,12 @@
             },
             {
                 "to": {
-                    "startLine": 1239,
+                    "startLine": 1238,
                     "startColumn": 4,
-                    "startOffset": 94389,
-                    "endLine": 1242,
+                    "startOffset": 94343,
+                    "endLine": 1241,
                     "endColumn": 12,
-                    "endOffset": 94722
+                    "endOffset": 94676
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6381,12 +6362,12 @@
             },
             {
                 "to": {
-                    "startLine": 1243,
+                    "startLine": 1242,
                     "startColumn": 4,
-                    "startOffset": 94727,
-                    "endLine": 1245,
+                    "startOffset": 94681,
+                    "endLine": 1244,
                     "endColumn": 12,
-                    "endOffset": 94882
+                    "endOffset": 94836
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6402,12 +6383,12 @@
             },
             {
                 "to": {
-                    "startLine": 1246,
+                    "startLine": 1245,
                     "startColumn": 4,
-                    "startOffset": 94887,
-                    "endLine": 1248,
+                    "startOffset": 94841,
+                    "endLine": 1247,
                     "endColumn": 12,
-                    "endOffset": 95034
+                    "endOffset": 94988
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6423,12 +6404,12 @@
             },
             {
                 "to": {
-                    "startLine": 1249,
+                    "startLine": 1248,
                     "startColumn": 4,
-                    "startOffset": 95039,
-                    "endLine": 1251,
+                    "startOffset": 94993,
+                    "endLine": 1250,
                     "endColumn": 12,
-                    "endOffset": 95205
+                    "endOffset": 95159
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6444,12 +6425,12 @@
             },
             {
                 "to": {
-                    "startLine": 1252,
+                    "startLine": 1251,
                     "startColumn": 4,
-                    "startOffset": 95210,
-                    "endLine": 1254,
+                    "startOffset": 95164,
+                    "endLine": 1253,
                     "endColumn": 12,
-                    "endOffset": 95372
+                    "endOffset": 95326
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6465,12 +6446,12 @@
             },
             {
                 "to": {
-                    "startLine": 1255,
+                    "startLine": 1254,
                     "startColumn": 4,
-                    "startOffset": 95377,
-                    "endLine": 1258,
+                    "startOffset": 95331,
+                    "endLine": 1257,
                     "endColumn": 12,
-                    "endOffset": 95615
+                    "endOffset": 95569
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6486,12 +6467,12 @@
             },
             {
                 "to": {
-                    "startLine": 1259,
+                    "startLine": 1258,
                     "startColumn": 4,
-                    "startOffset": 95620,
-                    "endLine": 1261,
+                    "startOffset": 95574,
+                    "endLine": 1260,
                     "endColumn": 12,
-                    "endOffset": 95785
+                    "endOffset": 95739
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6507,12 +6488,12 @@
             },
             {
                 "to": {
-                    "startLine": 1262,
+                    "startLine": 1261,
                     "startColumn": 4,
-                    "startOffset": 95790,
-                    "endLine": 1264,
+                    "startOffset": 95744,
+                    "endLine": 1263,
                     "endColumn": 12,
-                    "endOffset": 95958
+                    "endOffset": 95912
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6528,12 +6509,12 @@
             },
             {
                 "to": {
-                    "startLine": 1265,
+                    "startLine": 1264,
                     "startColumn": 4,
-                    "startOffset": 95963,
-                    "endLine": 1267,
+                    "startOffset": 95917,
+                    "endLine": 1266,
                     "endColumn": 12,
-                    "endOffset": 96129
+                    "endOffset": 96083
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6549,12 +6530,12 @@
             },
             {
                 "to": {
-                    "startLine": 1268,
+                    "startLine": 1267,
                     "startColumn": 4,
-                    "startOffset": 96134,
-                    "endLine": 1271,
+                    "startOffset": 96088,
+                    "endLine": 1270,
                     "endColumn": 12,
-                    "endOffset": 96403
+                    "endOffset": 96357
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6570,12 +6551,12 @@
             },
             {
                 "to": {
-                    "startLine": 1272,
+                    "startLine": 1271,
                     "startColumn": 4,
-                    "startOffset": 96408,
-                    "endLine": 1274,
+                    "startOffset": 96362,
+                    "endLine": 1273,
                     "endColumn": 12,
-                    "endOffset": 96602
+                    "endOffset": 96556
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6591,11 +6572,11 @@
             },
             {
                 "to": {
-                    "startLine": 1275,
+                    "startLine": 1274,
                     "startColumn": 4,
-                    "startOffset": 96607,
+                    "startOffset": 96561,
                     "endColumn": 83,
-                    "endOffset": 96686
+                    "endOffset": 96640
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6610,11 +6591,11 @@
             },
             {
                 "to": {
-                    "startLine": 1276,
+                    "startLine": 1275,
                     "startColumn": 4,
-                    "startOffset": 96691,
+                    "startOffset": 96645,
                     "endColumn": 95,
-                    "endOffset": 96782
+                    "endOffset": 96736
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6629,11 +6610,11 @@
             },
             {
                 "to": {
-                    "startLine": 1277,
+                    "startLine": 1276,
                     "startColumn": 4,
-                    "startOffset": 96787,
+                    "startOffset": 96741,
                     "endColumn": 95,
-                    "endOffset": 96878
+                    "endOffset": 96832
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6648,11 +6629,11 @@
             },
             {
                 "to": {
-                    "startLine": 1278,
+                    "startLine": 1277,
                     "startColumn": 4,
-                    "startOffset": 96883,
+                    "startOffset": 96837,
                     "endColumn": 97,
-                    "endOffset": 96976
+                    "endOffset": 96930
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6667,11 +6648,11 @@
             },
             {
                 "to": {
-                    "startLine": 1279,
+                    "startLine": 1278,
                     "startColumn": 4,
-                    "startOffset": 96981,
+                    "startOffset": 96935,
                     "endColumn": 99,
-                    "endOffset": 97076
+                    "endOffset": 97030
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6686,11 +6667,11 @@
             },
             {
                 "to": {
-                    "startLine": 1280,
+                    "startLine": 1279,
                     "startColumn": 4,
-                    "startOffset": 97081,
+                    "startOffset": 97035,
                     "endColumn": 101,
-                    "endOffset": 97178
+                    "endOffset": 97132
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6705,11 +6686,11 @@
             },
             {
                 "to": {
-                    "startLine": 1281,
+                    "startLine": 1280,
                     "startColumn": 4,
-                    "startOffset": 97183,
+                    "startOffset": 97137,
                     "endColumn": 101,
-                    "endOffset": 97280
+                    "endOffset": 97234
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6724,11 +6705,11 @@
             },
             {
                 "to": {
-                    "startLine": 1282,
+                    "startLine": 1281,
                     "startColumn": 4,
-                    "startOffset": 97285,
+                    "startOffset": 97239,
                     "endColumn": 101,
-                    "endOffset": 97382
+                    "endOffset": 97336
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6743,11 +6724,11 @@
             },
             {
                 "to": {
-                    "startLine": 1283,
+                    "startLine": 1282,
                     "startColumn": 4,
-                    "startOffset": 97387,
+                    "startOffset": 97341,
                     "endColumn": 101,
-                    "endOffset": 97484
+                    "endOffset": 97438
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6762,11 +6743,11 @@
             },
             {
                 "to": {
-                    "startLine": 1284,
+                    "startLine": 1283,
                     "startColumn": 4,
-                    "startOffset": 97489,
+                    "startOffset": 97443,
                     "endColumn": 101,
-                    "endOffset": 97586
+                    "endOffset": 97540
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6781,11 +6762,11 @@
             },
             {
                 "to": {
-                    "startLine": 1285,
+                    "startLine": 1284,
                     "startColumn": 4,
-                    "startOffset": 97591,
+                    "startOffset": 97545,
                     "endColumn": 99,
-                    "endOffset": 97686
+                    "endOffset": 97640
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6800,11 +6781,11 @@
             },
             {
                 "to": {
-                    "startLine": 1286,
+                    "startLine": 1285,
                     "startColumn": 4,
-                    "startOffset": 97691,
+                    "startOffset": 97645,
                     "endColumn": 95,
-                    "endOffset": 97782
+                    "endOffset": 97736
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6819,11 +6800,11 @@
             },
             {
                 "to": {
-                    "startLine": 1287,
+                    "startLine": 1286,
                     "startColumn": 4,
-                    "startOffset": 97787,
+                    "startOffset": 97741,
                     "endColumn": 111,
-                    "endOffset": 97894
+                    "endOffset": 97848
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6838,11 +6819,11 @@
             },
             {
                 "to": {
-                    "startLine": 1288,
+                    "startLine": 1287,
                     "startColumn": 4,
-                    "startOffset": 97899,
+                    "startOffset": 97853,
                     "endColumn": 128,
-                    "endOffset": 98023
+                    "endOffset": 97977
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6857,11 +6838,11 @@
             },
             {
                 "to": {
-                    "startLine": 1289,
+                    "startLine": 1288,
                     "startColumn": 4,
-                    "startOffset": 98028,
+                    "startOffset": 97982,
                     "endColumn": 122,
-                    "endOffset": 98146
+                    "endOffset": 98100
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6876,12 +6857,12 @@
             },
             {
                 "to": {
-                    "startLine": 1290,
+                    "startLine": 1289,
                     "startColumn": 4,
-                    "startOffset": 98151,
-                    "endLine": 1291,
+                    "startOffset": 98105,
+                    "endLine": 1290,
                     "endColumn": 12,
-                    "endOffset": 98300
+                    "endOffset": 98254
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6897,12 +6878,12 @@
             },
             {
                 "to": {
-                    "startLine": 1292,
+                    "startLine": 1291,
                     "startColumn": 4,
-                    "startOffset": 98305,
-                    "endLine": 1293,
+                    "startOffset": 98259,
+                    "endLine": 1292,
                     "endColumn": 12,
-                    "endOffset": 98454
+                    "endOffset": 98408
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6918,11 +6899,11 @@
             },
             {
                 "to": {
-                    "startLine": 1294,
+                    "startLine": 1293,
                     "startColumn": 4,
-                    "startOffset": 98459,
+                    "startOffset": 98413,
                     "endColumn": 97,
-                    "endOffset": 98552
+                    "endOffset": 98506
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6937,11 +6918,11 @@
             },
             {
                 "to": {
-                    "startLine": 1295,
+                    "startLine": 1294,
                     "startColumn": 4,
-                    "startOffset": 98557,
+                    "startOffset": 98511,
                     "endColumn": 113,
-                    "endOffset": 98666
+                    "endOffset": 98620
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6956,11 +6937,11 @@
             },
             {
                 "to": {
-                    "startLine": 1296,
+                    "startLine": 1295,
                     "startColumn": 4,
-                    "startOffset": 98671,
+                    "startOffset": 98625,
                     "endColumn": 93,
-                    "endOffset": 98760
+                    "endOffset": 98714
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6975,12 +6956,12 @@
             },
             {
                 "to": {
-                    "startLine": 1297,
+                    "startLine": 1296,
                     "startColumn": 4,
-                    "startOffset": 98765,
-                    "endLine": 1298,
+                    "startOffset": 98719,
+                    "endLine": 1297,
                     "endColumn": 12,
-                    "endOffset": 98900
+                    "endOffset": 98854
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6996,12 +6977,12 @@
             },
             {
                 "to": {
-                    "startLine": 1299,
+                    "startLine": 1298,
                     "startColumn": 4,
-                    "startOffset": 98905,
-                    "endLine": 1300,
+                    "startOffset": 98859,
+                    "endLine": 1299,
                     "endColumn": 12,
-                    "endOffset": 99034
+                    "endOffset": 98988
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7017,11 +6998,11 @@
             },
             {
                 "to": {
-                    "startLine": 1301,
+                    "startLine": 1300,
                     "startColumn": 4,
-                    "startOffset": 99039,
+                    "startOffset": 98993,
                     "endColumn": 95,
-                    "endOffset": 99130
+                    "endOffset": 99084
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7036,11 +7017,11 @@
             },
             {
                 "to": {
-                    "startLine": 1302,
+                    "startLine": 1301,
                     "startColumn": 4,
-                    "startOffset": 99135,
+                    "startOffset": 99089,
                     "endColumn": 111,
-                    "endOffset": 99242
+                    "endOffset": 99196
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7055,11 +7036,11 @@
             },
             {
                 "to": {
-                    "startLine": 1303,
+                    "startLine": 1302,
                     "startColumn": 4,
-                    "startOffset": 99247,
+                    "startOffset": 99201,
                     "endColumn": 99,
-                    "endOffset": 99342
+                    "endOffset": 99296
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7074,11 +7055,11 @@
             },
             {
                 "to": {
-                    "startLine": 1304,
+                    "startLine": 1303,
                     "startColumn": 4,
-                    "startOffset": 99347,
+                    "startOffset": 99301,
                     "endColumn": 115,
-                    "endOffset": 99458
+                    "endOffset": 99412
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7093,11 +7074,11 @@
             },
             {
                 "to": {
-                    "startLine": 1305,
+                    "startLine": 1304,
                     "startColumn": 4,
-                    "startOffset": 99463,
+                    "startOffset": 99417,
                     "endColumn": 95,
-                    "endOffset": 99554
+                    "endOffset": 99508
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7112,11 +7093,11 @@
             },
             {
                 "to": {
-                    "startLine": 1306,
+                    "startLine": 1305,
                     "startColumn": 4,
-                    "startOffset": 99559,
+                    "startOffset": 99513,
                     "endColumn": 111,
-                    "endOffset": 99666
+                    "endOffset": 99620
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7131,12 +7112,12 @@
             },
             {
                 "to": {
-                    "startLine": 1307,
+                    "startLine": 1306,
                     "startColumn": 4,
-                    "startOffset": 99671,
-                    "endLine": 1308,
+                    "startOffset": 99625,
+                    "endLine": 1307,
                     "endColumn": 12,
-                    "endOffset": 99806
+                    "endOffset": 99760
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7152,11 +7133,11 @@
             },
             {
                 "to": {
-                    "startLine": 1309,
+                    "startLine": 1308,
                     "startColumn": 4,
-                    "startOffset": 99811,
+                    "startOffset": 99765,
                     "endColumn": 135,
-                    "endOffset": 99942
+                    "endOffset": 99896
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7171,12 +7152,12 @@
             },
             {
                 "to": {
-                    "startLine": 1310,
+                    "startLine": 1309,
                     "startColumn": 4,
-                    "startOffset": 99947,
-                    "endLine": 1311,
+                    "startOffset": 99901,
+                    "endLine": 1310,
                     "endColumn": 12,
-                    "endOffset": 100106
+                    "endOffset": 100060
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7192,11 +7173,11 @@
             },
             {
                 "to": {
-                    "startLine": 1312,
+                    "startLine": 1311,
                     "startColumn": 4,
-                    "startOffset": 100111,
+                    "startOffset": 100065,
                     "endColumn": 129,
-                    "endOffset": 100236
+                    "endOffset": 100190
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7211,12 +7192,12 @@
             },
             {
                 "to": {
-                    "startLine": 1313,
+                    "startLine": 1312,
                     "startColumn": 4,
-                    "startOffset": 100241,
-                    "endLine": 1314,
+                    "startOffset": 100195,
+                    "endLine": 1313,
                     "endColumn": 12,
-                    "endOffset": 100394
+                    "endOffset": 100348
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7232,12 +7213,12 @@
             },
             {
                 "to": {
-                    "startLine": 1315,
+                    "startLine": 1314,
                     "startColumn": 4,
-                    "startOffset": 100399,
-                    "endLine": 1316,
+                    "startOffset": 100353,
+                    "endLine": 1315,
                     "endColumn": 12,
-                    "endOffset": 100544
+                    "endOffset": 100498
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7253,11 +7234,11 @@
             },
             {
                 "to": {
-                    "startLine": 1317,
+                    "startLine": 1316,
                     "startColumn": 4,
-                    "startOffset": 100549,
+                    "startOffset": 100503,
                     "endColumn": 140,
-                    "endOffset": 100685
+                    "endOffset": 100639
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7272,12 +7253,12 @@
             },
             {
                 "to": {
-                    "startLine": 1318,
+                    "startLine": 1317,
                     "startColumn": 4,
-                    "startOffset": 100690,
-                    "endLine": 1319,
+                    "startOffset": 100644,
+                    "endLine": 1318,
                     "endColumn": 12,
-                    "endOffset": 100829
+                    "endOffset": 100783
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7293,11 +7274,11 @@
             },
             {
                 "to": {
-                    "startLine": 1320,
+                    "startLine": 1319,
                     "startColumn": 4,
-                    "startOffset": 100834,
+                    "startOffset": 100788,
                     "endColumn": 134,
-                    "endOffset": 100964
+                    "endOffset": 100918
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7312,11 +7293,11 @@
             },
             {
                 "to": {
-                    "startLine": 1321,
+                    "startLine": 1320,
                     "startColumn": 4,
-                    "startOffset": 100969,
+                    "startOffset": 100923,
                     "endColumn": 111,
-                    "endOffset": 101076
+                    "endOffset": 101030
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7331,11 +7312,11 @@
             },
             {
                 "to": {
-                    "startLine": 1322,
+                    "startLine": 1321,
                     "startColumn": 4,
-                    "startOffset": 101081,
+                    "startOffset": 101035,
                     "endColumn": 127,
-                    "endOffset": 101204
+                    "endOffset": 101158
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7350,12 +7331,12 @@
             },
             {
                 "to": {
-                    "startLine": 1323,
+                    "startLine": 1322,
                     "startColumn": 4,
-                    "startOffset": 101209,
-                    "endLine": 1324,
+                    "startOffset": 101163,
+                    "endLine": 1323,
                     "endColumn": 12,
-                    "endOffset": 101340
+                    "endOffset": 101294
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7371,12 +7352,12 @@
             },
             {
                 "to": {
-                    "startLine": 1325,
+                    "startLine": 1324,
                     "startColumn": 4,
-                    "startOffset": 101345,
-                    "endLine": 1326,
+                    "startOffset": 101299,
+                    "endLine": 1325,
                     "endColumn": 12,
-                    "endOffset": 101482
+                    "endOffset": 101436
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7392,12 +7373,12 @@
             },
             {
                 "to": {
-                    "startLine": 1327,
+                    "startLine": 1326,
                     "startColumn": 4,
-                    "startOffset": 101487,
-                    "endLine": 1328,
+                    "startOffset": 101441,
+                    "endLine": 1327,
                     "endColumn": 12,
-                    "endOffset": 101624
+                    "endOffset": 101578
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7413,11 +7394,11 @@
             },
             {
                 "to": {
-                    "startLine": 1329,
+                    "startLine": 1328,
                     "startColumn": 4,
-                    "startOffset": 101629,
+                    "startOffset": 101583,
                     "endColumn": 111,
-                    "endOffset": 101736
+                    "endOffset": 101690
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7432,11 +7413,11 @@
             },
             {
                 "to": {
-                    "startLine": 1330,
+                    "startLine": 1329,
                     "startColumn": 4,
-                    "startOffset": 101741,
+                    "startOffset": 101695,
                     "endColumn": 139,
-                    "endOffset": 101876
+                    "endOffset": 101830
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7451,11 +7432,11 @@
             },
             {
                 "to": {
-                    "startLine": 1331,
+                    "startLine": 1330,
                     "startColumn": 4,
-                    "startOffset": 101881,
+                    "startOffset": 101835,
                     "endColumn": 67,
-                    "endOffset": 101944
+                    "endOffset": 101898
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7470,11 +7451,11 @@
             },
             {
                 "to": {
-                    "startLine": 1332,
+                    "startLine": 1331,
                     "startColumn": 4,
-                    "startOffset": 101949,
+                    "startOffset": 101903,
                     "endColumn": 72,
-                    "endOffset": 102017
+                    "endOffset": 101971
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7489,11 +7470,11 @@
             },
             {
                 "to": {
-                    "startLine": 1333,
+                    "startLine": 1332,
                     "startColumn": 4,
-                    "startOffset": 102022,
+                    "startOffset": 101976,
                     "endColumn": 73,
-                    "endOffset": 102091
+                    "endOffset": 102045
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7508,11 +7489,11 @@
             },
             {
                 "to": {
-                    "startLine": 1334,
+                    "startLine": 1333,
                     "startColumn": 4,
-                    "startOffset": 102096,
+                    "startOffset": 102050,
                     "endColumn": 72,
-                    "endOffset": 102164
+                    "endOffset": 102118
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7527,11 +7508,11 @@
             },
             {
                 "to": {
-                    "startLine": 1335,
+                    "startLine": 1334,
                     "startColumn": 4,
-                    "startOffset": 102169,
+                    "startOffset": 102123,
                     "endColumn": 73,
-                    "endOffset": 102238
+                    "endOffset": 102192
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7546,12 +7527,12 @@
             },
             {
                 "to": {
-                    "startLine": 1336,
+                    "startLine": 1335,
                     "startColumn": 4,
-                    "startOffset": 102243,
-                    "endLine": 1337,
+                    "startOffset": 102197,
+                    "endLine": 1336,
                     "endColumn": 12,
-                    "endOffset": 102384
+                    "endOffset": 102338
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7567,12 +7548,12 @@
             },
             {
                 "to": {
-                    "startLine": 1338,
+                    "startLine": 1337,
                     "startColumn": 4,
-                    "startOffset": 102389,
-                    "endLine": 1339,
+                    "startOffset": 102343,
+                    "endLine": 1338,
                     "endColumn": 12,
-                    "endOffset": 102528
+                    "endOffset": 102482
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7588,12 +7569,12 @@
             },
             {
                 "to": {
-                    "startLine": 1340,
+                    "startLine": 1339,
                     "startColumn": 4,
-                    "startOffset": 102533,
-                    "endLine": 1341,
+                    "startOffset": 102487,
+                    "endLine": 1340,
                     "endColumn": 12,
-                    "endOffset": 102666
+                    "endOffset": 102620
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7609,11 +7590,11 @@
             },
             {
                 "to": {
-                    "startLine": 1342,
+                    "startLine": 1341,
                     "startColumn": 4,
-                    "startOffset": 102671,
+                    "startOffset": 102625,
                     "endColumn": 65,
-                    "endOffset": 102732
+                    "endOffset": 102686
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7628,11 +7609,11 @@
             },
             {
                 "to": {
-                    "startLine": 1343,
+                    "startLine": 1342,
                     "startColumn": 4,
-                    "startOffset": 102737,
+                    "startOffset": 102691,
                     "endColumn": 89,
-                    "endOffset": 102822
+                    "endOffset": 102776
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7647,11 +7628,11 @@
             },
             {
                 "to": {
-                    "startLine": 1344,
+                    "startLine": 1343,
                     "startColumn": 4,
-                    "startOffset": 102827,
+                    "startOffset": 102781,
                     "endColumn": 79,
-                    "endOffset": 102902
+                    "endOffset": 102856
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7666,11 +7647,11 @@
             },
             {
                 "to": {
-                    "startLine": 1345,
+                    "startLine": 1344,
                     "startColumn": 4,
-                    "startOffset": 102907,
+                    "startOffset": 102861,
                     "endColumn": 91,
-                    "endOffset": 102994
+                    "endOffset": 102948
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7685,11 +7666,11 @@
             },
             {
                 "to": {
-                    "startLine": 1346,
+                    "startLine": 1345,
                     "startColumn": 4,
-                    "startOffset": 102999,
+                    "startOffset": 102953,
                     "endColumn": 97,
-                    "endOffset": 103092
+                    "endOffset": 103046
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7704,12 +7685,12 @@
             },
             {
                 "to": {
-                    "startLine": 1347,
+                    "startLine": 1346,
                     "startColumn": 4,
-                    "startOffset": 103097,
-                    "endLine": 1348,
+                    "startOffset": 103051,
+                    "endLine": 1347,
                     "endColumn": 12,
-                    "endOffset": 103202
+                    "endOffset": 103156
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7725,11 +7706,11 @@
             },
             {
                 "to": {
-                    "startLine": 1349,
+                    "startLine": 1348,
                     "startColumn": 4,
-                    "startOffset": 103207,
+                    "startOffset": 103161,
                     "endColumn": 77,
-                    "endOffset": 103280
+                    "endOffset": 103234
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7744,11 +7725,11 @@
             },
             {
                 "to": {
-                    "startLine": 1350,
+                    "startLine": 1349,
                     "startColumn": 4,
-                    "startOffset": 103285,
+                    "startOffset": 103239,
                     "endColumn": 105,
-                    "endOffset": 103386
+                    "endOffset": 103340
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7763,11 +7744,11 @@
             },
             {
                 "to": {
-                    "startLine": 1351,
+                    "startLine": 1350,
                     "startColumn": 4,
-                    "startOffset": 103391,
+                    "startOffset": 103345,
                     "endColumn": 91,
-                    "endOffset": 103478
+                    "endOffset": 103432
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7782,11 +7763,11 @@
             },
             {
                 "to": {
-                    "startLine": 1352,
+                    "startLine": 1351,
                     "startColumn": 4,
-                    "startOffset": 103483,
+                    "startOffset": 103437,
                     "endColumn": 103,
-                    "endOffset": 103582
+                    "endOffset": 103536
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7801,11 +7782,11 @@
             },
             {
                 "to": {
-                    "startLine": 1353,
+                    "startLine": 1352,
                     "startColumn": 4,
-                    "startOffset": 103587,
+                    "startOffset": 103541,
                     "endColumn": 109,
-                    "endOffset": 103692
+                    "endOffset": 103646
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7820,12 +7801,12 @@
             },
             {
                 "to": {
-                    "startLine": 1354,
+                    "startLine": 1353,
                     "startColumn": 4,
-                    "startOffset": 103697,
-                    "endLine": 1355,
+                    "startOffset": 103651,
+                    "endLine": 1354,
                     "endColumn": 12,
-                    "endOffset": 103814
+                    "endOffset": 103768
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7841,12 +7822,12 @@
             },
             {
                 "to": {
-                    "startLine": 1356,
+                    "startLine": 1355,
                     "startColumn": 4,
-                    "startOffset": 103819,
-                    "endLine": 1359,
+                    "startOffset": 103773,
+                    "endLine": 1358,
                     "endColumn": 12,
-                    "endOffset": 103977
+                    "endOffset": 103931
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7862,12 +7843,12 @@
             },
             {
                 "to": {
-                    "startLine": 1360,
+                    "startLine": 1359,
                     "startColumn": 4,
-                    "startOffset": 103982,
-                    "endLine": 1363,
+                    "startOffset": 103936,
+                    "endLine": 1362,
                     "endColumn": 12,
-                    "endOffset": 104134
+                    "endOffset": 104088
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7883,11 +7864,11 @@
             },
             {
                 "to": {
-                    "startLine": 1364,
+                    "startLine": 1363,
                     "startColumn": 4,
-                    "startOffset": 104139,
+                    "startOffset": 104093,
                     "endColumn": 79,
-                    "endOffset": 104214
+                    "endOffset": 104168
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7902,11 +7883,11 @@
             },
             {
                 "to": {
-                    "startLine": 1365,
+                    "startLine": 1364,
                     "startColumn": 4,
-                    "startOffset": 104219,
+                    "startOffset": 104173,
                     "endColumn": 99,
-                    "endOffset": 104314
+                    "endOffset": 104268
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7921,11 +7902,11 @@
             },
             {
                 "to": {
-                    "startLine": 1366,
+                    "startLine": 1365,
                     "startColumn": 4,
-                    "startOffset": 104319,
+                    "startOffset": 104273,
                     "endColumn": 89,
-                    "endOffset": 104404
+                    "endOffset": 104358
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7940,11 +7921,11 @@
             },
             {
                 "to": {
-                    "startLine": 1367,
+                    "startLine": 1366,
                     "startColumn": 4,
-                    "startOffset": 104409,
+                    "startOffset": 104363,
                     "endColumn": 109,
-                    "endOffset": 104514
+                    "endOffset": 104468
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7959,11 +7940,11 @@
             },
             {
                 "to": {
-                    "startLine": 1368,
+                    "startLine": 1367,
                     "startColumn": 4,
-                    "startOffset": 104519,
+                    "startOffset": 104473,
                     "endColumn": 91,
-                    "endOffset": 104606
+                    "endOffset": 104560
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7978,12 +7959,12 @@
             },
             {
                 "to": {
-                    "startLine": 1369,
+                    "startLine": 1368,
                     "startColumn": 4,
-                    "startOffset": 104611,
-                    "endLine": 1370,
+                    "startOffset": 104565,
+                    "endLine": 1369,
                     "endColumn": 12,
-                    "endOffset": 104706
+                    "endOffset": 104660
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7999,12 +7980,12 @@
             },
             {
                 "to": {
-                    "startLine": 1371,
+                    "startLine": 1370,
                     "startColumn": 4,
-                    "startOffset": 104711,
-                    "endLine": 1372,
+                    "startOffset": 104665,
+                    "endLine": 1371,
                     "endColumn": 12,
-                    "endOffset": 104818
+                    "endOffset": 104772
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8020,12 +8001,12 @@
             },
             {
                 "to": {
-                    "startLine": 1373,
+                    "startLine": 1372,
                     "startColumn": 4,
-                    "startOffset": 104823,
-                    "endLine": 1374,
+                    "startOffset": 104777,
+                    "endLine": 1373,
                     "endColumn": 12,
-                    "endOffset": 104932
+                    "endOffset": 104886
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8041,12 +8022,12 @@
             },
             {
                 "to": {
-                    "startLine": 1375,
+                    "startLine": 1374,
                     "startColumn": 4,
-                    "startOffset": 104937,
-                    "endLine": 1376,
+                    "startOffset": 104891,
+                    "endLine": 1375,
                     "endColumn": 12,
-                    "endOffset": 105048
+                    "endOffset": 105002
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8062,12 +8043,12 @@
             },
             {
                 "to": {
-                    "startLine": 1377,
+                    "startLine": 1376,
                     "startColumn": 4,
-                    "startOffset": 105053,
-                    "endLine": 1378,
+                    "startOffset": 105007,
+                    "endLine": 1377,
                     "endColumn": 12,
-                    "endOffset": 105164
+                    "endOffset": 105118
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8083,11 +8064,11 @@
             },
             {
                 "to": {
-                    "startLine": 1379,
+                    "startLine": 1378,
                     "startColumn": 4,
-                    "startOffset": 105169,
+                    "startOffset": 105123,
                     "endColumn": 93,
-                    "endOffset": 105258
+                    "endOffset": 105212
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8102,11 +8083,11 @@
             },
             {
                 "to": {
-                    "startLine": 1380,
+                    "startLine": 1379,
                     "startColumn": 4,
-                    "startOffset": 105263,
+                    "startOffset": 105217,
                     "endColumn": 113,
-                    "endOffset": 105372
+                    "endOffset": 105326
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8121,11 +8102,11 @@
             },
             {
                 "to": {
-                    "startLine": 1381,
+                    "startLine": 1380,
                     "startColumn": 4,
-                    "startOffset": 105377,
+                    "startOffset": 105331,
                     "endColumn": 117,
-                    "endOffset": 105490
+                    "endOffset": 105444
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8140,12 +8121,12 @@
             },
             {
                 "to": {
-                    "startLine": 1382,
+                    "startLine": 1381,
                     "startColumn": 4,
-                    "startOffset": 105495,
-                    "endLine": 1383,
+                    "startOffset": 105449,
+                    "endLine": 1382,
                     "endColumn": 12,
-                    "endOffset": 105592
+                    "endOffset": 105546
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8161,12 +8142,12 @@
             },
             {
                 "to": {
-                    "startLine": 1384,
+                    "startLine": 1383,
                     "startColumn": 4,
-                    "startOffset": 105597,
-                    "endLine": 1385,
+                    "startOffset": 105551,
+                    "endLine": 1384,
                     "endColumn": 12,
-                    "endOffset": 105712
+                    "endOffset": 105666
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8182,12 +8163,12 @@
             },
             {
                 "to": {
-                    "startLine": 1386,
+                    "startLine": 1385,
                     "startColumn": 4,
-                    "startOffset": 105717,
-                    "endLine": 1387,
+                    "startOffset": 105671,
+                    "endLine": 1386,
                     "endColumn": 12,
-                    "endOffset": 105834
+                    "endOffset": 105788
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8203,11 +8184,11 @@
             },
             {
                 "to": {
-                    "startLine": 1388,
+                    "startLine": 1387,
                     "startColumn": 4,
-                    "startOffset": 105839,
+                    "startOffset": 105793,
                     "endColumn": 81,
-                    "endOffset": 105916
+                    "endOffset": 105870
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8222,11 +8203,11 @@
             },
             {
                 "to": {
-                    "startLine": 1389,
+                    "startLine": 1388,
                     "startColumn": 4,
-                    "startOffset": 105921,
+                    "startOffset": 105875,
                     "endColumn": 103,
-                    "endOffset": 106020
+                    "endOffset": 105974
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8241,11 +8222,11 @@
             },
             {
                 "to": {
-                    "startLine": 1390,
+                    "startLine": 1389,
                     "startColumn": 4,
-                    "startOffset": 106025,
+                    "startOffset": 105979,
                     "endColumn": 119,
-                    "endOffset": 106140
+                    "endOffset": 106094
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8260,11 +8241,11 @@
             },
             {
                 "to": {
-                    "startLine": 1391,
+                    "startLine": 1390,
                     "startColumn": 4,
-                    "startOffset": 106145,
+                    "startOffset": 106099,
                     "endColumn": 125,
-                    "endOffset": 106266
+                    "endOffset": 106220
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8279,11 +8260,11 @@
             },
             {
                 "to": {
-                    "startLine": 1392,
+                    "startLine": 1391,
                     "startColumn": 4,
-                    "startOffset": 106271,
+                    "startOffset": 106225,
                     "endColumn": 97,
-                    "endOffset": 106364
+                    "endOffset": 106318
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8298,11 +8279,11 @@
             },
             {
                 "to": {
-                    "startLine": 1393,
+                    "startLine": 1392,
                     "startColumn": 4,
-                    "startOffset": 106369,
+                    "startOffset": 106323,
                     "endColumn": 93,
-                    "endOffset": 106458
+                    "endOffset": 106412
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8317,11 +8298,11 @@
             },
             {
                 "to": {
-                    "startLine": 1394,
+                    "startLine": 1393,
                     "startColumn": 4,
-                    "startOffset": 106463,
+                    "startOffset": 106417,
                     "endColumn": 87,
-                    "endOffset": 106546
+                    "endOffset": 106500
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8336,11 +8317,11 @@
             },
             {
                 "to": {
-                    "startLine": 1395,
+                    "startLine": 1394,
                     "startColumn": 4,
-                    "startOffset": 106551,
+                    "startOffset": 106505,
                     "endColumn": 111,
-                    "endOffset": 106658
+                    "endOffset": 106612
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8355,11 +8336,11 @@
             },
             {
                 "to": {
-                    "startLine": 1396,
+                    "startLine": 1395,
                     "startColumn": 4,
-                    "startOffset": 106663,
+                    "startOffset": 106617,
                     "endColumn": 115,
-                    "endOffset": 106774
+                    "endOffset": 106728
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8374,11 +8355,11 @@
             },
             {
                 "to": {
-                    "startLine": 1397,
+                    "startLine": 1396,
                     "startColumn": 4,
-                    "startOffset": 106779,
+                    "startOffset": 106733,
                     "endColumn": 121,
-                    "endOffset": 106896
+                    "endOffset": 106850
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8393,11 +8374,11 @@
             },
             {
                 "to": {
-                    "startLine": 1398,
+                    "startLine": 1397,
                     "startColumn": 4,
-                    "startOffset": 106901,
+                    "startOffset": 106855,
                     "endColumn": 111,
-                    "endOffset": 107008
+                    "endOffset": 106962
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8412,12 +8393,12 @@
             },
             {
                 "to": {
-                    "startLine": 1399,
+                    "startLine": 1398,
                     "startColumn": 4,
-                    "startOffset": 107013,
-                    "endLine": 1401,
+                    "startOffset": 106967,
+                    "endLine": 1400,
                     "endColumn": 12,
-                    "endOffset": 107183
+                    "endOffset": 107137
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8433,11 +8414,11 @@
             },
             {
                 "to": {
-                    "startLine": 1402,
+                    "startLine": 1401,
                     "startColumn": 4,
-                    "startOffset": 107188,
+                    "startOffset": 107142,
                     "endColumn": 115,
-                    "endOffset": 107299
+                    "endOffset": 107253
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8452,11 +8433,11 @@
             },
             {
                 "to": {
-                    "startLine": 1403,
+                    "startLine": 1402,
                     "startColumn": 4,
-                    "startOffset": 107304,
+                    "startOffset": 107258,
                     "endColumn": 85,
-                    "endOffset": 107385
+                    "endOffset": 107339
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8471,12 +8452,12 @@
             },
             {
                 "to": {
-                    "startLine": 1404,
+                    "startLine": 1403,
                     "startColumn": 4,
-                    "startOffset": 107390,
-                    "endLine": 1405,
+                    "startOffset": 107344,
+                    "endLine": 1404,
                     "endColumn": 12,
-                    "endOffset": 107497
+                    "endOffset": 107451
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8492,12 +8473,12 @@
             },
             {
                 "to": {
-                    "startLine": 1406,
+                    "startLine": 1405,
                     "startColumn": 4,
-                    "startOffset": 107502,
-                    "endLine": 1407,
+                    "startOffset": 107456,
+                    "endLine": 1406,
                     "endColumn": 12,
-                    "endOffset": 107621
+                    "endOffset": 107575
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8513,11 +8494,11 @@
             },
             {
                 "to": {
-                    "startLine": 1408,
+                    "startLine": 1407,
                     "startColumn": 4,
-                    "startOffset": 107626,
+                    "startOffset": 107580,
                     "endColumn": 66,
-                    "endOffset": 107688
+                    "endOffset": 107642
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8532,12 +8513,12 @@
             },
             {
                 "to": {
-                    "startLine": 1409,
+                    "startLine": 1408,
                     "startColumn": 4,
-                    "startOffset": 107693,
-                    "endLine": 1410,
+                    "startOffset": 107647,
+                    "endLine": 1409,
                     "endColumn": 12,
-                    "endOffset": 107814
+                    "endOffset": 107768
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8553,11 +8534,11 @@
             },
             {
                 "to": {
-                    "startLine": 1411,
+                    "startLine": 1410,
                     "startColumn": 4,
-                    "startOffset": 107819,
+                    "startOffset": 107773,
                     "endColumn": 67,
-                    "endOffset": 107882
+                    "endOffset": 107836
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8572,12 +8553,12 @@
             },
             {
                 "to": {
-                    "startLine": 1412,
+                    "startLine": 1411,
                     "startColumn": 4,
-                    "startOffset": 107887,
-                    "endLine": 1413,
+                    "startOffset": 107841,
+                    "endLine": 1412,
                     "endColumn": 12,
-                    "endOffset": 108010
+                    "endOffset": 107964
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8593,12 +8574,12 @@
             },
             {
                 "to": {
-                    "startLine": 1414,
+                    "startLine": 1413,
                     "startColumn": 4,
-                    "startOffset": 108015,
-                    "endLine": 1415,
+                    "startOffset": 107969,
+                    "endLine": 1414,
                     "endColumn": 12,
-                    "endOffset": 108154
+                    "endOffset": 108108
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8614,12 +8595,12 @@
             },
             {
                 "to": {
-                    "startLine": 1416,
+                    "startLine": 1415,
                     "startColumn": 4,
-                    "startOffset": 108159,
-                    "endLine": 1417,
+                    "startOffset": 108113,
+                    "endLine": 1416,
                     "endColumn": 12,
-                    "endOffset": 108282
+                    "endOffset": 108236
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8635,11 +8616,11 @@
             },
             {
                 "to": {
-                    "startLine": 1418,
+                    "startLine": 1417,
                     "startColumn": 4,
-                    "startOffset": 108287,
+                    "startOffset": 108241,
                     "endColumn": 68,
-                    "endOffset": 108351
+                    "endOffset": 108305
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8654,11 +8635,11 @@
             },
             {
                 "to": {
-                    "startLine": 1419,
+                    "startLine": 1418,
                     "startColumn": 4,
-                    "startOffset": 108356,
+                    "startOffset": 108310,
                     "endColumn": 94,
-                    "endOffset": 108446
+                    "endOffset": 108400
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8673,11 +8654,11 @@
             },
             {
                 "to": {
-                    "startLine": 1420,
+                    "startLine": 1419,
                     "startColumn": 4,
-                    "startOffset": 108451,
+                    "startOffset": 108405,
                     "endColumn": 114,
-                    "endOffset": 108561
+                    "endOffset": 108515
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8692,11 +8673,11 @@
             },
             {
                 "to": {
-                    "startLine": 1421,
+                    "startLine": 1420,
                     "startColumn": 4,
-                    "startOffset": 108566,
+                    "startOffset": 108520,
                     "endColumn": 112,
-                    "endOffset": 108674
+                    "endOffset": 108628
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8711,11 +8692,11 @@
             },
             {
                 "to": {
-                    "startLine": 1422,
+                    "startLine": 1421,
                     "startColumn": 4,
-                    "startOffset": 108679,
+                    "startOffset": 108633,
                     "endColumn": 98,
-                    "endOffset": 108773
+                    "endOffset": 108727
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8730,11 +8711,11 @@
             },
             {
                 "to": {
-                    "startLine": 1423,
+                    "startLine": 1422,
                     "startColumn": 4,
-                    "startOffset": 108778,
+                    "startOffset": 108732,
                     "endColumn": 108,
-                    "endOffset": 108882
+                    "endOffset": 108836
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8749,11 +8730,11 @@
             },
             {
                 "to": {
-                    "startLine": 1424,
+                    "startLine": 1423,
                     "startColumn": 4,
-                    "startOffset": 108887,
+                    "startOffset": 108841,
                     "endColumn": 110,
-                    "endOffset": 108993
+                    "endOffset": 108947
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8768,11 +8749,11 @@
             },
             {
                 "to": {
-                    "startLine": 1425,
+                    "startLine": 1424,
                     "startColumn": 4,
-                    "startOffset": 108998,
+                    "startOffset": 108952,
                     "endColumn": 110,
-                    "endOffset": 109104
+                    "endOffset": 109058
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8787,11 +8768,11 @@
             },
             {
                 "to": {
-                    "startLine": 1426,
+                    "startLine": 1425,
                     "startColumn": 4,
-                    "startOffset": 109109,
+                    "startOffset": 109063,
                     "endColumn": 100,
-                    "endOffset": 109205
+                    "endOffset": 109159
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8806,11 +8787,11 @@
             },
             {
                 "to": {
-                    "startLine": 1427,
+                    "startLine": 1426,
                     "startColumn": 4,
-                    "startOffset": 109210,
+                    "startOffset": 109164,
                     "endColumn": 104,
-                    "endOffset": 109310
+                    "endOffset": 109264
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8825,12 +8806,12 @@
             },
             {
                 "to": {
-                    "startLine": 1428,
+                    "startLine": 1427,
                     "startColumn": 4,
-                    "startOffset": 109315,
-                    "endLine": 1429,
+                    "startOffset": 109269,
+                    "endLine": 1428,
                     "endColumn": 12,
-                    "endOffset": 109422
+                    "endOffset": 109376
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8846,12 +8827,12 @@
             },
             {
                 "to": {
-                    "startLine": 1430,
+                    "startLine": 1429,
                     "startColumn": 4,
-                    "startOffset": 109427,
-                    "endLine": 1431,
+                    "startOffset": 109381,
+                    "endLine": 1430,
                     "endColumn": 12,
-                    "endOffset": 109552
+                    "endOffset": 109506
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8867,11 +8848,11 @@
             },
             {
                 "to": {
-                    "startLine": 1432,
+                    "startLine": 1431,
                     "startColumn": 4,
-                    "startOffset": 109557,
+                    "startOffset": 109511,
                     "endColumn": 90,
-                    "endOffset": 109643
+                    "endOffset": 109597
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8886,11 +8867,11 @@
             },
             {
                 "to": {
-                    "startLine": 1433,
+                    "startLine": 1432,
                     "startColumn": 4,
-                    "startOffset": 109648,
+                    "startOffset": 109602,
                     "endColumn": 122,
-                    "endOffset": 109766
+                    "endOffset": 109720
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8905,12 +8886,12 @@
             },
             {
                 "to": {
-                    "startLine": 1434,
+                    "startLine": 1433,
                     "startColumn": 4,
-                    "startOffset": 109771,
-                    "endLine": 1435,
+                    "startOffset": 109725,
+                    "endLine": 1434,
                     "endColumn": 12,
-                    "endOffset": 109878
+                    "endOffset": 109832
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8926,11 +8907,11 @@
             },
             {
                 "to": {
-                    "startLine": 1436,
+                    "startLine": 1435,
                     "startColumn": 4,
-                    "startOffset": 109883,
+                    "startOffset": 109837,
                     "endColumn": 85,
-                    "endOffset": 109964
+                    "endOffset": 109918
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8945,11 +8926,11 @@
             },
             {
                 "to": {
-                    "startLine": 1437,
+                    "startLine": 1436,
                     "startColumn": 4,
-                    "startOffset": 109969,
+                    "startOffset": 109923,
                     "endColumn": 103,
-                    "endOffset": 110068
+                    "endOffset": 110022
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8964,12 +8945,12 @@
             },
             {
                 "to": {
-                    "startLine": 1438,
+                    "startLine": 1437,
                     "startColumn": 4,
-                    "startOffset": 110073,
-                    "endLine": 1439,
+                    "startOffset": 110027,
+                    "endLine": 1438,
                     "endColumn": 12,
-                    "endOffset": 110176
+                    "endOffset": 110130
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8985,12 +8966,12 @@
             },
             {
                 "to": {
-                    "startLine": 1440,
+                    "startLine": 1439,
                     "startColumn": 4,
-                    "startOffset": 110181,
-                    "endLine": 1441,
+                    "startOffset": 110135,
+                    "endLine": 1440,
                     "endColumn": 12,
-                    "endOffset": 110276
+                    "endOffset": 110230
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9006,12 +8987,12 @@
             },
             {
                 "to": {
-                    "startLine": 1442,
+                    "startLine": 1441,
                     "startColumn": 4,
-                    "startOffset": 110281,
-                    "endLine": 1443,
+                    "startOffset": 110235,
+                    "endLine": 1442,
                     "endColumn": 12,
-                    "endOffset": 110394
+                    "endOffset": 110348
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9027,12 +9008,12 @@
             },
             {
                 "to": {
-                    "startLine": 1444,
+                    "startLine": 1443,
                     "startColumn": 4,
-                    "startOffset": 110399,
-                    "endLine": 1445,
+                    "startOffset": 110353,
+                    "endLine": 1444,
                     "endColumn": 12,
-                    "endOffset": 110498
+                    "endOffset": 110452
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9048,12 +9029,12 @@
             },
             {
                 "to": {
-                    "startLine": 1446,
+                    "startLine": 1445,
                     "startColumn": 4,
-                    "startOffset": 110503,
-                    "endLine": 1447,
+                    "startOffset": 110457,
+                    "endLine": 1446,
                     "endColumn": 12,
-                    "endOffset": 110602
+                    "endOffset": 110556
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9069,12 +9050,12 @@
             },
             {
                 "to": {
-                    "startLine": 1448,
+                    "startLine": 1447,
                     "startColumn": 4,
-                    "startOffset": 110607,
-                    "endLine": 1449,
+                    "startOffset": 110561,
+                    "endLine": 1448,
                     "endColumn": 12,
-                    "endOffset": 110728
+                    "endOffset": 110682
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9090,11 +9071,11 @@
             },
             {
                 "to": {
-                    "startLine": 1450,
+                    "startLine": 1449,
                     "startColumn": 4,
-                    "startOffset": 110733,
+                    "startOffset": 110687,
                     "endColumn": 87,
-                    "endOffset": 110816
+                    "endOffset": 110770
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9109,11 +9090,11 @@
             },
             {
                 "to": {
-                    "startLine": 1451,
+                    "startLine": 1450,
                     "startColumn": 4,
-                    "startOffset": 110821,
+                    "startOffset": 110775,
                     "endColumn": 89,
-                    "endOffset": 110906
+                    "endOffset": 110860
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9128,11 +9109,11 @@
             },
             {
                 "to": {
-                    "startLine": 1452,
+                    "startLine": 1451,
                     "startColumn": 4,
-                    "startOffset": 110911,
+                    "startOffset": 110865,
                     "endColumn": 109,
-                    "endOffset": 111016
+                    "endOffset": 110970
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9147,11 +9128,11 @@
             },
             {
                 "to": {
-                    "startLine": 1453,
+                    "startLine": 1452,
                     "startColumn": 4,
-                    "startOffset": 111021,
+                    "startOffset": 110975,
                     "endColumn": 83,
-                    "endOffset": 111100
+                    "endOffset": 111054
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9166,11 +9147,11 @@
             },
             {
                 "to": {
-                    "startLine": 1454,
+                    "startLine": 1453,
                     "startColumn": 4,
-                    "startOffset": 111105,
+                    "startOffset": 111059,
                     "endColumn": 53,
-                    "endOffset": 111154
+                    "endOffset": 111108
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9185,11 +9166,11 @@
             },
             {
                 "to": {
-                    "startLine": 1455,
+                    "startLine": 1454,
                     "startColumn": 4,
-                    "startOffset": 111159,
+                    "startOffset": 111113,
                     "endColumn": 63,
-                    "endOffset": 111218
+                    "endOffset": 111172
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9204,11 +9185,11 @@
             },
             {
                 "to": {
-                    "startLine": 1456,
+                    "startLine": 1455,
                     "startColumn": 4,
-                    "startOffset": 111223,
+                    "startOffset": 111177,
                     "endColumn": 105,
-                    "endOffset": 111324
+                    "endOffset": 111278
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9223,11 +9204,11 @@
             },
             {
                 "to": {
-                    "startLine": 1457,
+                    "startLine": 1456,
                     "startColumn": 4,
-                    "startOffset": 111329,
+                    "startOffset": 111283,
                     "endColumn": 109,
-                    "endOffset": 111434
+                    "endOffset": 111388
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9242,11 +9223,11 @@
             },
             {
                 "to": {
-                    "startLine": 1458,
+                    "startLine": 1457,
                     "startColumn": 4,
-                    "startOffset": 111439,
+                    "startOffset": 111393,
                     "endColumn": 83,
-                    "endOffset": 111518
+                    "endOffset": 111472
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9261,11 +9242,11 @@
             },
             {
                 "to": {
-                    "startLine": 1459,
+                    "startLine": 1458,
                     "startColumn": 4,
-                    "startOffset": 111523,
+                    "startOffset": 111477,
                     "endColumn": 119,
-                    "endOffset": 111638
+                    "endOffset": 111592
                 },
                 "from": {
                     "file": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",

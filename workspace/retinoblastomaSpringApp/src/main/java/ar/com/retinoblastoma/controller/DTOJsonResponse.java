@@ -6,6 +6,7 @@ public class DTOJsonResponse {
   private String black;
   private String red;
   private String yellow;
+  private String messsage;
 
   public DTOJsonResponse(String file, String white, String black, String red, String yellow, String messsage) {
       this.file = file;
@@ -63,7 +64,4 @@ public class DTOJsonResponse {
   public void setMesssage(String messsage) {
       this.messsage = messsage;
   }
-
-  private String messsage;
-
 }

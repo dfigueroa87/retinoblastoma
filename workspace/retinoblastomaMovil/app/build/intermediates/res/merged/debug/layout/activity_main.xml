@@ -24,7 +24,7 @@
 
         <Button
             android:id="@+id/details_button"
-            android:text="@string/detalles"
+            android:text="detalles"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

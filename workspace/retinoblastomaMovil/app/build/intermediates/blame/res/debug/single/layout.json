@@ -28,12 +28,12 @@
         "source": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\select_dialog_item_material.xml"
     },
     {
-        "merged": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_list_menu_item_icon.xml"
-    },
-    {
         "merged": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
         "source": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
         "merged": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
@@ -132,12 +132,12 @@
         "source": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
-        "source": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_expanded_menu_layout.xml"
-    },
-    {
         "merged": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
         "source": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
         "merged": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
