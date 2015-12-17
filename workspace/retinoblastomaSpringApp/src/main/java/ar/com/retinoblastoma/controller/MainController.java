@@ -427,14 +427,14 @@ public class MainController implements Initializable {
           .getInnerDetections()) {
         Mat originalMat = Highgui.imread((String) imageView.getProperties().get("path"));
         Mat img = new Mat(originalMat, ((CircleDetection) pupil).getInternRect());
-        ColorHSV white = new ColorHSV("blanco", new Rank(0.0, 180.0), new Rank(0.0, 56.0),
-            new Rank(229.5, 255.0));
+        ColorHSV white =
+            new ColorHSV("blanco", new Rank(0.0, 180.0), new Rank(0.0, 56.0), new Rank(229.5, 255.0));
         ColorHSV black =
-            new ColorHSV("negro", new Rank(0.0, 180.0), new Rank(0.0, 255.0), new Rank(0.0, 64.0));
-        ColorHSV red = new ColorHSV("rojo", new Rank(166.5, 10.0), new Rank(127.0, 255.0),
-            new Rank(64.0, 229.5));
-        ColorHSV yellow = new ColorHSV("amarillo", new Rank(19.0, 31.0), new Rank(127.0, 255.0),
-            new Rank(64.0, 229.5));
+            new ColorHSV("negro", new Rank(0.0, 180.0), new Rank(0.0, 255.0), new Rank(0.0, 51.0));
+        ColorHSV red =
+            new ColorHSV("rojo", new Rank(166.5, 10.0), new Rank(127.0, 255.0), new Rank(51.0, 255.0));
+        ColorHSV yellow = new ColorHSV("amarillo", new Rank(22.5, 37.5), new Rank(127.0, 255.0),
+            new Rank(51.0, 255.0));
         HistogramHSV histogram = new HistogramHSV();
         histogram.addColor(white);
         histogram.addColor(black);
@@ -522,16 +522,17 @@ public class MainController implements Initializable {
 
   public void saveToCSV(int faceCount, int eyeCount, int pupilCount, Detection pupil,
       int alturaCara) {
+    // In OpenCV, H = 0-180, S = 0-255, V = 0-255
     Mat originalMat = Highgui.imread((String) imageView.getProperties().get("path"));
     Mat img = new Mat(originalMat, ((CircleDetection) pupil).getInternRect());
     ColorHSV white =
         new ColorHSV("blanco", new Rank(0.0, 180.0), new Rank(0.0, 56.0), new Rank(229.5, 255.0));
     ColorHSV black =
-        new ColorHSV("negro", new Rank(0.0, 180.0), new Rank(0.0, 255.0), new Rank(0.0, 64.0));
+        new ColorHSV("negro", new Rank(0.0, 180.0), new Rank(0.0, 255.0), new Rank(0.0, 51.0));
     ColorHSV red =
-        new ColorHSV("rojo", new Rank(166.5, 10.0), new Rank(127.0, 255.0), new Rank(64.0, 229.5));
-    ColorHSV yellow = new ColorHSV("amarillo", new Rank(19.0, 31.0), new Rank(127.0, 255.0),
-        new Rank(64.0, 229.5));
+        new ColorHSV("rojo", new Rank(166.5, 10.0), new Rank(127.0, 255.0), new Rank(51.0, 255.0));
+    ColorHSV yellow = new ColorHSV("amarillo", new Rank(22.5, 37.5), new Rank(127.0, 255.0),
+        new Rank(51.0, 255.0));
     HistogramHSV histogram = new HistogramHSV();
     histogram.addColor(white);
     histogram.addColor(black);
