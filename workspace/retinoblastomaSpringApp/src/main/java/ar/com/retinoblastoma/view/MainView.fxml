@@ -17,13 +17,7 @@
         <Menu mnemonicParsing="false" text="Archivo">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#LoadImage" text="Abrir" />
-            <MenuItem mnemonicParsing="false" text="Guardar" />
             <MenuItem mnemonicParsing="false" onAction="#Exit" text="Salir" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Edición">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Delete" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Ayuda">
@@ -65,11 +59,11 @@
                 </Pane>
               </children>
             </HBox>
-            <SplitPane dividerPositions="0.6880108991825613" orientation="VERTICAL" prefHeight="737.0" prefWidth="310.0">
+            <SplitPane dividerPositions="0.7002724795640327" orientation="VERTICAL" prefHeight="737.0" prefWidth="310.0">
               <items>
-                <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0">
+                <SplitPane dividerPositions="0.5" prefHeight="542.0" prefWidth="710.0">
                   <items>
-                    <SplitPane dividerPositions="0.5" orientation="VERTICAL">
+                    <SplitPane dividerPositions="0.5029585798816568" orientation="VERTICAL">
                       <items>
                         <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="228.0" prefWidth="212.0" vbarPolicy="NEVER">
                           <content>
@@ -91,33 +85,27 @@
                             <CheckBox fx:id="checkPositive" layoutX="133.0" layoutY="321.0" mnemonicParsing="false" onAction="#checkPositivo" prefWidth="77.0" text="positivo" />
                             <TextField fx:id="comment" layoutX="89.0" layoutY="354.0" promptText="comentario" />
                             <Button fx:id="saveCommentButton" layoutX="252.0" layoutY="354.0" mnemonicParsing="false" onAction="#saveComment" text="Guardar" />
+                            <Button fx:id="criterio1" layoutX="14.0" layoutY="392.0" mnemonicParsing="false" onAction="#criterio1" prefWidth="110.0" text="Criterio 1" />
+                            <Button id="criterio1" fx:id="criterio2" layoutX="14.0" layoutY="423.0" mnemonicParsing="false" onAction="#criterio2" prefWidth="110.0" text="Criterio 2" />
+                            <Button id="criterio1" fx:id="criterio3" layoutX="14.0" layoutY="454.0" mnemonicParsing="false" onAction="#criterio3" prefWidth="110.0" text="Criterio 3" />
                           </children>
                         </Pane>
                       </children>
                     </HBox>
                   </items>
                 </SplitPane>
-                <VBox prefHeight="408.0" prefWidth="322.0">
+                <HBox prefHeight="240.0" prefWidth="710.0">
                   <children>
-                    <HBox prefHeight="124.9998779296875" prefWidth="710.0">
+                    <Pane prefHeight="291.0" prefWidth="351.0">
                       <children>
-                        <Pane prefHeight="96.0" prefWidth="710.0">
-                          <children>
-                            <Button fx:id="buttonRecalcular" layoutX="47.0" layoutY="21.0" mnemonicParsing="false" onAction="#calculateHistogramHSV" prefWidth="106.0" text="Histograma HSV" />
-                            <CheckBox fx:id="checkFlash" layoutX="359.0" layoutY="23.0" mnemonicParsing="false" text="Tiene Flash" />
-                            <Button id="buttonGuardarATexto" layoutX="32.0" layoutY="63.0" mnemonicParsing="false" onAction="#saveToText" prefHeight="25.0" prefWidth="137.0" text="Guardar a archivo" />
-                          </children>
-                        </Pane>
-                      </children>
-                    </HBox>
-                    <Pane prefHeight="159.0" prefWidth="695.0">
-                      <children>
-                        <PieChart fx:id="pieChart" layoutX="0.0" layoutY="0.0" legendVisible="false" minHeight="102.0" prefHeight="130.0" prefWidth="710.0" />
-                        <ImageView fx:id="histogramView" fitHeight="102.0" fitWidth="147.82608695652175" layoutX="439.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true" />
+                        <CheckBox fx:id="checkFlash" layoutX="176.0" layoutY="33.0" mnemonicParsing="false" text="Tiene Flash" />
+                        <Button id="buttonGuardarATexto" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#saveToText" prefHeight="25.0" prefWidth="137.0" text="Guardar a archivo" />
+                        <PieChart fx:id="pieChart" layoutX="358.0" layoutY="0.0" legendVisible="false" minHeight="86.00009999999747" prefHeight="216.99997792968497" prefWidth="351.000022070315" />
                       </children>
                     </Pane>
+                    <Pane prefHeight="274.0" prefWidth="359.0" />
                   </children>
-                </VBox>
+                </HBox>
               </items>
             </SplitPane>
           </items>

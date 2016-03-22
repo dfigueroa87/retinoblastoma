@@ -1,16 +1,12 @@
 package ar.com.retinoblastoma.controller;
 
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.lang.reflect.Field;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.Set;
 
 import org.opencv.core.Mat;
 import org.opencv.core.Point;
@@ -30,7 +26,6 @@ import ar.com.retinoblastoma.model.processing.ProcessingManager;
 import ar.com.retinoblastoma.model.processing.ProcessingManagerImpl;
 import ar.com.retinoblastoma.model.processing.Rank;
 import ar.com.retinoblastoma.utils.Utils;
-import au.com.bytecode.opencsv.CSVWriter;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -40,6 +35,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
@@ -54,9 +51,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.TilePane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 
@@ -89,8 +83,7 @@ public class MainController implements Initializable {
   ImageView imageView;
   @FXML
   ImageView resultImageView;
-  @FXML
-  ImageView histogramView;
+  
   @FXML
   TableView<HashMap<String, Double>> tableColorsPercentage;
   @FXML
@@ -116,6 +109,15 @@ public class MainController implements Initializable {
 
   @FXML
   AnchorPane anchorPane;
+  
+  @FXML
+  Button criterio1;
+  
+  @FXML
+  Button criterio2;
+  
+  @FXML
+  Button criterio3;
 
   private ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
 
@@ -139,6 +141,9 @@ public class MainController implements Initializable {
     comment.setDisable(true);
     comment.setPromptText("comentario");
     saveCommentButton.setDisable(true);
+    criterio1.setDisable(true);
+    criterio2.setDisable(true);
+    criterio3.setDisable(true);
 
     // all the stuff to draw the circles
     this.selectionCircle = new Circle();
@@ -230,15 +235,16 @@ public class MainController implements Initializable {
     fileChooser.getExtensionFilters()
         .add(new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
     List<File> files = fileChooser.showOpenMultipleDialog(null);
-    for (File file : files) {
-      ImageView imageView = createImageView(file.getAbsolutePath());
-      imageView.getProperties().put("path", file.getAbsolutePath());
-      imageContainer.getChildren().add(imageView);
-    }
-
-    // Save the path for the next file chooser dialog
-    if (!files.isEmpty()) {
-      path = files.get(0).getAbsolutePath();
+    if (files != null) {
+      for (File file : files) {
+        ImageView imageView = createImageView(file.getAbsolutePath());
+        imageView.getProperties().put("path", file.getAbsolutePath());
+        imageContainer.getChildren().add(imageView);
+      }
+      // Save the path for the next file chooser dialog
+      if (!files.isEmpty()) {
+        path = files.get(0).getAbsolutePath();
+      }
     }
   }
 
@@ -252,9 +258,13 @@ public class MainController implements Initializable {
     if (((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)) {
       // Clear result panes
       clearResults();
-
-      selectedMinView = (ImageView) e.getTarget();
-
+      
+      try {
+        selectedMinView = (ImageView) e.getTarget();
+      } catch (Exception e2) {
+        System.out.println("No fue seleccionada una imagen.");
+        return;
+      }
       // Clear properties data from global imageView
       imageView.getProperties().clear();
 
@@ -277,6 +287,9 @@ public class MainController implements Initializable {
       comment.setDisable(true);
       comment.setPromptText("comentario");
       saveCommentButton.setDisable(true);
+      criterio1.setDisable(true);
+      criterio2.setDisable(true);
+      criterio3.setDisable(true);
       circles.clear();
       repaint();
     }
@@ -328,15 +341,19 @@ public class MainController implements Initializable {
   @FXML
   public void clickFaceImage(Event e) {
     if (((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)) {
+      ImageView faceImage = null;
+      try {
+        faceImage = (ImageView) e.getTarget();
+      } catch (Exception e2) {
+        System.out.println("No fue seleccionada una imagen.");
+        return;
+      }
       eyesMinPane.getChildren().clear();
-
       resultImageView.getProperties().clear();
-
-      resultImageView.setImage(((ImageView) e.getTarget()).getImage());
-      resultImageView.getProperties().putAll(((ImageView) e.getTarget()).getProperties());
-
+      resultImageView.setImage(faceImage.getImage());
+      resultImageView.getProperties().putAll(faceImage.getProperties());
       RectDetection face =
-          (RectDetection) ((ImageView) e.getTarget()).getProperties().get("detection");
+          (RectDetection) faceImage.getProperties().get("detection");
       displayResults(face.getInnerDetections(), eyesMinPane);
 
       toggleMainDet(null);
@@ -346,6 +363,9 @@ public class MainController implements Initializable {
       comment.setDisable(true);
       comment.setPromptText("comentario");
       saveCommentButton.setDisable(true);
+      criterio1.setDisable(true);
+      criterio2.setDisable(true);
+      criterio3.setDisable(true);
     }
   }
 
@@ -372,10 +392,16 @@ public class MainController implements Initializable {
   @FXML
   public void clickEyeImage(Event e) {
     if (((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)) {
+      ImageView eyeImage = null;
+      try {
+        eyeImage = (ImageView) e.getTarget();
+      } catch (Exception e2) {
+        System.out.println("No fue seleccionada una imagen.");
+        return;
+      }
       resultImageView.getProperties().clear();
-
-      resultImageView.setImage(((ImageView) e.getTarget()).getImage());
-      resultImageView.getProperties().putAll(((ImageView) e.getTarget()).getProperties());
+      resultImageView.setImage(eyeImage.getImage());
+      resultImageView.getProperties().putAll(eyeImage.getProperties());
 
       toggleMainDet(null);
 
@@ -386,10 +412,16 @@ public class MainController implements Initializable {
       comment.setPromptText("comentario");
       saveCommentButton.setDisable(true);
       checkPositive.setSelected(false);
+      criterio1.setDisable(true);
+      criterio2.setDisable(true);
+      criterio3.setDisable(true);
       if (eye.getInnerDetections() != null && !eye.getInnerDetections().isEmpty()) {
         checkPositive.setDisable(false);
         comment.setDisable(false);
         saveCommentButton.setDisable(false);
+        criterio1.setDisable(false);
+        criterio2.setDisable(false);
+        criterio3.setDisable(false);
         CircleDetection pupil = (CircleDetection) eye.getInnerDetections().get(0);
         checkPositive.setSelected(pupil.isPositive());
         comment.setText(pupil.getComment());
@@ -420,37 +452,47 @@ public class MainController implements Initializable {
   }
 
   @FXML
-  public void calculateHistogramHSV() {
+  public HistogramHSV calculateHistogramHSV() {
     // In OpenCV, H = 0-180, S = 0-255, V = 0-255
+    HistogramHSV histogram = null;
     if (resultImageView.getImage() != null) {
-      for (Detection pupil : ((RectDetection) resultImageView.getProperties().get("detection"))
-          .getInnerDetections()) {
-        Mat originalMat = Highgui.imread((String) imageView.getProperties().get("path"));
-        Mat img = new Mat(originalMat, ((CircleDetection) pupil).getInternRect());
-        ColorHSV white =
-            new ColorHSV("blanco", new Rank(0.0, 180.0), new Rank(0.0, 56.0), new Rank(229.5, 255.0));
-        ColorHSV black =
-            new ColorHSV("negro", new Rank(0.0, 180.0), new Rank(0.0, 255.0), new Rank(0.0, 51.0));
-        ColorHSV red =
-            new ColorHSV("rojo", new Rank(166.5, 10.0), new Rank(127.0, 255.0), new Rank(51.0, 255.0));
-        ColorHSV yellow = new ColorHSV("amarillo", new Rank(22.5, 37.5), new Rank(127.0, 255.0),
-            new Rank(51.0, 255.0));
-        HistogramHSV histogram = new HistogramHSV();
-        histogram.addColor(white);
-        histogram.addColor(black);
-        histogram.addColor(red);
-        histogram.addColor(yellow);
-        procMan.CalculateColorsPercentageHSV(img, histogram);
-        pieChartData.clear();
-        for (ColorHSV color : histogram.getColors()) {
-          pieChartData.add(new PieChart.Data(color.getName(), color.getPercentage() * 100));
-          System.out.println("{" + color.getName() + ", " + color.getPercentage() + "}");
-        }
-
-        System.out.println();
+      Detection pupil = ((RectDetection) resultImageView.getProperties().get("detection"))
+          .getInnerDetections().get(0);
+      Mat originalMat = Highgui.imread((String) imageView.getProperties().get("path"));
+      Mat img = new Mat(originalMat, ((CircleDetection) pupil).getInternRect());
+      histogram = procMan.calculateColorsPercentageHSV(img);
+      int total =0;
+      for (ColorHSV color : histogram.getColors()) {
+        total += color.getOccurrence();
       }
+      pieChartData.clear();      
+      pieChartData.add(new PieChart.Data("blanco", procMan.getWhitePercentage(histogram, total) * 100));
+      pieChartData.add(new PieChart.Data("negro", procMan.getBlackPercentage(histogram, total) * 100));
+      pieChartData.add(new PieChart.Data("rojo", procMan.getRedPercentage(histogram, total) * 100));
+      pieChartData.add(new PieChart.Data("amarillo", procMan.getYellowPercentage(histogram, total) * 100));
+      applyCustomColorSequence(
+          pieChartData, 
+          "Snow", 
+          "black", 
+          "Tomato", 
+          "Gold"
+        );
+      System.out.println("{ blanco , " + procMan.getWhitePercentage(histogram, total) + "}");
+      System.out.println("{ negro , " + procMan.getBlackPercentage(histogram, total) + "}");
+      System.out.println("{ rojo , " + procMan.getRedPercentage(histogram, total) + "}");
+      System.out.println("{ amarillo , " + procMan.getYellowPercentage(histogram, total) + "}");
+      
+      System.out.println();
     }
-
+    return histogram;
+  }
+  
+  private void applyCustomColorSequence(ObservableList<PieChart.Data> pieChartData, String... pieColors) {
+    int i = 0;
+    for (PieChart.Data data : pieChartData) {
+      data.getNode().setStyle("-fx-pie-color: " + pieColors[i % pieColors.length] + ";");
+      i++;
+    }
   }
 
   @SuppressWarnings("unchecked")
@@ -475,7 +517,7 @@ public class MainController implements Initializable {
             int pupilCount = 0;
             for (Detection pupil : pupils) {
               pupilCount++;
-              saveToCSV(faceCount, eyeCount, pupilCount, pupil, alturaCara);
+              saveToCSV(faceCount, eyeCount, pupilCount, alturaCara, pupil);
             }
           }
         }
@@ -513,91 +555,53 @@ public class MainController implements Initializable {
           if (circle.getFill().equals(Color.web("blueviolet", 0.4))) {
             cD.setPositive(true);
           }
-          saveToCSV(99, 99, pupilCount, cD, cD.getRadius() * 2);
+          saveToCSV(99, 99, pupilCount, cD.getRadius() * 2, cD);
         }
       }
     }
 
   }
 
-  public void saveToCSV(int faceCount, int eyeCount, int pupilCount, Detection pupil,
-      int alturaCara) {
+  public void saveToCSV(int faceCount, int eyeCount, int pupilCount, int alturaCara,
+      Detection pupil) {
     // In OpenCV, H = 0-180, S = 0-255, V = 0-255
     Mat originalMat = Highgui.imread((String) imageView.getProperties().get("path"));
     Mat img = new Mat(originalMat, ((CircleDetection) pupil).getInternRect());
-    ColorHSV white =
-        new ColorHSV("blanco", new Rank(0.0, 180.0), new Rank(0.0, 56.0), new Rank(229.5, 255.0));
-    ColorHSV black =
-        new ColorHSV("negro", new Rank(0.0, 180.0), new Rank(0.0, 255.0), new Rank(0.0, 51.0));
-    ColorHSV red =
-        new ColorHSV("rojo", new Rank(166.5, 10.0), new Rank(127.0, 255.0), new Rank(51.0, 255.0));
-    ColorHSV yellow = new ColorHSV("amarillo", new Rank(22.5, 37.5), new Rank(127.0, 255.0),
-        new Rank(51.0, 255.0));
-    HistogramHSV histogram = new HistogramHSV();
-    histogram.addColor(white);
-    histogram.addColor(black);
-    histogram.addColor(red);
-    histogram.addColor(yellow);
-    procMan.CalculateColorsPercentageHSV(img, histogram);
-    // we are going to save a percentage but just with these colors
-    int total = 0;
-    for (ColorHSV color : histogram.getColors()) {
-      total += color.getOccurrence();
-    }
-    Double whitePerc = new Double(
-        ((double) histogram.getColors().get(histogram.getColors().indexOf(white)).getOccurrence())
-            / ((double) total));
-    Double blackPerc = new Double(
-        ((double) histogram.getColors().get(histogram.getColors().indexOf(black)).getOccurrence())
-            / ((double) total));
-    Double redPerc = new Double(
-        ((double) histogram.getColors().get(histogram.getColors().indexOf(red)).getOccurrence())
-            / ((double) total));
-    Double yellowPerc = new Double(
-        ((double) histogram.getColors().get(histogram.getColors().indexOf(yellow)).getOccurrence())
-            / ((double) total));
+    HistogramHSV histogram = procMan.calculateColorsPercentageHSV(img);
     String path = (String) imageView.getProperties().get("path");
-    String[] record = {path.substring(path.lastIndexOf("\\")), "" + faceCount, "" + eyeCount,
-        "" + pupilCount, whitePerc.toString(), blackPerc.toString(), redPerc.toString(),
-        yellowPerc.toString(), "" + checkFlash.isSelected(),
-        "" + ((CircleDetection) pupil).isPositive(), ((CircleDetection) pupil).getComment(), "" + alturaCara};
-    CSVWriter writer;
-    String csv = "data.csv";
-    try {
-      writer = new CSVWriter(new FileWriter(csv, true));
-      writer.writeNext(record);
-      writer.close();
-    } catch (IOException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
-    }
-
+    procMan.saveToCSV(histogram, path, checkFlash.isSelected(), faceCount, eyeCount, pupilCount,
+        alturaCara, (CircleDetection) pupil);
   }
 
   @FXML
   public void calculateHistogramHSL() {
     // In OpenCV, H = 0-180, S = 0-255, L = 0-255
-    if (resultImageView.getImage() != null) {
-      for (Detection pupil : ((RectDetection) resultImageView.getProperties().get("detection"))
-          .getInnerDetections()) {
-        Mat originalMat = Highgui.imread((String) imageView.getProperties().get("path"));
-        Mat img = new Mat(originalMat, ((CircleDetection) pupil).getInternRect());
-        ColorHSL lum = new ColorHSL("luminoso", new Rank(0.0, 180.0), new Rank(0.0, 255.0),
-            new Rank(204.0, 255.0));
-        ColorHSL osc = new ColorHSL("oscuro", new Rank(0.0, 180.0), new Rank(0.0, 255.0),
-            new Rank(0.0, 204.0));
-        HistogramHSL histogram = new HistogramHSL();
-        histogram.addColor(lum);
-        histogram.addColor(osc);
-        procMan.CalculateColorsPercentageHSL(img, histogram);
-        pieChartData.clear();
-        for (ColorHSL color : histogram.getColors()) {
-          pieChartData.add(new PieChart.Data(color.getName(), color.getPercentage() * 100));
-          System.out.println("{" + color.getName() + ", " + color.getPercentage() + "}");
-        }
-        System.out.println();
-      }
-    }
+//    if (resultImageView.getImage() != null) {
+//      for (Detection pupil : ((RectDetection) resultImageView.getProperties().get("detection"))
+//          .getInnerDetections()) {
+//        Mat originalMat = Highgui.imread((String) imageView.getProperties().get("path"));
+//        Mat img = new Mat(originalMat, ((CircleDetection) pupil).getInternRect());
+//        ColorHSL lum = new ColorHSL("luminoso", new Rank(0.0, 180.0), new Rank(0.0, 255.0),
+//            new Rank(204.0, 255.0));
+//        ColorHSL osc = new ColorHSL("oscuro", new Rank(0.0, 180.0), new Rank(0.0, 255.0),
+//            new Rank(0.0, 204.0));
+//        HistogramHSL histogram = new HistogramHSL();
+//        histogram.addColor(lum);
+//        histogram.addColor(osc);
+//        procMan.calculateColorsPercentageHSL(img, histogram);
+//        int total = 0;
+//        for (ColorHSV color : histogram.getColors()) {
+//          total += color.getOccurrence();
+//        }
+//        pieChartData.clear();
+//        pieChartData.add(new PieChart.Data("blanco", procMan.getWhitePercentage(histogram, total) * 100));
+//        System.out.println("{" + color.getName() + ", " + color.getPercentage() + "}");
+//        System.out.println("{" + color.getName() + ", " + color.getPercentage() + "}");
+//        System.out.println("{" + color.getName() + ", " + color.getPercentage() + "}");
+//        System.out.println("{" + color.getName() + ", " + color.getPercentage() + "}");
+//        System.out.println();
+//      }
+//    }
   }
 
   @FXML
@@ -622,6 +626,63 @@ public class MainController implements Initializable {
     CircleDetection pupil = (CircleDetection) eye.getInnerDetections().get(0);
     if (comment.getText() != null && !"".equals(comment.getText())) {
       pupil.setComment(comment.getText());
+    }
+  }
+
+  @FXML
+  public void criterio1() {
+    HistogramHSV histogram = this.calculateHistogramHSV();
+    if (histogram != null) {
+      boolean criterio1 = procMan.criterio1(histogram);
+      String mensaje = new String();
+      if (criterio1) {
+        mensaje = "Positivo.";
+      } else {
+        mensaje = "Negativo.";
+      }
+      Alert alert = new Alert(AlertType.INFORMATION);
+      alert.setTitle("Criterio 1");
+      alert.setHeaderText("Resultado de evaluar el criterio número uno");
+      alert.setContentText("Según el criterio, está pupila da: " + mensaje);
+      alert.showAndWait();
+    }
+  }
+
+  @FXML
+  public void criterio2() {
+    HistogramHSV histogram = this.calculateHistogramHSV();
+    if (histogram != null) {
+      boolean criterio2 = procMan.criterio2(histogram);
+      String mensaje = new String();
+      if (criterio2) {
+        mensaje = "Positivo.";
+      } else {
+        mensaje = "Negativo.";
+      }
+      Alert alert = new Alert(AlertType.INFORMATION);
+      alert.setTitle("Criterio 2");
+      alert.setHeaderText("Resultado de evaluar el criterio número dos");
+      alert.setContentText("Según el criterio, está pupila da: " + mensaje);
+      alert.showAndWait();
+    }
+  }
+
+  @FXML
+  public void criterio3() {
+    HistogramHSV histogram = this.calculateHistogramHSV();
+    if (histogram != null) {
+      boolean criterio3 = procMan.criterio3(histogram);
+      String mensaje = new String();
+      if (criterio3) {
+        mensaje = "Positivo.";
+      } else {
+        mensaje = "Negativo.";
+      }
+      Alert alert = new Alert(AlertType.INFORMATION);
+      alert.setTitle("Criterio 3");
+      alert.setHeaderText("Resultado de evaluar el criterio número tres");
+      alert.setContentText("Según el criterio, está pupila da: " + mensaje);
+      alert.showAndWait();
     }
   }
 
