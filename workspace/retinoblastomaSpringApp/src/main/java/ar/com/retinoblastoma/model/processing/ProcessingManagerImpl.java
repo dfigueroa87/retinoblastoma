@@ -54,10 +54,7 @@ public class ProcessingManagerImpl implements ProcessingManager {
   @Override
   public void saveToCSV(HistogramHSV histogram, String path, Boolean flash, Integer faceCount,
       Integer eyeCount, Integer pupilCount, Integer alturaCara, CircleDetection pupil) {
-    int total = 0;
-    for (ColorHSV color : histogram.getColors()) {
-      total += color.getOccurrence();
-    }
+    int total = getTotal(histogram);
     Double whitePerc = getWhitePercentage(histogram, total);
     Double blackPerc = getBlackPercentage(histogram, total);
     Double redPerc = getRedPercentage(histogram, total);
@@ -83,10 +80,7 @@ public class ProcessingManagerImpl implements ProcessingManager {
 
   @Override
   public Boolean criterio1(HistogramHSV histogram) {
-    Integer total = 0;
-    for (ColorHSV color : histogram.getColors()) {
-      total += color.getOccurrence();
-    }
+    int total = getTotal(histogram);
     Double blackPerc = getBlackPercentage(histogram, total);
     Double redPerc = getRedPercentage(histogram, total);
     if (blackPerc > 0.5 || redPerc > 0.5) {
@@ -100,10 +94,7 @@ public class ProcessingManagerImpl implements ProcessingManager {
 
   @Override
   public Boolean criterio2(HistogramHSV histogram) {
-    Integer total = 0;
-    for (ColorHSV color : histogram.getColors()) {
-      total += color.getOccurrence();
-    }
+    int total = getTotal(histogram);
     Double whitePerc = getWhitePercentage(histogram, total);
     Double yellowPerc = getYellowPercentage(histogram, total);
     if (whitePerc > 0.3 || yellowPerc > 0.3) {
@@ -115,10 +106,7 @@ public class ProcessingManagerImpl implements ProcessingManager {
 
   @Override
   public Boolean criterio3(HistogramHSV histogram) {
-    Integer total = 0;
-    for (ColorHSV color : histogram.getColors()) {
-      total += color.getOccurrence();
-    }
+    int total = getTotal(histogram);
     Double whitePerc = getWhitePercentage(histogram, total);
     Double yellowPerc = getYellowPercentage(histogram, total);
     Double blackPerc = getBlackPercentage(histogram, total);
@@ -126,7 +114,7 @@ public class ProcessingManagerImpl implements ProcessingManager {
     if ((blackPerc < 0.5 && redPerc < 0.5) || whitePerc > 0.5 || yellowPerc > 0.5) {
       return true;
     }
-    
+
     return false;
   }
 
@@ -160,5 +148,14 @@ public class ProcessingManagerImpl implements ProcessingManager {
         ((double) histogram.getColors().get(histogram.getColors().indexOf(yellow)).getOccurrence())
             / ((double) total));
     return whitePerc;
+  }
+
+  @Override
+  public int getTotal(HistogramHSV histogram) {
+    int total = 0;
+    for (ColorHSV color : histogram.getColors()) {
+      total += color.getOccurrence();
+    }
+    return total;
   }
 }

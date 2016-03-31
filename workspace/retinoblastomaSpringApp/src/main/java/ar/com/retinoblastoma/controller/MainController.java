@@ -3,6 +3,7 @@ package ar.com.retinoblastoma.controller;
 import java.io.File;
 import java.lang.reflect.Field;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -83,7 +84,7 @@ public class MainController implements Initializable {
   ImageView imageView;
   @FXML
   ImageView resultImageView;
-  
+
   @FXML
   TableView<HashMap<String, Double>> tableColorsPercentage;
   @FXML
@@ -109,13 +110,13 @@ public class MainController implements Initializable {
 
   @FXML
   AnchorPane anchorPane;
-  
+
   @FXML
   Button criterio1;
-  
+
   @FXML
   Button criterio2;
-  
+
   @FXML
   Button criterio3;
 
@@ -258,7 +259,7 @@ public class MainController implements Initializable {
     if (((MouseEvent) e).getButton().equals(MouseButton.PRIMARY)) {
       // Clear result panes
       clearResults();
-      
+
       try {
         selectedMinView = (ImageView) e.getTarget();
       } catch (Exception e2) {
@@ -352,8 +353,7 @@ public class MainController implements Initializable {
       resultImageView.getProperties().clear();
       resultImageView.setImage(faceImage.getImage());
       resultImageView.getProperties().putAll(faceImage.getProperties());
-      RectDetection face =
-          (RectDetection) faceImage.getProperties().get("detection");
+      RectDetection face = (RectDetection) faceImage.getProperties().get("detection");
       displayResults(face.getInnerDetections(), eyesMinPane);
 
       toggleMainDet(null);
@@ -461,33 +461,28 @@ public class MainController implements Initializable {
       Mat originalMat = Highgui.imread((String) imageView.getProperties().get("path"));
       Mat img = new Mat(originalMat, ((CircleDetection) pupil).getInternRect());
       histogram = procMan.calculateColorsPercentageHSV(img);
-      int total =0;
-      for (ColorHSV color : histogram.getColors()) {
-        total += color.getOccurrence();
-      }
-      pieChartData.clear();      
-      pieChartData.add(new PieChart.Data("blanco", procMan.getWhitePercentage(histogram, total) * 100));
-      pieChartData.add(new PieChart.Data("negro", procMan.getBlackPercentage(histogram, total) * 100));
+      int total = procMan.getTotal(histogram);
+      pieChartData.clear();
+      pieChartData
+          .add(new PieChart.Data("blanco", procMan.getWhitePercentage(histogram, total) * 100));
+      pieChartData
+          .add(new PieChart.Data("negro", procMan.getBlackPercentage(histogram, total) * 100));
       pieChartData.add(new PieChart.Data("rojo", procMan.getRedPercentage(histogram, total) * 100));
-      pieChartData.add(new PieChart.Data("amarillo", procMan.getYellowPercentage(histogram, total) * 100));
-      applyCustomColorSequence(
-          pieChartData, 
-          "Snow", 
-          "black", 
-          "Tomato", 
-          "Gold"
-        );
+      pieChartData
+          .add(new PieChart.Data("amarillo", procMan.getYellowPercentage(histogram, total) * 100));
+      applyCustomColorSequence(pieChartData, "Snow", "black", "Tomato", "Gold");
       System.out.println("{ blanco , " + procMan.getWhitePercentage(histogram, total) + "}");
       System.out.println("{ negro , " + procMan.getBlackPercentage(histogram, total) + "}");
       System.out.println("{ rojo , " + procMan.getRedPercentage(histogram, total) + "}");
       System.out.println("{ amarillo , " + procMan.getYellowPercentage(histogram, total) + "}");
-      
+
       System.out.println();
     }
     return histogram;
   }
-  
-  private void applyCustomColorSequence(ObservableList<PieChart.Data> pieChartData, String... pieColors) {
+
+  private void applyCustomColorSequence(ObservableList<PieChart.Data> pieChartData,
+      String... pieColors) {
     int i = 0;
     for (PieChart.Data data : pieChartData) {
       data.getNode().setStyle("-fx-pie-color: " + pieColors[i % pieColors.length] + ";");
@@ -576,32 +571,33 @@ public class MainController implements Initializable {
   @FXML
   public void calculateHistogramHSL() {
     // In OpenCV, H = 0-180, S = 0-255, L = 0-255
-//    if (resultImageView.getImage() != null) {
-//      for (Detection pupil : ((RectDetection) resultImageView.getProperties().get("detection"))
-//          .getInnerDetections()) {
-//        Mat originalMat = Highgui.imread((String) imageView.getProperties().get("path"));
-//        Mat img = new Mat(originalMat, ((CircleDetection) pupil).getInternRect());
-//        ColorHSL lum = new ColorHSL("luminoso", new Rank(0.0, 180.0), new Rank(0.0, 255.0),
-//            new Rank(204.0, 255.0));
-//        ColorHSL osc = new ColorHSL("oscuro", new Rank(0.0, 180.0), new Rank(0.0, 255.0),
-//            new Rank(0.0, 204.0));
-//        HistogramHSL histogram = new HistogramHSL();
-//        histogram.addColor(lum);
-//        histogram.addColor(osc);
-//        procMan.calculateColorsPercentageHSL(img, histogram);
-//        int total = 0;
-//        for (ColorHSV color : histogram.getColors()) {
-//          total += color.getOccurrence();
-//        }
-//        pieChartData.clear();
-//        pieChartData.add(new PieChart.Data("blanco", procMan.getWhitePercentage(histogram, total) * 100));
-//        System.out.println("{" + color.getName() + ", " + color.getPercentage() + "}");
-//        System.out.println("{" + color.getName() + ", " + color.getPercentage() + "}");
-//        System.out.println("{" + color.getName() + ", " + color.getPercentage() + "}");
-//        System.out.println("{" + color.getName() + ", " + color.getPercentage() + "}");
-//        System.out.println();
-//      }
-//    }
+    // if (resultImageView.getImage() != null) {
+    // for (Detection pupil : ((RectDetection) resultImageView.getProperties().get("detection"))
+    // .getInnerDetections()) {
+    // Mat originalMat = Highgui.imread((String) imageView.getProperties().get("path"));
+    // Mat img = new Mat(originalMat, ((CircleDetection) pupil).getInternRect());
+    // ColorHSL lum = new ColorHSL("luminoso", new Rank(0.0, 180.0), new Rank(0.0, 255.0),
+    // new Rank(204.0, 255.0));
+    // ColorHSL osc = new ColorHSL("oscuro", new Rank(0.0, 180.0), new Rank(0.0, 255.0),
+    // new Rank(0.0, 204.0));
+    // HistogramHSL histogram = new HistogramHSL();
+    // histogram.addColor(lum);
+    // histogram.addColor(osc);
+    // procMan.calculateColorsPercentageHSL(img, histogram);
+    // int total = 0;
+    // for (ColorHSV color : histogram.getColors()) {
+    // total += color.getOccurrence();
+    // }
+    // pieChartData.clear();
+    // pieChartData.add(new PieChart.Data("blanco", procMan.getWhitePercentage(histogram, total) *
+    // 100));
+    // System.out.println("{" + color.getName() + ", " + color.getPercentage() + "}");
+    // System.out.println("{" + color.getName() + ", " + color.getPercentage() + "}");
+    // System.out.println("{" + color.getName() + ", " + color.getPercentage() + "}");
+    // System.out.println("{" + color.getName() + ", " + color.getPercentage() + "}");
+    // System.out.println();
+    // }
+    // }
   }
 
   @FXML
@@ -634,6 +630,7 @@ public class MainController implements Initializable {
     HistogramHSV histogram = this.calculateHistogramHSV();
     if (histogram != null) {
       boolean criterio1 = procMan.criterio1(histogram);
+      int total = procMan.getTotal(histogram);
       String mensaje = new String();
       if (criterio1) {
         mensaje = "Positivo.";
@@ -643,7 +640,21 @@ public class MainController implements Initializable {
       Alert alert = new Alert(AlertType.INFORMATION);
       alert.setTitle("Criterio 1");
       alert.setHeaderText("Resultado de evaluar el criterio número uno");
-      alert.setContentText("Según el criterio, está pupila da: " + mensaje);
+      alert
+      .setContentText(
+          "Según el criterio, está pupila da: " + "\n\r\t" + mensaje + "\n\r" + "Porcentajes:"
+              + "\n\r\tNegro:\t"
+              + new DecimalFormat("0.00").format(
+                  procMan.getBlackPercentage(histogram, total) * 100)
+              + " %" + "\n\r\tRojo:\t"
+              + new DecimalFormat("0.00").format(
+                  procMan.getRedPercentage(histogram, total) * 100)
+              + " %" + "\n\r\tBlanco:\t"
+              + new DecimalFormat("0.00")
+                  .format(procMan.getWhitePercentage(histogram, total) * 100)
+              + " %" + "\n\r\tAmarillo:\t" + new DecimalFormat("0.00")
+                  .format(procMan.getYellowPercentage(histogram, total) * 100)
+              + " %");
       alert.showAndWait();
     }
   }
@@ -653,6 +664,7 @@ public class MainController implements Initializable {
     HistogramHSV histogram = this.calculateHistogramHSV();
     if (histogram != null) {
       boolean criterio2 = procMan.criterio2(histogram);
+      int total = procMan.getTotal(histogram);
       String mensaje = new String();
       if (criterio2) {
         mensaje = "Positivo.";
@@ -662,7 +674,21 @@ public class MainController implements Initializable {
       Alert alert = new Alert(AlertType.INFORMATION);
       alert.setTitle("Criterio 2");
       alert.setHeaderText("Resultado de evaluar el criterio número dos");
-      alert.setContentText("Según el criterio, está pupila da: " + mensaje);
+      alert
+      .setContentText(
+          "Según el criterio, está pupila da: " + "\n\r\t" + mensaje + "\n\r" + "Porcentajes:"
+              + "\n\r\tNegro:\t"
+              + new DecimalFormat("0.00").format(
+                  procMan.getBlackPercentage(histogram, total) * 100)
+              + " %" + "\n\r\tRojo:\t"
+              + new DecimalFormat("0.00").format(
+                  procMan.getRedPercentage(histogram, total) * 100)
+              + " %" + "\n\r\tBlanco:\t"
+              + new DecimalFormat("0.00")
+                  .format(procMan.getWhitePercentage(histogram, total) * 100)
+              + " %" + "\n\r\tAmarillo:\t" + new DecimalFormat("0.00")
+                  .format(procMan.getYellowPercentage(histogram, total) * 100)
+              + " %");
       alert.showAndWait();
     }
   }
@@ -672,6 +698,7 @@ public class MainController implements Initializable {
     HistogramHSV histogram = this.calculateHistogramHSV();
     if (histogram != null) {
       boolean criterio3 = procMan.criterio3(histogram);
+      int total = procMan.getTotal(histogram);
       String mensaje = new String();
       if (criterio3) {
         mensaje = "Positivo.";
@@ -681,7 +708,21 @@ public class MainController implements Initializable {
       Alert alert = new Alert(AlertType.INFORMATION);
       alert.setTitle("Criterio 3");
       alert.setHeaderText("Resultado de evaluar el criterio número tres");
-      alert.setContentText("Según el criterio, está pupila da: " + mensaje);
+      alert
+          .setContentText(
+              "Según el criterio, está pupila da: " + "\n\r\t" + mensaje + "\n\r" + "Porcentajes:"
+                  + "\n\r\tNegro:\t"
+                  + new DecimalFormat("0.00").format(
+                      procMan.getBlackPercentage(histogram, total) * 100)
+                  + " %" + "\n\r\tRojo:\t"
+                  + new DecimalFormat("0.00").format(
+                      procMan.getRedPercentage(histogram, total) * 100)
+                  + " %" + "\n\r\tBlanco:\t"
+                  + new DecimalFormat("0.00")
+                      .format(procMan.getWhitePercentage(histogram, total) * 100)
+                  + " %" + "\n\r\tAmarillo:\t" + new DecimalFormat("0.00")
+                      .format(procMan.getYellowPercentage(histogram, total) * 100)
+                  + " %");
       alert.showAndWait();
     }
   }
@@ -698,6 +739,17 @@ public class MainController implements Initializable {
     } while (tmpClass != null);
 
     throw new RuntimeException("Field '" + fieldName + "' not found on class " + clazz);
+  }
+  
+  @FXML
+  public void acercaDe() {
+    Alert alert = new Alert(AlertType.INFORMATION);
+    alert.setTitle("Acerca de...");
+    alert.setHeaderText("Aplicación de escritorio realizada para la tesis \"Análisis de imágenes para el diagnóstico temprano de la leucocoria\"");
+    alert
+        .setContentText(
+            "Creada por: " + "\n\r\t Diego David Figueroa." + "\n\r\t José Tupac Palomeque.");
+    alert.showAndWait();
   }
 
 }

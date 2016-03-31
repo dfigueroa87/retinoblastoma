@@ -27,4 +27,6 @@ public interface ProcessingManager {
   Double getBlackPercentage(HistogramHSV histogram, int total);
 
   Double getWhitePercentage(HistogramHSV histogram, int total);
+
+  int getTotal(HistogramHSV histogram);
 }
