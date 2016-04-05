@@ -3,14 +3,10 @@ package com.retinoblastoma;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
-
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -19,6 +15,7 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor;
 
 import org.apache.commons.codec.binary.Base64;
+import org.parceler.Parcels;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -36,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
     // this way we know we're looking at the response from our own action
     private static final int SELECT_PICTURE = 1;
 
-    private String selectedImagePath;
+    public static final String RESPONSE = "response";
+    public static final String EXTRAS = "extras";
 
     private ImageView image;
 
@@ -66,11 +64,9 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this, getString(R.string.imagen_no_cargada), Toast.LENGTH_SHORT).show();
                         } else {
                             Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
-                            intent.putExtra(DetailsActivity.DATA_MESSAGE, data.getMesssage());
-                            intent.putExtra(DetailsActivity.DATA_WHITE, data.getWhite());
-                            intent.putExtra(DetailsActivity.DATA_BLACK, data.getBlack());
-                            intent.putExtra(DetailsActivity.DATA_RED, data.getRed());
-                            intent.putExtra(DetailsActivity.DATA_YELLOW, data.getYellow());
+                            Bundle bundle = new Bundle();
+                            bundle.putParcelable(RESPONSE, Parcels.wrap(data));
+                            intent.putExtra(EXTRAS, bundle);
 
                             startActivity(intent);
                         }
@@ -117,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Retrofit retrofit = new Retrofit.Builder()
                         .addConverterFactory(GsonConverterFactory.create())
-                        .baseUrl("http://192.168.0.2:8080/")
+                        .baseUrl("http://192.168.0.16:8080/")
                         .client(client)
                         .build();
 
@@ -126,7 +122,8 @@ public class MainActivity extends AppCompatActivity {
                 call.enqueue(new Callback<DTOJsonResponse>() {
                     @Override
                     public void onResponse(Response<DTOJsonResponse> response, Retrofit retrofit) {
-                        showImage(response);
+                        storeData(response.body());
+                        ImageUtils.showImage(image, response.body().getFile());
                     }
                     @Override
                     public void onFailure(Throwable t) {
@@ -137,18 +134,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void showImage(Response<DTOJsonResponse> response) {
-        data = response.body();
-
-        byte[] decodedString = android.util.Base64.decode(response.body().getFile(), android.util.Base64.DEFAULT);
-        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-        image.setImageBitmap(decodedByte);
+    private void storeData(DTOJsonResponse jsonResponse) {
+        data = jsonResponse;
     }
 
     private String getEncodedString(Intent data) {
         Uri uri = data.getData();
         String path = getRealPathFromURI(this, uri);
-        Log.i("tupi", path);
 
         try {
             File mFile = new File(path);

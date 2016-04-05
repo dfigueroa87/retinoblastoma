@@ -40,12 +40,12 @@
         "source": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
-        "merged": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
-        "source": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
-    },
-    {
         "merged": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
         "source": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
         "merged": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
@@ -76,12 +76,12 @@
         "source": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_media_action.xml"
     },
     {
-        "merged": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
-        "source": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_search_view.xml"
-    },
-    {
         "merged": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
         "source": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_search_view.xml"
     },
     {
         "merged": "D:\\retinoblastoma\\workspace\\retinoblastomaMovil\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",

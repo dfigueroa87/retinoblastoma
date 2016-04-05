@@ -1,26 +1,24 @@
 package com.retinoblastoma;
 
+import org.parceler.Parcel;
+
+import java.util.List;
+
 /**
  * Created by Tupac on 27/11/2015.
  */
+@Parcel
 public class DTOJsonResponse {
-    private String file;
-    private String white;
-    private String black;
-    private String red;
-    private String yellow;
-    private String messsage;
 
-    public DTOJsonResponse(){
+    private String file;
+    private List<PupilResult> list;
+
+    public DTOJsonResponse() {
     }
 
-    public DTOJsonResponse(String file, String white, String black, String red, String yellow, String messsage) {
+    public DTOJsonResponse(String file, List<PupilResult> list) {
         this.file = file;
-        this.white = white;
-        this.black = black;
-        this.red = red;
-        this.yellow = yellow;
-        this.messsage = messsage;
+        this.list = list;
     }
 
     public String getFile() {
@@ -31,43 +29,12 @@ public class DTOJsonResponse {
         this.file = file;
     }
 
-    public String getWhite() {
-        return white;
+    public List<PupilResult> getList() {
+        return list;
     }
 
-    public void setWhite(String white) {
-        this.white = white;
+    public void setList(List<PupilResult> list) {
+        this.list = list;
     }
 
-    public String getBlack() {
-        return black;
-    }
-
-    public void setBlack(String black) {
-        this.black = black;
-    }
-
-    public String getRed() {
-        return red;
-    }
-
-    public void setRed(String red) {
-        this.red = red;
-    }
-
-    public String getYellow() {
-        return yellow;
-    }
-
-    public void setYellow(String yellow) {
-        this.yellow = yellow;
-    }
-
-    public String getMesssage() {
-        return messsage;
-    }
-
-    public void setMesssage(String messsage) {
-        this.messsage = messsage;
-    }
 }

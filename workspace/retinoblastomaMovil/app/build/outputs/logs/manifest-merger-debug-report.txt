@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml:2:1-25:12
+ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml:2:1-30:12
 	package
 		ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml:3:5-33
 		INJECTED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml
@@ -22,7 +22,7 @@ ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidM
 	android:name
 		ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml:6:22-64
 application
-ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml:8:5-23:19
+ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml:8:5-28:19
 MERGED from [com.android.support:appcompat-v7:23.0.1] D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.0.1] D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\AndroidManifest.xml:22:5-20
 	android:label
@@ -50,11 +50,17 @@ ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidM
 	android:name
 		ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml:17:27-74
 activity#com.retinoblastoma.DetailsActivity
-ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml:20:9-22:25
+ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml:20:9-27:20
 	android:parentActivityName
-		ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml:21:13-55
+		ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml:22:13-55
 	android:name
-		ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml:20:19-50
+		ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml:21:13-44
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml:24:13-26:49
+	android:value
+		ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml:26:17-46
+	android:name
+		ADDED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml:25:17-63
 uses-sdk
 INJECTED from D:\retinoblastoma\workspace\retinoblastomaMovil\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.0.1] D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\AndroidManifest.xml:20:5-43

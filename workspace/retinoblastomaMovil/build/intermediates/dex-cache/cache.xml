@@ -1,3 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\Tupac\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\logging-interceptor\2.6.0\77dc6e1eedd47953b41ef936f20b9b693fe73f6f\logging-interceptor-2.6.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="77dc6e1eedd47953b41ef936f20b9b693fe73f6f">
+        <dex dex="D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\pre-dexed\debug\logging-interceptor-2.6.0_4ae211e442d390c23a5ae7bd8b22d18502688651.jar" />
+    </item>
+    <item
+        jar="C:\Users\Tupac\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\pre-dexed\debug\gson-2.3.1_805341222c448fbd6c80e22c13c5df4fcfbda462.jar" />
+    </item>
+    <item
+        jar="C:\Users\Tupac\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\pre-dexed\debug\okio-1.6.0_947932fd1c58cd07c631628e0bcfae431ed8c03e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Tupac\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.10\4b95f4897fa13f2cd904aee711aeafc0c5295cd8\commons-codec-1.10.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4b95f4897fa13f2cd904aee711aeafc0c5295cd8">
+        <dex dex="D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\pre-dexed\debug\commons-codec-1.10_7687a9e6fd4e409fb2e51703778713f36116ff11.jar" />
+    </item>
+    <item
+        jar="C:\Users\Tupac\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\converter-gson\2.0.0-beta2\392c3d09e0f5e7087544093cc0cb23bb9c7af5fa\converter-gson-2.0.0-beta2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="392c3d09e0f5e7087544093cc0cb23bb9c7af5fa">
+        <dex dex="D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.0-beta2_428f5b9bbe51593b3d35949f1f2d57d7bef54d80.jar" />
+    </item>
+    <item
+        jar="D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1_39cd162ad35fa6102cffd39f0fff6d5e440b8a8d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Tupac\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1_b3b7b71da74198cf83db807c0e191b58cf86233c.jar" />
+    </item>
+    <item
+        jar="D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.1_eefb9f3ace0e93ca69387dbb0da5526e14c9cd98.jar" />
+    </item>
+    <item
+        jar="C:\Users\Tupac\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.6.0\212387a39088ecd3daff8e3bfc3bdc4123e33c67\okhttp-2.6.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="212387a39088ecd3daff8e3bfc3bdc4123e33c67">
+        <dex dex="D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\pre-dexed\debug\okhttp-2.6.0_ec59f08c24766a9cb60c768353b6b31899af8640.jar" />
+    </item>
+    <item
+        jar="D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.0.1_a8683b001608f97ca730b2a8d1f79feaf66142a5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Tupac\.gradle\caches\modules-2\files-2.1\org.parceler\parceler-api\1.0.4\4f7392b86e064f3f6da06977f54c21a48e6b6871\parceler-api-1.0.4.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4f7392b86e064f3f6da06977f54c21a48e6b6871">
+        <dex dex="D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\pre-dexed\debug\parceler-api-1.0.4_69ceabcf9513c72188a63479126fd485bedf4817.jar" />
+    </item>
+    <item
+        jar="C:\Users\Tupac\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\retrofit\2.0.0-beta2\880d9e0997b2d1bfc98e0d121ced33ee5d04aac4\retrofit-2.0.0-beta2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="880d9e0997b2d1bfc98e0d121ced33ee5d04aac4">
+        <dex dex="D:\retinoblastoma\workspace\retinoblastomaMovil\app\build\intermediates\pre-dexed\debug\retrofit-2.0.0-beta2_fe6b24c1f68ae337188184f43ad0767c21047bfe.jar" />
+    </item>
+
+</items>
