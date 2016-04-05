@@ -10,6 +10,7 @@ import java.util.Base64;
 import java.util.Random;
 
 import org.opencv.core.Mat;
+import org.opencv.core.Rect;
 import org.opencv.highgui.Highgui;
 
 import ar.com.retinoblastoma.model.detection.CircleDetection;
@@ -20,8 +21,10 @@ import ar.com.retinoblastoma.model.detection.RectDetection;
 import ar.com.retinoblastoma.model.processing.HistogramHSV;
 import ar.com.retinoblastoma.model.processing.ProcessingManager;
 import ar.com.retinoblastoma.model.processing.ProcessingManagerImpl;
+import ar.com.retinoblastoma.utils.Utils;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
 
 public class APIController {
 
@@ -86,6 +89,11 @@ public class APIController {
                 } else {
                   mensaje = "Negativo";
                 }
+                Mat eyeMat = new Mat(originalMat,
+                        new Rect(((RectDetection) eye).getX(), ((RectDetection) eye).getY(), ((RectDetection) eye).getWidth(), ((RectDetection) eye).getHeight()));
+                    String pathEye = randomString(8, "eye.jpg");
+                    Highgui.imwrite(pathEye, eyeMat);
+                        File fileResult = new File(pathEye);
                 PupilResult pupilResult = new PupilResult(
                     new DecimalFormat("0.00")
                         .format(procMan.getWhitePercentage(histogram, total) * 100),
@@ -95,7 +103,7 @@ public class APIController {
                         .format(procMan.getRedPercentage(histogram, total) * 100),
                     new DecimalFormat("0.00")
                         .format(procMan.getYellowPercentage(histogram, total) * 100),
-                    mensaje);
+                    mensaje,convertFileToString(fileResult));
                 list.add(pupilResult);
 
               }

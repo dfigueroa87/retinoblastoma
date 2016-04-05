@@ -1,24 +1,25 @@
 package ar.com.retinoblastoma.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DTOJsonResponse {
   
   private String file;
   
 
-  private ArrayList<PupilResult> list = new ArrayList<PupilResult>();
+  private List<PupilResult> list = new ArrayList<PupilResult>();
 
-  public DTOJsonResponse(String file,ArrayList<PupilResult> list) {
+  public DTOJsonResponse(String file,List<PupilResult> list) {
     this.file = file;
     this.list = list;
   }
 
-  public ArrayList<PupilResult> getList() {
+  public List<PupilResult> getList() {
     return list;
   }
 
-  public void setList(ArrayList<PupilResult> list) {
+  public void setList(List<PupilResult> list) {
     this.list = list;
   }
   

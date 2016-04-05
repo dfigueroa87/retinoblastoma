@@ -3,24 +3,38 @@ package ar.com.retinoblastoma.controller;
 public class PupilResult {
 
 
+	private String file;
   private String white;
   private String black;
   private String red;
   private String yellow;
-  private String messsage;
+  private String message;
 
-  public PupilResult(String white, String black, String red, String yellow, String messsage) {
+  public PupilResult(String white, String black, String red, String yellow, String message, String file) {
 
     this.white = white;
     this.black = black;
     this.red = red;
     this.yellow = yellow;
-    this.messsage = messsage;
+    this.message = message;
+    this.file = file;
   }
 
 
 
-  public String getWhite() {
+  public String getFile() {
+	return file;
+}
+
+
+
+public void setFile(String file) {
+	this.file = file;
+}
+
+
+
+public String getWhite() {
     return white;
   }
 
@@ -52,11 +66,11 @@ public class PupilResult {
     this.yellow = yellow;
   }
 
-  public String getMesssage() {
-    return messsage;
+  public String getMessage() {
+    return message;
   }
 
-  public void setMesssage(String messsage) {
-    this.messsage = messsage;
+  public void setMessage(String message) {
+    this.message = message;
   }
 }
