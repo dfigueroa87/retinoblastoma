@@ -2,4 +2,6 @@
     <string name="app_name">retinoblastoma</string>
     <string name="imagen_no_cargada">Imagen No Cargada</string>
     <string name="buscar_imagen">Buscar Imagen</string>
+    <string name="opciones">Opciones</string>
+    <string name="direccion">Direccion del servidor</string>
 </resources>

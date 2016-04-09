@@ -1,13 +1,23 @@
 package com.retinoblastoma;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
+import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -29,31 +39,47 @@ import retrofit.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
 
-    // this is the action code we use in our intent,
-    // this way we know we're looking at the response from our own action
     private static final int SELECT_PICTURE = 1;
 
     public static final String RESPONSE = "response";
     public static final String EXTRAS = "extras";
+    public static final String SETTINGS_FRAGMENT_TAG = "SettingsFragment";
+    public static final String IP_ADDRESS_KEY = "IP_ADDRESS_KEY";
+
+    private static String ipAddress;
 
     private ImageView image;
-
     private DTOJsonResponse data;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setupButtons();
+        image = (ImageView) findViewById(R.id.image);
+
+        loadIpAddress();
+    }
+
+    private void loadIpAddress() {
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        ipAddress = sharedPref.getString(IP_ADDRESS_KEY, null);
+    }
+
+    private void setupButtons() {
         findViewById(R.id.button)
                 .setOnClickListener(new View.OnClickListener() {
                     public void onClick(View arg0) {
-                        // in onCreate or any event where your want the user to
-                        // select a file
-                        Intent intent = new Intent();
-                        intent.setType("image/*");
-                        intent.setAction(Intent.ACTION_GET_CONTENT);
-                        startActivityForResult(Intent.createChooser(intent,
-                                "Select Picture"), SELECT_PICTURE);
+                        if (ipAddress != null) {
+                            Intent intent = new Intent();
+                            intent.setType("image/*");
+                            intent.setAction(Intent.ACTION_GET_CONTENT);
+                            startActivityForResult(Intent.createChooser(intent,
+                                    "Select Picture"), SELECT_PICTURE);
+                        } else {
+                            Toast.makeText(MainActivity.this, "El servidor no esta configurado",
+                                    Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
         findViewById(R.id.details_button)
@@ -81,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
                         data = null;
                     }
                 });
-        image = (ImageView) findViewById(R.id.image);
     }
 
     public String getRealPathFromURI(Context context, Uri contentUri) {
@@ -113,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Retrofit retrofit = new Retrofit.Builder()
                         .addConverterFactory(GsonConverterFactory.create())
-                        .baseUrl("http://192.168.0.16:8080/")
+                        .baseUrl(ipAddress)
                         .client(client)
                         .build();
 
@@ -127,6 +152,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     @Override
                     public void onFailure(Throwable t) {
+                        Toast.makeText(MainActivity.this, "Error en el servidor",
+                                Toast.LENGTH_SHORT).show();
                         t.printStackTrace();
                     }
                 });
@@ -157,6 +184,64 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return null;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            showSettingsDialog();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void showSettingsDialog() {
+        DialogFragment dialog = new SettingsFragment();
+        dialog.show(getSupportFragmentManager(), SETTINGS_FRAGMENT_TAG);
+    }
+
+    public static class SettingsFragment extends DialogFragment {
+
+        @NonNull
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            LayoutInflater inflater = getActivity().getLayoutInflater();
+
+            View view = inflater.inflate(R.layout.settings_dialog, null);
+            final EditText ipAddressEditText = (EditText) view.findViewById(R.id.ipAddress);
+            builder.setView(view)
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int id) {
+                            ipAddress = String.format("http://%s/", ipAddressEditText.getText().toString());
+                            saveServerAddress(ipAddress);
+                        }
+                    })
+                    .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            SettingsFragment.this.getDialog().cancel();
+                        }
+                    });
+            return builder.create();
+        }
+
+        private void saveServerAddress(String ipAddress) {
+            SharedPreferences sharedPreferences = getActivity().getPreferences(MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(IP_ADDRESS_KEY, ipAddress);
+            editor.apply();
+        }
+
     }
 
 }
