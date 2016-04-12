@@ -59,11 +59,11 @@
                 </Pane>
               </children>
             </HBox>
-            <SplitPane dividerPositions="0.7002724795640327" orientation="VERTICAL" prefHeight="737.0" prefWidth="310.0">
+            <SplitPane dividerPositions="0.7005494505494505" orientation="VERTICAL" prefHeight="737.0" prefWidth="310.0">
               <items>
                 <SplitPane dividerPositions="0.5" prefHeight="542.0" prefWidth="710.0">
                   <items>
-                    <SplitPane dividerPositions="0.5029585798816568" orientation="VERTICAL">
+                    <SplitPane dividerPositions="0.5029821073558648" orientation="VERTICAL">
                       <items>
                         <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="228.0" prefWidth="212.0" vbarPolicy="NEVER">
                           <content>
@@ -82,8 +82,8 @@
                         <Pane prefHeight="399.0" prefWidth="342.0">
                           <children>
                             <ImageView fx:id="resultImageView" fitHeight="150.0" fitWidth="200.0" layoutX="71.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" />
-                            <CheckBox fx:id="checkPositive" layoutX="133.0" layoutY="321.0" mnemonicParsing="false" onAction="#checkPositivo" prefWidth="77.0" text="positivo" />
-                            <TextField fx:id="comment" layoutX="89.0" layoutY="354.0" promptText="comentario" />
+                            <CheckBox fx:id="checkPositive" layoutX="133.0" layoutY="321.0" mnemonicParsing="false" onAction="#checkPositivo" prefWidth="171.0" text="positivo" />
+                            <TextField fx:id="comment" layoutX="61.0" layoutY="354.0" promptText="comentario" />
                             <Button fx:id="saveCommentButton" layoutX="252.0" layoutY="354.0" mnemonicParsing="false" onAction="#saveComment" text="Guardar" />
                             <Button fx:id="criterio1" layoutX="14.0" layoutY="392.0" mnemonicParsing="false" onAction="#criterio1" prefWidth="110.0" text="Criterio 1" />
                             <Button id="criterio1" fx:id="criterio2" layoutX="14.0" layoutY="423.0" mnemonicParsing="false" onAction="#criterio2" prefWidth="110.0" text="Criterio 2" />
@@ -98,8 +98,8 @@
                   <children>
                     <Pane prefHeight="291.0" prefWidth="351.0">
                       <children>
-                        <CheckBox fx:id="checkFlash" layoutX="176.0" layoutY="33.0" mnemonicParsing="false" text="Tiene Flash" />
-                        <Button id="buttonGuardarATexto" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#saveToText" prefHeight="25.0" prefWidth="137.0" text="Guardar a archivo" />
+                        <CheckBox fx:id="checkFlash" layoutX="206.0" layoutY="33.0" mnemonicParsing="false" text="Tiene Flash" />
+                        <Button id="buttonGuardarATexto" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#saveToText" prefHeight="26.951171875" prefWidth="165.0" text="Guardar a archivo" />
                         <PieChart fx:id="pieChart" layoutX="358.0" layoutY="0.0" legendVisible="false" minHeight="86.00009999999747" prefHeight="216.99997792968497" prefWidth="351.000022070315" />
                       </children>
                     </Pane>

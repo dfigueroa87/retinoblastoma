@@ -120,34 +120,51 @@ public class ProcessingManagerImpl implements ProcessingManager {
 
   @Override
   public Double getWhitePercentage(HistogramHSV histogram, int total) {
-    Double whitePerc = new Double(
-        ((double) histogram.getColors().get(histogram.getColors().indexOf(white)).getOccurrence())
-            / ((double) total));
-    return whitePerc;
+	if(total!=0){
+		Double whitePerc = new Double(
+				((double) histogram.getColors().get(histogram.getColors().indexOf(white)).getOccurrence())
+				/ ((double) total));
+		return whitePerc;
+	}else{
+		return new Double(0);
+	}
   }
 
   @Override
   public Double getBlackPercentage(HistogramHSV histogram, int total) {
-    Double whitePerc = new Double(
-        ((double) histogram.getColors().get(histogram.getColors().indexOf(black)).getOccurrence())
-            / ((double) total));
-    return whitePerc;
+	if(total!=0){
+		Double whitePerc = new Double(
+				((double) histogram.getColors().get(histogram.getColors().indexOf(black)).getOccurrence())
+				/ ((double) total));
+		return whitePerc;
+	}else{
+		return new Double(0);
+	}
   }
 
   @Override
   public Double getRedPercentage(HistogramHSV histogram, int total) {
-    Double whitePerc = new Double(
-        ((double) histogram.getColors().get(histogram.getColors().indexOf(red)).getOccurrence())
-            / ((double) total));
-    return whitePerc;
+	if(total!=0){
+		Double whitePerc = new Double(
+				((double) histogram.getColors().get(histogram.getColors().indexOf(red)).getOccurrence())
+				/ ((double) total));
+		return whitePerc;
+	}else{
+		return new Double(0);
+	}
+    
   }
 
   @Override
   public Double getYellowPercentage(HistogramHSV histogram, int total) {
-    Double whitePerc = new Double(
-        ((double) histogram.getColors().get(histogram.getColors().indexOf(yellow)).getOccurrence())
-            / ((double) total));
-    return whitePerc;
+	if(total!=0){
+		Double whitePerc = new Double(
+				((double) histogram.getColors().get(histogram.getColors().indexOf(yellow)).getOccurrence())
+				/ ((double) total));
+		return whitePerc;
+	}else{
+		return new Double(0);
+	}
   }
 
   @Override
